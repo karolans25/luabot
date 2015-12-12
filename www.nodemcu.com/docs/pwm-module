@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>NodeMCU Docs | PWM module</title>
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+
+  <!-- Let me embed vines -->
+  <!--
+  <script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+  -->
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/orange.ico" type="image/x-icon">
+
+  <!-- Vendor theme mods -->
+  <script src="assets/js/jquery-styling.js"></script>
+  <script src="assets/js/prettify.js"></script>
+  <!-- <script src='../assets/js/scrollspy.js'></script> -->
+
+  <!-- Spark theme mods -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/js/animated-core.js"></script>
+
+  <!-- Meta -->
+  <meta content="NodeMCU" property="og:title">
+  <meta content="Documentation for NodeMCU, a platform for connected devices." name="description">
+
+</head>
+<body role="flatdoc">
+
+  <div id="docs">
+    <div class="header">
+      <div class="left">
+        <a href="https://www.nodemcu.com">
+          <img src="assets/images/nodemcu-docs.png" id="logo">
+        </a>
+      </div>
+      <div class="right">
+        <!--
+        <a href="../assets/docs.zip" class="icon"><i class="icon ion-arrow-down-a"></i></a>
+        -->
+        <a href="http://www.github.com/nodemcu/nodemcu-firmware" class="icon"><i class="icon ion-social-github"></i></a>
+        <!--
+        <a href="https://github.com/spark/docs/edit/master/src/content/pwm-module.md" class="button">Edit this page</a>
+        -->
+      </div>
+    </div>
+
+    <div class="content-root" data-spy="scroll" data-target="#toc">
+      <div class="menubar">
+        <div class="menu section" role="flatdoc-menu">
+          <ul>
+            
+              <li><a href="index.1" class="level-0 ">Index</a></li>
+            
+              <li><a href="node-module" class="level-0 ">node module</a></li>
+            
+              <li><a href="file-module" class="level-0 ">file module</a></li>
+            
+              <li><a href="wifi-module" class="level-0 ">wifi module</a></li>
+            
+              <li><a href="wifi-sta-module" class="level-0 ">wifi.sta module</a></li>
+            
+              <li><a href="wifi-ap-module" class="level-0 ">wifi.ap module</a></li>
+            
+              <li><a href="timer-module" class="level-0 ">timer module</a></li>
+            
+              <li><a href="gpio-module" class="level-0 ">GPIO module</a></li>
+            
+              <li><a href="pwm-module" class="level-0 active">PWM module</a></li>
+            
+              <li><a href="net-module" class="level-0 ">net module</a></li>
+            
+              <li><a href="net-server-module" class="level-0 ">net.server module</a></li>
+            
+              <li><a href="net-socket-module" class="level-0 ">net.socket module</a></li>
+            
+              <li><a href="i2c-module" class="level-0 ">i2c module</a></li>
+            
+              <li><a href="adc-module" class="level-0 ">adc module</a></li>
+            
+              <li><a href="uart-module" class="level-0 ">uart module</a></li>
+            
+              <li><a href="onewire-module" class="level-0 ">onewire module</a></li>
+            
+              <li><a href="bit-module" class="level-0 ">bit module</a></li>
+            
+              <li><a href="spi-module" class="level-0 ">spi module</a></li>
+            
+              <li><a href="mqtt-module" class="level-0 ">mqtt module</a></li>
+            
+              <li><a href="mqtt-client-module" class="level-0 ">mqtt client module</a></li>
+            
+          </ul>
+        </div>
+        <div class="menu section" role="flatdoc-menu">
+          <ul id="toc">
+          <li id="pwm-module-item" class="level-1"><a id="pwm-module-link" href="pwm-module#pwm-module" class="level-1">PWM module</a></li><li id="pwm-module-pwm-setup-item" class="level-2"><a id="pwm-module-pwm-setup-link" href="pwm-module#pwm-module-pwm-setup" class="level-2">pwm.setup()</a></li><li id="pwm-module-pwm-close-item" class="level-2"><a id="pwm-module-pwm-close-link" href="pwm-module#pwm-module-pwm-close" class="level-2">pwm.close()</a></li><li id="pwm-module-pwm-start-item" class="level-2"><a id="pwm-module-pwm-start-link" href="pwm-module#pwm-module-pwm-start" class="level-2">pwm.start()</a></li><li id="pwm-module-pwm-stop-item" class="level-2"><a id="pwm-module-pwm-stop-link" href="pwm-module#pwm-module-pwm-stop" class="level-2">pwm.stop()</a></li><li id="pwm-module-pwm-setclock-item" class="level-2"><a id="pwm-module-pwm-setclock-link" href="pwm-module#pwm-module-pwm-setclock" class="level-2">pwm.setclock()</a></li><li id="pwm-module-pwm-getclock-item" class="level-2"><a id="pwm-module-pwm-getclock-link" href="pwm-module#pwm-module-pwm-getclock" class="level-2">pwm.getclock()</a></li><li id="pwm-module-pwm-setduty-item" class="level-2"><a id="pwm-module-pwm-setduty-link" href="pwm-module#pwm-module-pwm-setduty" class="level-2">pwm.setduty()</a></li><li id="pwm-module-pwm-getduty-item" class="level-2"><a id="pwm-module-pwm-getduty-link" href="pwm-module#pwm-module-pwm-getduty" class="level-2">pwm.getduty()</a></li></ul>
+        </div>
+      </div>
+      <div role="flatdoc-content" class="content">
+        <h1 id="pwm-module">PWM module</h1>
+<h2 id="pwm-module-pwm-setup">pwm.setup()</h2>
+<h4 id="description">Description</h4>
+<p>set pin to PWM mode. Only 3 pins can be set to PWM mode at the most.</p>
+<h4 id="syntax">Syntax</h4>
+<p>pwm.setup(pin, clock, duty)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: 1~12, IO index<br>
+clock: 1~1000, pwm frequency<br>
+duty: 0~1023, pwm duty cycle, max 1023(10bit)</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- set pin index 1 as pwm output, frequency is 100Hz, </span>
+    <span class="comment">-- duty cycle is 50%-50%.</span>
+    pwm.setup(<span class="number">1</span>, <span class="number">100</span>, <span class="number">512</span>)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="pwm-module#pwm-module-pwm-start">pwm.start()</a></p>
+<h2 id="pwm-module-pwm-close">pwm.close()</h2>
+<h4 id="description">Description</h4>
+<p>quit PWM mode for specified pin.</p>
+<h4 id="syntax">Syntax</h4>
+<p>pwm.close(pin)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: 1~12, IO index</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- set pin index 1 as pwm output, frequency is 100Hz, </span>
+    <span class="comment">-- duty cycle is 50%-50%.</span>
+    pwm.setup(<span class="number">1</span>, <span class="number">100</span>, <span class="number">512</span>)
+
+    <span class="comment">--pin 1 quits pwm mode.</span>
+    pwm.close(<span class="number">1</span>)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="pwm-module#pwm-module-pwm-start">pwm.start()</a></p>
+<h2 id="pwm-module-pwm-start">pwm.start()</h2>
+<h4 id="description">Description</h4>
+<p>pwm starts, users can detect the waveform on the gpio.</p>
+<h4 id="syntax">Syntax</h4>
+<p>pwm.start(pin)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: 1~12, IO index</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- set pin index 1 as pwm output, frequency is 100Hz, </span>
+    <span class="comment">-- duty cycle is 50%-50%.</span>
+    pwm.setup(<span class="number">1</span>, <span class="number">100</span>, <span class="number">512</span>)
+
+    <span class="comment">-- start pwm output.</span>
+    pwm.start(<span class="number">1</span>)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="pwm-module#pwm-module-pwm-stop">pwm.stop()</a></p>
+<h2 id="pwm-module-pwm-stop">pwm.stop()</h2>
+<h4 id="description">Description</h4>
+<p>pause the output of PWM waveform.</p>
+<h4 id="syntax">Syntax</h4>
+<p>pwm.stop(pin)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: 1~12, IO index</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- set pin index 1 as pwm output, frequency is 100Hz, </span>
+    <span class="comment">-- duty cycle is 50%-50%.</span>
+    pwm.setup(<span class="number">1</span>, <span class="number">100</span>, <span class="number">512</span>)
+
+    <span class="comment">-- start pwm output.</span>
+    pwm.start(<span class="number">1</span>)
+
+    <span class="comment">--something else. </span>
+
+    <span class="comment">--stop pwm output.</span>
+    pwm.stop(<span class="number">1</span>)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="pwm-module#pwm-module-pwm-start">pwm.start()</a></p>
+<h2 id="pwm-module-pwm-setclock">pwm.setclock()</h2>
+<h4 id="description">Description</h4>
+<p>set pwm frequency for pin.<br>
+<strong>-Note:</strong> setup pwm frequency will synchronously change others if there are any. Only one PWM frequency can be allowed for the system.</p>
+<h4 id="syntax">Syntax</h4>
+<p>pwm.setclock(pin, clock)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: 1~12, IO index.<br>
+clock: 1~1000, pwm frequency.</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- set pin index 1 as pwm output, frequency is 100Hz, </span>
+    <span class="comment">-- duty cycle is 50%-50%.</span>
+    pwm.setup(<span class="number">1</span>, <span class="number">100</span>, <span class="number">512</span>)
+
+    <span class="comment">-- start pwm output.</span>
+    pwm.start(<span class="number">1</span>)
+
+    <span class="comment">--something else. </span>
+
+    <span class="comment">-- change pwm frequency for pin 1.</span>
+    pwm.setclock(<span class="number">1</span>, <span class="number">10</span>)
+
+    <span class="comment">--something else.</span>
+
+    <span class="comment">--stop pwm output.</span>
+    pwm.stop(<span class="number">1</span>)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="pwm-module#pwm-module-pwm-getclock">pwm.getclock()</a></p>
+<h2 id="pwm-module-pwm-getclock">pwm.getclock()</h2>
+<h4 id="description">Description</h4>
+<p>get pwm frequency of pin.</p>
+<h4 id="syntax">Syntax</h4>
+<p>pwm.getclock(pin)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: 1~12, IO index.</p>
+<h4 id="returns">Returns</h4>
+<p>number:pwm frequency of pin</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- get pwm frequency for pin 1.</span>
+    <span class="built_in">print</span>(pwm.getclock(<span class="number">1</span>))</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="pwm-module#pwm-module-pwm-setclock">pwm.setclock()</a></p>
+<h2 id="pwm-module-pwm-setduty">pwm.setduty()</h2>
+<h4 id="description">Description</h4>
+<p>set duty clycle for pin.</p>
+<h4 id="syntax">Syntax</h4>
+<p>pwm.setduty(pin, duty)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: 1~12, IO index<br>
+duty: 0~1023, pwm duty cycle, max 1023(10bit).</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- set pin index 1 as pwm output, frequency is 100Hz, </span>
+    <span class="comment">-- duty cycle is 50%-50%.</span>
+    pwm.setup(<span class="number">1</span>, <span class="number">100</span>, <span class="number">512</span>)
+
+    <span class="comment">-- start pwm output.</span>
+    pwm.start(<span class="number">1</span>)
+
+    <span class="comment">--something else. </span>
+
+    <span class="comment">-- change pwm duty cycle for pin 1.</span>
+    pwm.setduty(<span class="number">1</span>, <span class="number">256</span>)
+
+    <span class="comment">--something else.</span>
+
+    <span class="comment">--stop pwm output.</span>
+    pwm.stop(<span class="number">1</span>)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="pwm-module#pwm-module-pwm-getduty">pwm.getduty()</a></p>
+<h2 id="pwm-module-pwm-getduty">pwm.getduty()</h2>
+<h4 id="description">Description</h4>
+<p>get duty clycle for pin.</p>
+<h4 id="syntax">Syntax</h4>
+<p>pwm.getduty(pin)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: 1~12, IO index</p>
+<h4 id="returns">Returns</h4>
+<p>number: duty cycle, max 1023.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- D1 is connected to green led</span>
+    <span class="comment">-- D2 is connected to blue led</span>
+    <span class="comment">-- D3 is connected to red led</span>
+    pwm.setup(<span class="number">1</span>,<span class="number">500</span>,<span class="number">512</span>)
+    pwm.setup(<span class="number">2</span>,<span class="number">500</span>,<span class="number">512</span>)
+    pwm.setup(<span class="number">3</span>,<span class="number">500</span>,<span class="number">512</span>)
+    pwm.start(<span class="number">1</span>)
+    pwm.start(<span class="number">2</span>)
+    pwm.start(<span class="number">3</span>)
+    <span class="function"><span class="keyword">function</span> <span class="title">led</span><span class="params">(r,g,b)</span></span>
+      pwm.setduty(<span class="number">1</span>,g)
+      pwm.setduty(<span class="number">2</span>,b)
+      pwm.setduty(<span class="number">3</span>,r)
+    <span class="keyword">end</span>
+    led(<span class="number">512</span>,<span class="number">0</span>,<span class="number">0</span>) <span class="comment">--  set led to red</span>
+    led(<span class="number">0</span>,<span class="number">0</span>,<span class="number">512</span>) <span class="comment">-- set led to blue.</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="pwm-module#pwm-module-pwm-setduty">pwm.setduty()</a></p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom -->
+  <script src="assets/js/docs.js"></script>
+
+</body>
+</html>

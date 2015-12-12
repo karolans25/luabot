@@ -1,0 +1,361 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>NodeMCU Docs | onewire module</title>
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+
+  <!-- Let me embed vines -->
+  <!--
+  <script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+  -->
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/orange.ico" type="image/x-icon">
+
+  <!-- Vendor theme mods -->
+  <script src="assets/js/jquery-styling.js"></script>
+  <script src="assets/js/prettify.js"></script>
+  <!-- <script src='../assets/js/scrollspy.js'></script> -->
+
+  <!-- Spark theme mods -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/js/animated-core.js"></script>
+
+  <!-- Meta -->
+  <meta content="NodeMCU" property="og:title">
+  <meta content="Documentation for NodeMCU, a platform for connected devices." name="description">
+
+</head>
+<body role="flatdoc">
+
+  <div id="docs">
+    <div class="header">
+      <div class="left">
+        <a href="https://www.nodemcu.com">
+          <img src="assets/images/nodemcu-docs.png" id="logo">
+        </a>
+      </div>
+      <div class="right">
+        <!--
+        <a href="../assets/docs.zip" class="icon"><i class="icon ion-arrow-down-a"></i></a>
+        -->
+        <a href="http://www.github.com/nodemcu/nodemcu-firmware" class="icon"><i class="icon ion-social-github"></i></a>
+        <!--
+        <a href="https://github.com/spark/docs/edit/master/src/content/onewire-module.md" class="button">Edit this page</a>
+        -->
+      </div>
+    </div>
+
+    <div class="content-root" data-spy="scroll" data-target="#toc">
+      <div class="menubar">
+        <div class="menu section" role="flatdoc-menu">
+          <ul>
+            
+              <li><a href="index.1" class="level-0 ">Index</a></li>
+            
+              <li><a href="node-module" class="level-0 ">node module</a></li>
+            
+              <li><a href="file-module" class="level-0 ">file module</a></li>
+            
+              <li><a href="wifi-module" class="level-0 ">wifi module</a></li>
+            
+              <li><a href="wifi-sta-module" class="level-0 ">wifi.sta module</a></li>
+            
+              <li><a href="wifi-ap-module" class="level-0 ">wifi.ap module</a></li>
+            
+              <li><a href="timer-module" class="level-0 ">timer module</a></li>
+            
+              <li><a href="gpio-module" class="level-0 ">GPIO module</a></li>
+            
+              <li><a href="pwm-module" class="level-0 ">PWM module</a></li>
+            
+              <li><a href="net-module" class="level-0 ">net module</a></li>
+            
+              <li><a href="net-server-module" class="level-0 ">net.server module</a></li>
+            
+              <li><a href="net-socket-module" class="level-0 ">net.socket module</a></li>
+            
+              <li><a href="i2c-module" class="level-0 ">i2c module</a></li>
+            
+              <li><a href="adc-module" class="level-0 ">adc module</a></li>
+            
+              <li><a href="uart-module" class="level-0 ">uart module</a></li>
+            
+              <li><a href="onewire-module" class="level-0 active">onewire module</a></li>
+            
+              <li><a href="bit-module" class="level-0 ">bit module</a></li>
+            
+              <li><a href="spi-module" class="level-0 ">spi module</a></li>
+            
+              <li><a href="mqtt-module" class="level-0 ">mqtt module</a></li>
+            
+              <li><a href="mqtt-client-module" class="level-0 ">mqtt client module</a></li>
+            
+          </ul>
+        </div>
+        <div class="menu section" role="flatdoc-menu">
+          <ul id="toc">
+          <li id="onewire-module-item" class="level-1"><a id="onewire-module-link" href="onewire-module#onewire-module" class="level-1">onewire module</a></li><li id="onewire-module-constant-item" class="level-2"><a id="onewire-module-constant-link" href="onewire-module#onewire-module-constant" class="level-2">CONSTANT</a></li><li id="onewire-module-ow-setup-item" class="level-2"><a id="onewire-module-ow-setup-link" href="onewire-module#onewire-module-ow-setup" class="level-2">ow.setup()</a></li><li id="onewire-module-ow-reset-item" class="level-2"><a id="onewire-module-ow-reset-link" href="onewire-module#onewire-module-ow-reset" class="level-2">ow.reset()</a></li><li id="onewire-module-ow-skip-item" class="level-2"><a id="onewire-module-ow-skip-link" href="onewire-module#onewire-module-ow-skip" class="level-2">ow.skip()</a></li><li id="onewire-module-ow-select-item" class="level-2"><a id="onewire-module-ow-select-link" href="onewire-module#onewire-module-ow-select" class="level-2">ow.select()</a></li><li id="onewire-module-ow-write-item" class="level-2"><a id="onewire-module-ow-write-link" href="onewire-module#onewire-module-ow-write" class="level-2">ow.write()</a></li><li id="onewire-module-ow-write-bytes-item" class="level-2"><a id="onewire-module-ow-write-bytes-link" href="onewire-module#onewire-module-ow-write-bytes" class="level-2">ow.write_bytes()</a></li><li id="onewire-module-ow-read-item" class="level-2"><a id="onewire-module-ow-read-link" href="onewire-module#onewire-module-ow-read" class="level-2">ow.read()</a></li><li id="onewire-module-ow-read-bytes-item" class="level-2"><a id="onewire-module-ow-read-bytes-link" href="onewire-module#onewire-module-ow-read-bytes" class="level-2">ow.read_bytes()</a></li><li id="onewire-module-ow-depower-item" class="level-2"><a id="onewire-module-ow-depower-link" href="onewire-module#onewire-module-ow-depower" class="level-2">ow.depower()</a></li><li id="onewire-module-ow-reset-search-item" class="level-2"><a id="onewire-module-ow-reset-search-link" href="onewire-module#onewire-module-ow-reset-search" class="level-2">ow.reset_search()</a></li><li id="onewire-module-ow-target-search-item" class="level-2"><a id="onewire-module-ow-target-search-link" href="onewire-module#onewire-module-ow-target-search" class="level-2">ow.target_search()</a></li><li id="onewire-module-ow-search-item" class="level-2"><a id="onewire-module-ow-search-link" href="onewire-module#onewire-module-ow-search" class="level-2">ow.search()</a></li><li id="onewire-module-ow-crc8-item" class="level-2"><a id="onewire-module-ow-crc8-link" href="onewire-module#onewire-module-ow-crc8" class="level-2">ow.crc8()</a></li><li id="onewire-module-ow-check-crc16-item" class="level-2"><a id="onewire-module-ow-check-crc16-link" href="onewire-module#onewire-module-ow-check-crc16" class="level-2">ow.check_crc16()</a></li><li id="onewire-module-ow-crc16-item" class="level-2"><a id="onewire-module-ow-crc16-link" href="onewire-module#onewire-module-ow-crc16" class="level-2">ow.crc16()</a></li></ul>
+        </div>
+      </div>
+      <div role="flatdoc-content" class="content">
+        <h1 id="onewire-module">onewire module</h1>
+<h2 id="onewire-module-constant">CONSTANT</h2>
+<p>none</p>
+<h2 id="onewire-module-ow-setup">ow.setup()</h2>
+<h4 id="description">Description</h4>
+<p>set a pin in onewire mode.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>ow.setup(pin)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: 1~12, IO index<br></p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="onewire-module"></a></p>
+<h2 id="onewire-module-ow-reset">ow.reset()</h2>
+<h4 id="description">Description</h4>
+<p>Perform a 1-Wire reset cycle. <br></p>
+<h4 id="syntax">Syntax</h4>
+<p>ow.reset(pin)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: 1~12, IO index<br></p>
+<h4 id="returns">Returns</h4>
+<p>number: Returns 1 if a device responds with a presence pulse.  Returns 0 if there is no device or the bus is shorted or otherwise held low for more than 250uS</p>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="onewire-module"></a></p>
+<h2 id="onewire-module-ow-skip">ow.skip()</h2>
+<h4 id="description">Description</h4>
+<p>Issue a 1-Wire rom skip command, to address all on bus. <br></p>
+<h4 id="syntax">Syntax</h4>
+<p>ow.skip(pin)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: 1~12, IO index<br></p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="onewire-module"></a></p>
+<h2 id="onewire-module-ow-select">ow.select()</h2>
+<h4 id="description">Description</h4>
+<p>Issue a 1-Wire rom select command, make sure you do the ow.reset(pin) first. <br></p>
+<h4 id="syntax">Syntax</h4>
+<p>ow.select(pin, rom)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: 1~12, IO index<br>
+rom: string value, len 8, rom code of the salve device</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua"><span class="comment">-- 18b20 Example</span>
+pin = <span class="number">9</span>
+ow.setup(pin)
+count = <span class="number">0</span>
+<span class="keyword">repeat</span>
+  count = count + <span class="number">1</span>
+  addr = ow.reset_search(pin)
+  addr = ow.search(pin)
+  tmr.wdclr()
+<span class="keyword">until</span>((addr ~= <span class="keyword">nil</span>) <span class="keyword">or</span> (count &gt; <span class="number">100</span>))
+<span class="keyword">if</span> (addr == <span class="keyword">nil</span>) <span class="keyword">then</span>
+  <span class="built_in">print</span>(<span class="string">&quot;No more addresses.&quot;</span>)
+<span class="keyword">else</span>
+  <span class="built_in">print</span>(addr:byte(<span class="number">1</span>,<span class="number">8</span>))
+  crc = ow.crc8(<span class="built_in">string</span>.sub(addr,<span class="number">1</span>,<span class="number">7</span>))
+  <span class="keyword">if</span> (crc == addr:byte(<span class="number">8</span>)) <span class="keyword">then</span>
+    <span class="keyword">if</span> ((addr:byte(<span class="number">1</span>) == <span class="number">0x10</span>) <span class="keyword">or</span> (addr:byte(<span class="number">1</span>) == <span class="number">0x28</span>)) <span class="keyword">then</span>
+      <span class="built_in">print</span>(<span class="string">&quot;Device is a DS18S20 family device.&quot;</span>)
+        <span class="keyword">repeat</span>
+          ow.reset(pin)
+          ow.<span class="built_in">select</span>(pin, addr)
+          ow.write(pin, <span class="number">0x44</span>, <span class="number">1</span>)
+          tmr.delay(<span class="number">1000000</span>)
+          present = ow.reset(pin)
+          ow.<span class="built_in">select</span>(pin, addr)
+          ow.write(pin,<span class="number">0xBE</span>,<span class="number">1</span>)
+          <span class="built_in">print</span>(<span class="string">&quot;P=&quot;</span>..present)  
+          data = <span class="keyword">nil</span>
+          data = <span class="built_in">string</span>.char(ow.read(pin))
+          <span class="keyword">for</span> i = <span class="number">1</span>, <span class="number">8</span> <span class="keyword">do</span>
+            data = data .. <span class="built_in">string</span>.char(ow.read(pin))
+          <span class="keyword">end</span>
+          <span class="built_in">print</span>(data:byte(<span class="number">1</span>,<span class="number">9</span>))
+          crc = ow.crc8(<span class="built_in">string</span>.sub(data,<span class="number">1</span>,<span class="number">8</span>))
+          <span class="built_in">print</span>(<span class="string">&quot;CRC=&quot;</span>..crc)
+          <span class="keyword">if</span> (crc == data:byte(<span class="number">9</span>)) <span class="keyword">then</span>
+             t = (data:byte(<span class="number">1</span>) + data:byte(<span class="number">2</span>) * <span class="number">256</span>) * <span class="number">625</span>
+             t1 = t / <span class="number">10000</span>
+             t2 = t % <span class="number">10000</span>
+             <span class="built_in">print</span>(<span class="string">&quot;Temperature=&quot;</span>..t1..<span class="string">&quot;.&quot;</span>..t2..<span class="string">&quot;Centigrade&quot;</span>)
+          <span class="keyword">end</span>                   
+          tmr.wdclr()
+        <span class="keyword">until</span> <span class="keyword">false</span>
+    <span class="keyword">else</span>
+      <span class="built_in">print</span>(<span class="string">&quot;Device family is not recognized.&quot;</span>)
+    <span class="keyword">end</span>
+  <span class="keyword">else</span>
+    <span class="built_in">print</span>(<span class="string">&quot;CRC is not valid!&quot;</span>)
+  <span class="keyword">end</span>
+<span class="keyword">end</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="onewire-module"></a></p>
+<h2 id="onewire-module-ow-write">ow.write()</h2>
+<h4 id="description">Description</h4>
+<p>Write a byte. If &apos;power&apos; is 1 then the wire is held high at the end for parasitically powered devices. You are responsible for eventually depowering it by calling depower() or doing another read or write. <br></p>
+<h4 id="syntax">Syntax</h4>
+<p>ow.write(pin, v, power)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin:  1~12, IO index <br>
+v:  byte to be written to salve device <br>
+power:  1 for wire being held high for parasitically powered devices.</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="onewire-module"></a></p>
+<h2 id="onewire-module-ow-write-bytes">ow.write_bytes()</h2>
+<h4 id="description">Description</h4>
+<p>Write multi bytes. If &apos;power&apos; is 1 then the wire is held high at the end for parasitically powered devices. You are responsible for eventually depowering it by calling depower() or doing another read or write. <br></p>
+<h4 id="syntax">Syntax</h4>
+<p>ow.write_bytes(pin, buf, power)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin:  1~12, IO index <br>
+buf:  string to be written to salve device <br>
+power:  1 for wire being held high for parasitically powered devices.</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="onewire-module"></a></p>
+<h2 id="onewire-module-ow-read">ow.read()</h2>
+<h4 id="description">Description</h4>
+<p>read a byte.  <br></p>
+<h4 id="syntax">Syntax</h4>
+<p>ow.read(pin)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin:  1~12, IO index <br></p>
+<h4 id="returns">Returns</h4>
+<p>byte read from slave device.</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="onewire-module"></a></p>
+<h2 id="onewire-module-ow-read-bytes">ow.read_bytes()</h2>
+<h4 id="description">Description</h4>
+<p>read multi bytes. <br></p>
+<h4 id="syntax">Syntax</h4>
+<p>ow.read_bytes(pin, size)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin:  1~12, IO index <br>
+size:  number of bytes to be read from slave device.<br></p>
+<h4 id="returns">Returns</h4>
+<p>string: bytes read from slave device.</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="onewire-module"></a></p>
+<h2 id="onewire-module-ow-depower">ow.depower()</h2>
+<h4 id="description">Description</h4>
+<p>Stop forcing power onto the bus. You only need to do this if you used the &apos;power&apos; flag to ow.write() or used a ow.write_bytes() and aren&apos;t about to do another read or write.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>ow.depower(pin)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin:  1~12, IO index <br></p>
+<h4 id="example">Example</h4>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="onewire-module"></a></p>
+<h2 id="onewire-module-ow-reset-search">ow.reset_search()</h2>
+<h4 id="description">Description</h4>
+<p>Clear the search state so that it will start from the beginning again.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>ow.reset_search(pin)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin:  1~12, IO index <br></p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="onewire-module"></a></p>
+<h2 id="onewire-module-ow-target-search">ow.target_search()</h2>
+<h4 id="description">Description</h4>
+<p>Setup the search to find the device type &apos;family_code&apos; on the next call to ow.search() if it is present.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>ow.target_search(pin, family_code)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin:  1~12, IO index <br>
+family_code:  byte for family code.</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="onewire-module"></a></p>
+<h2 id="onewire-module-ow-search">ow.search()</h2>
+<h4 id="description">Description</h4>
+<p>Look for the next device. <br></p>
+<h4 id="syntax">Syntax</h4>
+<p>ow.search(pin)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin:  1~12, IO index <br></p>
+<h4 id="returns">Returns</h4>
+<p>if succeed return a string length of 8, which contain the rom code of slave device. <br>
+if failed in searching next device return nil.</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="onewire-module"></a></p>
+<h2 id="onewire-module-ow-crc8">ow.crc8()</h2>
+<h4 id="description">Description</h4>
+<p>Compute a Dallas Semiconductor 8 bit CRC, these are used in the ROM and scratchpad registers. <br></p>
+<h4 id="syntax">Syntax</h4>
+<p>ow.crc8(buf)</p>
+<h4 id="parameters">Parameters</h4>
+<p>buf: string value, data to be calculated check sum in string. <br></p>
+<h4 id="returns">Returns</h4>
+<p>crc result in byte.</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="onewire-module"></a></p>
+<h2 id="onewire-module-ow-check-crc16">ow.check_crc16()</h2>
+<h4 id="description">Description</h4>
+<p>Compute the 1-Wire CRC16 and compare it against the received CRC. <br></p>
+<h4 id="syntax">Syntax</h4>
+<p>ow.check_crc16(buf, inverted_crc0, inverted_crc1, crc)</p>
+<h4 id="parameters">Parameters</h4>
+<p>buf: string value, data to be calculated check sum in string. <br>
+inverted_crc0:  LSB of received CRC. <br>
+inverted_crc1:  MSB of received CRC. <br>
+crc:  crc starting value (optional)</p>
+<h4 id="returns">Returns</h4>
+<p>bool: true, if the CRC matches; false for dismatches.</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="onewire-module"></a></p>
+<h2 id="onewire-module-ow-crc16">ow.crc16()</h2>
+<h4 id="description">Description</h4>
+<p>Compute a Dallas Semiconductor 16 bit CRC.  This is required to check the integrity of data received from many 1-Wire devices.  Note that the CRC computed here is <strong>not</strong> what you&apos;ll get from the 1-Wire network, for two reasons:<br>
+    1) The CRC is transmitted bitwise inverted.<br>
+    2) Depending on the endian-ness of your processor, the binary representation of the two-byte return value may have a different byte order than the two bytes you get from 1-Wire. <br></p>
+<h4 id="syntax">Syntax</h4>
+<p>ow.crc16(buf, crc)</p>
+<h4 id="parameters">Parameters</h4>
+<p>buf:  string value, data to be calculated check sum in string. <br>
+crc:  crc starting value (optional)</p>
+<h4 id="returns">Returns</h4>
+<p>return The CRC16, as defined by Dallas Semiconductor.</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="onewire-module"></a></p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom -->
+  <script src="assets/js/docs.js"></script>
+
+</body>
+</html>

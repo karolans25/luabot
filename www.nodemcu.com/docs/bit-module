@@ -1,0 +1,369 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>NodeMCU Docs | bit module</title>
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+
+  <!-- Let me embed vines -->
+  <!--
+  <script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+  -->
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/orange.ico" type="image/x-icon">
+
+  <!-- Vendor theme mods -->
+  <script src="assets/js/jquery-styling.js"></script>
+  <script src="assets/js/prettify.js"></script>
+  <!-- <script src='../assets/js/scrollspy.js'></script> -->
+
+  <!-- Spark theme mods -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/js/animated-core.js"></script>
+
+  <!-- Meta -->
+  <meta content="NodeMCU" property="og:title">
+  <meta content="Documentation for NodeMCU, a platform for connected devices." name="description">
+
+</head>
+<body role="flatdoc">
+
+  <div id="docs">
+    <div class="header">
+      <div class="left">
+        <a href="https://www.nodemcu.com">
+          <img src="assets/images/nodemcu-docs.png" id="logo">
+        </a>
+      </div>
+      <div class="right">
+        <!--
+        <a href="../assets/docs.zip" class="icon"><i class="icon ion-arrow-down-a"></i></a>
+        -->
+        <a href="http://www.github.com/nodemcu/nodemcu-firmware" class="icon"><i class="icon ion-social-github"></i></a>
+        <!--
+        <a href="https://github.com/spark/docs/edit/master/src/content/bit-module.md" class="button">Edit this page</a>
+        -->
+      </div>
+    </div>
+
+    <div class="content-root" data-spy="scroll" data-target="#toc">
+      <div class="menubar">
+        <div class="menu section" role="flatdoc-menu">
+          <ul>
+            
+              <li><a href="index.1" class="level-0 ">Index</a></li>
+            
+              <li><a href="node-module" class="level-0 ">node module</a></li>
+            
+              <li><a href="file-module" class="level-0 ">file module</a></li>
+            
+              <li><a href="wifi-module" class="level-0 ">wifi module</a></li>
+            
+              <li><a href="wifi-sta-module" class="level-0 ">wifi.sta module</a></li>
+            
+              <li><a href="wifi-ap-module" class="level-0 ">wifi.ap module</a></li>
+            
+              <li><a href="timer-module" class="level-0 ">timer module</a></li>
+            
+              <li><a href="gpio-module" class="level-0 ">GPIO module</a></li>
+            
+              <li><a href="pwm-module" class="level-0 ">PWM module</a></li>
+            
+              <li><a href="net-module" class="level-0 ">net module</a></li>
+            
+              <li><a href="net-server-module" class="level-0 ">net.server module</a></li>
+            
+              <li><a href="net-socket-module" class="level-0 ">net.socket module</a></li>
+            
+              <li><a href="i2c-module" class="level-0 ">i2c module</a></li>
+            
+              <li><a href="adc-module" class="level-0 ">adc module</a></li>
+            
+              <li><a href="uart-module" class="level-0 ">uart module</a></li>
+            
+              <li><a href="onewire-module" class="level-0 ">onewire module</a></li>
+            
+              <li><a href="bit-module" class="level-0 active">bit module</a></li>
+            
+              <li><a href="spi-module" class="level-0 ">spi module</a></li>
+            
+              <li><a href="mqtt-module" class="level-0 ">mqtt module</a></li>
+            
+              <li><a href="mqtt-client-module" class="level-0 ">mqtt client module</a></li>
+            
+          </ul>
+        </div>
+        <div class="menu section" role="flatdoc-menu">
+          <ul id="toc">
+          <li id="bit-module-item" class="level-1"><a id="bit-module-link" href="bit-module#bit-module" class="level-1">bit module</a></li><li id="bit-module-constant-item" class="level-2"><a id="bit-module-constant-link" href="bit-module#bit-module-constant" class="level-2">CONSTANT</a></li><li id="bit-module-bit-bnot-item" class="level-2"><a id="bit-module-bit-bnot-link" href="bit-module#bit-module-bit-bnot" class="level-2">bit.bnot()</a></li><li id="bit-module-bit-band-item" class="level-2"><a id="bit-module-bit-band-link" href="bit-module#bit-module-bit-band" class="level-2">bit.band()</a></li><li id="bit-module-bit-bor-item" class="level-2"><a id="bit-module-bit-bor-link" href="bit-module#bit-module-bit-bor" class="level-2">bit.bor()</a></li><li id="bit-module-bit-bxor-item" class="level-2"><a id="bit-module-bit-bxor-link" href="bit-module#bit-module-bit-bxor" class="level-2">bit.bxor()</a></li><li id="bit-module-bit-lshift-item" class="level-2"><a id="bit-module-bit-lshift-link" href="bit-module#bit-module-bit-lshift" class="level-2">bit.lshift()</a></li><li id="bit-module-bit-rshift-item" class="level-2"><a id="bit-module-bit-rshift-link" href="bit-module#bit-module-bit-rshift" class="level-2">bit.rshift()</a></li><li id="bit-module-bit-arshift-item" class="level-2"><a id="bit-module-bit-arshift-link" href="bit-module#bit-module-bit-arshift" class="level-2">bit.arshift()</a></li><li id="bit-module-bit-bit-item" class="level-2"><a id="bit-module-bit-bit-link" href="bit-module#bit-module-bit-bit" class="level-2">bit.bit()</a></li><li id="bit-module-bit-set-item" class="level-2"><a id="bit-module-bit-set-link" href="bit-module#bit-module-bit-set" class="level-2">bit.set()</a></li><li id="bit-module-bit-clear-item" class="level-2"><a id="bit-module-bit-clear-link" href="bit-module#bit-module-bit-clear" class="level-2">bit.clear()</a></li><li id="bit-module-bit-isset-item" class="level-2"><a id="bit-module-bit-isset-link" href="bit-module#bit-module-bit-isset" class="level-2">bit.isset()</a></li><li id="bit-module-bit-isclear-item" class="level-2"><a id="bit-module-bit-isclear-link" href="bit-module#bit-module-bit-isclear" class="level-2">bit.isclear()</a></li></ul>
+        </div>
+      </div>
+      <div role="flatdoc-content" class="content">
+        <h1 id="bit-module">bit module</h1>
+<h2 id="bit-module-constant">CONSTANT</h2>
+<p>none</p>
+<h2 id="bit-module-bit-bnot">bit.bnot()</h2>
+<h4 id="description">Description</h4>
+<p>Bitwise negation, equivalent to ~value in C.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>bit.bnot(value)</p>
+<h4 id="parameters">Parameters</h4>
+<p>value: the number to negate.</p>
+<h4 id="returns">Returns</h4>
+<p>number: the bitwise negated value of the number.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- print bitwise negation result for 0x0</span>
+    <span class="comment">-- value is 32 bit width</span>
+    <span class="comment">-- if value exceeds 32bit, the result is 0.</span>
+    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.bnot(<span class="number">0x00000000</span>))
+
+    <span class="comment">-- the result is actully is 0xffffffff</span>
+    &gt;    result: -<span class="number">1</span>      
+
+    <span class="comment">-- print bitwise negation result for 0xffffffff</span>
+    <span class="comment">-- value is 32 bit width</span>
+    <span class="comment">-- if value exceeds 32bit, the result is 0.</span>
+    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.bnot(<span class="number">0xffffffff</span>))
+
+    <span class="comment">-- the result is actully is 0x00000000</span>
+    &gt;    result: <span class="number">0</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="bit-module"></a></p>
+<h2 id="bit-module-bit-band">bit.band()</h2>
+<h4 id="description">Description</h4>
+<p>Bitwise AND, equivalent to val1 &amp; val2 &amp; ... &amp; valn in C.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>bit.band(val1, val2, ... valn)</p>
+<h4 id="parameters">Parameters</h4>
+<p>val1: first AND argument.<br>
+val2: second AND argument.<br>
+valn: nth AND argument.</p>
+<h4 id="returns">Returns</h4>
+<p>number: the bitwise AND of all the arguments.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    v1 = <span class="number">0xffffffff</span>
+    v2 = <span class="number">0x000000ff</span>
+    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.band(v1, v2)) 
+
+    <span class="comment">-- result is 0x000000ff, equals to 255</span>
+    &gt;    result: <span class="number">255</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="bit-module"></a></p>
+<h2 id="bit-module-bit-bor">bit.bor()</h2>
+<h4 id="description">Description</h4>
+<p>Bitwise OR, equivalent to val1 | val2 | ... | valn in C.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>bit.bor(val1, val2, ... valn)</p>
+<h4 id="parameters">Parameters</h4>
+<p>val1: first OR argument.<br>
+val2: second OR argument.<br>
+valn: nth OR argument.</p>
+<h4 id="returns">Returns</h4>
+<p>number: the bitwise OR of all the arguments.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    v1 = <span class="number">0x0000ff00</span>
+    v2 = <span class="number">0x000000ff</span>
+    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.band(v1, v2)) 
+
+    <span class="comment">-- result is 0x0000ffff, equals to 65535</span>
+    &gt;    result: <span class="number">65535</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="bit-module"></a></p>
+<h2 id="bit-module-bit-bxor">bit.bxor()</h2>
+<h4 id="description">Description</h4>
+<p>Bitwise XOR, equivalent to val1 ^ val2 ^ ... ^ valn in C.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>bit.bxor(val1, val2, ... valn)</p>
+<h4 id="parameters">Parameters</h4>
+<p>val1: first XOR argument.<br>
+val2: second XOR argument.<br>
+valn: nth XOR argument.</p>
+<h4 id="returns">Returns</h4>
+<p>number: the bitwise XOR of all the arguments.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    v1 = <span class="number">0x0000ffff</span>
+    v2 = <span class="number">0x0000ff00</span>
+    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.bxor(v1, v2)) 
+
+    <span class="comment">-- result is 0x000000ff, equals to 255</span>
+    &gt;    result: <span class="number">255</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="bit-module"></a></p>
+<h2 id="bit-module-bit-lshift">bit.lshift()</h2>
+<h4 id="description">Description</h4>
+<p>Left-shift a number, equivalent to value &lt;&lt; shift in C.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>bit.lshift(value, shift)</p>
+<h4 id="parameters">Parameters</h4>
+<p>value: the value to shift.<br>
+shift: positions to shift.</p>
+<h4 id="returns">Returns</h4>
+<p>number: the number shifted left</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    v1 = <span class="number">0x00000001</span>
+    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.lshift(v1, <span class="number">4</span>)) 
+
+    <span class="comment">-- result is 0x00000010, equals to 16</span>
+    &gt;    result: <span class="number">16</span>
+
+
+    <span class="comment">-- the bit.lshift operation is cyclic shift. </span>
+    v1 = <span class="number">0x00000001</span>
+    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.lshift(v1, <span class="number">34</span>)) 
+
+    <span class="comment">-- result is 0x00000004</span>
+    &gt;    result: <span class="number">4</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="bit-module"></a></p>
+<h2 id="bit-module-bit-rshift">bit.rshift()</h2>
+<h4 id="description">Description</h4>
+<p>Logical right shift a number, equivalent to ( unsigned )value &gt;&gt; shift in C.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>bit.rshift(value, shift)</p>
+<h4 id="parameters">Parameters</h4>
+<p>value: the value to shift.<br>
+shift: positions to shift.</p>
+<h4 id="returns">Returns</h4>
+<p>number: the number shifted right (logically).</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    v1 = <span class="number">0x00000001</span>
+    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.rshift(v1, <span class="number">1</span>)) 
+
+    <span class="comment">-- result is 0x00000000, equals to 0</span>
+    &gt;    result: <span class="number">16</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="bit-module"></a></p>
+<h2 id="bit-module-bit-arshift">bit.arshift()</h2>
+<h4 id="description">Description</h4>
+<p>Arithmetic right shift a number equivalent to value &gt;&gt; shift in C.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>bit.arshift(value, shift)</p>
+<h4 id="parameters">Parameters</h4>
+<p>value: the value to shift.<br>
+shift: positions to shift.</p>
+<h4 id="returns">Returns</h4>
+<p>number: the number shifted right (arithmetically).</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    v1 = <span class="number">0x00000010</span>
+    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.arshift(v1, <span class="number">4</span>)) 
+
+    <span class="comment">-- result is 0x00000001, equals to 1</span>
+    &gt;    result: <span class="number">1</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="bit-module"></a></p>
+<h2 id="bit-module-bit-bit">bit.bit()</h2>
+<h4 id="description">Description</h4>
+<p>Generate a number with a 1 bit (used for mask generation). Equivalent to 1 &lt;&lt; position in C.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>bit.bit(position)</p>
+<h4 id="parameters">Parameters</h4>
+<p>position: position of the bit that will be set to 1.</p>
+<h4 id="returns">Returns</h4>
+<p>number: a number with only one 1 bit at position (the rest are set to 0).</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.bit(<span class="number">3</span>))
+
+    <span class="comment">-- result is 0x00000008</span>
+    &gt;    result: <span class="number">8</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="bit-module"></a></p>
+<h2 id="bit-module-bit-set">bit.set()</h2>
+<h4 id="description">Description</h4>
+<p>Set bits in a number.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>bit.set(value, pos1, pos2, ..., posn)</p>
+<h4 id="parameters">Parameters</h4>
+<p>value: the base number.<br>
+pos1: position of the first bit to set.<br>
+pos2: position of the second bit to set.<br>
+posn: position of the nth bit to set.</p>
+<h4 id="returns">Returns</h4>
+<p>number: the number with the bit(s) set in the given position(s).</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    v1 = <span class="number">0x00000000</span>
+    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.set(v1, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>))
+
+    <span class="comment">-- result is 0x0000000f, equals to 15</span>
+    &gt;    result: <span class="number">15</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="bit-module"></a></p>
+<h2 id="bit-module-bit-clear">bit.clear()</h2>
+<h4 id="description">Description</h4>
+<p>Clear bits in a number.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>bit.clear(value, pos1, pos2, ..., posn)</p>
+<h4 id="parameters">Parameters</h4>
+<p>value: the base number.<br>
+pos1: position of the first bit to clear.<br>
+pos2: position of the second bit to clear.<br>
+posn: position of thet nth bit to clear.</p>
+<h4 id="returns">Returns</h4>
+<p>number: the number with the bit(s) cleared in the given position(s).</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    v1 = <span class="number">0x000000ff</span>
+    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.clear(v1, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>))
+
+    <span class="comment">-- result is 0x0000000f, equals to 15</span>
+    &gt;    result: <span class="number">15</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="bit-module"></a></p>
+<h2 id="bit-module-bit-isset">bit.isset()</h2>
+<h4 id="description">Description</h4>
+<p>Test if a given bit is set.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>bit.isset(value, position)</p>
+<h4 id="parameters">Parameters</h4>
+<p>value: the value to test.<br>
+position: bit position to test.</p>
+<h4 id="returns">Returns</h4>
+<p>boolean: true if the bit at the given position is 1, false otherwise.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    v1 = <span class="number">0x000000ff</span>
+    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.isset(v1, <span class="number">1</span>))
+
+    &gt;    result: <span class="keyword">true</span>
+
+
+    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.isset(v1, <span class="number">1</span>))
+
+    &gt;    result: <span class="keyword">false</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="bit-module"></a></p>
+<h2 id="bit-module-bit-isclear">bit.isclear()</h2>
+<h4 id="description">Description</h4>
+<p>Test if a given bit is cleared.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>bit.isclear(value, position)</p>
+<h4 id="parameters">Parameters</h4>
+<p>value: the value to test.<br>
+position: bit position to test.</p>
+<h4 id="returns">Returns</h4>
+<p>boolean: true if the bit at the given position is 0, false othewise.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    v1 = <span class="number">0x000000ff</span>
+    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.isclear(v1, <span class="number">1</span>))
+
+    &gt;    result: <span class="keyword">false</span>
+
+
+    <span class="built_in">print</span>(<span class="string">&quot;result: &quot;</span>..bit.isclear(v1, <span class="number">1</span>))
+
+    &gt;    result: <span class="keyword">true</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="bit-module"></a></p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom -->
+  <script src="assets/js/docs.js"></script>
+
+</body>
+</html>

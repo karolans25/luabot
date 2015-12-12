@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>NodeMCU Docs | adc module</title>
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+
+  <!-- Let me embed vines -->
+  <!--
+  <script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+  -->
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/orange.ico" type="image/x-icon">
+
+  <!-- Vendor theme mods -->
+  <script src="assets/js/jquery-styling.js"></script>
+  <script src="assets/js/prettify.js"></script>
+  <!-- <script src='../assets/js/scrollspy.js'></script> -->
+
+  <!-- Spark theme mods -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/js/animated-core.js"></script>
+
+  <!-- Meta -->
+  <meta content="NodeMCU" property="og:title">
+  <meta content="Documentation for NodeMCU, a platform for connected devices." name="description">
+
+</head>
+<body role="flatdoc">
+
+  <div id="docs">
+    <div class="header">
+      <div class="left">
+        <a href="https://www.nodemcu.com">
+          <img src="assets/images/nodemcu-docs.png" id="logo">
+        </a>
+      </div>
+      <div class="right">
+        <!--
+        <a href="../assets/docs.zip" class="icon"><i class="icon ion-arrow-down-a"></i></a>
+        -->
+        <a href="http://www.github.com/nodemcu/nodemcu-firmware" class="icon"><i class="icon ion-social-github"></i></a>
+        <!--
+        <a href="https://github.com/spark/docs/edit/master/src/content/adc-module.md" class="button">Edit this page</a>
+        -->
+      </div>
+    </div>
+
+    <div class="content-root" data-spy="scroll" data-target="#toc">
+      <div class="menubar">
+        <div class="menu section" role="flatdoc-menu">
+          <ul>
+            
+              <li><a href="index.1" class="level-0 ">Index</a></li>
+            
+              <li><a href="node-module" class="level-0 ">node module</a></li>
+            
+              <li><a href="file-module" class="level-0 ">file module</a></li>
+            
+              <li><a href="wifi-module" class="level-0 ">wifi module</a></li>
+            
+              <li><a href="wifi-sta-module" class="level-0 ">wifi.sta module</a></li>
+            
+              <li><a href="wifi-ap-module" class="level-0 ">wifi.ap module</a></li>
+            
+              <li><a href="timer-module" class="level-0 ">timer module</a></li>
+            
+              <li><a href="gpio-module" class="level-0 ">GPIO module</a></li>
+            
+              <li><a href="pwm-module" class="level-0 ">PWM module</a></li>
+            
+              <li><a href="net-module" class="level-0 ">net module</a></li>
+            
+              <li><a href="net-server-module" class="level-0 ">net.server module</a></li>
+            
+              <li><a href="net-socket-module" class="level-0 ">net.socket module</a></li>
+            
+              <li><a href="i2c-module" class="level-0 ">i2c module</a></li>
+            
+              <li><a href="adc-module" class="level-0 active">adc module</a></li>
+            
+              <li><a href="uart-module" class="level-0 ">uart module</a></li>
+            
+              <li><a href="onewire-module" class="level-0 ">onewire module</a></li>
+            
+              <li><a href="bit-module" class="level-0 ">bit module</a></li>
+            
+              <li><a href="spi-module" class="level-0 ">spi module</a></li>
+            
+              <li><a href="mqtt-module" class="level-0 ">mqtt module</a></li>
+            
+              <li><a href="mqtt-client-module" class="level-0 ">mqtt client module</a></li>
+            
+          </ul>
+        </div>
+        <div class="menu section" role="flatdoc-menu">
+          <ul id="toc">
+          <li id="adc-module-item" class="level-1"><a id="adc-module-link" href="adc-module#adc-module" class="level-1">adc module</a></li><li id="adc-module-constant-item" class="level-2"><a id="adc-module-constant-link" href="adc-module#adc-module-constant" class="level-2">CONSTANT</a></li><li id="adc-module-adc-read-item" class="level-2"><a id="adc-module-adc-read-link" href="adc-module#adc-module-adc-read" class="level-2">adc.read()</a></li></ul>
+        </div>
+      </div>
+      <div role="flatdoc-content" class="content">
+        <h1 id="adc-module">adc module</h1>
+<h2 id="adc-module-constant">CONSTANT</h2>
+<p>none</p>
+<h2 id="adc-module-adc-read">adc.read()</h2>
+<h4 id="description">Description</h4>
+<p>read adc value of id, esp8266 has only one 10bit adc, id=0, pin TOUT</p>
+<h4 id="syntax">Syntax</h4>
+<p>adc.read(id)</p>
+<h4 id="parameters">Parameters</h4>
+<p>id = 0<br></p>
+<h4 id="returns">Returns</h4>
+<p>adc value</p>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="adc-module"></a></p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom -->
+  <script src="assets/js/docs.js"></script>
+
+</body>
+</html>

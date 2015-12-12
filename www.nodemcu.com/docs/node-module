@@ -1,0 +1,368 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>NodeMCU Docs | node module</title>
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+
+  <!-- Let me embed vines -->
+  <!--
+  <script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+  -->
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/orange.ico" type="image/x-icon">
+
+  <!-- Vendor theme mods -->
+  <script src="assets/js/jquery-styling.js"></script>
+  <script src="assets/js/prettify.js"></script>
+  <!-- <script src='../assets/js/scrollspy.js'></script> -->
+
+  <!-- Spark theme mods -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/js/animated-core.js"></script>
+
+  <!-- Meta -->
+  <meta content="NodeMCU" property="og:title">
+  <meta content="Documentation for NodeMCU, a platform for connected devices." name="description">
+
+</head>
+<body role="flatdoc">
+
+  <div id="docs">
+    <div class="header">
+      <div class="left">
+        <a href="https://www.nodemcu.com">
+          <img src="assets/images/nodemcu-docs.png" id="logo">
+        </a>
+      </div>
+      <div class="right">
+        <!--
+        <a href="../assets/docs.zip" class="icon"><i class="icon ion-arrow-down-a"></i></a>
+        -->
+        <a href="http://www.github.com/nodemcu/nodemcu-firmware" class="icon"><i class="icon ion-social-github"></i></a>
+        <!--
+        <a href="https://github.com/spark/docs/edit/master/src/content/node-module.md" class="button">Edit this page</a>
+        -->
+      </div>
+    </div>
+
+    <div class="content-root" data-spy="scroll" data-target="#toc">
+      <div class="menubar">
+        <div class="menu section" role="flatdoc-menu">
+          <ul>
+            
+              <li><a href="index.1" class="level-0 ">Index</a></li>
+            
+              <li><a href="node-module" class="level-0 active">node module</a></li>
+            
+              <li><a href="file-module" class="level-0 ">file module</a></li>
+            
+              <li><a href="wifi-module" class="level-0 ">wifi module</a></li>
+            
+              <li><a href="wifi-sta-module" class="level-0 ">wifi.sta module</a></li>
+            
+              <li><a href="wifi-ap-module" class="level-0 ">wifi.ap module</a></li>
+            
+              <li><a href="timer-module" class="level-0 ">timer module</a></li>
+            
+              <li><a href="gpio-module" class="level-0 ">GPIO module</a></li>
+            
+              <li><a href="pwm-module" class="level-0 ">PWM module</a></li>
+            
+              <li><a href="net-module" class="level-0 ">net module</a></li>
+            
+              <li><a href="net-server-module" class="level-0 ">net.server module</a></li>
+            
+              <li><a href="net-socket-module" class="level-0 ">net.socket module</a></li>
+            
+              <li><a href="i2c-module" class="level-0 ">i2c module</a></li>
+            
+              <li><a href="adc-module" class="level-0 ">adc module</a></li>
+            
+              <li><a href="uart-module" class="level-0 ">uart module</a></li>
+            
+              <li><a href="onewire-module" class="level-0 ">onewire module</a></li>
+            
+              <li><a href="bit-module" class="level-0 ">bit module</a></li>
+            
+              <li><a href="spi-module" class="level-0 ">spi module</a></li>
+            
+              <li><a href="mqtt-module" class="level-0 ">mqtt module</a></li>
+            
+              <li><a href="mqtt-client-module" class="level-0 ">mqtt client module</a></li>
+            
+          </ul>
+        </div>
+        <div class="menu section" role="flatdoc-menu">
+          <ul id="toc">
+          <li id="node-module-item" class="level-1"><a id="node-module-link" href="node-module#node-module" class="level-1">node module</a></li><li id="node-module-node-restart-item" class="level-2"><a id="node-module-node-restart-link" href="node-module#node-module-node-restart" class="level-2">node.restart()</a></li><li id="node-module-node-dsleep-item" class="level-2"><a id="node-module-node-dsleep-link" href="node-module#node-module-node-dsleep" class="level-2">node.dsleep()</a></li><li id="node-module-node-info-item" class="level-2"><a id="node-module-node-info-link" href="node-module#node-module-node-info" class="level-2">node.info()</a></li><li id="node-module-node-chipid-item" class="level-2"><a id="node-module-node-chipid-link" href="node-module#node-module-node-chipid" class="level-2">node.chipid()</a></li><li id="node-module-node-flashid-item" class="level-2"><a id="node-module-node-flashid-link" href="node-module#node-module-node-flashid" class="level-2">node.flashid()</a></li><li id="node-module-node-heap-item" class="level-2"><a id="node-module-node-heap-link" href="node-module#node-module-node-heap" class="level-2">node.heap()</a></li><li id="node-module-node-key-item" class="level-2"><a id="node-module-node-key-link" href="node-module#node-module-node-key" class="level-2">node.key()</a></li><li id="node-module-node-led-item" class="level-2"><a id="node-module-node-led-link" href="node-module#node-module-node-led" class="level-2">node.led()</a></li><li id="node-module-node-input-item" class="level-2"><a id="node-module-node-input-link" href="node-module#node-module-node-input" class="level-2">node.input()</a></li><li id="node-module-node-output-item" class="level-2"><a id="node-module-node-output-link" href="node-module#node-module-node-output" class="level-2">node.output()</a></li><li id="node-module-node-readvdd33-item" class="level-2"><a id="node-module-node-readvdd33-link" href="node-module#node-module-node-readvdd33" class="level-2">node.readvdd33()</a></li><li id="node-module-node-compile-item" class="level-2"><a id="node-module-node-compile-link" href="node-module#node-module-node-compile" class="level-2">node.compile()</a></li></ul>
+        </div>
+      </div>
+      <div role="flatdoc-content" class="content">
+        <h1 id="node-module">node module</h1>
+<h2 id="node-module-node-restart">node.restart()</h2>
+<p><img src="assets/images/node.restart.jpg" alt=""></p>
+<h4 id="description">Description</h4>
+<p>restart the chip.</p>
+<h4 id="syntax">Syntax</h4>
+<p>node.restart()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- the esp8266 will restart after this excuting this function.</span>
+    node.restart();</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="node-module"></a></p>
+<h2 id="node-module-node-dsleep">node.dsleep()</h2>
+<p><img src="assets/images/node.dsleep.png" alt=""></p>
+<h4 id="description">Description</h4>
+<p>Enter deep sleep mode, wake up when timed out.<br></p>
+<h4 id="syntax">Syntax</h4>
+<p>node.dsleep(us)<br>
+<strong>-Note:</strong> This function can only be used in the condition that esp8266 PIN32(RST) and PIN8(XPD_DCDC) are connected together.</p>
+<h4 id="parameters">Parameters</h4>
+<p>us: sleep time in micro second</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- sleep time is 10s</span>
+    sleep_time = <span class="number">10</span> * <span class="number">1000</span> * <span class="number">1000</span>
+
+    <span class="comment">-- Do not forget to connect PIN32 and PIN8</span>
+    node.dsleep(sleep_time);</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="node-module"></a></p>
+<h2 id="node-module-node-info">node.info()</h2>
+<h4 id="description">Description</h4>
+<p>return NodeMCU version, chipid, flashid, flash size, flash mode, flash speed.</p>
+<h4 id="syntax">Syntax</h4>
+<p>node.info()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>number: majorVer, minorVer, devVer, chipid, flashid, flashsize, flashmode, flashspeed.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- get NodeMCU and hardware information.</span>
+    majorVer, minorVer, devVer, chipid, flashid, flashsize, 
+    flashmode, flashspeed = node.info();
+
+    <span class="comment">-- print NodeMCU major version and minor version.</span>
+    <span class="built_in">print</span>(<span class="string">&quot;NodeMCU &quot;</span>..majorVer..<span class="string">&quot;.&quot;</span>..minorVer..<span class="string">&quot;.&quot;</span>..devVer)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="node-module"></a></p>
+<h2 id="node-module-node-chipid">node.chipid()</h2>
+<h4 id="description">Description</h4>
+<p>return esp8266 chip ID</p>
+<h4 id="syntax">Syntax</h4>
+<p>node.chipid()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>number:chip ID</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    id = node.chipid()
+
+    <span class="comment">-- print chip ID</span>
+    <span class="built_in">print</span>(<span class="string">&quot;Chip ID is: &quot;</span>..id)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="node-module"></a></p>
+<h2 id="node-module-node-flashid">node.flashid()</h2>
+<h4 id="description">Description</h4>
+<p>return flash ID</p>
+<h4 id="syntax">Syntax</h4>
+<p>node.flashid()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>number:flash ID</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    flashid = node.flashid();
+
+    <span class="comment">-- print flash ID</span>
+    <span class="built_in">print</span>(<span class="string">&quot;Flash id is: &quot;</span>..flashid)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="node-module"></a></p>
+<h2 id="node-module-node-heap">node.heap()</h2>
+<h4 id="description">Description</h4>
+<p>return the remain HEAP size in bytes</p>
+<h4 id="syntax">Syntax</h4>
+<p>node.heap()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>number: system heap size left in bytes</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    heap_size = node.heap();
+
+    <span class="comment">-- print system availible heap size.</span>
+    <span class="built_in">print</span>(<span class="string">&quot;Remaining heap size is: &quot;</span>..heap_size)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="node-module"></a></p>
+<h2 id="node-module-node-key">node.key()</h2>
+<p><img src="assets/images/node.key.jpg" alt=""></p>
+<h4 id="description">Description</h4>
+<p>define button function, button is connected to GPIO16.<br>
+<strong>Note:</strong> This function only works on Dev Kit 0.9 and Firmware build20150127 or previous version.</p>
+<h4 id="syntax">Syntax</h4>
+<p>node.key(type, function())</p>
+<h4 id="parameters">Parameters</h4>
+<p>type: type is either string &quot;long&quot; or &quot;short&quot;. long: press the key for 3 seconds, short: press shortly(less than 3 seconds)<br>
+function(): user defined function which is called when key is pressed. If nil, cancling the user defined function.<br>
+Default function: long: change LED blinking rate,  short: reset chip</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- register callback function for long press node key.</span>
+    <span class="comment">-- here callback is &quot;print(&apos;hello world&apos;).</span>
+    node.key(<span class="string">&quot;long&quot;</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span> 
+        <span class="built_in">print</span>(<span class="string">&apos;hello world&apos;</span>) 
+      <span class="keyword">end</span>
+    )</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="node-module#node-module-node-led">node.led()</a></p>
+<h2 id="node-module-node-led">node.led()</h2>
+<h4 id="description">Description</h4>
+<p>setup the on/off time for led, which connected to GPIO16, multiplexing with node.key().<br>
+<strong>Note:</strong> This function only works on Dev Kit 0.9 and Firmware build20150127 or previous version.</p>
+<h4 id="syntax">Syntax</h4>
+<p>node.led(low, high)</p>
+<h4 id="parameters">Parameters</h4>
+<p>Low: LED off time, LED keeps on when low=0. Unit: milliseconds, time resolution: 80~100ms<br>
+High: LED on time. Unit: milliseconds, time resolution: 80~100ms</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- led blinking with period of 2s approximately.</span>
+    node.led(<span class="number">10</span>, <span class="number">10</span>);</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="node-module#node-module-node-key">node.key()</a></p>
+<h2 id="node-module-node-input">node.input()</h2>
+<h4 id="description">Description</h4>
+<p>accept a string and put the string into Lua interpretor.<br>
+same as pcall(loadstring(str)) but support multi seperated line.</p>
+<h4 id="syntax">Syntax</h4>
+<p>node.input(str)</p>
+<h4 id="parameters">Parameters</h4>
+<p>str: Lua chunk</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- Never use node.input() in console. No effect.</span>
+    sk:on(<span class="string">&quot;receive&quot;</span>, <span class="function"><span class="keyword">function</span><span class="params">(conn, payload)</span></span> 
+        node.input(payload) 
+      <span class="keyword">end</span>
+    )</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="node-module"></a></p>
+<h2 id="node-module-node-output">node.output()</h2>
+<h4 id="description">Description</h4>
+<p>direct output from lua interpretor to a call back function.</p>
+<h4 id="syntax">Syntax</h4>
+<p>node.output(function(str), serial_debug)</p>
+<h4 id="parameters">Parameters</h4>
+<p>function(str): a function accept every output as str, and can send the output to a socket.<br>
+serial_debug: 1 output also show in serial. 0: no serial output.</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="function"><span class="keyword">function</span> <span class="title">tonet</span><span class="params">(str)</span></span>
+      sk:send(str)
+      <span class="comment">-- print(str) WRONG!!! </span>
+      <span class="comment">-- Never ever print something in this function</span>
+      <span class="comment">-- because this will cause a recursive function call!!!</span>
+    <span class="keyword">end</span>
+    node.ouput(tonet, <span class="number">1</span>)  <span class="comment">-- serial also get the lua output.</span></code></pre>
+<pre><code class="language-lua">    <span class="comment">-- a simple telnet server</span>
+    s=net.createServer(net.TCP) 
+    s:listen(<span class="number">2323</span>,<span class="function"><span class="keyword">function</span><span class="params">(c)</span></span> 
+       con_std = c 
+       <span class="function"><span class="keyword">function</span> <span class="title">s_output</span><span class="params">(str)</span></span> 
+          <span class="keyword">if</span>(con_std~=<span class="keyword">nil</span>) 
+             <span class="keyword">then</span> con_std:send(str) 
+          <span class="keyword">end</span> 
+       <span class="keyword">end</span> 
+       <span class="comment">-- re-direct output to function s_ouput.</span>
+       node.output(s_output, <span class="number">0</span>)   
+       c:on(<span class="string">&quot;receive&quot;</span>,<span class="function"><span class="keyword">function</span><span class="params">(c,l)</span></span> 
+       <span class="comment">-- works like pcall(loadstring(l)) </span>
+       <span class="comment">--but support multiple separate line   </span>
+          node.input(l)           
+       <span class="keyword">end</span>) 
+       c:on(<span class="string">&quot;disconnection&quot;</span>,<span class="function"><span class="keyword">function</span><span class="params">(c)</span></span> 
+          con_std = <span class="keyword">nil</span> 
+        <span class="comment">-- un-regist the redirect output function,</span>
+        <span class="comment">-- output goes to serial  </span>
+          node.output(<span class="keyword">nil</span>)        
+       <span class="keyword">end</span>) 
+    <span class="keyword">end</span>)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="node-module"></a></p>
+<h2 id="node-module-node-readvdd33">node.readvdd33()</h2>
+<h4 id="description">Description</h4>
+<p>Reading vdd33 pin voltage</p>
+<h4 id="syntax">Syntax</h4>
+<p>node.readvdd33()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>Number: voltage in mV.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- get voltage in mV.</span>
+    <span class="built_in">print</span>(node.readvdd33())</code></pre>
+<p>output</p>
+<blockquote>
+<p>  3345</p>
+</blockquote>
+<pre><code class="language-lua">    <span class="comment">-- Convert mV to V.</span>
+    v = node.readvdd33() / <span class="number">1000</span>
+    <span class="built_in">print</span>(v)
+    v=<span class="keyword">nil</span></code></pre>
+<p>output</p>
+<blockquote>
+<p>  3.315</p>
+</blockquote>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="node-module"></a></p>
+<h2 id="node-module-node-compile">node.compile()</h2>
+<h4 id="description">Description</h4>
+<p>compile lua text file into lua bytecode file, and save it as .lc file.</p>
+<h4 id="syntax">Syntax</h4>
+<p>node.compile(&quot;file.lua&quot;)</p>
+<h4 id="parameters">Parameters</h4>
+<p>lua text file end with &quot;.lua&quot;</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">  <span class="comment">-- create hello.lua file.</span>
+  file.open(<span class="string">&quot;hello.lua&quot;</span>,<span class="string">&quot;w+&quot;</span>)
+  file.writeline(<span class="string">[[print(&quot;hello nodemcu&quot;)]]</span>)
+  file.writeline(<span class="string">[[print(node.heap())]]</span>)
+  file.close()
+
+  <span class="comment">-- compile this file. A file named hello.lc is generated.</span>
+  node.compile(<span class="string">&quot;hello.lua&quot;</span>)
+  <span class="built_in">dofile</span>(<span class="string">&quot;hello.lua&quot;</span>)
+  <span class="built_in">dofile</span>(<span class="string">&quot;hello.lc&quot;</span>)
+
+  <span class="comment">-- [[ Note: If Sensor.lua for example is a module file that can </span>
+  be required, the <span class="built_in">require</span> order is *.lc <span class="keyword">and</span> <span class="keyword">then</span> *.lua file. ]]</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="node-module"></a></p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom -->
+  <script src="assets/js/docs.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>NodeMCU Docs | wifi.sta module</title>
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+
+  <!-- Let me embed vines -->
+  <!--
+  <script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+  -->
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/orange.ico" type="image/x-icon">
+
+  <!-- Vendor theme mods -->
+  <script src="assets/js/jquery-styling.js"></script>
+  <script src="assets/js/prettify.js"></script>
+  <!-- <script src='../assets/js/scrollspy.js'></script> -->
+
+  <!-- Spark theme mods -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/js/animated-core.js"></script>
+
+  <!-- Meta -->
+  <meta content="NodeMCU" property="og:title">
+  <meta content="Documentation for NodeMCU, a platform for connected devices." name="description">
+
+</head>
+<body role="flatdoc">
+
+  <div id="docs">
+    <div class="header">
+      <div class="left">
+        <a href="https://www.nodemcu.com">
+          <img src="assets/images/nodemcu-docs.png" id="logo">
+        </a>
+      </div>
+      <div class="right">
+        <!--
+        <a href="../assets/docs.zip" class="icon"><i class="icon ion-arrow-down-a"></i></a>
+        -->
+        <a href="http://www.github.com/nodemcu/nodemcu-firmware" class="icon"><i class="icon ion-social-github"></i></a>
+        <!--
+        <a href="https://github.com/spark/docs/edit/master/src/content/wifi-sta-module.md" class="button">Edit this page</a>
+        -->
+      </div>
+    </div>
+
+    <div class="content-root" data-spy="scroll" data-target="#toc">
+      <div class="menubar">
+        <div class="menu section" role="flatdoc-menu">
+          <ul>
+            
+              <li><a href="index.1" class="level-0 ">Index</a></li>
+            
+              <li><a href="node-module" class="level-0 ">node module</a></li>
+            
+              <li><a href="file-module" class="level-0 ">file module</a></li>
+            
+              <li><a href="wifi-module" class="level-0 ">wifi module</a></li>
+            
+              <li><a href="wifi-sta-module" class="level-0 active">wifi.sta module</a></li>
+            
+              <li><a href="wifi-ap-module" class="level-0 ">wifi.ap module</a></li>
+            
+              <li><a href="timer-module" class="level-0 ">timer module</a></li>
+            
+              <li><a href="gpio-module" class="level-0 ">GPIO module</a></li>
+            
+              <li><a href="pwm-module" class="level-0 ">PWM module</a></li>
+            
+              <li><a href="net-module" class="level-0 ">net module</a></li>
+            
+              <li><a href="net-server-module" class="level-0 ">net.server module</a></li>
+            
+              <li><a href="net-socket-module" class="level-0 ">net.socket module</a></li>
+            
+              <li><a href="i2c-module" class="level-0 ">i2c module</a></li>
+            
+              <li><a href="adc-module" class="level-0 ">adc module</a></li>
+            
+              <li><a href="uart-module" class="level-0 ">uart module</a></li>
+            
+              <li><a href="onewire-module" class="level-0 ">onewire module</a></li>
+            
+              <li><a href="bit-module" class="level-0 ">bit module</a></li>
+            
+              <li><a href="spi-module" class="level-0 ">spi module</a></li>
+            
+              <li><a href="mqtt-module" class="level-0 ">mqtt module</a></li>
+            
+              <li><a href="mqtt-client-module" class="level-0 ">mqtt client module</a></li>
+            
+          </ul>
+        </div>
+        <div class="menu section" role="flatdoc-menu">
+          <ul id="toc">
+          <li id="wifi-sta-module-item" class="level-1"><a id="wifi-sta-module-link" href="wifi-sta-module#wifi-sta-module" class="level-1">wifi.sta module</a></li><li id="wifi-sta-module-wifi-sta-config-item" class="level-2"><a id="wifi-sta-module-wifi-sta-config-link" href="wifi-sta-module#wifi-sta-module-wifi-sta-config" class="level-2">wifi.sta.config()</a></li><li id="wifi-sta-module-wifi-sta-connect-item" class="level-2"><a id="wifi-sta-module-wifi-sta-connect-link" href="wifi-sta-module#wifi-sta-module-wifi-sta-connect" class="level-2">wifi.sta.connect()</a></li><li id="wifi-sta-module-wifi-sta-disconnect-item" class="level-2"><a id="wifi-sta-module-wifi-sta-disconnect-link" href="wifi-sta-module#wifi-sta-module-wifi-sta-disconnect" class="level-2">wifi.sta.disconnect()</a></li><li id="wifi-sta-module-wifi-sta-autoconnect-item" class="level-2"><a id="wifi-sta-module-wifi-sta-autoconnect-link" href="wifi-sta-module#wifi-sta-module-wifi-sta-autoconnect" class="level-2">wifi.sta.autoconnect()</a></li><li id="wifi-sta-module-wifi-sta-getip-item" class="level-2"><a id="wifi-sta-module-wifi-sta-getip-link" href="wifi-sta-module#wifi-sta-module-wifi-sta-getip" class="level-2">wifi.sta.getip()</a></li><li id="wifi-sta-module-wifi-sta-setip-item" class="level-2"><a id="wifi-sta-module-wifi-sta-setip-link" href="wifi-sta-module#wifi-sta-module-wifi-sta-setip" class="level-2">wifi.sta.setip()</a></li><li id="wifi-sta-module-wifi-sta-getmac-item" class="level-2"><a id="wifi-sta-module-wifi-sta-getmac-link" href="wifi-sta-module#wifi-sta-module-wifi-sta-getmac" class="level-2">wifi.sta.getmac()</a></li><li id="wifi-sta-module-wifi-sta-setmac-item" class="level-2"><a id="wifi-sta-module-wifi-sta-setmac-link" href="wifi-sta-module#wifi-sta-module-wifi-sta-setmac" class="level-2">wifi.sta.setmac()</a></li><li id="wifi-sta-module-wifi-sta-getap-item" class="level-2"><a id="wifi-sta-module-wifi-sta-getap-link" href="wifi-sta-module#wifi-sta-module-wifi-sta-getap" class="level-2">wifi.sta.getap()</a></li><li id="wifi-sta-module-wifi-sta-status-item" class="level-2"><a id="wifi-sta-module-wifi-sta-status-link" href="wifi-sta-module#wifi-sta-module-wifi-sta-status" class="level-2">wifi.sta.status()</a></li><li id="wifi-sta-module-wifi-sta-getbroadcast-item" class="level-2"><a id="wifi-sta-module-wifi-sta-getbroadcast-link" href="wifi-sta-module#wifi-sta-module-wifi-sta-getbroadcast" class="level-2">wifi.sta.getbroadcast()</a></li></ul>
+        </div>
+      </div>
+      <div role="flatdoc-content" class="content">
+        <h1 id="wifi-sta-module">wifi.sta module</h1>
+<h2 id="wifi-sta-module-wifi-sta-config">wifi.sta.config()</h2>
+<h4 id="description">Description</h4>
+<p>set ssid and password in station mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.sta.config(ssid, password)</p>
+<h4 id="parameters">Parameters</h4>
+<p>ssid: string which is less than 32 bytes.<br>
+password: string which is less than 64 bytes.</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    wifi.sta.config(<span class="string">&quot;myssid&quot;</span>,<span class="string">&quot;mypassword&quot;</span>)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-sta-module#wifi-sta-module-wifi-sta-connect">wifi.sta.connect()</a><br>
+<strong>-</strong>   <a href="wifi-sta-module#wifi-sta-module-wifi-sta-disconnect">wifi.sta.disconnect()</a></p>
+<h2 id="wifi-sta-module-wifi-sta-connect">wifi.sta.connect()</h2>
+<h4 id="description">Description</h4>
+<p>connect to AP in station mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.sta.connect()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    wifi.sta.connect()</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-sta-module#wifi-sta-module-wifi-sta-disconnect">wifi.sta.disconnect()</a><br>
+<strong>-</strong>   <a href="wifi-sta-module#wifi-sta-module-wifi-sta-config">wifi.sta.config()</a></p>
+<h2 id="wifi-sta-module-wifi-sta-disconnect">wifi.sta.disconnect()</h2>
+<h4 id="description">Description</h4>
+<p>disconnect from AP in station mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.sta.disconnect()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    wifi.sta.disconnect()</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-sta-module#wifi-sta-module-wifi-sta-config">wifi.sta.config()</a><br>
+<strong>-</strong>   <a href="wifi-sta-module#wifi-sta-module-wifi-sta-connect">wifi.sta.connect()</a></p>
+<h2 id="wifi-sta-module-wifi-sta-autoconnect">wifi.sta.autoconnect()</h2>
+<h4 id="description">Description</h4>
+<p>auto connect to AP in station mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.sta.autoconnect(auto)</p>
+<h4 id="parameters">Parameters</h4>
+<p>auto: 0 to disable auto connecting. 1 to enable auto connecting</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    wifi.sta.autoconnect()</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-sta-module#wifi-sta-module-wifi-sta-config">wifi.sta.config()</a><br>
+<strong>-</strong>   <a href="wifi-sta-module#wifi-sta-module-wifi-sta-connect">wifi.sta.connect()</a><br>
+<strong>-</strong>   <a href="wifi-sta-module#wifi-sta-module-wifi-sta-disconnect">wifi.sta.disconnect()</a></p>
+<h2 id="wifi-sta-module-wifi-sta-getip">wifi.sta.getip()</h2>
+<h4 id="description">Description</h4>
+<p>get ip, netmask, gateway address in station mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.sta.getip()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>ip, netmask, gateway address in string, for example:&quot;192.168.0.111&quot;<br>
+return nil if ip = &quot;0.0.0.0&quot;.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- print current ip, netmask, gateway</span>
+    <span class="built_in">print</span>(wifi.sta.getip())
+    <span class="comment">-- 192.168.0.111  255.255.255.0  192.168.0.1</span>
+    ip = wifi.sta.getip()
+    <span class="built_in">print</span>(ip)
+    <span class="comment">-- 192.168.0.111</span>
+    ip, nm = wifi.sta.getip()
+    <span class="built_in">print</span>(nm)
+    <span class="comment">-- 255.255.255.0</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-sta-module#wifi-sta-module-wifi-sta-getmac">wifi.sta.getmac()</a></p>
+<h2 id="wifi-sta-module-wifi-sta-setip">wifi.sta.setip()</h2>
+<h4 id="description">Description</h4>
+<p>set ip, netmask, gateway address in station mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.sta.setip(cfg)</p>
+<h4 id="parameters">Parameters</h4>
+<p>cfg: table contain ip, netmask, and gateway<br></p>
+<pre><code class="language-lua">{
+  <span class="string">&quot;ip&quot;</span>:<span class="string">&quot;192.168.0.111&quot;</span>,
+  <span class="string">&quot;netmask&quot;</span>:<span class="string">&quot;255.255.255.0&quot;</span>,
+  <span class="string">&quot;gateway&quot;</span>:<span class="string">&quot;192.168.0.1&quot;</span>
+}</code></pre>
+<h4 id="returns">Returns</h4>
+<p>true if success, false if fail.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">  cfg =
+  {
+    <span class="string">&quot;ip&quot;</span>:<span class="string">&quot;192.168.0.111&quot;</span>,
+    <span class="string">&quot;netmask&quot;</span>:<span class="string">&quot;255.255.255.0&quot;</span>,
+    <span class="string">&quot;gateway&quot;</span>:<span class="string">&quot;192.168.0.1&quot;</span>
+  }
+  wifi.sta.setip(cfg)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-sta-module#wifi-sta-module-wifi-sta-setmac">wifi.sta.setmac()</a></p>
+<h2 id="wifi-sta-module-wifi-sta-getmac">wifi.sta.getmac()</h2>
+<h4 id="description">Description</h4>
+<p>get mac address in station mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.sta.getmac()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>mac address in string, for example:&quot;18-33-44-FE-55-BB&quot;</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- print current mac address</span>
+    <span class="built_in">print</span>(wifi.sta.getmac())</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-sta-module#wifi-sta-module-wifi-sta-getip">wifi.sta.getip()</a></p>
+<h2 id="wifi-sta-module-wifi-sta-setmac">wifi.sta.setmac()</h2>
+<h4 id="description">Description</h4>
+<p>set mac address in station mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.sta.setmac(mac)</p>
+<h4 id="parameters">Parameters</h4>
+<p>mac address in byte string, for example:&quot;\024\024\024\024\024\024&quot;</p>
+<h4 id="returns">Returns</h4>
+<p>true if success, false if fail.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="built_in">print</span>(wifi.sta.setmac(<span class="string">&quot;\024\024\024\024\024\024&quot;</span>))</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-sta-module#wifi-sta-module-wifi-sta-setip">wifi.sta.setip()</a></p>
+<h2 id="wifi-sta-module-wifi-sta-getap">wifi.sta.getap()</h2>
+<h4 id="description">Description</h4>
+<p>scan and get ap list as a lua table into callback function.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.sta.getap(function(table))</p>
+<h4 id="parameters">Parameters</h4>
+<p>function(table): a callback function to receive ap table when scan is done<br>
+    this function receive a table, the key is the ssid, value is other info in format: authmode,rssi,bssid,channel</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- print ap list</span>
+    <span class="function"><span class="keyword">function</span> <span class="title">listap</span><span class="params">(t)</span></span>
+      <span class="keyword">for</span> k,v <span class="keyword">in</span> <span class="built_in">pairs</span>(t) <span class="keyword">do</span>
+        <span class="built_in">print</span>(k..<span class="string">&quot; : &quot;</span>..v)
+      <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    wifi.sta.getap(listap)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-sta-module#wifi-sta-module-wifi-sta-getip">wifi.sta.getip()</a></p>
+<h2 id="wifi-sta-module-wifi-sta-status">wifi.sta.status()</h2>
+<h4 id="description">Description</h4>
+<p>get current status in station mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.sta.status()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>number&#xFF1A; 0~5
+0: STATION_IDLE,
+1: STATION_CONNECTING,
+2: STATION_WRONG_PASSWORD,
+3: STATION_NO_AP_FOUND,
+4: STATION_CONNECT_FAIL,
+5: STATION_GOT_IP.</p>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-sta-module"></a></p>
+<h2 id="wifi-sta-module-wifi-sta-getbroadcast">wifi.sta.getbroadcast()</h2>
+<h4 id="description">Description</h4>
+<p>get getbroadcast address in station mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.sta.getbroadcast()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>getbroadcast address in string, for example:&quot;192.168.0.255&quot;<br>
+return nil if ip = &quot;0.0.0.0&quot;.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    bc = wifi.sta.getbroadcast()
+    <span class="built_in">print</span>(bc)
+    <span class="comment">-- 192.168.0.255</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-sta-module#wifi-sta-module-wifi-sta-getip">wifi.sta.getip()</a></p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom -->
+  <script src="assets/js/docs.js"></script>
+
+</body>
+</html>

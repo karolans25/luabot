@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>NodeMCU Docs | mqtt client module</title>
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+
+  <!-- Let me embed vines -->
+  <!--
+  <script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+  -->
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/orange.ico" type="image/x-icon">
+
+  <!-- Vendor theme mods -->
+  <script src="assets/js/jquery-styling.js"></script>
+  <script src="assets/js/prettify.js"></script>
+  <!-- <script src='../assets/js/scrollspy.js'></script> -->
+
+  <!-- Spark theme mods -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/js/animated-core.js"></script>
+
+  <!-- Meta -->
+  <meta content="NodeMCU" property="og:title">
+  <meta content="Documentation for NodeMCU, a platform for connected devices." name="description">
+
+</head>
+<body role="flatdoc">
+
+  <div id="docs">
+    <div class="header">
+      <div class="left">
+        <a href="https://www.nodemcu.com">
+          <img src="assets/images/nodemcu-docs.png" id="logo">
+        </a>
+      </div>
+      <div class="right">
+        <!--
+        <a href="../assets/docs.zip" class="icon"><i class="icon ion-arrow-down-a"></i></a>
+        -->
+        <a href="http://www.github.com/nodemcu/nodemcu-firmware" class="icon"><i class="icon ion-social-github"></i></a>
+        <!--
+        <a href="https://github.com/spark/docs/edit/master/src/content/mqtt-client-module.md" class="button">Edit this page</a>
+        -->
+      </div>
+    </div>
+
+    <div class="content-root" data-spy="scroll" data-target="#toc">
+      <div class="menubar">
+        <div class="menu section" role="flatdoc-menu">
+          <ul>
+            
+              <li><a href="index.1" class="level-0 ">Index</a></li>
+            
+              <li><a href="node-module" class="level-0 ">node module</a></li>
+            
+              <li><a href="file-module" class="level-0 ">file module</a></li>
+            
+              <li><a href="wifi-module" class="level-0 ">wifi module</a></li>
+            
+              <li><a href="wifi-sta-module" class="level-0 ">wifi.sta module</a></li>
+            
+              <li><a href="wifi-ap-module" class="level-0 ">wifi.ap module</a></li>
+            
+              <li><a href="timer-module" class="level-0 ">timer module</a></li>
+            
+              <li><a href="gpio-module" class="level-0 ">GPIO module</a></li>
+            
+              <li><a href="pwm-module" class="level-0 ">PWM module</a></li>
+            
+              <li><a href="net-module" class="level-0 ">net module</a></li>
+            
+              <li><a href="net-server-module" class="level-0 ">net.server module</a></li>
+            
+              <li><a href="net-socket-module" class="level-0 ">net.socket module</a></li>
+            
+              <li><a href="i2c-module" class="level-0 ">i2c module</a></li>
+            
+              <li><a href="adc-module" class="level-0 ">adc module</a></li>
+            
+              <li><a href="uart-module" class="level-0 ">uart module</a></li>
+            
+              <li><a href="onewire-module" class="level-0 ">onewire module</a></li>
+            
+              <li><a href="bit-module" class="level-0 ">bit module</a></li>
+            
+              <li><a href="spi-module" class="level-0 ">spi module</a></li>
+            
+              <li><a href="mqtt-module" class="level-0 ">mqtt module</a></li>
+            
+              <li><a href="mqtt-client-module" class="level-0 active">mqtt client module</a></li>
+            
+          </ul>
+        </div>
+        <div class="menu section" role="flatdoc-menu">
+          <ul id="toc">
+          <li id="mqtt-client-module-item" class="level-1"><a id="mqtt-client-module-link" href="mqtt-client-module#mqtt-client-module" class="level-1">mqtt client module</a></li><li id="mqtt-client-module-constant-item" class="level-2"><a id="mqtt-client-module-constant-link" href="mqtt-client-module#mqtt-client-module-constant" class="level-2">CONSTANT</a></li><li id="mqtt-client-module-mqtt-lwt-item" class="level-2"><a id="mqtt-client-module-mqtt-lwt-link" href="mqtt-client-module#mqtt-client-module-mqtt-lwt" class="level-2">mqtt:lwt()</a></li><li id="mqtt-client-module-mqtt-connect-item" class="level-2"><a id="mqtt-client-module-mqtt-connect-link" href="mqtt-client-module#mqtt-client-module-mqtt-connect" class="level-2">mqtt:connect()</a></li><li id="mqtt-client-module-mqtt-close-item" class="level-2"><a id="mqtt-client-module-mqtt-close-link" href="mqtt-client-module#mqtt-client-module-mqtt-close" class="level-2">mqtt:close()</a></li><li id="mqtt-client-module-mqtt-publish-item" class="level-2"><a id="mqtt-client-module-mqtt-publish-link" href="mqtt-client-module#mqtt-client-module-mqtt-publish" class="level-2">mqtt:publish()</a></li><li id="mqtt-client-module-mqtt-subscribe-item" class="level-2"><a id="mqtt-client-module-mqtt-subscribe-link" href="mqtt-client-module#mqtt-client-module-mqtt-subscribe" class="level-2">mqtt:subscribe()</a></li><li id="mqtt-client-module-mqtt-on-item" class="level-2"><a id="mqtt-client-module-mqtt-on-link" href="mqtt-client-module#mqtt-client-module-mqtt-on" class="level-2">mqtt:on()</a></li></ul>
+        </div>
+      </div>
+      <div role="flatdoc-content" class="content">
+        <h1 id="mqtt-client-module">mqtt client module</h1>
+<h2 id="mqtt-client-module-constant">CONSTANT</h2>
+<h2 id="mqtt-client-module-mqtt-lwt">mqtt:lwt()</h2>
+<h4 id="description">Description</h4>
+<p>setup Last Will and Testament (optional)<br>
+Broker will publish a message with qos = 0, retain = 0, data = &quot;offline&quot; <br>
+to topic &quot;/lwt&quot; if client don&apos;t send keepalive packet.</p>
+<h4 id="syntax">Syntax</h4>
+<p>mqtt:lwt(topic, message, qos, retain)</p>
+<h4 id="parameters">Parameters</h4>
+<p>topic: the topic to publish to, String.<br>
+message: the message to publish, Buffer or String.<br>
+qos: qos level, default 0.<br>
+retain: retain flag, default 0.</p>
+<h4 id="returns">Returns</h4>
+<p>nil.</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="mqtt-client-module"></a></p>
+<h2 id="mqtt-client-module-mqtt-connect">mqtt:connect()</h2>
+<h4 id="description">Description</h4>
+<p>Connects to the broker specified by the given host, port, and secure options</p>
+<h4 id="syntax">Syntax</h4>
+<p>mqtt:connect( host, port, secure, function(client) )</p>
+<h4 id="parameters">Parameters</h4>
+<p>host: host domain or ip, string.<br>
+port: number, broker port.<br>
+secure: 0 or 1, default 0.<br>
+function(client): when connected, call this function.</p>
+<h4 id="returns">Returns</h4>
+<p>nil.</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="mqtt-client-module"></a></p>
+<h2 id="mqtt-client-module-mqtt-close">mqtt:close()</h2>
+<h4 id="description">Description</h4>
+<p>close connection to the broker.</p>
+<h4 id="syntax">Syntax</h4>
+<p>mqtt:close()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>nil.</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="mqtt-client-module"></a></p>
+<h2 id="mqtt-client-module-mqtt-publish">mqtt:publish()</h2>
+<h4 id="description">Description</h4>
+<p>Publish a message</p>
+<h4 id="syntax">Syntax</h4>
+<p>mqtt:publish( topic, payload, qos, retain, function(client) )</p>
+<h4 id="parameters">Parameters</h4>
+<p>topic: the topic to publish to, string<br>
+message: the message to publish, string<br>
+qos: qos level, default 0<br>
+retain: retain flag, default 0<br>
+function(client): callback fired when PUBACK received.<br></p>
+<h4 id="returns">Returns</h4>
+<p>nil.</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="mqtt-client-module"></a></p>
+<h2 id="mqtt-client-module-mqtt-subscribe">mqtt:subscribe()</h2>
+<h4 id="description">Description</h4>
+<p>Subscribe to a topic or topics</p>
+<h4 id="syntax">Syntax</h4>
+<p>mqtt:subscribe(topic, qos, function(client, topic, message))</p>
+<h4 id="parameters">Parameters</h4>
+<p>topic: a string topic to subscribe to<br>
+qos: qos subscription level, default 0<br>
+function(client, topic, message): callback fired when message received.<br></p>
+<h4 id="returns">Returns</h4>
+<p>nil.</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="mqtt-client-module"></a></p>
+<h2 id="mqtt-client-module-mqtt-on">mqtt:on()</h2>
+<h4 id="description">Description</h4>
+<p>register callback function to event.</p>
+<h4 id="syntax">Syntax</h4>
+<p>mqtt:on(event, function(client, [topic], [message]))</p>
+<h4 id="parameters">Parameters</h4>
+<p>event: string, which can be: &quot;connect&quot;, &quot;message&quot;, &quot;offline&quot;<br>
+function cb(client, [topic], [message]): callback function. The first param is the client.<br>
+If event is &quot;message&quot;,  the 2nd and 3rd param are received topic and message in string.</p>
+<h4 id="returns">Returns</h4>
+<p>nil.</p>
+<h4 id="example">Example</h4>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="mqtt-client-module"></a></p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom -->
+  <script src="assets/js/docs.js"></script>
+
+</body>
+</html>

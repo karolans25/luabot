@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>NodeMCU Docs | wifi.ap module</title>
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+
+  <!-- Let me embed vines -->
+  <!--
+  <script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+  -->
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/orange.ico" type="image/x-icon">
+
+  <!-- Vendor theme mods -->
+  <script src="assets/js/jquery-styling.js"></script>
+  <script src="assets/js/prettify.js"></script>
+  <!-- <script src='../assets/js/scrollspy.js'></script> -->
+
+  <!-- Spark theme mods -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/js/animated-core.js"></script>
+
+  <!-- Meta -->
+  <meta content="NodeMCU" property="og:title">
+  <meta content="Documentation for NodeMCU, a platform for connected devices." name="description">
+
+</head>
+<body role="flatdoc">
+
+  <div id="docs">
+    <div class="header">
+      <div class="left">
+        <a href="https://www.nodemcu.com">
+          <img src="assets/images/nodemcu-docs.png" id="logo">
+        </a>
+      </div>
+      <div class="right">
+        <!--
+        <a href="../assets/docs.zip" class="icon"><i class="icon ion-arrow-down-a"></i></a>
+        -->
+        <a href="http://www.github.com/nodemcu/nodemcu-firmware" class="icon"><i class="icon ion-social-github"></i></a>
+        <!--
+        <a href="https://github.com/spark/docs/edit/master/src/content/wifi-ap-module.md" class="button">Edit this page</a>
+        -->
+      </div>
+    </div>
+
+    <div class="content-root" data-spy="scroll" data-target="#toc">
+      <div class="menubar">
+        <div class="menu section" role="flatdoc-menu">
+          <ul>
+            
+              <li><a href="index.1" class="level-0 ">Index</a></li>
+            
+              <li><a href="node-module" class="level-0 ">node module</a></li>
+            
+              <li><a href="file-module" class="level-0 ">file module</a></li>
+            
+              <li><a href="wifi-module" class="level-0 ">wifi module</a></li>
+            
+              <li><a href="wifi-sta-module" class="level-0 ">wifi.sta module</a></li>
+            
+              <li><a href="wifi-ap-module" class="level-0 active">wifi.ap module</a></li>
+            
+              <li><a href="timer-module" class="level-0 ">timer module</a></li>
+            
+              <li><a href="gpio-module" class="level-0 ">GPIO module</a></li>
+            
+              <li><a href="pwm-module" class="level-0 ">PWM module</a></li>
+            
+              <li><a href="net-module" class="level-0 ">net module</a></li>
+            
+              <li><a href="net-server-module" class="level-0 ">net.server module</a></li>
+            
+              <li><a href="net-socket-module" class="level-0 ">net.socket module</a></li>
+            
+              <li><a href="i2c-module" class="level-0 ">i2c module</a></li>
+            
+              <li><a href="adc-module" class="level-0 ">adc module</a></li>
+            
+              <li><a href="uart-module" class="level-0 ">uart module</a></li>
+            
+              <li><a href="onewire-module" class="level-0 ">onewire module</a></li>
+            
+              <li><a href="bit-module" class="level-0 ">bit module</a></li>
+            
+              <li><a href="spi-module" class="level-0 ">spi module</a></li>
+            
+              <li><a href="mqtt-module" class="level-0 ">mqtt module</a></li>
+            
+              <li><a href="mqtt-client-module" class="level-0 ">mqtt client module</a></li>
+            
+          </ul>
+        </div>
+        <div class="menu section" role="flatdoc-menu">
+          <ul id="toc">
+          <li id="wifi-ap-module-item" class="level-1"><a id="wifi-ap-module-link" href="wifi-ap-module#wifi-ap-module" class="level-1">wifi.ap module</a></li><li id="wifi-ap-module-wifi-ap-config-item" class="level-2"><a id="wifi-ap-module-wifi-ap-config-link" href="wifi-ap-module#wifi-ap-module-wifi-ap-config" class="level-2">wifi.ap.config()</a></li><li id="wifi-ap-module-wifi-ap-getip-item" class="level-2"><a id="wifi-ap-module-wifi-ap-getip-link" href="wifi-ap-module#wifi-ap-module-wifi-ap-getip" class="level-2">wifi.ap.getip()</a></li><li id="wifi-ap-module-wifi-ap-setip-item" class="level-2"><a id="wifi-ap-module-wifi-ap-setip-link" href="wifi-ap-module#wifi-ap-module-wifi-ap-setip" class="level-2">wifi.ap.setip()</a></li><li id="wifi-ap-module-wifi-ap-getmac-item" class="level-2"><a id="wifi-ap-module-wifi-ap-getmac-link" href="wifi-ap-module#wifi-ap-module-wifi-ap-getmac" class="level-2">wifi.ap.getmac()</a></li><li id="wifi-ap-module-wifi-ap-setmac-item" class="level-2"><a id="wifi-ap-module-wifi-ap-setmac-link" href="wifi-ap-module#wifi-ap-module-wifi-ap-setmac" class="level-2">wifi.ap.setmac()</a></li><li id="wifi-ap-module-wifi-ap-getbroadcast-item" class="level-2"><a id="wifi-ap-module-wifi-ap-getbroadcast-link" href="wifi-ap-module#wifi-ap-module-wifi-ap-getbroadcast" class="level-2">wifi.ap.getbroadcast()</a></li></ul>
+        </div>
+      </div>
+      <div role="flatdoc-content" class="content">
+        <h1 id="wifi-ap-module">wifi.ap module</h1>
+<h2 id="wifi-ap-module-wifi-ap-config">wifi.ap.config()</h2>
+<h4 id="description">Description</h4>
+<p>set ssid and password in ap mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.ap.config(cfg)</p>
+<h4 id="parameters">Parameters</h4>
+<p>cfg: lua table to setup ap.</p>
+<h4 id="example-">Example:</h4>
+<pre><code class="language-lua">     cfg={}
+     cfg.ssid=<span class="string">&quot;myssid&quot;</span>
+     cfg.pwd=<span class="string">&quot;mypwd&quot;</span>
+     wifi.ap.config(cfg)</code></pre>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>    <a href="wifi-ap-module"></a></p>
+<h2 id="wifi-ap-module-wifi-ap-getip">wifi.ap.getip()</h2>
+<h4 id="description">Description</h4>
+<p>get ip, netmask, gateway in ap mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.ap.getip()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>ip, netmask, gateway address in string, for example:&quot;192.168.0.111&quot;<br>
+return nil if ip = &quot;0.0.0.0&quot;.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- print current ip, netmask, gateway</span>
+    <span class="built_in">print</span>(wifi.ap.getip())
+    <span class="comment">-- 192.168.4.1  255.255.255.0  192.168.4.1</span>
+    ip = wifi.ap.getip()
+    <span class="built_in">print</span>(ip)
+    <span class="comment">-- 192.168.4.1</span>
+    ip, nm = wifi.ap.getip()
+    <span class="built_in">print</span>(nm)
+    <span class="comment">-- 255.255.255.0</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-ap-module#wifi-ap-module-wifi-ap-getmac">wifi.ap.getmac()</a></p>
+<h2 id="wifi-ap-module-wifi-ap-setip">wifi.ap.setip()</h2>
+<h4 id="description">Description</h4>
+<p>set ip, netmask, gateway address in ap mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.ap.setip(cfg)</p>
+<h4 id="parameters">Parameters</h4>
+<p>cfg: table contain ip, netmask, and gateway<br></p>
+<pre><code class="language-lua">{
+  <span class="string">&quot;ip&quot;</span>:<span class="string">&quot;192.168.1.1&quot;</span>,
+  <span class="string">&quot;netmask&quot;</span>:<span class="string">&quot;255.255.255.0&quot;</span>,
+  <span class="string">&quot;gateway&quot;</span>:<span class="string">&quot;192.168.1.1&quot;</span>
+}</code></pre>
+<h4 id="returns">Returns</h4>
+<p>true if success, false if fail.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">  cfg =
+  {
+    <span class="string">&quot;ip&quot;</span>:<span class="string">&quot;192.168.1.1&quot;</span>,
+    <span class="string">&quot;netmask&quot;</span>:<span class="string">&quot;255.255.255.0&quot;</span>,
+    <span class="string">&quot;gateway&quot;</span>:<span class="string">&quot;192.168.1.1&quot;</span>
+  }
+  wifi.ap.setip(cfg)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-ap-module#wifi-ap-module-wifi-ap-setmac">wifi.ap.setmac()</a></p>
+<h2 id="wifi-ap-module-wifi-ap-getmac">wifi.ap.getmac()</h2>
+<h4 id="description">Description</h4>
+<p>get mac address in ap mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.ap.getmac()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>mac address in string, for example:&quot;1A-33-44-FE-55-BB&quot;</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    wifi.ap.getmac()</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-ap-module#wifi-ap-module-wifi-ap-getip">wifi.ap.getip()</a></p>
+<h2 id="wifi-ap-module-wifi-ap-setmac">wifi.ap.setmac()</h2>
+<h4 id="description">Description</h4>
+<p>set mac address in ap mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.ap.setmac(mac)</p>
+<h4 id="parameters">Parameters</h4>
+<p>mac address in byte string, for example:&quot;\024\024\024\024\024\024&quot;</p>
+<h4 id="returns">Returns</h4>
+<p>true if success, false if fail.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="built_in">print</span>(wifi.ap.setmac(<span class="string">&quot;\024\024\024\024\024\024&quot;</span>))</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-ap-module#wifi-ap-module-wifi-ap-setip">wifi.ap.setip()</a></p>
+<h2 id="wifi-ap-module-wifi-ap-getbroadcast">wifi.ap.getbroadcast()</h2>
+<h4 id="description">Description</h4>
+<p>get getbroadcast address in ap mode.</p>
+<h4 id="syntax">Syntax</h4>
+<p>wifi.ap.getbroadcast()</p>
+<h4 id="parameters">Parameters</h4>
+<p>nil</p>
+<h4 id="returns">Returns</h4>
+<p>getbroadcast address in string, for example:&quot;192.168.0.255&quot;<br>
+return nil if ip = &quot;0.0.0.0&quot;.</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    bc = wifi.ap.getbroadcast()
+    <span class="built_in">print</span>(bc)
+    <span class="comment">-- 192.168.0.255</span></code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="wifi-ap-module#wifi-ap-module-wifi-ap-getip">wifi.ap.getip()</a></p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom -->
+  <script src="assets/js/docs.js"></script>
+
+</body>
+</html>

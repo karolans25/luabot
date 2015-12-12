@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>NodeMCU Docs | GPIO module</title>
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+
+  <!-- Let me embed vines -->
+  <!--
+  <script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+  -->
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/orange.ico" type="image/x-icon">
+
+  <!-- Vendor theme mods -->
+  <script src="assets/js/jquery-styling.js"></script>
+  <script src="assets/js/prettify.js"></script>
+  <!-- <script src='../assets/js/scrollspy.js'></script> -->
+
+  <!-- Spark theme mods -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/js/animated-core.js"></script>
+
+  <!-- Meta -->
+  <meta content="NodeMCU" property="og:title">
+  <meta content="Documentation for NodeMCU, a platform for connected devices." name="description">
+
+</head>
+<body role="flatdoc">
+
+  <div id="docs">
+    <div class="header">
+      <div class="left">
+        <a href="https://www.nodemcu.com">
+          <img src="assets/images/nodemcu-docs.png" id="logo">
+        </a>
+      </div>
+      <div class="right">
+        <!--
+        <a href="../assets/docs.zip" class="icon"><i class="icon ion-arrow-down-a"></i></a>
+        -->
+        <a href="http://www.github.com/nodemcu/nodemcu-firmware" class="icon"><i class="icon ion-social-github"></i></a>
+        <!--
+        <a href="https://github.com/spark/docs/edit/master/src/content/gpio-module.md" class="button">Edit this page</a>
+        -->
+      </div>
+    </div>
+
+    <div class="content-root" data-spy="scroll" data-target="#toc">
+      <div class="menubar">
+        <div class="menu section" role="flatdoc-menu">
+          <ul>
+            
+              <li><a href="index.1" class="level-0 ">Index</a></li>
+            
+              <li><a href="node-module" class="level-0 ">node module</a></li>
+            
+              <li><a href="file-module" class="level-0 ">file module</a></li>
+            
+              <li><a href="wifi-module" class="level-0 ">wifi module</a></li>
+            
+              <li><a href="wifi-sta-module" class="level-0 ">wifi.sta module</a></li>
+            
+              <li><a href="wifi-ap-module" class="level-0 ">wifi.ap module</a></li>
+            
+              <li><a href="timer-module" class="level-0 ">timer module</a></li>
+            
+              <li><a href="gpio-module" class="level-0 active">GPIO module</a></li>
+            
+              <li><a href="pwm-module" class="level-0 ">PWM module</a></li>
+            
+              <li><a href="net-module" class="level-0 ">net module</a></li>
+            
+              <li><a href="net-server-module" class="level-0 ">net.server module</a></li>
+            
+              <li><a href="net-socket-module" class="level-0 ">net.socket module</a></li>
+            
+              <li><a href="i2c-module" class="level-0 ">i2c module</a></li>
+            
+              <li><a href="adc-module" class="level-0 ">adc module</a></li>
+            
+              <li><a href="uart-module" class="level-0 ">uart module</a></li>
+            
+              <li><a href="onewire-module" class="level-0 ">onewire module</a></li>
+            
+              <li><a href="bit-module" class="level-0 ">bit module</a></li>
+            
+              <li><a href="spi-module" class="level-0 ">spi module</a></li>
+            
+              <li><a href="mqtt-module" class="level-0 ">mqtt module</a></li>
+            
+              <li><a href="mqtt-client-module" class="level-0 ">mqtt client module</a></li>
+            
+          </ul>
+        </div>
+        <div class="menu section" role="flatdoc-menu">
+          <ul id="toc">
+          <li id="gpio-module-item" class="level-1"><a id="gpio-module-link" href="gpio-module#gpio-module" class="level-1">GPIO module</a></li><li id="gpio-module-constant-item" class="level-2"><a id="gpio-module-constant-link" href="gpio-module#gpio-module-constant" class="level-2">CONSTANT</a></li><li id="gpio-module-gpio-mode-item" class="level-2"><a id="gpio-module-gpio-mode-link" href="gpio-module#gpio-module-gpio-mode" class="level-2">gpio.mode()</a></li><li id="gpio-module-gpio-read-item" class="level-2"><a id="gpio-module-gpio-read-link" href="gpio-module#gpio-module-gpio-read" class="level-2">gpio.read()</a></li><li id="gpio-module-gpio-write-item" class="level-2"><a id="gpio-module-gpio-write-link" href="gpio-module#gpio-module-gpio-write" class="level-2">gpio.write()</a></li><li id="gpio-module-gpio-trig-item" class="level-2"><a id="gpio-module-gpio-trig-link" href="gpio-module#gpio-module-gpio-trig" class="level-2">gpio.trig()</a></li></ul>
+        </div>
+      </div>
+      <div role="flatdoc-content" class="content">
+        <h1 id="gpio-module">GPIO module</h1>
+<h2 id="gpio-module-constant">CONSTANT</h2>
+<p>gpio.OUTPUT, gpio.INPUT, gpio.INT, gpio.HIGH, gpio.LOW</p>
+<h2 id="gpio-module-gpio-mode">gpio.mode()</h2>
+<h4 id="description">Description</h4>
+<p>initialize pin to GPIO mode, set the pin in/out mode, internal pullup.</p>
+<h4 id="syntax">Syntax</h4>
+<p>gpio.mode(pin, mode, pullup)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: 0~12, IO index<br>
+mode: gpio.OUTPUT or gpio.INPUT, or gpio.INT(interrupt mode)
+pullup: gpio.PULLUP or gpio.FLOAT, default: gpio.FLOAT.</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- set gpio 1 as output.</span>
+    gpio.mode(<span class="number">1</span>, gpio.OUTPUT)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="gpio-module#gpio-module-gpio_read">gpio.read()</a></p>
+<h2 id="gpio-module-gpio-read">gpio.read()</h2>
+<h4 id="description">Description</h4>
+<p>read pin value.</p>
+<h4 id="syntax">Syntax</h4>
+<p>gpio.read(pin)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: 0~12, IO index</p>
+<h4 id="returns">Returns</h4>
+<p>number:0 - low, 1 - high</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- read value of gpio 0.</span>
+    gpio.read(<span class="number">0</span>)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="gpio-module#gpio-module-gpio_mode">gpio.mode()</a></p>
+<h2 id="gpio-module-gpio-write">gpio.write()</h2>
+<h4 id="description">Description</h4>
+<p>set pin value.</p>
+<h4 id="syntax">Syntax</h4>
+<p>gpio.write(pin)</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: 0~12, IO index<br>
+level: gpio.HIGH or gpio.LOW</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- set pin index 1 to GPIO mode, and set the pin to high.</span>
+    pin=<span class="number">1</span>
+    gpio.mode(pin, gpio.OUTPUT)
+    gpio.write(pin, gpio.HIGH)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="gpio-module#gpio-module-gpio_mode">gpio.mode()</a><br>
+<strong>-</strong>   <a href="gpio-module#gpio-module-gpio_read">gpio.read()</a></p>
+<p><strong>-</strong> <a href="gpio-module#index">Back to Index</a></p>
+<h2 id="gpio-module-gpio-trig">gpio.trig()</h2>
+<h4 id="description">Description</h4>
+<p>set the interrupt callback function for pin.</p>
+<h4 id="syntax">Syntax</h4>
+<p>gpio.trig(pin, type, function(level))</p>
+<h4 id="parameters">Parameters</h4>
+<p>pin: <strong>1~12</strong>, IO index, pin D0 does not support Interrupt.<br>
+type: &quot;up&quot;, &quot;down&quot;, &quot;both&quot;, &quot;low&quot;, &quot;high&quot;, which represent rising edge, falling edge, both edge, low level, high level trig mode separately.<br>
+function(level): callback function when triggered. The gpio level is the param. Use previous callback function if undefined here.</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- use pin 0 as the input pulse width counter</span>
+    pulse1 = <span class="number">0</span>
+    du = <span class="number">0</span>
+    gpio.mode(<span class="number">1</span>,gpio.INT)
+    <span class="function"><span class="keyword">function</span> <span class="title">pin1cb</span><span class="params">(level)</span></span>
+     du = tmr.now() &#x2013; pulse1
+     <span class="built_in">print</span>(du)
+     pulse1 = tmr.now()
+     <span class="keyword">if</span> level == <span class="number">1</span> <span class="keyword">then</span> gpio.trig(<span class="number">1</span>, <span class="string">&quot;down &quot;</span>) <span class="keyword">else</span> gpio.trig(<span class="number">1</span>, <span class="string">&quot;up &quot;</span>) <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    gpio.trig(<span class="number">1</span>, <span class="string">&quot;down &quot;</span>,pin1cb)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="gpio-module#gpio-module-gpio_mode">gpio.mode()</a><br>
+<strong>-</strong>   <a href="gpio-module#gpio-module-gpio_write">gpio.write()</a></p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom -->
+  <script src="assets/js/docs.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>NodeMCU Docs | uart module</title>
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+
+  <!-- Let me embed vines -->
+  <!--
+  <script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+  -->
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/orange.ico" type="image/x-icon">
+
+  <!-- Vendor theme mods -->
+  <script src="assets/js/jquery-styling.js"></script>
+  <script src="assets/js/prettify.js"></script>
+  <!-- <script src='../assets/js/scrollspy.js'></script> -->
+
+  <!-- Spark theme mods -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/js/animated-core.js"></script>
+
+  <!-- Meta -->
+  <meta content="NodeMCU" property="og:title">
+  <meta content="Documentation for NodeMCU, a platform for connected devices." name="description">
+
+</head>
+<body role="flatdoc">
+
+  <div id="docs">
+    <div class="header">
+      <div class="left">
+        <a href="https://www.nodemcu.com">
+          <img src="assets/images/nodemcu-docs.png" id="logo">
+        </a>
+      </div>
+      <div class="right">
+        <!--
+        <a href="../assets/docs.zip" class="icon"><i class="icon ion-arrow-down-a"></i></a>
+        -->
+        <a href="http://www.github.com/nodemcu/nodemcu-firmware" class="icon"><i class="icon ion-social-github"></i></a>
+        <!--
+        <a href="https://github.com/spark/docs/edit/master/src/content/uart-module.md" class="button">Edit this page</a>
+        -->
+      </div>
+    </div>
+
+    <div class="content-root" data-spy="scroll" data-target="#toc">
+      <div class="menubar">
+        <div class="menu section" role="flatdoc-menu">
+          <ul>
+            
+              <li><a href="index.1" class="level-0 ">Index</a></li>
+            
+              <li><a href="node-module" class="level-0 ">node module</a></li>
+            
+              <li><a href="file-module" class="level-0 ">file module</a></li>
+            
+              <li><a href="wifi-module" class="level-0 ">wifi module</a></li>
+            
+              <li><a href="wifi-sta-module" class="level-0 ">wifi.sta module</a></li>
+            
+              <li><a href="wifi-ap-module" class="level-0 ">wifi.ap module</a></li>
+            
+              <li><a href="timer-module" class="level-0 ">timer module</a></li>
+            
+              <li><a href="gpio-module" class="level-0 ">GPIO module</a></li>
+            
+              <li><a href="pwm-module" class="level-0 ">PWM module</a></li>
+            
+              <li><a href="net-module" class="level-0 ">net module</a></li>
+            
+              <li><a href="net-server-module" class="level-0 ">net.server module</a></li>
+            
+              <li><a href="net-socket-module" class="level-0 ">net.socket module</a></li>
+            
+              <li><a href="i2c-module" class="level-0 ">i2c module</a></li>
+            
+              <li><a href="adc-module" class="level-0 ">adc module</a></li>
+            
+              <li><a href="uart-module" class="level-0 active">uart module</a></li>
+            
+              <li><a href="onewire-module" class="level-0 ">onewire module</a></li>
+            
+              <li><a href="bit-module" class="level-0 ">bit module</a></li>
+            
+              <li><a href="spi-module" class="level-0 ">spi module</a></li>
+            
+              <li><a href="mqtt-module" class="level-0 ">mqtt module</a></li>
+            
+              <li><a href="mqtt-client-module" class="level-0 ">mqtt client module</a></li>
+            
+          </ul>
+        </div>
+        <div class="menu section" role="flatdoc-menu">
+          <ul id="toc">
+          <li id="uart-module-item" class="level-1"><a id="uart-module-link" href="uart-module#uart-module" class="level-1">uart module</a></li><li id="uart-module-constant-item" class="level-2"><a id="uart-module-constant-link" href="uart-module#uart-module-constant" class="level-2">CONSTANT</a></li><li id="uart-module-uart-setup-item" class="level-2"><a id="uart-module-uart-setup-link" href="uart-module#uart-module-uart-setup" class="level-2">uart.setup()</a></li><li id="uart-module-uart-on-item" class="level-2"><a id="uart-module-uart-on-link" href="uart-module#uart-module-uart-on" class="level-2">uart.on()</a></li><li id="uart-module-uart-write-item" class="level-2"><a id="uart-module-uart-write-link" href="uart-module#uart-module-uart-write" class="level-2">uart.write()</a></li></ul>
+        </div>
+      </div>
+      <div role="flatdoc-content" class="content">
+        <h1 id="uart-module">uart module</h1>
+<h2 id="uart-module-constant">CONSTANT</h2>
+<p>none</p>
+<h2 id="uart-module-uart-setup">uart.setup()</h2>
+<h4 id="description">Description</h4>
+<p>setup uart&apos;s baud, databits, parity, stopbits, echo.</p>
+<h4 id="syntax">Syntax</h4>
+<p>uart.setup( id, baud, databits, parity, stopbits, echo )</p>
+<h4 id="parameters">Parameters</h4>
+<p>id = 0, only 1 uart supported.<br>
+baud = 9600, 19200, 38400, 57600, 74880, 115200, 230400, 460800, 921600. not tested more than 115200<br>
+databits = 5, 6, 7, 8. <br>
+parity = 0(none).<br>
+stopbits = 1(1 stopbit), 2(2 stopbit).<br>
+echo = 0(close echo back).</p>
+<h4 id="returns">Returns</h4>
+<p>baud.</p>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="uart-module"></a></p>
+<h2 id="uart-module-uart-on">uart.on()</h2>
+<h4 id="description">Description</h4>
+<p>set the callback function to the uart event,<br>
+&quot;data&quot; event supported, means there is data input from uart.</p>
+<h4 id="syntax">Syntax</h4>
+<p>uart.on(method, [number/end_char], [function], [run_input])</p>
+<h4 id="parameters">Parameters</h4>
+<p>method = &quot;data&quot;, there is data input from uart.<br>
+number/end_char: if pass in a number n<255, the="" callback="" will="" called="" when="" n="" chars="" are="" received.="" <br="">
+if n=0, will receive every char in buffer.<br>
+if pass in a one char string &quot;c&quot;, the callback will called when &quot;c&quot; is encounterd, or max n=255 received.<br>
+function: callback function, event &quot;data&quot; has a callback like this: function(data) end<br>
+run_input: 0 or 1, 0: input from uart will not go into lua interpreter, can accept binary data.<br>
+1: input from uart will go into lua interpreter, and run.</255,></p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="example">Example</h4>
+<pre><code class="language-lua">    <span class="comment">-- when 4 chars is received.</span>
+    uart.on(<span class="string">&quot;data&quot;</span>, <span class="number">4</span>, 
+      <span class="function"><span class="keyword">function</span><span class="params">(data)</span></span>
+        <span class="built_in">print</span>(<span class="string">&quot;receive from uart:&quot;</span>, data)
+        <span class="keyword">if</span> data==<span class="string">&quot;quit&quot;</span> <span class="keyword">then</span> 
+          uart.on(<span class="string">&quot;data&quot;</span>) 
+        <span class="keyword">end</span>        
+    <span class="keyword">end</span>, <span class="number">0</span>)
+    <span class="comment">-- when &apos;\r&apos; is received.</span>
+    uart.on(<span class="string">&quot;data&quot;</span>, <span class="string">&quot;\r&quot;</span>, 
+      <span class="function"><span class="keyword">function</span><span class="params">(data)</span></span>
+        <span class="built_in">print</span>(<span class="string">&quot;receive from uart:&quot;</span>, data)
+        <span class="keyword">if</span> data==<span class="string">&quot;quit\r&quot;</span> <span class="keyword">then</span> 
+          uart.on(<span class="string">&quot;data&quot;</span>) 
+        <span class="keyword">end</span>        
+    <span class="keyword">end</span>, <span class="number">0</span>)</code></pre>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="uart-module"></a></p>
+<h2 id="uart-module-uart-write">uart.write()</h2>
+<h4 id="description">Description</h4>
+<p>write string to uart.</p>
+<h4 id="syntax">Syntax</h4>
+<p>uart.write( id, string1, string2... )</p>
+<h4 id="parameters">Parameters</h4>
+<p>id = 0, only 1 uart supported.<br>
+string1..n: string write to uart.</p>
+<h4 id="returns">Returns</h4>
+<p>nil</p>
+<h4 id="see-also">See also</h4>
+<p><strong>-</strong>   <a href="uart-module"></a></p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom -->
+  <script src="assets/js/docs.js"></script>
+
+</body>
+</html>
