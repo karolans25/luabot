@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Firmware Download | NodeLua</title>
+
+<script src="http://nodelua.org/wp-content/themes/developer/js/jquery-1.8.2.min.js" type="text/javascript"></script>
+
+<link rel="shortcut icon" href="http://nodelua.org/wp-content/themes/developer/image/favicon.png">
+<link rel="pingback" href="http://nodelua.org/xmlrpc.php" />
+<!--[if lt IE 9]>
+<script src="http://nodelua.org/wp-content/themes/developer/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="NodeLua &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="NodeLua &raquo; Comments Feed" href="comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="NodeLua &raquo; Firmware Download Comments Feed" href="doc/download_firmware/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/nodelua.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56806,55356,56826),0,0),c.toDataURL().length>3e3):("simple"===a?d.fillText(String.fromCharCode(55357,56835),0,0):d.fillText(String.fromCharCode(55356,57135),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='bbp-default-css'  href='http://nodelua.org/wp-content/plugins/bbpress/templates/default/css/bbpress.css?ver=2.5.7-5693' type='text/css' media='screen' />
+<link rel='stylesheet' id='auth_pages-css'  href='http://nodelua.org/wp-content/plugins/sdk_auth/pages.css?ver=4.4' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-style-css'  href='http://nodelua.org/wp-content/themes/developer/style.css?ver=4.4' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='http://nodelua.org/wp-content/themes/developer/css/ie.css?ver=20121010' type='text/css' media='all' />
+<![endif]-->
+<script type='text/javascript' src='http://nodelua.org/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://nodelua.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://nodelua.org/wp-content/plugins/sdk_auth/pages.js?ver=4.4'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://nodelua.org/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.4" />
+<link rel="canonical" href="index.html?p=235" />
+<link rel='shortlink' href='index.html?p=235' />
+<link rel="alternate" type="application/json+oembed" href="wp-json/oembed/1.0/embed?url=http%253A%252F%252Fnodelua.org%252Fdoc%252Fdownload_firmware%252F" />
+<link rel="alternate" type="text/xml+oembed" href="wp-json/oembed/1.0/embed?url=http%253A%252F%252Fnodelua.org%252Fdoc%252Fdownload_firmware%252F&amp;format=xml" />
+
+<style>html { margin-top: 0px !important; }</style>
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function()
+{
+	// Collapse everything but the first menu:
+	$(".side-nav > ul > li > a").not(".current-page-ancestor > a").find("+ ul").slideUp(1);
+	$(".side-nav > ul > li > ul > li > a").not(".current-page-ancestor > a").find("+ ul").slideUp(1);
+	// Expand or collapse:
+	$(".side-nav > ul > li > a").click(function()
+	{
+		$(this).find("+ ul").slideToggle("fast");
+	});
+	$(".side-nav > ul > li > ul > li > a").click(function()
+	{
+		$(this).find("+ ul").slideToggle("fast");
+	});
+});
+</script>
+</head>
+
+
+<body class="page page-id-235 page-child parent-pageid-32 page-template page-template-page-templates page-template-sdk-docs page-template-page-templatessdk-docs-php manage-page-bg full-width single-author">
+
+		<div id="wrapper" class="indented-wrapper" >
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="main_menu_home" class="collapse navbar-collapse navbar-ex1-collapse">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+		    <a class="navbar-brand" href="index.html" title="NodeLua" rel="home">NodeLua</a>
+                      </div>
+          <ul class="nav navbar-nav navbar-right navbar-user">
+			<li class="dark" id="li-logout"><div id="icon-login" class="icon"></div><a href="wp-login.php">Log in</a></li>
+
+
+			<li class="dark" id="li-about-us"><div id="icon-about-us" class="icon"></div><a href="about/us">ABOUT</a></li>
+            <li class="current-page-dark" id="li-docs"><div id="icon-doc" class="icon"></div><a href="doc/index">DOCS</a></li>
+			<li class="dark" id="li-forum"><div id="icon-forum" class="icon"></div><a href="forums">COMMUNITY</a></li>
+            <li class="dark" id="li-home"><div id="icon-home" class="icon"></div><a href="index.html">HOME</a></li>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+	<div class='nav side-nav' id='side-nav'>
+	<script>
+		$(document).ready(function()
+		{
+			var panelHeightUpdateFunction = function()
+			{
+				var newHeight = $(window).height() - 120;
+				if ($(window).width() < 740)
+				{
+					newHeight = "auto";
+				}
+				$('#side-nav').height(newHeight);
+			}
+
+
+			// Set initial size to match initial content
+			panelHeightUpdateFunction();
+
+			$(window).resize(panelHeightUpdateFunction);
+		});
+	</script>
+
+<ul id="menu-%e6%96%87%e6%a1%a3" class="menu"><li id="nav-menu-item-400" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-235 current_page_item"><div id="nav-menu-item-400-icon" class="icon"></div><a href="index.html?p=235" class=" menu-link main-menu-link">Firmware Download</a></li><li id="nav-menu-item-38" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-38-icon" class="icon"></div><a href="index.html?p=34" class=" menu-link main-menu-link">Documents</a></li><li id="nav-menu-item-297" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><div id="nav-menu-item-297-icon" class="icon"></div><a href="javascript:void(0)" class=" menu-link main-menu-link">Tutorial</a>
+<ul class="sub-menu menu-odd  menu-depth-1">
+	<li id="nav-menu-item-298" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-298-icon" class="icon"></div><a href="make-your-first-node" class=" menu-link sub-menu-link">Make your first Node</a></li>	<li id="nav-menu-item-358" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-358-icon" class="icon"></div><a href="getting-started-with-node-webide" class=" menu-link sub-menu-link">Getting Started with Node WebIDE</a></li></ul>
+</li><li id="nav-menu-item-190" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><div id="nav-menu-item-190-icon" class="icon"></div><a href="javascript:void(0)" class=" menu-link main-menu-link">API references</a>
+<ul class="sub-menu menu-odd  menu-depth-1">
+	<li id="nav-menu-item-346" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-346-icon" class="icon"></div><a href="index.html?p=344" class=" menu-link sub-menu-link">Cloud</a></li>	<li id="nav-menu-item-441" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-441-icon" class="icon"></div><a href="index.html?p=439" class=" menu-link sub-menu-link">Key</a></li>	<li id="nav-menu-item-191" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-191-icon" class="icon"></div><a href="index.html?p=188" class=" menu-link sub-menu-link">GPIO</a></li>	<li id="nav-menu-item-414" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-414-icon" class="icon"></div><a href="index.html?p=407" class=" menu-link sub-menu-link">PWM</a></li>	<li id="nav-menu-item-332" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-332-icon" class="icon"></div><a href="index.html?p=328" class=" menu-link sub-menu-link">Timer</a></li>	<li id="nav-menu-item-192" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-192-icon" class="icon"></div><a href="index.html?p=186" class=" menu-link sub-menu-link">WIFI</a></li></ul>
+</li></ul>
+	<!--<input type="button" id="download_btn" class="highlight_btn" value="下载SDK" onclick="window.location='http://nodelua.org/download_sdk'">-->
+
+	<div class='panel'>
+	</div>
+</div>
+
+<div id="page" class="hfeed site manage-page">
+<div id="main" class="wrapper">
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+							
+	<article id="post-235" class="post-235 page type-page status-publish hentry">
+		<header class="entry-header">
+												<h1 class="entry-title">Firmware Download</h1>
+		</header>
+
+		<div class="entry-content">
+			<p>Current version: 1.0.20150120 <a href="assets/uploads/2014/12/nodelua_8266.fw">Download</a>.</p>
+<p>NodeLua firmware is open source under Apache License. The official github page is: <a href="https://github.com/haroldmars/nodelua">https://github.com/haroldmars/nodelua</a></p>
+<p>WARNING: This firmware is still in early alpha stage, you are welcome to <a href="http://nodelua.org/forums/forum/nodelua-firmware/bug-reports/" target="_blank">report bugs here</a>, and <a href="http://nodelua.org/forums/forum/nodelua-firmware/feature-and-api-requests/" target="_blank">request new features here</a>. Please note that the APIs may change by time.</p>
+<p>To use the downloaded firmware, please read the <a href="make-your-first-node">tutorial</a>. You can <a href="manage_product_add">create a project</a> within WebIDE and follow the tips to run your codes on the Node, enjoy yourself!</p>
+<p>Change log:<br />
+Jan 20, 2015 1.0.20150120<br />
+1. Save Lua code on Flash so that the Node can launch without a Internet connection afterwards!<br />
+2. Fixed: more robust way to upload cloud data<br />
+3. Fixed: mqtt lost connection and failed to retry after route reboot<br />
+4. Added pull-up option to gpio.mode()<br />
+5. New module: key(see <a href="key">docs</a>)<br />
+6. Upgraded to SDK 0.9.4<br />
+7. Rewrote DS18B20 function with async timer to handle long delay<br />
+8. Color text escape sequence codes was removed</p>
+<p>Jan 2, 2015 1.0.20150102<br />
+1. New module: PWM(see <a href="pwm">docs</a>)</p>
+<p>Dec 24, 2014 1.0.20141224<br />
+1. Have &#8220;Save &#038; Run&#8221; in NodeLua WebIDE work properly.<br />
+2. Redirect Node&#8217;s output to WebIDE&#8217;s debug window<br />
+3. New API functions: node.chipid() and node.restart() (Thanks to alonewolfx2)</p>
+<p>Dec 19, 2014 1.0.20141219<br />
+First version came out!</p>
+					</div><!-- .entry-content -->
+		<footer class="entry-meta">
+					</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+				
+<div id="comments" class="comments-area">
+
+	
+	
+	
+</div><!-- #comments .comments-area -->			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+</div><!-- #main .wrapper -->
+</div><!-- #page -->
+
+	<footer id="colophon" role="contentinfo">
+		<div class="site-info">
+			咕噜喵 版权所有
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #wrapper -->
+
+<script type='text/javascript' src='http://nodelua.org/wp-content/plugins/bbpress/templates/default/js/editor.js?ver=2.5.7-5693'></script>
+<script type='text/javascript' src='http://nodelua.org/wp-content/themes/developer/js/navigation.js?ver=1.0'></script>
+<script type='text/javascript' src='http://nodelua.org/wp-includes/js/wp-embed.min.js?ver=4.4'></script>
+</body>
+</html>

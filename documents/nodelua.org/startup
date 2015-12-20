@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Forum: Startup | NodeLua</title>
+
+<script src="http://nodelua.org/wp-content/themes/developer/js/jquery-1.8.2.min.js" type="text/javascript"></script>
+
+<link rel="shortcut icon" href="http://nodelua.org/wp-content/themes/developer/image/favicon.png">
+<link rel="pingback" href="http://nodelua.org/xmlrpc.php" />
+<!--[if lt IE 9]>
+<script src="http://nodelua.org/wp-content/themes/developer/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="NodeLua &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="NodeLua &raquo; Comments Feed" href="comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="NodeLua &raquo; Startup Comments Feed" href="http://nodelua.org/forums/forum/nodelua-firmware/startup/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/nodelua.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56806,55356,56826),0,0),c.toDataURL().length>3e3):("simple"===a?d.fillText(String.fromCharCode(55357,56835),0,0):d.fillText(String.fromCharCode(55356,57135),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='bbp-default-css'  href='http://nodelua.org/wp-content/plugins/bbpress/templates/default/css/bbpress.css?ver=2.5.7-5693' type='text/css' media='screen' />
+<link rel='stylesheet' id='auth_pages-css'  href='http://nodelua.org/wp-content/plugins/sdk_auth/pages.css?ver=4.4' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-style-css'  href='http://nodelua.org/wp-content/themes/developer/style.css?ver=4.4' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='http://nodelua.org/wp-content/themes/developer/css/ie.css?ver=20121010' type='text/css' media='all' />
+<![endif]-->
+<script type='text/javascript' src='http://nodelua.org/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://nodelua.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://nodelua.org/wp-content/plugins/sdk_auth/pages.js?ver=4.4'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://nodelua.org/wp-includes/wlwmanifest.xml" /> 
+<link rel='next' title='Lua language' href='http://nodelua.org/forums/forum/general/lua-language/' />
+<meta name="generator" content="WordPress 4.4" />
+<link rel="canonical" href="index.html?p=310" />
+<link rel='shortlink' href='index.html?p=310' />
+<link rel="alternate" type="application/json+oembed" href="wp-json/oembed/1.0/embed?url=http%253A%252F%252Fnodelua.org%252Fforums%252Fforum%252Fnodelua-firmware%252Fstartup%252F" />
+<link rel="alternate" type="text/xml+oembed" href="wp-json/oembed/1.0/embed?url=http%253A%252F%252Fnodelua.org%252Fforums%252Fforum%252Fnodelua-firmware%252Fstartup%252F&amp;format=xml" />
+
+<style>html { margin-top: 0px !important; }</style>
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function()
+{
+	// Collapse everything but the first menu:
+	$(".side-nav > ul > li > a").not(".current-page-ancestor > a").find("+ ul").slideUp(1);
+	$(".side-nav > ul > li > ul > li > a").not(".current-page-ancestor > a").find("+ ul").slideUp(1);
+	// Expand or collapse:
+	$(".side-nav > ul > li > a").click(function()
+	{
+		$(this).find("+ ul").slideToggle("fast");
+	});
+	$(".side-nav > ul > li > ul > li > a").click(function()
+	{
+		$(this).find("+ ul").slideToggle("fast");
+	});
+});
+</script>
+</head>
+
+
+<body class="forum bbpress single single-forum postid-310 forum_bg full-width single-author">
+
+		<div id="wrapper">
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="main_menu_forum" class="collapse navbar-collapse navbar-ex1-collapse">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+		    <a class="navbar-brand" href="index.html" title="NodeLua" rel="home">NodeLua</a>
+                      </div>
+          <ul class="nav navbar-nav navbar-right navbar-user">
+			<li class="dark" id="li-logout"><div id="icon-login" class="icon"></div><a href="wp-login.php">Log in</a></li>
+
+
+			<li class="dark" id="li-about-us"><div id="icon-about-us" class="icon"></div><a href="about/us">ABOUT</a></li>
+            <li class="dark" id="li-docs"><div id="icon-doc" class="icon"></div><a href="doc/index">DOCS</a></li>
+			<li class="current-page-dark" id="li-forum"><div id="icon-forum" class="icon"></div><a href="forums">COMMUNITY</a></li>
+            <li class="dark" id="li-home"><div id="icon-home" class="icon"></div><a href="index.html">HOME</a></li>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+	<div class='nav side-nav' id='side-nav'>
+	<script>
+		$(document).ready(function()
+		{
+			var panelHeightUpdateFunction = function()
+			{
+				var newHeight = $(window).height() - 120;
+				if ($(window).width() < 740)
+				{
+					newHeight = "auto";
+				}
+				$('#side-nav').height(newHeight);
+			}
+
+
+			// Set initial size to match initial content
+			panelHeightUpdateFunction();
+
+			$(window).resize(panelHeightUpdateFunction);
+		});
+	</script>
+
+
+	<!--<input type="button" id="download_btn" class="highlight_btn" value="下载SDK" onclick="window.location='http://nodelua.org/download_sdk'">-->
+
+	<div class='panel'>
+	</div>
+</div>
+
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+							
+	<article id="post-310" class="post-310 forum type-forum status-publish hentry">
+		<header class="entry-header">
+												<h1 class="entry-title">Startup</h1>
+		</header>
+
+		<div class="entry-content">
+			
+<div id="bbpress-forums">
+
+	<div class="bbp-breadcrumb"><p><a href="index.html" class="bbp-breadcrumb-home">Home</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <a href="forums" class="bbp-breadcrumb-root">Forums</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <a href="http://nodelua.org/forums/forum/nodelua-firmware/" class="bbp-breadcrumb-forum">NodeLua firmware</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <span class="bbp-breadcrumb-current">Startup</span></p></div>
+	
+	
+	
+		<div class="bbp-template-notice info"><p class="bbp-forum-description">This forum contains 11 topics and 12 replies, and was last updated by <a href="http://nodelua.org/forums/user/nickld/" title="View NickLD&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://2.gravatar.com/avatar/84c13705995c88208db098836b946de2?s=14&#038;d=identicon&#038;r=g' srcset='http://2.gravatar.com/avatar/84c13705995c88208db098836b946de2?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/nickld/" title="View NickLD&#039;s profile" class="bbp-author-name" rel="nofollow">NickLD</a> <a href="http://nodelua.org/forums/topic/will-not-keep-or-connect-to-node-id/" title="Will not keep or connect to Node ID">3 months, 2 weeks ago</a>.</p></div>
+		
+		
+			
+
+<div class="bbp-pagination">
+	<div class="bbp-pagination-count">
+
+		Viewing 12 topics - 1 through 12 (of 12 total)
+	</div>
+
+	<div class="bbp-pagination-links">
+
+		
+	</div>
+</div>
+
+
+			
+
+<ul id="bbp-forum-310" class="bbp-topics">
+
+	<li class="bbp-header">
+
+		<ul class="forum-titles">
+			<li class="bbp-topic-title">Topic</li>
+			<li class="bbp-topic-voice-count">Voices</li>
+			<li class="bbp-topic-reply-count">Posts</li>
+			<li class="bbp-topic-freshness">Freshness</li>
+		</ul>
+
+	</li>
+
+	<li class="bbp-body">
+
+		
+			
+<ul id="bbp-topic-211" class="odd super-sticky bbp-parent-forum-200 user-id-1 post-211 topic type-topic status-publish hentry">
+
+	<li class="bbp-topic-title">
+
+		
+		
+		<a class="bbp-topic-permalink" href="http://nodelua.org/forums/topic/welcome/">Welcome</a>
+
+		
+		
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-started-by">Started by: <a href="http://nodelua.org/forums/user/lcpcsky/" title="View Harold L.&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://1.gravatar.com/avatar/4c5a3a4c582bb7113803ef7a77b4b586?s=14&#038;d=identicon&#038;r=g' srcset='http://1.gravatar.com/avatar/4c5a3a4c582bb7113803ef7a77b4b586?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/lcpcsky/" title="View Harold L.&#039;s profile" class="bbp-author-name" rel="nofollow">Harold L.</a></span>
+
+			
+			
+				
+				<span class="bbp-topic-started-in">in: <a href="http://nodelua.org/forums/forum/modules/esp8266/">ESP8266</a></span>
+
+				
+			
+		</p>
+
+		
+		
+	</li>
+
+	<li class="bbp-topic-voice-count">1</li>
+
+	<li class="bbp-topic-reply-count">1</li>
+
+	<li class="bbp-topic-freshness">
+
+		
+		<a href="http://nodelua.org/forums/topic/welcome/" title="Welcome">1 year ago</a>
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-freshness-author"><a href="http://nodelua.org/forums/user/lcpcsky/" title="View Harold L.&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://1.gravatar.com/avatar/4c5a3a4c582bb7113803ef7a77b4b586?s=14&#038;d=identicon&#038;r=g' srcset='http://1.gravatar.com/avatar/4c5a3a4c582bb7113803ef7a77b4b586?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/lcpcsky/" title="View Harold L.&#039;s profile" class="bbp-author-name" rel="nofollow">Harold L.</a></span>
+
+			
+		</p>
+	</li>
+
+</ul><!-- #bbp-topic-211 -->
+
+		
+			
+<ul id="bbp-topic-494" class="even bbp-parent-forum-310 user-id-976 post-494 topic type-topic status-publish hentry">
+
+	<li class="bbp-topic-title">
+
+		
+		
+		<a class="bbp-topic-permalink" href="http://nodelua.org/forums/topic/will-not-keep-or-connect-to-node-id/">Will not keep or connect to Node ID</a>
+
+		
+		
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-started-by">Started by: <a href="http://nodelua.org/forums/user/nickld/" title="View NickLD&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://2.gravatar.com/avatar/84c13705995c88208db098836b946de2?s=14&#038;d=identicon&#038;r=g' srcset='http://2.gravatar.com/avatar/84c13705995c88208db098836b946de2?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/nickld/" title="View NickLD&#039;s profile" class="bbp-author-name" rel="nofollow">NickLD</a></span>
+
+			
+			
+		</p>
+
+		
+		
+	</li>
+
+	<li class="bbp-topic-voice-count">1</li>
+
+	<li class="bbp-topic-reply-count">1</li>
+
+	<li class="bbp-topic-freshness">
+
+		
+		<a href="http://nodelua.org/forums/topic/will-not-keep-or-connect-to-node-id/" title="Will not keep or connect to Node ID">3 months, 2 weeks ago</a>
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-freshness-author"><a href="http://nodelua.org/forums/user/nickld/" title="View NickLD&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://2.gravatar.com/avatar/84c13705995c88208db098836b946de2?s=14&#038;d=identicon&#038;r=g' srcset='http://2.gravatar.com/avatar/84c13705995c88208db098836b946de2?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/nickld/" title="View NickLD&#039;s profile" class="bbp-author-name" rel="nofollow">NickLD</a></span>
+
+			
+		</p>
+	</li>
+
+</ul><!-- #bbp-topic-494 -->
+
+		
+			
+<ul id="bbp-topic-493" class="odd bbp-parent-forum-310 user-id-776 post-493 topic type-topic status-publish hentry">
+
+	<li class="bbp-topic-title">
+
+		
+		
+		<a class="bbp-topic-permalink" href="http://nodelua.org/forums/topic/project-status/">Project status?</a>
+
+		
+		
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-started-by">Started by: <a href="http://nodelua.org/forums/user/dougal/" title="View dougal&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://2.gravatar.com/avatar/81717a172b6918071fbea1a52483294b?s=14&#038;d=identicon&#038;r=g' srcset='http://2.gravatar.com/avatar/81717a172b6918071fbea1a52483294b?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/dougal/" title="View dougal&#039;s profile" class="bbp-author-name" rel="nofollow">dougal</a></span>
+
+			
+			
+		</p>
+
+		
+		
+	</li>
+
+	<li class="bbp-topic-voice-count">1</li>
+
+	<li class="bbp-topic-reply-count">1</li>
+
+	<li class="bbp-topic-freshness">
+
+		
+		<a href="http://nodelua.org/forums/topic/project-status/" title="Project status?">3 months, 2 weeks ago</a>
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-freshness-author"><a href="http://nodelua.org/forums/user/dougal/" title="View dougal&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://2.gravatar.com/avatar/81717a172b6918071fbea1a52483294b?s=14&#038;d=identicon&#038;r=g' srcset='http://2.gravatar.com/avatar/81717a172b6918071fbea1a52483294b?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/dougal/" title="View dougal&#039;s profile" class="bbp-author-name" rel="nofollow">dougal</a></span>
+
+			
+		</p>
+	</li>
+
+</ul><!-- #bbp-topic-493 -->
+
+		
+			
+<ul id="bbp-topic-488" class="even bbp-parent-forum-310 user-id-704 post-488 topic type-topic status-publish hentry">
+
+	<li class="bbp-topic-title">
+
+		
+		
+		<a class="bbp-topic-permalink" href="http://nodelua.org/forums/topic/help-with-error-message/">Help with error message&#8230;.</a>
+
+		
+		
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-started-by">Started by: <a href="http://nodelua.org/forums/user/taldenk/" title="View taldenk&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://2.gravatar.com/avatar/b585816d1dfda33655600e6e2c9515ef?s=14&#038;d=identicon&#038;r=g' srcset='http://2.gravatar.com/avatar/b585816d1dfda33655600e6e2c9515ef?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/taldenk/" title="View taldenk&#039;s profile" class="bbp-author-name" rel="nofollow">taldenk</a></span>
+
+			
+			
+		</p>
+
+		
+		
+	</li>
+
+	<li class="bbp-topic-voice-count">1</li>
+
+	<li class="bbp-topic-reply-count">1</li>
+
+	<li class="bbp-topic-freshness">
+
+		
+		<a href="http://nodelua.org/forums/topic/help-with-error-message/" title="Help with error message&#8230;.">6 months ago</a>
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-freshness-author"><a href="http://nodelua.org/forums/user/taldenk/" title="View taldenk&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://2.gravatar.com/avatar/b585816d1dfda33655600e6e2c9515ef?s=14&#038;d=identicon&#038;r=g' srcset='http://2.gravatar.com/avatar/b585816d1dfda33655600e6e2c9515ef?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/taldenk/" title="View taldenk&#039;s profile" class="bbp-author-name" rel="nofollow">taldenk</a></span>
+
+			
+		</p>
+	</li>
+
+</ul><!-- #bbp-topic-488 -->
+
+		
+			
+<ul id="bbp-topic-385" class="odd bbp-parent-forum-310 user-id-111 post-385 topic type-topic status-publish hentry">
+
+	<li class="bbp-topic-title">
+
+		
+		
+		<a class="bbp-topic-permalink" href="http://nodelua.org/forums/topic/how-to-get-started-the-tutorial-is-not-enough-for-me/">How to get started ? the tutorial is not enough for me :(</a>
+
+		
+		
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-started-by">Started by: <a href="http://nodelua.org/forums/user/mihaicph/" title="View mihaicph&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://0.gravatar.com/avatar/ff35165005700ee49f9dbdc9b3a4812e?s=14&#038;d=identicon&#038;r=g' srcset='http://0.gravatar.com/avatar/ff35165005700ee49f9dbdc9b3a4812e?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/mihaicph/" title="View mihaicph&#039;s profile" class="bbp-author-name" rel="nofollow">mihaicph</a></span>
+
+			
+			
+		</p>
+
+		
+		
+	</li>
+
+	<li class="bbp-topic-voice-count">3</li>
+
+	<li class="bbp-topic-reply-count">3</li>
+
+	<li class="bbp-topic-freshness">
+
+		
+		<a href="http://nodelua.org/forums/topic/how-to-get-started-the-tutorial-is-not-enough-for-me/#post-483" title="Reply To: How to get started ? the tutorial is not enough for me :(">7 months ago</a>
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-freshness-author"><a href="http://nodelua.org/forums/user/ken/" title="View ken&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://1.gravatar.com/avatar/a43bead910878b22428fdecffe29eb85?s=14&#038;d=identicon&#038;r=g' srcset='http://1.gravatar.com/avatar/a43bead910878b22428fdecffe29eb85?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/ken/" title="View ken&#039;s profile" class="bbp-author-name" rel="nofollow">ken</a></span>
+
+			
+		</p>
+	</li>
+
+</ul><!-- #bbp-topic-385 -->
+
+		
+			
+<ul id="bbp-topic-479" class="even bbp-parent-forum-310 user-id-571 post-479 topic type-topic status-publish hentry">
+
+	<li class="bbp-topic-title">
+
+		
+		
+		<a class="bbp-topic-permalink" href="http://nodelua.org/forums/topic/node-keeps-rebooting-when-ap-is-switched-off/">Node keeps rebooting, when AP is switched off.</a>
+
+		
+		
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-started-by">Started by: <a href="http://nodelua.org/forums/user/wzab/" title="View wzab&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://1.gravatar.com/avatar/1cb0ae0e04c776313a9e3fab984d9365?s=14&#038;d=identicon&#038;r=g' srcset='http://1.gravatar.com/avatar/1cb0ae0e04c776313a9e3fab984d9365?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/wzab/" title="View wzab&#039;s profile" class="bbp-author-name" rel="nofollow">wzab</a></span>
+
+			
+			
+		</p>
+
+		
+		
+	</li>
+
+	<li class="bbp-topic-voice-count">1</li>
+
+	<li class="bbp-topic-reply-count">1</li>
+
+	<li class="bbp-topic-freshness">
+
+		
+		<a href="http://nodelua.org/forums/topic/node-keeps-rebooting-when-ap-is-switched-off/" title="Node keeps rebooting, when AP is switched off.">7 months, 1 week ago</a>
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-freshness-author"><a href="http://nodelua.org/forums/user/wzab/" title="View wzab&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://1.gravatar.com/avatar/1cb0ae0e04c776313a9e3fab984d9365?s=14&#038;d=identicon&#038;r=g' srcset='http://1.gravatar.com/avatar/1cb0ae0e04c776313a9e3fab984d9365?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/wzab/" title="View wzab&#039;s profile" class="bbp-author-name" rel="nofollow">wzab</a></span>
+
+			
+		</p>
+	</li>
+
+</ul><!-- #bbp-topic-479 -->
+
+		
+			
+<ul id="bbp-topic-475" class="odd bbp-parent-forum-310 user-id-481 post-475 topic type-topic status-publish hentry topic-tag-flash-erase-empty">
+
+	<li class="bbp-topic-title">
+
+		
+		
+		<a class="bbp-topic-permalink" href="http://nodelua.org/forums/topic/problem-after-firmware-flash/">Problem after firmware flash</a>
+
+		
+		
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-started-by">Started by: <a href="http://nodelua.org/forums/user/tita2000/" title="View tita2000&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://0.gravatar.com/avatar/364866c02b09858830fca7b1e7e058da?s=14&#038;d=identicon&#038;r=g' srcset='http://0.gravatar.com/avatar/364866c02b09858830fca7b1e7e058da?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/tita2000/" title="View tita2000&#039;s profile" class="bbp-author-name" rel="nofollow">tita2000</a></span>
+
+			
+			
+		</p>
+
+		
+		
+	</li>
+
+	<li class="bbp-topic-voice-count">1</li>
+
+	<li class="bbp-topic-reply-count">2</li>
+
+	<li class="bbp-topic-freshness">
+
+		
+		<a href="http://nodelua.org/forums/topic/problem-after-firmware-flash/#post-476" title="Reply To: Problem after firmware flash">8 months, 1 week ago</a>
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-freshness-author"><a href="http://nodelua.org/forums/user/tita2000/" title="View tita2000&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://0.gravatar.com/avatar/364866c02b09858830fca7b1e7e058da?s=14&#038;d=identicon&#038;r=g' srcset='http://0.gravatar.com/avatar/364866c02b09858830fca7b1e7e058da?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/tita2000/" title="View tita2000&#039;s profile" class="bbp-author-name" rel="nofollow">tita2000</a></span>
+
+			
+		</p>
+	</li>
+
+</ul><!-- #bbp-topic-475 -->
+
+		
+			
+<ul id="bbp-topic-458" class="even bbp-parent-forum-310 user-id-254 post-458 topic type-topic status-publish hentry">
+
+	<li class="bbp-topic-title">
+
+		
+		
+		<a class="bbp-topic-permalink" href="http://nodelua.org/forums/topic/firmware-installation-experience/">Firmware Installation experience</a>
+
+		
+		
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-started-by">Started by: <a href="http://nodelua.org/forums/user/mikeyuku/" title="View mikeyuku&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://2.gravatar.com/avatar/b5d3cd179fde0e5ef07fc887ca01853c?s=14&#038;d=identicon&#038;r=g' srcset='http://2.gravatar.com/avatar/b5d3cd179fde0e5ef07fc887ca01853c?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/mikeyuku/" title="View mikeyuku&#039;s profile" class="bbp-author-name" rel="nofollow">mikeyuku</a></span>
+
+			
+			
+		</p>
+
+		
+		
+	</li>
+
+	<li class="bbp-topic-voice-count">2</li>
+
+	<li class="bbp-topic-reply-count">2</li>
+
+	<li class="bbp-topic-freshness">
+
+		
+		<a href="http://nodelua.org/forums/topic/firmware-installation-experience/#post-465" title="Reply To: Firmware Installation experience">9 months, 3 weeks ago</a>
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-freshness-author"><a href="http://nodelua.org/forums/user/csyst/" title="View csyst&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://0.gravatar.com/avatar/f8cc23eca457446fd53b91b6d44993e7?s=14&#038;d=identicon&#038;r=g' srcset='http://0.gravatar.com/avatar/f8cc23eca457446fd53b91b6d44993e7?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/csyst/" title="View csyst&#039;s profile" class="bbp-author-name" rel="nofollow">csyst</a></span>
+
+			
+		</p>
+	</li>
+
+</ul><!-- #bbp-topic-458 -->
+
+		
+			
+<ul id="bbp-topic-435" class="odd bbp-parent-forum-310 user-id-213 post-435 topic type-topic status-publish hentry">
+
+	<li class="bbp-topic-title">
+
+		
+		
+		<a class="bbp-topic-permalink" href="http://nodelua.org/forums/topic/cloud-id/">Cloud ID</a>
+
+		
+		
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-started-by">Started by: <a href="http://nodelua.org/forums/user/hegdekir/" title="View hegdekir&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://2.gravatar.com/avatar/2a62bad8b1c6b52d976eb04071a873ba?s=14&#038;d=identicon&#038;r=g' srcset='http://2.gravatar.com/avatar/2a62bad8b1c6b52d976eb04071a873ba?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/hegdekir/" title="View hegdekir&#039;s profile" class="bbp-author-name" rel="nofollow">hegdekir</a></span>
+
+			
+			
+		</p>
+
+		
+		
+	</li>
+
+	<li class="bbp-topic-voice-count">1</li>
+
+	<li class="bbp-topic-reply-count">1</li>
+
+	<li class="bbp-topic-freshness">
+
+		
+		<a href="http://nodelua.org/forums/topic/cloud-id/" title="Cloud ID">11 months ago</a>
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-freshness-author"><a href="http://nodelua.org/forums/user/hegdekir/" title="View hegdekir&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://2.gravatar.com/avatar/2a62bad8b1c6b52d976eb04071a873ba?s=14&#038;d=identicon&#038;r=g' srcset='http://2.gravatar.com/avatar/2a62bad8b1c6b52d976eb04071a873ba?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/hegdekir/" title="View hegdekir&#039;s profile" class="bbp-author-name" rel="nofollow">hegdekir</a></span>
+
+			
+		</p>
+	</li>
+
+</ul><!-- #bbp-topic-435 -->
+
+		
+			
+<ul id="bbp-topic-368" class="even bbp-parent-forum-310 user-id-105 post-368 topic type-topic status-publish hentry">
+
+	<li class="bbp-topic-title">
+
+		
+		
+		<a class="bbp-topic-permalink" href="http://nodelua.org/forums/topic/garbage-text-in-serial-term/">Garbage text in serial term. ?</a>
+
+		
+		
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-started-by">Started by: <a href="http://nodelua.org/forums/user/erni/" title="View Erni&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://0.gravatar.com/avatar/fba251f507c513c61ee8cd84b51d0792?s=14&#038;d=identicon&#038;r=g' srcset='http://0.gravatar.com/avatar/fba251f507c513c61ee8cd84b51d0792?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/erni/" title="View Erni&#039;s profile" class="bbp-author-name" rel="nofollow">Erni</a></span>
+
+			
+			
+		</p>
+
+		
+		
+	</li>
+
+	<li class="bbp-topic-voice-count">3</li>
+
+	<li class="bbp-topic-reply-count">4</li>
+
+	<li class="bbp-topic-freshness">
+
+		
+		<a href="http://nodelua.org/forums/topic/garbage-text-in-serial-term/#post-433" title="Reply To: Garbage text in serial term. ?">11 months ago</a>
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-freshness-author"><a href="http://nodelua.org/forums/user/jeffeb3/" title="View jeffeb3&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://0.gravatar.com/avatar/6c99687d4435a431c4ac18073e5012f7?s=14&#038;d=identicon&#038;r=g' srcset='http://0.gravatar.com/avatar/6c99687d4435a431c4ac18073e5012f7?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/jeffeb3/" title="View jeffeb3&#039;s profile" class="bbp-author-name" rel="nofollow">jeffeb3</a></span>
+
+			
+		</p>
+	</li>
+
+</ul><!-- #bbp-topic-368 -->
+
+		
+			
+<ul id="bbp-topic-387" class="odd bbp-parent-forum-310 user-id-131 post-387 topic type-topic status-publish hentry topic-tag-webpage-tcp-arduino">
+
+	<li class="bbp-topic-title">
+
+		
+		
+		<a class="bbp-topic-permalink" href="http://nodelua.org/forums/topic/just-starting-out/">Just starting out</a>
+
+		
+		
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-started-by">Started by: <a href="http://nodelua.org/forums/user/neovin/" title="View Neovin&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://0.gravatar.com/avatar/f5ca59f93f443ae0643a0b293910de9b?s=14&#038;d=identicon&#038;r=g' srcset='http://0.gravatar.com/avatar/f5ca59f93f443ae0643a0b293910de9b?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/neovin/" title="View Neovin&#039;s profile" class="bbp-author-name" rel="nofollow">Neovin</a></span>
+
+			
+			
+		</p>
+
+		
+		
+	</li>
+
+	<li class="bbp-topic-voice-count">1</li>
+
+	<li class="bbp-topic-reply-count">1</li>
+
+	<li class="bbp-topic-freshness">
+
+		
+		<a href="http://nodelua.org/forums/topic/just-starting-out/" title="Just starting out">12 months ago</a>
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-freshness-author"><a href="http://nodelua.org/forums/user/neovin/" title="View Neovin&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://0.gravatar.com/avatar/f5ca59f93f443ae0643a0b293910de9b?s=14&#038;d=identicon&#038;r=g' srcset='http://0.gravatar.com/avatar/f5ca59f93f443ae0643a0b293910de9b?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/neovin/" title="View Neovin&#039;s profile" class="bbp-author-name" rel="nofollow">Neovin</a></span>
+
+			
+		</p>
+	</li>
+
+</ul><!-- #bbp-topic-387 -->
+
+		
+			
+<ul id="bbp-topic-374" class="even bbp-parent-forum-310 user-id-107 post-374 topic type-topic status-publish hentry topic-tag-webide">
+
+	<li class="bbp-topic-title">
+
+		
+		
+		<a class="bbp-topic-permalink" href="http://nodelua.org/forums/topic/node-offline/">node offline</a>
+
+		
+		
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-started-by">Started by: <a href="http://nodelua.org/forums/user/kingfisher/" title="View kingfisher&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://0.gravatar.com/avatar/6c300759657725873b2d3885c6b8e999?s=14&#038;d=identicon&#038;r=g' srcset='http://0.gravatar.com/avatar/6c300759657725873b2d3885c6b8e999?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/kingfisher/" title="View kingfisher&#039;s profile" class="bbp-author-name" rel="nofollow">kingfisher</a></span>
+
+			
+			
+		</p>
+
+		
+		
+	</li>
+
+	<li class="bbp-topic-voice-count">3</li>
+
+	<li class="bbp-topic-reply-count">6</li>
+
+	<li class="bbp-topic-freshness">
+
+		
+		<a href="http://nodelua.org/forums/topic/node-offline/#post-384" title="Reply To: node offline">12 months ago</a>
+		
+		<p class="bbp-topic-meta">
+
+			
+			<span class="bbp-topic-freshness-author"><a href="http://nodelua.org/forums/user/lcpcsky/" title="View Harold L.&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://1.gravatar.com/avatar/4c5a3a4c582bb7113803ef7a77b4b586?s=14&#038;d=identicon&#038;r=g' srcset='http://1.gravatar.com/avatar/4c5a3a4c582bb7113803ef7a77b4b586?s=28&amp;d=identicon&amp;r=g 2x' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="http://nodelua.org/forums/user/lcpcsky/" title="View Harold L.&#039;s profile" class="bbp-author-name" rel="nofollow">Harold L.</a></span>
+
+			
+		</p>
+	</li>
+
+</ul><!-- #bbp-topic-374 -->
+
+		
+	</li>
+
+	<li class="bbp-footer">
+
+		<div class="tr">
+			<p>
+				<span class="td colspan4">&nbsp;</span>
+			</p>
+		</div><!-- .tr -->
+
+	</li>
+
+</ul><!-- #bbp-forum-310 -->
+
+
+			
+
+<div class="bbp-pagination">
+	<div class="bbp-pagination-count">
+
+		Viewing 12 topics - 1 through 12 (of 12 total)
+	</div>
+
+	<div class="bbp-pagination-links">
+
+		
+	</div>
+</div>
+
+
+			
+
+
+
+	<div id="no-topic-0" class="bbp-no-topic">
+		<div class="bbp-template-notice">
+			<p>You must be logged in to create new topics.</p>
+		</div>
+	</div>
+
+
+
+		
+	
+	
+</div>
+					</div><!-- .entry-content -->
+		<footer class="entry-meta">
+					</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+				
+<div id="comments" class="comments-area">
+
+	
+	
+	
+</div><!-- #comments .comments-area -->			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+		<footer id="colophon" role="contentinfo">
+		<div class="site-info">
+			咕噜喵 版权所有
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #wrapper -->
+
+<script type='text/javascript' src='http://nodelua.org/wp-content/plugins/bbpress/templates/default/js/editor.js?ver=2.5.7-5693'></script>
+<script type='text/javascript' src='http://nodelua.org/wp-content/themes/developer/js/navigation.js?ver=1.0'></script>
+<script type='text/javascript' src='http://nodelua.org/wp-includes/js/wp-embed.min.js?ver=4.4'></script>
+</body>
+</html>

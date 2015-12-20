@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Make your first Node | NodeLua</title>
+
+<script src="http://nodelua.org/wp-content/themes/developer/js/jquery-1.8.2.min.js" type="text/javascript"></script>
+
+<link rel="shortcut icon" href="http://nodelua.org/wp-content/themes/developer/image/favicon.png">
+<link rel="pingback" href="http://nodelua.org/xmlrpc.php" />
+<!--[if lt IE 9]>
+<script src="http://nodelua.org/wp-content/themes/developer/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="NodeLua &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="NodeLua &raquo; Comments Feed" href="comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="NodeLua &raquo; Make your first Node Comments Feed" href="doc/tutorial/make-your-first-node/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/nodelua.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56806,55356,56826),0,0),c.toDataURL().length>3e3):("simple"===a?d.fillText(String.fromCharCode(55357,56835),0,0):d.fillText(String.fromCharCode(55356,57135),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='bbp-default-css'  href='http://nodelua.org/wp-content/plugins/bbpress/templates/default/css/bbpress.css?ver=2.5.7-5693' type='text/css' media='screen' />
+<link rel='stylesheet' id='auth_pages-css'  href='http://nodelua.org/wp-content/plugins/sdk_auth/pages.css?ver=4.4' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-style-css'  href='http://nodelua.org/wp-content/themes/developer/style.css?ver=4.4' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='http://nodelua.org/wp-content/themes/developer/css/ie.css?ver=20121010' type='text/css' media='all' />
+<![endif]-->
+<script type='text/javascript' src='http://nodelua.org/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://nodelua.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://nodelua.org/wp-content/plugins/sdk_auth/pages.js?ver=4.4'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://nodelua.org/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.4" />
+<link rel="canonical" href="make-your-first-node" />
+<link rel='shortlink' href='index.html?p=294' />
+<link rel="alternate" type="application/json+oembed" href="wp-json/oembed/1.0/embed?url=http%253A%252F%252Fnodelua.org%252Fdoc%252Ftutorial%252Fmake-your-first-node%252F" />
+<link rel="alternate" type="text/xml+oembed" href="wp-json/oembed/1.0/embed?url=http%253A%252F%252Fnodelua.org%252Fdoc%252Ftutorial%252Fmake-your-first-node%252F&amp;format=xml" />
+
+<style>html { margin-top: 0px !important; }</style>
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function()
+{
+	// Collapse everything but the first menu:
+	$(".side-nav > ul > li > a").not(".current-page-ancestor > a").find("+ ul").slideUp(1);
+	$(".side-nav > ul > li > ul > li > a").not(".current-page-ancestor > a").find("+ ul").slideUp(1);
+	// Expand or collapse:
+	$(".side-nav > ul > li > a").click(function()
+	{
+		$(this).find("+ ul").slideToggle("fast");
+	});
+	$(".side-nav > ul > li > ul > li > a").click(function()
+	{
+		$(this).find("+ ul").slideToggle("fast");
+	});
+});
+</script>
+</head>
+
+
+<body class="page page-id-294 page-child parent-pageid-292 page-template page-template-page-templates page-template-sdk-docs page-template-page-templatessdk-docs-php manage-page-bg full-width single-author">
+
+		<div id="wrapper" class="indented-wrapper" >
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="main_menu_home" class="collapse navbar-collapse navbar-ex1-collapse">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+		    <a class="navbar-brand" href="index.html" title="NodeLua" rel="home">NodeLua</a>
+                      </div>
+          <ul class="nav navbar-nav navbar-right navbar-user">
+			<li class="dark" id="li-logout"><div id="icon-login" class="icon"></div><a href="wp-login.php">Log in</a></li>
+
+
+			<li class="dark" id="li-about-us"><div id="icon-about-us" class="icon"></div><a href="about/us">ABOUT</a></li>
+            <li class="current-page-dark" id="li-docs"><div id="icon-doc" class="icon"></div><a href="doc/index">DOCS</a></li>
+			<li class="dark" id="li-forum"><div id="icon-forum" class="icon"></div><a href="forums">COMMUNITY</a></li>
+            <li class="dark" id="li-home"><div id="icon-home" class="icon"></div><a href="index.html">HOME</a></li>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+	<div class='nav side-nav' id='side-nav'>
+	<script>
+		$(document).ready(function()
+		{
+			var panelHeightUpdateFunction = function()
+			{
+				var newHeight = $(window).height() - 120;
+				if ($(window).width() < 740)
+				{
+					newHeight = "auto";
+				}
+				$('#side-nav').height(newHeight);
+			}
+
+
+			// Set initial size to match initial content
+			panelHeightUpdateFunction();
+
+			$(window).resize(panelHeightUpdateFunction);
+		});
+	</script>
+
+<ul id="menu-%e6%96%87%e6%a1%a3" class="menu"><li id="nav-menu-item-400" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-400-icon" class="icon"></div><a href="index.html?p=235" class=" menu-link main-menu-link">Firmware Download</a></li><li id="nav-menu-item-38" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-38-icon" class="icon"></div><a href="index.html?p=34" class=" menu-link main-menu-link">Documents</a></li><li id="nav-menu-item-297" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children"><div id="nav-menu-item-297-icon" class="icon"></div><a href="javascript:void(0)" class=" menu-link main-menu-link">Tutorial</a>
+<ul class="sub-menu menu-odd  menu-depth-1">
+	<li id="nav-menu-item-298" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-294 current_page_item"><div id="nav-menu-item-298-icon" class="icon"></div><a href="make-your-first-node" class=" menu-link sub-menu-link">Make your first Node</a></li>	<li id="nav-menu-item-358" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-358-icon" class="icon"></div><a href="getting-started-with-node-webide" class=" menu-link sub-menu-link">Getting Started with Node WebIDE</a></li></ul>
+</li><li id="nav-menu-item-190" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><div id="nav-menu-item-190-icon" class="icon"></div><a href="javascript:void(0)" class=" menu-link main-menu-link">API references</a>
+<ul class="sub-menu menu-odd  menu-depth-1">
+	<li id="nav-menu-item-346" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-346-icon" class="icon"></div><a href="index.html?p=344" class=" menu-link sub-menu-link">Cloud</a></li>	<li id="nav-menu-item-441" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-441-icon" class="icon"></div><a href="index.html?p=439" class=" menu-link sub-menu-link">Key</a></li>	<li id="nav-menu-item-191" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-191-icon" class="icon"></div><a href="index.html?p=188" class=" menu-link sub-menu-link">GPIO</a></li>	<li id="nav-menu-item-414" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-414-icon" class="icon"></div><a href="index.html?p=407" class=" menu-link sub-menu-link">PWM</a></li>	<li id="nav-menu-item-332" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-332-icon" class="icon"></div><a href="index.html?p=328" class=" menu-link sub-menu-link">Timer</a></li>	<li id="nav-menu-item-192" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><div id="nav-menu-item-192-icon" class="icon"></div><a href="index.html?p=186" class=" menu-link sub-menu-link">WIFI</a></li></ul>
+</li></ul>
+	<!--<input type="button" id="download_btn" class="highlight_btn" value="下载SDK" onclick="window.location='http://nodelua.org/download_sdk'">-->
+
+	<div class='panel'>
+	</div>
+</div>
+
+<div id="page" class="hfeed site manage-page">
+<div id="main" class="wrapper">
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+							
+	<article id="post-294" class="post-294 page type-page status-publish hentry">
+		<header class="entry-header">
+												<h1 class="entry-title">Make your first Node</h1>
+		</header>
+
+		<div class="entry-content">
+			<p><script src="http://nodelua.org/wp-content/themes/developer/js/ace-builds/ace.js" type="text/javascript" charset="utf-8"></script></p>
+<div class="instructions">You could use any ESP8266 module available as your Node. After flashing the NodeLua firmware into a module, it becomes a &#8220;Node&#8221;. So you can write code in the WebIDE and run it by simply one click. Please following the instructions below to make a Node step by step:</p>
+<p>1. <a target="_blank" href="download_firmware">Download the NodeLua firmware</a></p>
+<p>2. Connect the ESP8266 module with a USB-Serial(TTL) convertor. Boot the module into &#8220;Download mode&#8221; by powering on with GPIO2 pulled up to VCC while GPIO0 and GPIO15 pulled down to GND (1K ~ 4.7K ohm resistors are required, don&#8217;t connect the pins to VCC/GND directly!).</p>
+<p>3. Write the nodelua_8266.fw into ESP8266 with <a target="_blank" href="https://github.com/tommie/esptool">esptool.py</a> (a simple, platform independent, open source replacement for the offical XTCOM tool)<br />
+./esptool.py write_flash 0x00000 nodelua_8266.fw</p>
+<p>4. Pull GPIO0 back to VCC, so the module will boot normally. Open a serial communication program (e.g. minicom on Linux and Mac OS X, with command: minicom -D /dev/ttyUSB0 -b 115200 -c on; or putty on MS Windows) on your PC, connect with baudrate 115200, then power on the module.</p>
+<div class="instruction_code_label">Power on the module. If you can see the following screen, please go on.</div>
+<div class="instruction_code_box">
+<div id="boot_msg" class="code">
+NodeLua 1.0.20141218 (With liblua 5.1.5) Copyright (C) 2014 NodeLua.org free mem=32960<br />
+Please set wifi parameters to connect to an exist AP!<br />
+&gt;
+	</div>
+<p>	<script>
+		codeblock("boot_msg", 6);
+	</script>
+</div>
+<div class="instruction_code_label">Then edit your WIFI information below and copy them one line at a time to the serial port</div>
+<div class="instruction_code_box instruction_code_box_editable">
+<div id="init_code" class="code">wifi.setmode(wifi.STATION)<br />
+wifi.config(&quot;SSID&quot;, &quot;PASSWORD&quot;)
+</div>
+<p>	<script>
+		codeblock("init_code", 6, true);
+	</script>
+</div>
+<p>5. <a target="_blank" href="manage_product_add">Create a project</a> in the WebIDE</p>
+<p>6, <a target="_blank" href="manage_module_instance_create">Create a Node</a> and get the Node initialization script in the WebIDE.</p>
+<p>7. Copy the Node initialization script to the serial port</p>
+<p>8. Reboot your Node to complete.</p>
+<p>Any problem? <a href="startup">Let&#8217;s discuss here</a>
+</div>
+					</div><!-- .entry-content -->
+		<footer class="entry-meta">
+					</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+				
+<div id="comments" class="comments-area">
+
+	
+	
+	
+</div><!-- #comments .comments-area -->			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+</div><!-- #main .wrapper -->
+</div><!-- #page -->
+
+	<footer id="colophon" role="contentinfo">
+		<div class="site-info">
+			咕噜喵 版权所有
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #wrapper -->
+
+<script type='text/javascript' src='http://nodelua.org/wp-content/plugins/bbpress/templates/default/js/editor.js?ver=2.5.7-5693'></script>
+<script type='text/javascript' src='http://nodelua.org/wp-content/themes/developer/js/navigation.js?ver=1.0'></script>
+<script type='text/javascript' src='http://nodelua.org/wp-includes/js/wp-embed.min.js?ver=4.4'></script>
+</body>
+</html>

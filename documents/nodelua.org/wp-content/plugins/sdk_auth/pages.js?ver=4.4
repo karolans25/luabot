@@ -1,0 +1,562 @@
+function getParameterByName(name)
+{
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+function current_appid()
+{
+	return getParameterByName("appid");
+}
+function try_using_guest()
+{
+	$('#user_login').val('guest');
+	$('#user_pass').val('guest');
+	$('#loginformform').submit();
+}
+function codeblock(divid, lines, editable)
+{
+	var editor = ace.edit(divid);
+	editor.setTheme("ace/theme/tomorrow_night");
+	editor.getSession().setMode("ace/mode/lua");
+	editor.getSession().setUseSoftTabs(false);
+	editor.renderer.setShowGutter(false);
+	if (!editable)
+	{
+		editor.setHighlightActiveLine(false);
+		editor.setReadOnly(true);
+	}
+	editor.setOptions({
+		maxLines: lines,
+		minLines: lines
+	});
+}
+
+function upload_code(url, templateid, productid, editorid, succ_cb)
+{
+	var editor = ace.edit(editorid);
+	var code = editor.getValue();
+	if (code == '')
+	{
+		return;
+	}
+	var jqxhr = $.post( url, {code: code, templateid: templateid, productid: productid}, function(data)
+	{
+		var dataObj = JSON.parse(data);
+		if (dataObj.succ == 1)
+		{
+			if (succ_cb)
+			{
+				succ_cb();
+			}
+			else
+			{
+				showMessage(MESSAGE_TYPE.NOTICE, "Success!", 1000);
+			}
+		}
+		else
+		{
+			showMessage(MESSAGE_TYPE.ERROR, dataObj.msg ? dataObj.msg : "Unknown error 1", 1000);
+		}
+	})
+	.fail(function() {
+		showMessage(MESSAGE_TYPE.ERROR, "Attation! Save failed! Try refresh the page after copy your code!", 1000);
+	});
+}
+function download_code(editorid)
+{
+	var editor = ace.edit(editorid);
+	var jqxhr = $.post( window.ajax_url + "function_product_code_download", {productid: window.current_productid}, function(data)
+	{
+        var innerHTML = '<table class="data-load" id="cloud-datas-table"><tbody>';
+		var dataObj = JSON.parse(data);
+		if (dataObj.succ == 1)
+		{
+			editor.setValue(dataObj.code, 1);
+		}
+		else
+		{
+			showMessage(MESSAGE_TYPE.ERROR, dataObj.msg ? dataObj.msg : "Error", 1000);
+		}
+	})
+	.fail(function() {
+		showMessage(MESSAGE_TYPE.ERROR, "Something is wrong, try refresh the page later", 1000);
+	});
+}
+
+function run_on_node()
+{
+	showMessage(MESSAGE_TYPE.NOTICE, "Launching...");
+    var jqxhr = $.post( window.ajax_url + "function_debug_run", {productid: window.current_productid}, function(data)
+    {
+    	var dataObj = JSON.parse(data);
+    	if (dataObj.succ == 1)
+    	{
+			var jqxhr = $.get( "http://"+window.nodeapi_url+"/api/project/run?pid="+window.current_productid+"&auth_opt="+window.auth_for_nodeapi, function(content)
+			{
+				var dataObj = content;
+				if (dataObj.succ === 1)
+				{
+					showMessage(MESSAGE_TYPE.NOTICE, "Success!", 1000);
+				}
+				else
+				{
+					showMessage(MESSAGE_TYPE.WARNING, dataObj.msg ? dataObj.msg : "Error to run, errcode=1" ); //TODO: unavaliable wording
+				}
+			})
+			.fail(function() {
+				showMessage(MESSAGE_TYPE.WARNING, "Error to run, errcode=2" ); //TODO: unavaliable wording
+			});
+    	}
+    	else if (dataObj.succ == -1)
+    	{
+    		showMessage(MESSAGE_TYPE.WARNING, dataObj.msg ? dataObj.msg : "Error to run, errcode=3");
+    	}
+    	else
+    	{
+    		showMessage(MESSAGE_TYPE.WARNING, dataObj.msg ? dataObj.msg : "Error to run, errcode=4", 1000);
+    	}
+    })
+    .fail(function() {
+    	showMessage(MESSAGE_TYPE.WARNING, "Error to run, errcode=5", 1000);
+    });
+}
+
+function set_debug_node(miid)
+{
+	showMessage(MESSAGE_TYPE.NOTICE, "Loading...");
+    var jqxhr = $.post( window.ajax_url + "function_set_debug_node", {productid: window.current_productid, miid: miid}, function(data)
+    {
+    	var dataObj = JSON.parse(data);
+    	if (dataObj.succ == 1)
+    	{
+			var jqxhr = $.get( "http://"+window.nodeapi_url+"/api/project/debugnode?pid="+window.current_productid+"&old_miid="+dataObj.old_miid+"&auth_opt="+window.auth_for_nodeapi, function(content)
+			{
+				var dataObj = content;
+				if (dataObj.succ === 1)
+				{
+					showMessage(MESSAGE_TYPE.NOTICE, "Success!", 1000);
+					window.location.reload();
+				}
+				else
+				{
+					showMessage(MESSAGE_TYPE.WARNING, dataObj.msg ? dataObj.msg : "Error, errcode=1" ); //TODO: unavaliable wording
+				}
+			})
+			.fail(function() {
+				showMessage(MESSAGE_TYPE.WARNING, "Server is down, please try again later~" ); //TODO: unavaliable wording
+			});
+    	}
+    	else
+    	{
+    		showMessage(MESSAGE_TYPE.WARNING, dataObj.msg ? dataObj.msg : "Error, errcode=3", 1000);
+    	}
+    })
+    .fail(function() {
+    	showMessage(MESSAGE_TYPE.WARNING, "Error, errcode=4", 1000);
+    });
+}
+
+function debug_output(from, level, s, e)
+{
+	if (from != "")
+	{
+		s="["+from+"] "+s;
+	}
+    console.log(s, e);
+    var output = $("#output");
+	var auto_scroll = ((output[0].scrollHeight - output[0].scrollTop) < output.height() + 40);
+    var p = document.createElement("p");
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    var time = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
+    p.textContent = "[" + time + "] " + s;
+    p.setAttribute("class", (level == MESSAGE_TYPE.ERROR ? "error" : ( level == MESSAGE_TYPE.WARNING ? "warning" : ( level == MESSAGE_TYPE.NOTICE ? "notice" : "verbose"))));
+    output[0].appendChild(p);
+    if (output.children().length > 1000)
+    {
+        output[0].removeChild(output[0].children[0]);
+    }
+	if (auto_scroll)
+	{
+		output.animate({ scrollTop: output[0].scrollHeight }, 0);
+	}
+}
+
+function ws_check_browser()
+{
+    if (window.WebSocket)
+    {
+    }
+    else
+    {
+        debug_output("WebIDE", MESSAGE_TYPE.ERROR, "Sorry, your browser does not support full features for debugging. Try Chrome, Firefox or IE10+");
+    }
+}
+function ws_setup()
+{
+    var wsServer = 'ws://'+window.nodeapi_url+':80/api/project/output?pid='+window.current_productid+"&auth_opt="+window.auth_for_nodeapi;
+    var ws = new WebSocket(wsServer);
+
+    ws.onopen = function (e)
+    {
+        debug_output("WebIDE", MESSAGE_TYPE.NOTICE, "Connected",e);
+        ws.timer = setInterval(function() {
+            ws.send(JSON.stringify({"type": "ping"}));
+        }, 30000 );
+        //sendMessage("Conan");
+    }
+
+    ws.onclose = function (e)
+    {
+        debug_output("WebIDE", MESSAGE_TYPE.WARNING, "Disconnected",e);
+        clearInterval(ws.timer);
+		setTimeout(function()
+		{
+			ws_setup();
+		}, 2000);
+    }
+
+    ws.onmessage = function(e)
+    {
+		var dataObj = JSON.parse(e.data);
+        if (dataObj.type == "output")
+        {
+            debug_output("", MESSAGE_TYPE.VERBOSE, dataObj.msg, e);
+        }
+        else if (dataObj.type == "reconnect")
+        {
+			debug_output("WebIDE", MESSAGE_TYPE.NOTICE, "Debugging Node changed!", e);
+			ws.close();
+		}
+        else if (dataObj.type == "node_status")
+        {
+            if (dataObj.status == 1)
+            {
+                debug_output("WebIDE", MESSAGE_TYPE.NOTICE, "Debugging Node is online", e);
+            }
+            else
+            {
+                debug_output("WebIDE", MESSAGE_TYPE.WARNING, "Debugging Node is offline", e);
+            }
+		}
+        else if (dataObj.type == "error")
+        {
+            if (dataObj.msg == "Please set a debugging Node!")
+            {
+                //TODO: tutorial wording!!!
+                debug_output("WebIDE", MESSAGE_TYPE.WARNING, "" + dataObj.msg, e);
+            }
+            else
+            {
+                debug_output("WebIDE", MESSAGE_TYPE.ERROR, "Error: " + dataObj.msg, e);
+            }
+        }
+        else if (dataObj.type == "ping")
+        {
+            ws.send(JSON.stringify({"type": "pong"}));
+        }
+        else if (dataObj.type == "pong")
+        {
+        }
+
+        //ws.close();
+    }
+
+    ws.onerror = function (e)
+    {
+        debug_output("WebIDE", MESSAGE_TYPE.ERROR, "Server is down, please try again later~", e);
+    }
+
+    var sendMessage = function(msg)
+    {
+        ws.send(msg);
+        debug_output("WebIDE", MESSAGE_TYPE.WARNING, "SEND : "+ msg);
+    }
+}
+
+// function show_datatype_selector($html_name, $selected, $disabled = FALSE)
+// {
+// 	?>
+// 	<select name="<?php echo $html_name; ?>" id="<?php echo $html_name; ?>" <?php echo ($disabled?'disabled':'');?>>
+// 	<?php
+// 		$cloud_data_types = get_cloud_data_types();
+// 		foreach ($cloud_data_types as $line)
+// 		{
+// 			$type_id = $line['id'];
+// 			$name = $line['name'];
+// 	?>
+// 			<option value="<?php echo $type_id;?>" <?php echo ($type_id == $selected ? 'selected':'');?>><?php echo $name;?></option>
+// 	<?php
+// 		}
+// 	?>
+// 	</select>
+// 	<?php
+// }
+
+function prepare_for_create_simple_template()
+{
+    $('#id_auth_template_cloudid').val("");
+    $('#id_auth_template_name').val("");
+    $('#id_auth_template_data_type').val("0");
+    $('#cloud-img-readable').hide();
+    $('#cloud-img-writable').show();
+    $('#id_auth_template_dir').val("0");
+}
+function on_dir_selector_changed(dir)
+{
+    if (dir == "0")
+    {
+        $('#cloud-img-readable').hide();
+        $('#cloud-img-writable').show();
+    }
+    else
+    {
+        $('#cloud-img-readable').show();
+        $('#cloud-img-writable').hide();
+    }
+}
+function prepare_for_modify_cloud_dataset(auth, miid, cloudid, name, data_type_id, dir)
+{
+    $('#id_auth_template_cloudid').val(cloudid);
+    $('#id_auth_template_name').val(name);
+    $('#id_auth_template_data_type').val(data_type_id);
+    on_dir_selector_changed(dir);
+    $('#id_auth_template_dir').val(dir);
+
+	if (miid)
+	{
+		var data = {
+			labels: [],
+			datasets: [
+				{
+					label: "My First dataset",
+					fillColor: "rgba(220,220,220,0.2)",
+					strokeColor: "rgba(220,220,220,1)",
+					pointColor: "rgba(220,220,220,1)",
+					pointStrokeColor: "#fff",
+					pointHighlightFill: "#fff",
+					pointHighlightStroke: "rgba(220,220,220,1)",
+					data: []
+				},
+			]
+		};
+		var jqxhr = $.get( "http://"+window.nodeapi_url+"/api/cloud/data/query?miid="+miid+"&cloud_id="+cloudid+"&x=debug&auth_opt="+auth, function(content)
+		{
+			var dataObj = content;
+			if (dataObj.succ === 1)
+			{
+				if (dataObj.datasets.length > 0 && dataObj.labels.length > 0)
+				{
+					data.datasets[0].data = dataObj.datasets[0].data;
+					data.labels = dataObj.labels;
+
+					var min = Math.min.apply(null, data.datasets[0].data);
+					var max = Math.max.apply(null, data.datasets[0].data);
+					if (max == min)
+					{
+						max ++;
+					}
+					var opt = {
+						scaleOverride : true,
+						scaleSteps : Math.round(max - min) + 2,
+						scaleStepWidth : 1,
+						scaleStartValue : min - 1
+					}
+					var domSvg = $("#cloud_data_chart").get(0);
+					if (domSvg.myLineChart !== undefined)
+					{
+						domSvg.myLineChart.destroy();
+					}
+					var ctx = domSvg.getContext("2d");
+					domSvg.myLineChart = new Chart(ctx).Line(data, opt);
+				}
+				else
+				{
+					alert( "error" );
+				}
+			}
+			else
+			{
+    			alert( dataObj.msg ? dataObj.msg : "error" );
+			}
+		})
+		.fail(function() {
+			alert( "error" );
+		});
+
+		$('#cloud_data_chart').show();
+		$('#set_debug_notify').hide();
+	}
+	else
+	{
+		$('#cloud_data_chart').hide();
+		$('#set_debug_notify').show();
+	}
+}
+function add_cloud_dataset()
+{
+    var cloudid = $('#id_auth_template_cloudid').val();
+    var name = $('#id_auth_template_name').val();
+    var data_type_id = $('#id_auth_template_data_type').val();
+    var dir = $('#id_auth_template_dir').val();
+    var url = window.ajax_url;
+
+    if (cloudid == "")
+    { //create
+        url = url + "function_add_cloud_dataset";
+    }
+    else
+    { //modify
+        url = url + "function_modify_cloud_dataset";
+    }
+	var jqxhr = $.post( url, {name: name, tid: window.current_tid, cloudid: cloudid, data_type_id: data_type_id, dir: dir}, function(data)
+	{
+		var dataObj = JSON.parse(data);
+		if (dataObj.succ == 1)
+		{
+			load_cloud_datasets("cloud-datasets");
+			tb_remove();
+		}
+		else
+		{
+			alert( dataObj.msg ? dataObj.msg : "error" );
+		}
+	})
+	.fail(function() {
+		alert( "error" );
+	});
+}
+function delete_cloud_datasets(cloudid)
+{
+    if (confirm('Are you sure?'))
+    {
+    	var jqxhr = $.post( window.ajax_url + "function_delete_cloud_dataset", {cloudid: cloudid}, function(data)
+    	{
+    		var dataObj = JSON.parse(data);
+    		if (dataObj.succ == 1)
+    		{
+    			load_cloud_datasets("cloud-datasets");
+    			tb_remove();
+    		}
+    		else
+    		{
+    			alert( dataObj.msg ? dataObj.msg : "error" );
+    		}
+    	})
+    	.fail(function() {
+    		alert( "error" );
+    	});
+    }
+}
+function load_cloud_datasets(dom_node_id)
+{
+	var parent = $('#'+dom_node_id);
+
+	var jqxhr = $.post( window.ajax_url + "function_list_cloud_dataset", {tid: window.current_tid, with_deleted: 0}, function(data)
+	{
+        var innerHTML = '<table class="data-load" id="cloud-datas-table"><tbody>';
+		var dataObj = JSON.parse(data);
+		if (dataObj.succ == 1)
+		{
+            for (i = 0; i < dataObj.data.length; i ++)
+            {
+                var info = dataObj.data[i];
+    			innerHTML += '<tr class="data-odd-row"><td class="cloud-data-row-name">';
+    			innerHTML += '<a class="thickbox" onclick=\'prepare_for_modify_cloud_dataset("'+window.auth_for_nodeapi+'", "'+window.current_product_debug_miid+'", "'+info['id']+'", "'+info['name']+'", "'+info['data_type_id']+'", "'+info['dir']+'")\' href="#TB_inline?width=200&height=560&inlineId=id_popup_box_cloud_data">';
+    			innerHTML += info['name'];
+    			innerHTML += '</a>';
+    			innerHTML += '<input type="button" class="delete_btn" onclick="delete_cloud_datasets(\''+info['id']+'\');">';
+    			innerHTML += '<br />(CloudID='+info['id']+')';
+    			innerHTML += '</td></tr>';
+
+    			innerHTML += '<tr><td>';
+
+    			innerHTML += '<img id="cloud-img-cloud" src="' + window.stylesheet_directory + '/image/cloud_cloud.png">';
+    			innerHTML += '<div id="cloud-box">';
+    			innerHTML += '	<div>' + window.cloud_data_types[ info['data_type_id'] ] + '</div>';
+    			innerHTML += '	<img id="cloud-img-array" src="' + window.stylesheet_directory + '/image/' + (info['dir'] == 1 ? 'cloud_array_readable.png' : 'cloud_array_writable.png') + '">';
+    			innerHTML += '	<div id="cloud-dir">' + window.cloud_data_dir[ info['dir'] ] + '</div>';
+    			innerHTML += '</div>';
+    			innerHTML += '<img id="cloud-img-module" src="' + window.stylesheet_directory + '/image/cloud_module.png">';
+
+    			innerHTML += '</td></tr>';
+            }
+            innerHTML += '</tbody></table>';
+            parent[0].innerHTML = innerHTML;
+		}
+		else
+		{
+			alert( "error" );
+		}
+	})
+	.fail(function() {
+		alert( "error" );
+	});
+}
+
+function show_node_info(miid, sec, name, pid)
+{
+    $('#id_auth_miid').val(miid);
+    $('#id_auth_name').val(name);
+    $('#id_auth_products').val(pid);
+    $('#id_auth_init_script').text('node.setid("'+miid+'", "'+sec+'")');
+}
+function create_node(product_id)
+{
+    var url = window.ajax_url + "function_create_module_instance";
+	var jqxhr = $.post( url, {product_id: product_id}, function(data)
+	{
+		var dataObj = JSON.parse(data);
+		if (dataObj.succ == 1)
+		{
+            $('#id_auth_create_info').text('node.setid("'+dataObj.miid+'", "'+dataObj.security_hash+'")');
+            $('#id_auth_create_title1').hide();
+            $('#id_auth_create_title2').show();
+            $('#id_auth_create_create').hide();
+            $('#id_auth_create_close').show();
+            $('#id_auth_create_how_to_activate').attr("href", window.site_url + '/manage_module_instance_instruction?miid='+dataObj.miid+'&productid='+product_id);
+		}
+		else
+		{
+			alert( dataObj.msg ? dataObj.msg : "error" );
+		}
+	})
+	.fail(function() {
+		alert( "error" );
+	});
+}
+function prepare_create_node()
+{
+    $('#id_auth_create_info').text('');
+    $('#id_auth_create_title1').show();
+    $('#id_auth_create_title2').hide();
+    $('#id_auth_create_create').show();
+    $('#id_auth_create_close').hide();
+}
+function modify_node_info()
+{
+    var miid = $('#id_auth_miid').val();
+    var name = $('#id_auth_name').val();
+    var product_id = $('#id_auth_products').val();
+    var url = window.ajax_url + "function_modify_module_instance";
+
+	var jqxhr = $.post( url, {miid: miid, name: name, product_id: product_id}, function(data)
+	{
+		var dataObj = JSON.parse(data);
+		if (dataObj.succ == 1)
+		{
+			location.reload();
+		}
+		else
+		{
+			alert( dataObj.msg ? dataObj.msg : "error" );
+		}
+	})
+	.fail(function() {
+		alert( "error" );
+	});
+}
