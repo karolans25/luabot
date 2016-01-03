@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[papersize={214mm,160mm},tmargin=10mm, 
+bmargin=10mm,lmargin=10mm, rmargin=10mm]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsfonts, latexsym }
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsfonts}
+
+%Agregar imágenes entre párrafos
+\usepackage{wrapfig}	%Figuras al lado del texto
+\usepackage[rflt]{floatflt} %Figuras flotantes entre el texto
+
+
+%Uso de colores
+\usepackage[usenames]{color}
+
+%Tipo de letra usada en el documento
+\usepackage{mathpazo} %palatino
+
+\usepackage{graphicx}%librería para insertar gráficos.
+%Hiper referencias y ocultando el link (hidelinks)
+\usepackage[hidelinks]{hyperref} %Para hiper referencias."
+%Referencias externas
+\usepackage{xr}
+\usepackage{caption} %Captación sin float
+
+%No indentar
+\setlength{\parindent}{0cm}
+
+%Para Insertar Código
+\usepackage{minted}
+\definecolor{consola}{rgb}{0.95,0.85,0.00}
+
+%########################################
+%####### CAJAS
+\usepackage{tikz,tkz-tab} %
+\usetikzlibrary{matrix,arrows, positioning,shadows,shadings,backgrounds,
+calc, shapes, tikzmark}
+\usepackage{tcolorbox, empheq} %
+\tcbuselibrary{skins,breakable,listings,theorems}
+%########################################
+
+%Manejo de footnote y headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+%Dont ident
+\setlength\parindent{0pt}
+
+\twocolumn
+
+%Ruta de imagenes
+\graphicspath{imag/}
+
+\title{Manual y Curso Tarjeta\\ PINGUINOTUX}
+\author{Carolina Gómez, Julián Murcia, Johnny Cubides.   
+    \\ {\small (crpulidog, jamurcian, jgcubidesc)@unal.edu.co}}
+
+\begin{document}
+\tableofcontents
+\usemintedstyle{tarc}
+
+\input{src/section1.tex}
+
+\end{document}

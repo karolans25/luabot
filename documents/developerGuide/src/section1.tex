@@ -1,0 +1,93 @@
+\section{Blockly LuaBot}
+
+\subsection{Insertar Categoría en la caja de herramientas} 
+
+Para insertar una nueva categoría en la caja de herramientas de blockly 
+basta con agregar las siguientes líneas en el fichero \textit{index.html}
+
+\begin{minted}[bgcolor=white]{XML}
+<category name=``nueva_categoria''>
+	... Contenido ...
+</category>
+\end{minted}
+
+Donde \textbf{nueva\_categoria} se sustituye por la categoría que se está
+creando.
+
+Ejemplo: en el \textit{index.html} se agregará una nueva categoría llamada
+Pines
+
+\begin{minted}[bgcolor=white]{HTML}
+<!DOCTYPE html>
+<html>
+<head>
+... Contenido ...
+</head>
+<body>
+... Contenido ...
+<xml id=``toolbox'' style=``display: none''>
+... Contenido ...
+<sep></sep>
+<!-- A continuacion la nueva categoria -->
+<category name=``Pines''>
+	... Contenido ...
+</category>
+</xml>
+</body>
+</html>
+\end{minted}
+
+
+\subsection{Insertar Herramienta en Categoría}
+
+Para insertar una herramienta basta con agregar la siguiente línea:
+
+\begin{minted}[bgcolor=white]{XML}
+<block type=``nueva_herramienta''></block>
+\end{minted}
+
+Donde \textbf{nueva\_herramienta} se sustituye por el nombre de la 
+herramienta creada con \textit{blocklyFactory}
+
+Ejemplo: En el \textit{index.html} se agregará la herramienta gpio\_mode 
+en la categoría Pines.
+
+\begin{minted}[bgcolor=white]{HTML}
+<!DOCTYPE html>
+<html>
+<head>
+... Contenido ...
+</head>
+<body>
+... Contenido ...
+<xml id=``toolbox'' style=``display: none''>
+... Contenido ...
+<sep></sep>
+<category name=``Pines''>
+<!-- A continuacion la nueva herramienta -->
+	<block type=``gpio_mode''></block>
+</category>
+</xml>
+</body>
+</html>
+\end{minted}
+
+\subsection{Crear Nueva Herramienta con BlocklyFactory}
+
+\textit{BlocklyFactory} Permite crear nuevos bloques (las herramientas) 
+de una manera gráfica.
+
+Como se puede ver en la imagen \ref{fig:blocklyfactory}
+
+\onecolumn
+
+%Imagen para IEEE
+\begin{figure}[hptp]
+    \centering
+    \includegraphics[scale=0.4]{imag/blocklyfactory.png}
+    \caption{BlocklyFactory}
+    \label{fig:blocklyfactory}
+\end{figure}
+\smallskip
+
+\twocolumn

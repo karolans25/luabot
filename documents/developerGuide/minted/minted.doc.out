@@ -1,0 +1,7 @@
+  \begin{listing}[H]
+    \mint{cl}/(car (cons 1 '(2)))/
+    \caption{Example of a listing.}
+    \label{lst:example}
+  \end{listing}
+
+  Listing \ref{lst:example} contains an example of a listing.

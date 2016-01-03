@@ -1,0 +1,29 @@
+{
+  "name": "jardin",
+  "version": "1.0.0",
+  "description": "proyectoTecnicas",
+  "main": "servidor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "johnny",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "no"
+  },
+  "keywords": [
+    "tecnicas"
+  ],
+  "dependencies": {
+    "express": "^4.13.3",
+    "favicon": "^0.0.2",
+    "jade": "^1.11.0",
+    "node-gyp": "^3.0.3",
+    "node-pre-gyp": "^0.6.13",
+    "routes": "^2.1.0",
+    "serialport": "^2.0.2",
+    "socket.io": "^1.3.7"
+  },
+  "devDependencies": {}
+}

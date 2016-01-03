@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Mi Jardin</h1>
+
+
+<button type="button" onclick="leer()">Refresh Sensors</button><br/> 
+<textarea id="salida0" name="comentarios" rows="10" cols="40">
+Salida de Sensores</textarea><br/>
+<button type="button" onclick="actuador('a')">Open Door</button> 
+<button type="button" onclick="actuador('b')">Close Door</button><br/> 
+<button type="button" onclick="actuador('c')">Start Disipador</button> 
+<button type="button" onclick="actuador('d')">Stop Disipador</button><br/>
+<button type="button" onclick="actuador('e')">Start Riego</button> 
+<button type="button" onclick="actuador('f')">Stop Riego</button><br/> 
+<button type="button" onclick="actuador('1')">Luces 1</button> 
+<button type="button" onclick="actuador('2')">Luces 2</button> 
+<button type="button" onclick="actuador('3')">Luces 3</button> 
+<button type="button" onclick="actuador('4')">Luces 4</button><br/> 
+<input id="salida1" type="text" name="tipo">
+<input id="terminal" type="text" name="nombre">
+<input id="terminal1" type="text" name="tipo">
+
+<p id="salida1"></p>
+
+<script 
+language="javascript" 
+src ="socket.io.js">
+</script>
+<script language="javascript" src = "action.js">
+</script>
+
+</body>
+</html> 
+

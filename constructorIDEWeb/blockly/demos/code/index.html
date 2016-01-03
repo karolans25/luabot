@@ -14,6 +14,9 @@
   <script src="../../dart_compressed.js"></script>
   <script src="../../lua_compressed.js"></script>
   <script src="code.js"></script>
+  <script src="gpio.js"></script>
+  <script language="javascript" src="socket.io.js"></script>
+  <script language="javascript" src="cliente.js"></script>
 </head>
 <body>
   <table width="100%" height="100%">
@@ -22,7 +25,10 @@
         <h1><a href="https://developers.google.com/blockly/">Blockly</a>&rlm; &gt;
           <a href="../index.html">Demos</a>&rlm; &gt;
           <span id="title">...</span>
-        </h1>
+        	<button type="button" onclick="saveFile()">Save File</button>
+        	<button type="button" onclick="upload()">Upload</button>
+			<input id = "terminal0" type = "text" name = Terminal">
+		</h1>
       </td>
       <td class="farSide">
         <select id="languageMenu"></select>
@@ -374,6 +380,9 @@
     <sep></sep>
     <category id="catVariables" colour="330" custom="VARIABLE"></category>
     <category id="catFunctions" colour="290" custom="PROCEDURE"></category>
+    <category name="Pines">
+      <block type="gpio_mode"></block>
+    </category>"
   </xml>
 
 </body>

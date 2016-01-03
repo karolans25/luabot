@@ -1,0 +1,82 @@
+####################################################
+PROBLEMA
+####################################################
+sudo npm install  serialport
+npm WARN package.json asap@1.0.0 No repository field.
+npm WARN package.json css@1.0.8 No repository field.
+npm WARN package.json css-parse@1.0.4 No repository field.
+npm WARN package.json css-stringify@1.0.5 No repository field.
+\
+> serialport@2.0.5 install /home/johnny/proyectos/luabot/serverNode/node_modules/serialport
+> node-pre-gyp install --fallback-to-build
+
+/usr/bin/env: node: No such file or directory
+npm WARN This failure might be due to the use of legacy binary "node"
+npm WARN For further explanations, please read
+/usr/share/doc/nodejs/README.Debian
+ 
+npm ERR! serialport@2.0.5 install: `node-pre-gyp install --fallback-to-build`
+npm ERR! Exit status 127
+npm ERR! 
+npm ERR! Failed at the serialport@2.0.5 install script.
+npm ERR! This is most likely a problem with the serialport package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node-pre-gyp install --fallback-to-build
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls serialport
+npm ERR! There is likely additional logging output above.
+
+npm ERR! System Linux 3.16.0-4-686-pae
+npm ERR! command "/usr/bin/nodejs" "/usr/bin/npm" "install" "serialport"
+npm ERR! cwd /home/johnny/proyectos/luabot/serverNode
+npm ERR! node -v v4.2.2
+npm ERR! npm -v 1.4.21
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /home/johnny/proyectos/luabot/serverNode/npm-debug.log
+npm ERR! not ok code 0
+
+###########################################################
+SOLUCION
+###########################################################
+
+johnny@debian:serverNode$ sudo apt-get install nodejs-legacy
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following NEW packages will be installed:
+  nodejs-legacy
+0 upgraded, 1 newly installed, 0 to remove and 602 not upgraded.
+Need to get 193 kB of archives.
+After this operation, 231 kB of additional disk space will be used.
+Get:1 http://ftp.mx.debian.org/debian/ stretch/main nodejs-legacy all 4.2.2~dfsg-1 [193 kB]
+Fetched 193 kB in 8s (22.4 kB/s)                                               
+Selecting previously unselected package nodejs-legacy.
+(Reading database ... 285269 files and directories currently installed.)
+Preparing to unpack .../nodejs-legacy_4.2.2~dfsg-1_all.deb ...
+Unpacking nodejs-legacy (4.2.2~dfsg-1) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up nodejs-legacy (4.2.2~dfsg-1) ...
+
+#####################################################
+INSTALACION
+#####################################################
+
+johnny@debian:serverNode$ sudo npm install serialport
+npm WARN package.json asap@1.0.0 No repository field.
+npm WARN package.json css@1.0.8 No repository field.
+npm WARN package.json css-parse@1.0.4 No repository field.
+npm WARN package.json css-stringify@1.0.5 No repository field.
+/
+> serialport@2.0.5 install /home/johnny/proyectos/luabot/serverNode/node_modules/serialport
+> node-pre-gyp install --fallback-to-build
+
+[serialport] Success: "/home/johnny/proyectos/luabot/serverNode/node_modules/serialport/build/Release/node-v46-linux-ia32/serialport.node" is installed via remote
+serialport@2.0.5 node_modules/serialport
+├── bindings@1.2.1
+├── async@0.9.0
+├── sf@0.1.7
+├── optimist@0.6.1
+└── nan@2.0.9

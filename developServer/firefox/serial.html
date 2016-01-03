@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+	
+<body onload="load()">
+        <object id="plugin0" type="application/x-juart" width="0" height="0" >
+            <param name="onload" value="pluginLoaded"  />
+        </object><br />
+        <h1>jUART Serial Port Echo Test</h1><br/>
+        This test will echo the data you sent through serial port.
+</body>
+
+<h1>My First JavaScript</h1>
+
+<button type="button" onclick="myFunction()">Submit</button>
+
+<script>
+
+function myFunction() {
+var baud = 9600; // 9600, 115200
+var parity = 0; //0-> none, 1 -> odd, 2 -> even
+var csice = 8; // 5, 6, 7 ,8
+var flow = 0; // flow control, 0 -> none, 1 -> software, 2 -> hardware
+var stop = 0; // 0 -> none, 1 -> onepointfive, 2 -> two
+var ser = plugin().Serial;
+ser.open("/dev/ttyUSB0");
+ser.set_option(baud, parity, csize, flow, stop);
+//ser.recv_callback(recv); //Callback function for recieve data
+	ser.send('x');
+	ser.send('\n');
+}
+</script>
+<p id="demo"></p>
+
+</body>
+</html> 

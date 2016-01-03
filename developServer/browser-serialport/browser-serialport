@@ -1,0 +1,1017 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=1020">
+    
+    
+    <title>garrows/browser-serialport · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="garrows/browser-serialport" name="twitter:title" /><meta content="browser-serialport - Robots in the browser. Just like node-serialport but for browser/chrome apps." name="twitter:description" /><meta content="https://avatars0.githubusercontent.com/u/205256?v=3&amp;s=400" name="twitter:image:src" />
+      <meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="https://avatars0.githubusercontent.com/u/205256?v=3&amp;s=400" property="og:image" /><meta content="garrows/browser-serialport" property="og:title" /><meta content="https://github.com/garrows/browser-serialport" property="og:url" /><meta content="browser-serialport - Robots in the browser. Just like node-serialport but for browser/chrome apps." property="og:description" />
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    
+    <meta name="pjax-timeout" content="1000">
+    
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient>
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="BAB36372:6924:1FDA7FBF:56773704" name="octolytics-dimension-request_id" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;" data-pjax-transient="true" name="analytics-location" />
+<meta content="Rails, view, files#disambiguate" data-pjax-transient="true" name="analytics-event" />
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged Out">
+
+
+
+        <meta name="hostname" content="github.com">
+    <meta name="user-login" content="">
+
+        <meta name="expected-hostname" content="github.com">
+
+      <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0">
+      <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+    <meta content="df9d0af889237312b71ca8f83cd8c40b84dc2438" name="form-nonce" />
+
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-2cf579a6b28dd247fe7895e0539371525ae8c3bf4e52e45e893bb6b09ee597df.css" media="all" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2-4280061368be57917309c32e14e922e1b4575c8e586c5aa9f6feeb11280c7a2f.css" media="all" rel="stylesheet" />
+    
+    
+
+
+    <meta http-equiv="x-pjax-version" content="e884612b86c6e4ec31651647e12e417b">
+
+      
+  <meta name="description" content="browser-serialport - Robots in the browser. Just like node-serialport but for browser/chrome apps.">
+  <meta name="go-import" content="github.com/garrows/browser-serialport git https://github.com/garrows/browser-serialport.git">
+
+  <meta content="205256" name="octolytics-dimension-user_id" /><meta content="garrows" name="octolytics-dimension-user_login" /><meta content="13459795" name="octolytics-dimension-repository_id" /><meta content="garrows/browser-serialport" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="13459795" name="octolytics-dimension-repository_network_root_id" /><meta content="garrows/browser-serialport" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/garrows/browser-serialport/commits/master.atom" rel="alternate" title="Recent Commits to browser-serialport:master" type="application/atom+xml">
+
+  </head>
+
+
+  <body class="logged_out   env-production  vis-public">
+    <a href="browser-serialport#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+
+    
+    
+    
+
+
+
+      
+      <div class="header header-logged-out" role="banner">
+  <div class="container clearfix">
+
+    <a class="header-logo-wordmark" href="https://github.com/" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+      <span class="mega-octicon octicon-logo-github"></span>
+    </a>
+
+    <div class="header-actions" role="navigation">
+        <a class="btn btn-primary" href="https://github.com/join" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+      <a class="btn" href="https://github.com/login?return_to=%2Fgarrows%2Fbrowser-serialport" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+    </div>
+
+    <div class="site-search repo-scope js-site-search" role="search">
+      <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/garrows/browser-serialport/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/garrows/browser-serialport/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <label class="js-chromeless-input-container form-control">
+    <div class="scope-badge">This repository</div>
+    <input type="text"
+      class="js-site-search-focus js-site-search-field is-clearable chromeless-input"
+      data-hotkey="s"
+      name="q"
+      placeholder="Search"
+      aria-label="Search this repository"
+      data-global-scope-placeholder="Search GitHub"
+      data-repo-scope-placeholder="Search"
+      tabindex="1"
+      autocapitalize="off">
+  </label>
+</form>
+    </div>
+
+      <ul class="header-nav left" role="navigation">
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://github.com/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://github.com/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://github.com/pricing" data-ga-click="(Logged out) Header, go to pricing, text:pricing">Pricing</a>
+          </li>
+      </ul>
+
+  </div>
+</div>
+
+
+
+    <div id="start-of-content" class="accessibility-aid"></div>
+
+      <div id="js-flash-container">
+</div>
+
+
+    <div role="main" class="main-content">
+        <div itemscope itemtype="http://schema.org/WebPage">
+    <div id="js-repo-pjax-container" class="context-loader-container js-repo-nav-next" data-pjax-container>
+      
+<div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+  <div class="container repohead-details-container">
+
+    
+
+<ul class="pagehead-actions">
+
+  <li>
+      <a href="https://github.com/login?return_to=%2Fgarrows%2Fbrowser-serialport"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to watch a repository" rel="nofollow">
+    <span class="octicon octicon-eye"></span>
+    Watch
+  </a>
+  <a class="social-count" href="https://github.com/garrows/browser-serialport/watchers">
+    8
+  </a>
+
+  </li>
+
+  <li>
+      <a href="https://github.com/login?return_to=%2Fgarrows%2Fbrowser-serialport"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to star a repository" rel="nofollow">
+    <span class="octicon octicon-star "></span>
+    Star
+  </a>
+
+    <a class="social-count js-social-count" href="https://github.com/garrows/browser-serialport/stargazers">
+      63
+    </a>
+
+  </li>
+
+  <li>
+      <a href="https://github.com/login?return_to=%2Fgarrows%2Fbrowser-serialport"
+        class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+        aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <span class="octicon octicon-repo-forked "></span>
+        Fork
+      </a>
+
+    <a href="https://github.com/garrows/browser-serialport/network" class="social-count">
+      25
+    </a>
+  </li>
+</ul>
+
+    <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public ">
+  <span class="octicon octicon-repo "></span>
+  <span class="author"><a href="https://github.com/garrows" class="url fn" itemprop="url" rel="author"><span itemprop="title">garrows</span></a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong><a href="browser-serialport" data-pjax="#js-repo-pjax-container">browser-serialport</a></strong>
+
+  <span class="page-context-loader">
+    <img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+  </span>
+
+</h1>
+
+  </div>
+  <div class="container">
+    
+<nav class="reponav js-repo-nav js-sidenav-container-pjax js-octicon-loaders"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container">
+
+  <a href="browser-serialport" aria-label="Code" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /garrows/browser-serialport">
+    <span class="octicon octicon-code "></span>
+    Code
+</a>
+    <a href="https://github.com/garrows/browser-serialport/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /garrows/browser-serialport/issues">
+      <span class="octicon octicon-issue-opened "></span>
+      Issues
+      <span class="counter">8</span>
+</a>
+  <a href="https://github.com/garrows/browser-serialport/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /garrows/browser-serialport/pulls">
+    <span class="octicon octicon-git-pull-request "></span>
+    Pull requests
+    <span class="counter">0</span>
+</a>
+
+  <a href="https://github.com/garrows/browser-serialport/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /garrows/browser-serialport/pulse">
+    <span class="octicon octicon-pulse "></span>
+    Pulse
+</a>
+  <a href="https://github.com/garrows/browser-serialport/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /garrows/browser-serialport/graphs">
+    <span class="octicon octicon-graph "></span>
+    Graphs
+</a>
+
+</nav>
+
+  </div>
+</div>
+
+<div class="container new-discussion-timeline experiment-repo-nav">
+  <div class="repository-content">
+
+    
+<div class="repository-meta js-details-container">
+  <span class="repository-meta-content">
+        Robots in the browser. Just like node-serialport but for browser/chrome apps.
+  </span>
+
+</div>
+
+
+<div class="overall-summary overall-summary-bottomless">
+
+  <div class="stats-switcher-viewport js-stats-switcher-viewport">
+    <div class="stats-switcher-wrapper">
+    <ul class="numbers-summary">
+      <li class="commits">
+        <a data-pjax href="https://github.com/garrows/browser-serialport/commits/master">
+            <span class="octicon octicon-history "></span>
+            <span class="num text-emphasized">
+              118
+            </span>
+            commits
+        </a>
+      </li>
+      <li>
+        <a data-pjax href="https://github.com/garrows/browser-serialport/branches">
+          <span class="octicon octicon-git-branch "></span>
+          <span class="num text-emphasized">
+            3
+          </span>
+          branches
+        </a>
+      </li>
+
+      <li>
+        <a data-pjax href="https://github.com/garrows/browser-serialport/releases">
+          <span class="octicon octicon-tag "></span>
+          <span class="num text-emphasized">
+            4
+          </span>
+          releases
+        </a>
+      </li>
+
+      <li>
+        
+  <a href="https://github.com/garrows/browser-serialport/graphs/contributors">
+    <span class="octicon octicon-organization "></span>
+    <span class="num text-emphasized">
+      7
+    </span>
+    contributors
+  </a>
+      </li>
+    </ul>
+
+      <div class="repository-lang-stats">
+        <ol class="repository-lang-stats-numbers">
+          <li>
+              <a href="https://github.com/garrows/browser-serialport/search?l=javascript">
+                <span class="color-block language-color" style="background-color:#f1e05a;"></span>
+                <span class="lang">JavaScript</span>
+                <span class="percent">98.3%</span>
+              </a>
+          </li>
+          <li>
+              <span class="other">
+                <span class="color-block language-color" style="background-color:#ededed;"></span>
+                <span class="lang">Other</span>
+                <span class="percent">1.7%</span>
+              </span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <div class="repository-lang-stats-graph js-toggle-lang-stats" title="Click for language details">
+    <span class="language-color" aria-label="JavaScript 98.3%" style="width:98.3%; background-color:#f1e05a;" itemprop="keywords">JavaScript</span>
+    <span class="language-color" aria-label="Other 1.7%" style="width:1.7%; background-color:#ededed;" itemprop="keywords">Other</span>
+  </div>
+
+<include-fragment src="/garrows/browser-serialport/show_partial?partial=tree%2Frecently_touched_branches_list"></include-fragment>
+
+<div class="file-navigation in-mid-page file-navigation-new">
+  <div class="right">
+    <div class="btn-group">
+      
+  <button class="btn btn-sm disabled tooltipped tooltipped-n" aria-label="You must be signed in to make or propose changes" type="button">
+    New file
+  </button>
+
+
+
+      <a href="https://github.com/garrows/browser-serialport/find/master"
+        class="btn btn-sm empty-icon right js-show-file-finder"
+        data-pjax
+        data-hotkey="t"
+        data-ga-click="Repository, find file, location:repo overview">
+        Find file
+      </a>
+    </div>
+      <div class="file-navigation-options" data-multiple>
+
+        <div class="file-navigation-option">
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/users/set_protocol" class="js-set-user-protocol-preference" data-form-nonce="df9d0af889237312b71ca8f83cd8c40b84dc2438" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="ck8189j9tWExY24ynN8UjAy/L/xvalPfsTd2JNht4K/eldwag5cmfUZWdjSeTm1qQaxTenF9OJRYQ2oY82mEgg==" /></div>
+            <input type="hidden" name="protocol_type" value="clone">
+
+            <div class="select-menu js-menu-container js-select-menu">
+              <div class="input-group js-select-button js-zeroclipboard-container">
+                <div class="input-group-button">
+  <button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone HTTPS, location:repo overview">
+    HTTPS
+  </button>
+</div>
+<input type="text" class="input-monospace input-mini js-zeroclipboard-target js-url-field" value="https://github.com/garrows/browser-serialport.git" readonly>
+<div class="input-group-button">
+  <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy "></span></button>
+</div>
+
+              </div>
+
+              <div class="select-menu-modal-holder">
+                <div class="select-menu-modal js-menu-content" aria-hidden="true">
+                  <div class="select-menu-header">
+                    <span aria-label="Close" class="octicon octicon-x js-menu-close" role="button"></span>
+                    <span class="select-menu-title">Choose a clone URL</span>
+                  </div>
+
+                  <div class="select-menu-list js-navigation-container" role="menu">
+                      <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+                        <span class="select-menu-item-icon octicon octicon-check"></span>
+                        <div class="select-menu-item-text">
+                          <input type="radio" name="protocol_selector" value="http" checked>
+                          <span class="select-menu-item-heading">
+                            HTTPS
+                            (recommended)
+                          </span>
+                            <span class="description">
+                              Clone with Git or checkout with SVN using the repository's web address.
+                            </span>
+                          <span class="js-select-button-text hidden-select-button-text">
+                            <div class="input-group-button">
+  <button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone HTTPS, location:repo overview">
+    HTTPS
+  </button>
+</div>
+<input type="text" class="input-monospace input-mini js-zeroclipboard-target js-url-field" value="https://github.com/garrows/browser-serialport.git" readonly>
+<div class="input-group-button">
+  <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy "></span></button>
+</div>
+
+                          </span>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="select-menu-list" role="menu">
+                    <a class="select-menu-item select-menu-action" href="https://help.github.com/articles/which-remote-url-should-i-use" target="_blank">
+                      <span class="select-menu-item-icon octicon octicon-question"></span>
+                      <div class="select-menu-item-text">
+                        Learn more about clone URLs
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+</form>        </div>
+
+        <div class="file-navigation-option">
+</div>
+
+
+        <div class="file-navigation-option">
+          <a href="https://github.com/garrows/browser-serialport/archive/master.zip"
+             class="btn btn-sm"
+             rel="nofollow"
+             data-ga-click="Repository, download zip, location:repo overview">
+            Download ZIP
+          </a>
+        </div>
+      </div>
+  </div>
+
+  
+<div class="select-menu js-menu-container js-select-menu left">
+  <button class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
+    title="master"
+    type="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <i>Branch:</i>
+    <span class="js-select-button css-truncate-target">master</span>
+  </button>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span aria-label="Close" class="octicon octicon-x js-menu-close" role="button"></span>
+        <span class="select-menu-title">Switch branches/tags</span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="browser-serialport#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="browser-serialport#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="https://github.com/garrows/browser-serialport/tree/cordova"
+               data-name="cordova"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="cordova">
+                cordova
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open selected"
+               href="https://github.com/garrows/browser-serialport/tree/master"
+               data-name="master"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="master">
+                master
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="https://github.com/garrows/browser-serialport/tree/update"
+               data-name="update"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="update">
+                update
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/garrows/browser-serialport/tree/v2.0.3"
+                 data-name="v2.0.3"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="v2.0.3">v2.0.3</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/garrows/browser-serialport/tree/v2.0.2"
+                 data-name="v2.0.2"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="v2.0.2">v2.0.2</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/garrows/browser-serialport/tree/v2.0.1"
+                 data-name="v2.0.1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="v2.0.1">v2.0.1</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/garrows/browser-serialport/tree/v2.0.0"
+                 data-name="v2.0.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="v2.0.0">v2.0.0</a>
+            </div>
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+    <a href="https://github.com/garrows/browser-serialport/pull/new/master" class="btn btn-sm btn-primary" data-pjax data-ga-click="Repository, new pull request, location:repo overview">
+      New pull request
+    </a>
+
+  <div class="breadcrumb">
+    
+  </div>
+</div>
+
+
+
+
+  <div class="commit-tease js-details-container">
+    <span class="right">
+      Latest commit
+      <a class="commit-tease-sha" href="https://github.com/garrows/browser-serialport/commit/4855a281079285691f9c8576d10717371a33d5de" data-pjax>
+        4855a28
+      </a>
+      <time datetime="2015-08-07T01:26:10Z" is="relative-time">Aug 6, 2015</time>
+    </span>
+
+
+    <span class="commit-author-section">
+      <img alt="@phated" class="avatar" height="20" src="https://avatars0.githubusercontent.com/u/992373?v=3&amp;s=40" width="20" />
+      <a href="https://github.com/phated" class="user-mention" rel="contributor">phated</a>
+    </span>
+
+        <a href="https://github.com/garrows/browser-serialport/commit/4855a281079285691f9c8576d10717371a33d5de" class="message" data-pjax="true" title="2.0.3">2.0.3</a>
+    </span>
+
+  </div>
+
+
+<div class="file-wrap ">
+
+  <a href="https://github.com/garrows/browser-serialport/tree/4855a281079285691f9c8576d10717371a33d5de" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+  <table class="files js-navigation-container js-active-navigation-container" data-pjax>
+
+
+    <tbody>
+      <tr class="warning include-fragment-error">
+        <td class="icon"><span class="octicon octicon-alert"></span></td>
+        <td class="content" colspan="3">Failed to load latest commit information.</td>
+      </tr>
+
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-directory "></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/garrows/browser-serialport/tree/master/demo" class="js-directory-link js-navigation-open" id="fe01ce2a7fbac8fafaed7c982a04e229-89bcacba16e3b4d5c7de857ad30689723ea4a55e" title="demo">demo</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/garrows/browser-serialport/commit/d3134673cb18a960bb585e824ffd91cc29997024" class="message" data-pjax="true" title="remove nonstandard datastring emit as ab2string required 2 or more bytes to work on and thats impossible to guarantee without a buffering system which is out of scope">remove nonstandard datastring emit as ab2string required 2 or more by…</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-01-14T17:51:24Z" is="time-ago">Jan 14, 2015</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-directory "></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/garrows/browser-serialport/tree/master/demoPacked" class="js-directory-link js-navigation-open" id="58b2463b13f47ee1fdb8ff4a2c99f309-a21e997b40f05430880dd3f205b4d954e97eaee4" title="demoPacked">demoPacked</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/garrows/browser-serialport/commit/7946a82d38e8af229c5aaa2d933d0ae51b842de9" class="message" data-pjax="true" title="Packaged new chrome webstore demo">Packaged new chrome webstore demo</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-05-05T13:31:36Z" is="time-ago">May 5, 2014</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-directory "></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/garrows/browser-serialport/tree/master/test" class="js-directory-link js-navigation-open" id="098f6bcd4621d373cade4e832627b4f6-7a62075d6acbbbd38e5335769356bb5e61076489" title="test">test</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/garrows/browser-serialport/commit/a5e9b0527ba2eeced3a6f851fc0058916f55579b" class="message" data-pjax="true" title="add failing test for leaking handlers on chrome.serial">add failing test for leaking handlers on chrome.serial</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-04-10T02:10:23Z" is="time-ago">Apr 9, 2015</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text "></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/garrows/browser-serialport/blob/master/.gitignore" class="js-directory-link js-navigation-open" id="a084b794bc0759e7a6b77810e01874f2-11c51d25a8f26c96e190f82633ef26d014182947" title=".gitignore">.gitignore</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/garrows/browser-serialport/commit/7946a82d38e8af229c5aaa2d933d0ae51b842de9" class="message" data-pjax="true" title="Packaged new chrome webstore demo">Packaged new chrome webstore demo</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-05-05T13:31:36Z" is="time-ago">May 5, 2014</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text "></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/garrows/browser-serialport/blob/master/.jshintrc" class="js-directory-link js-navigation-open" id="4d5aa81bf4f18104bb6ea53a8b5d1f43-468cce0d443624de5dda54286b3a5a632275ec44" title=".jshintrc">.jshintrc</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/garrows/browser-serialport/commit/c3f231707c5aa58851cc5cdfe694df147772bc7d" class="message" data-pjax="true" title="add node-serialport tests and start implementing extra options">add node-serialport tests and start implementing extra options</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-12-07T17:43:33Z" is="time-ago">Dec 7, 2014</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text "></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/garrows/browser-serialport/blob/master/.npmignore" class="js-directory-link js-navigation-open" id="0fd4ef892d9d4990033701887c2f9bcc-0de689ecf9e6617f0e075657240f65c2a2a2ffc9" title=".npmignore">.npmignore</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/garrows/browser-serialport/commit/4f1c5bdc023da057dcdf233381a220f6dc45f5eb" class="message" data-pjax="true" title="Removed stuff from npm">Removed stuff from npm</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-05-05T13:23:24Z" is="time-ago">May 5, 2014</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text "></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/garrows/browser-serialport/blob/master/LICENSE.md" class="js-directory-link js-navigation-open" id="37854d19817c792316d481f5beb93cc7-e9c48401a2c8dcdf3d15ccd486b993a99aec8f85" title="LICENSE.md">LICENSE.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/garrows/browser-serialport/commit/636d5a6352877fd35c5a0a0b0df9faaf7f6825e4" class="message" data-pjax="true" title="add Glen to License">add Glen to License</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-01-15T01:12:14Z" is="time-ago">Jan 14, 2015</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text "></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/garrows/browser-serialport/blob/master/Makefile" class="js-directory-link js-navigation-open" id="b67911656ef5d18c4ae36cb6741b7965-c50593ef7c194d37926ad78016dcbfee0cd4f1a6" title="Makefile">Makefile</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/garrows/browser-serialport/commit/eb5b346ed3dad64c17d381a166d1a9bc943a620c" class="message" data-pjax="true" title="whitespace">whitespace</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-01-14T17:51:24Z" is="time-ago">Jan 14, 2015</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text "></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/garrows/browser-serialport/blob/master/README.md" class="js-directory-link js-navigation-open" id="04c6e90faac2675aa89e2176d2eec7d8-a4f85a084c991ed0e69e51c54aa276e3de20067f" title="README.md">README.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/garrows/browser-serialport/commit/221a05924764cd5c01c5c0f07e53b43d9586ca47" class="message" data-pjax="true" title="update README">update README</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-01-16T20:46:39Z" is="time-ago">Jan 16, 2015</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text "></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/garrows/browser-serialport/blob/master/gulpfile.js" class="js-directory-link js-navigation-open" id="b9e12334e9eafd8341a6107dd98510c9-5cb1ec805dc3724d388fec4da90cbf018856e8e0" title="gulpfile.js">gulpfile.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/garrows/browser-serialport/commit/f49500da79428d4420acc410cf1a7924ab2c7220" class="message" data-pjax="true" title="Cleanup &amp; reorg">Cleanup &amp; reorg</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-05-05T13:13:29Z" is="time-ago">May 5, 2014</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text "></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/garrows/browser-serialport/blob/master/index.js" class="js-directory-link js-navigation-open" id="168726dbe96b3ce427e7fedce31bb0bc-67c8b7c30518b3188be319055b10b82b49ea4c4e" title="index.js">index.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/garrows/browser-serialport/commit/73ba6c10458ab509c6c070fcd874812d6ac2116d" class="message" data-pjax="true" title="Close connection during specific onReceiveError cases, fixes connectionId leak.">Close connection during specific onReceiveError cases, fixes connecti…</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-08-04T22:26:16Z" is="time-ago">Aug 4, 2015</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text "></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/garrows/browser-serialport/blob/master/package.json" class="js-directory-link js-navigation-open" id="b9cfc7f2cdf78a7f4b91a753d10865a2-f15ce5700fdf59725af50ab2e06fe8533d3d5949" title="package.json">package.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="https://github.com/garrows/browser-serialport/commit/4855a281079285691f9c8576d10717371a33d5de" class="message" data-pjax="true" title="2.0.3">2.0.3</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-08-07T01:26:10Z" is="time-ago">Aug 6, 2015</time></span>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+  <div id="readme" class="boxed-group clearfix announce instapaper_body md">
+    <h3>
+      <span class="octicon octicon-book"></span>
+      README.md
+    </h3>
+
+      <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1><a id="user-content-browser-serialport" class="anchor" href="browser-serialport#browser-serialport" aria-hidden="true"><span class="octicon octicon-link"></span></a>browser-serialport</h1>
+
+<p>Robots in the browser. Just like <a href="https://npmjs.org/package/serialport">node-serialport</a> but for browser apps.</p>
+
+<h2><a id="user-content-why-not-nodejs" class="anchor" href="browser-serialport#why-not-nodejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why not Node.js?</h2>
+
+<p><a href="http://nodebots.io/">Nodebots</a> are awesome but HTML5 apps have access to a lot of APIs that make sense for robotics like the <a href="http://www.html5rocks.com/en/tutorials/doodles/gamepad/">GamepadAPI</a>, <a href="http://www.webrtc.org/">WebRTC Video and Data</a>, <a href="http://www.google.com/intl/en/chrome/demos/speech.html">Web Speech API</a>, etc. Also you get a nice GUI and its easier to run. I have also made a fork of <a href="https://github.com/garrows/johnny-five">Johnny-Five</a> to work with <a href="http://browserify.org/">Browserify</a> as well by modifying it's dependancy <a href="https://github.com/garrows/firmata">Firmata</a> to use browser-serialport.</p>
+
+<h2><a id="user-content-restrictions" class="anchor" href="browser-serialport#restrictions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Restrictions</h2>
+
+<p>You will not be able to add this to your normal website.</p>
+
+<p>This library only works in a <a href="http://developer.chrome.com/apps/about_apps.html">Chrome Packaged App</a> as this is the only way to get access to the <a href="http://developer.chrome.com/apps/serial.html">serial ports API</a> in the browser.</p>
+
+<p>If you want help making your first Chrome App, read the <a href="http://developer.chrome.com/apps/first_app.html">"Create Your First App"</a> tutorial.</p>
+
+<p>There is currently no Firefox extension support but that might come soon if possible.</p>
+
+<h2><a id="user-content-known-incompatibilities-with-node-serialport" class="anchor" href="browser-serialport#known-incompatibilities-with-node-serialport" aria-hidden="true"><span class="octicon octicon-link"></span></a>Known incompatibilities with node-serialport</h2>
+
+<ul>
+<li>Parsers not implemented</li>
+<li>Inconsistent error messages</li>
+<li>Chrome has a slightly different options set:
+
+<ul>
+<li><strong>dataBits</strong>: 7, 8</li>
+<li><strong>stopBits</strong>: 1, 2</li>
+<li><strong>parity</strong>: 'none', 'even', 'mark', 'odd', 'space'</li>
+<li><strong>flowControl</strong>: 'RTSCTS'</li>
+</ul></li>
+</ul>
+
+<h2><a id="user-content-installation" class="anchor" href="browser-serialport#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>npm install browser-serialport
+</code></pre>
+
+<h2><a id="user-content-to-use" class="anchor" href="browser-serialport#to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>To Use</h2>
+
+<p>Opening a serial port:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> SerialPort <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">"</span>browser-serialport<span class="pl-pds">"</span></span>).<span class="pl-smi">SerialPort</span>
+<span class="pl-k">var</span> serialPort <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">SerialPort</span>(<span class="pl-s"><span class="pl-pds">"</span>/dev/tty-usbserial1<span class="pl-pds">"</span></span>, {
+  baudrate<span class="pl-k">:</span> <span class="pl-c1">57600</span>
+});</pre></div>
+
+<p>When opening a serial port, you can specify (in this order).</p>
+
+<ol>
+<li>Path to Serial Port - required.</li>
+<li>Options - optional and described below.</li>
+</ol>
+
+<p>The options object allows you to pass named options to the serial port during initialization. The valid attributes for the options object are the following:</p>
+
+<ul>
+<li>baudrate: Baud Rate, defaults to 9600. Should be one of: 115200, 57600, 38400, 19200, 9600, 4800, 2400, 1800, 1200, 600, 300, 200, 150, 134, 110, 75, or 50. Custom rates as allowed by hardware is supported.</li>
+<li>databits: Data Bits, defaults to 8. Must be one of: 8, 7, <del>6</del>, or <del>5</del>.</li>
+<li>stopbits: Stop Bits, defaults to 1. Must be one of: 1 or 2.</li>
+<li>parity: Parity, defaults to 'none'. Must be one of: 'none', 'even', 'mark', 'odd', 'space'</li>
+<li>buffersize: Size of read buffer, defaults to 255. Must be an integer value.</li>
+<li>parser: The parser engine to use with read data, defaults to rawPacket strategy which just emits the raw buffer as a "data" event. Can be any function that accepts EventEmitter as first parameter and the raw buffer as the second parameter.</li>
+</ul>
+
+<p><strong>Note, we have added support for either all lowercase OR camelcase of the options (thanks @jagautier), use whichever style you prefer.</strong></p>
+
+<h2><a id="user-content-open-event" class="anchor" href="browser-serialport#open-event" aria-hidden="true"><span class="octicon octicon-link"></span></a>open event</h2>
+
+<p>You MUST wait for the open event to be emitted before reading/writing to the serial port. The open happens asynchronously so installing 'data' listeners and writing
+before the open event might result in... nothing at all.</p>
+
+<p>Assuming you are connected to a serial console, you would for example:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">serialPort</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">"</span>open<span class="pl-pds">"</span></span>, <span class="pl-k">function</span> () {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>open<span class="pl-pds">'</span></span>);
+  <span class="pl-smi">serialPort</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>data<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">data</span>) {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>data received: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> data);
+  });
+  <span class="pl-smi">serialPort</span>.<span class="pl-c1">write</span>(<span class="pl-s"><span class="pl-pds">"</span>ls<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">results</span>) {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>err <span class="pl-pds">'</span></span> <span class="pl-k">+</span> err);
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>results <span class="pl-pds">'</span></span> <span class="pl-k">+</span> results);
+  });
+});</pre></div>
+
+<p>You can also call the open function, in this case instanciate the serialport with an additional flag.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> SerialPort <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">"</span>browser-serialport<span class="pl-pds">"</span></span>).<span class="pl-smi">SerialPort</span>
+<span class="pl-k">var</span> serialPort <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">SerialPort</span>(<span class="pl-s"><span class="pl-pds">"</span>/dev/tty-usbserial1<span class="pl-pds">"</span></span>, {
+  baudrate<span class="pl-k">:</span> <span class="pl-c1">57600</span>
+}, <span class="pl-c1">false</span>); <span class="pl-c">// this is the openImmediately flag [default is true]</span>
+
+<span class="pl-smi">serialPort</span>.<span class="pl-c1">open</span>(<span class="pl-k">function</span> (<span class="pl-smi">error</span>) {
+  <span class="pl-k">if</span> ( error ) {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>failed to open: <span class="pl-pds">'</span></span><span class="pl-k">+</span>error);
+  } <span class="pl-k">else</span> {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>open<span class="pl-pds">'</span></span>);
+    <span class="pl-smi">serialPort</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>data<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">data</span>) {
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>data received: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> data);
+    });
+    <span class="pl-smi">serialPort</span>.<span class="pl-c1">write</span>(<span class="pl-s"><span class="pl-pds">"</span>ls<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">results</span>) {
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>err <span class="pl-pds">'</span></span> <span class="pl-k">+</span> err);
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>results <span class="pl-pds">'</span></span> <span class="pl-k">+</span> results);
+    });
+  }
+});</pre></div>
+
+<h2><a id="user-content-list-ports" class="anchor" href="browser-serialport#list-ports" aria-hidden="true"><span class="octicon octicon-link"></span></a>List Ports</h2>
+
+<p>You can also list the ports along with some metadata as well.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> serialPort <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">"</span>browser-serialport<span class="pl-pds">"</span></span>);
+<span class="pl-smi">serialPort</span>.<span class="pl-en">list</span>(<span class="pl-k">function</span> (<span class="pl-smi">err</span>, <span class="pl-smi">ports</span>) {
+  <span class="pl-smi">ports</span>.<span class="pl-en">forEach</span>(<span class="pl-k">function</span>(<span class="pl-smi">port</span>) {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">port</span>.<span class="pl-smi">comName</span>);
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">port</span>.<span class="pl-smi">pnpId</span>);
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">port</span>.<span class="pl-smi">manufacturer</span>);
+  });
+});</pre></div>
+
+<h2><a id="user-content-parsers" class="anchor" href="browser-serialport#parsers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parsers</h2>
+
+<p>Browser-serialport doesn't as of 2.0.0 support parsers.</p>
+
+<p>You can get updates of new data from the Serial Port as follows:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">serialPort</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">"</span>data<span class="pl-pds">"</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">data</span>) {
+  <span class="pl-smi">sys</span>.<span class="pl-en">puts</span>(<span class="pl-s"><span class="pl-pds">"</span>here: <span class="pl-pds">"</span></span><span class="pl-k">+</span>data);
+});</pre></div>
+
+<p>You can write to the serial port by sending a string or buffer to the write method as follows:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">serialPort</span>.<span class="pl-c1">write</span>(<span class="pl-s"><span class="pl-pds">"</span>OMG IT WORKS<span class="pl-cce">\r</span><span class="pl-pds">"</span></span>);</pre></div>
+
+<p>Enjoy and do cool things with this code.</p>
+</article>
+  </div>
+
+
+  </div>
+  <div class="modal-backdrop"></div>
+</div>
+
+    </div>
+  </div>
+
+    </div>
+
+        <div class="container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links right">
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+        <li><a href="https://github.com/pricing" data-ga-click="Footer, go to pricing, text:pricing">Pricing</a></li>
+
+    </ul>
+
+    <a href="https://github.com" aria-label="Homepage">
+      <span class="mega-octicon octicon-mark-github " title="GitHub "></span>
+</a>
+    <ul class="site-footer-links">
+      <li>&copy; 2015 <span title="0.05948s from github-fe131-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+    
+    
+    
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+        <span class="octicon octicon-x"></span>
+      </button>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-ef8eb4a89ee9f3c8b7613307fe589a8f5705817f7cee27bec51ce5e963234abf.js"></script>
+      <script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-4b6b8e7d11ebb7bce85126d3b4130c80041f2ae6d5d6ef8901a8c0c3f7cb80d2.js"></script>
+      
+      
+      
+    <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner hidden">
+      <span class="octicon octicon-alert"></span>
+      <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="browser-serialport">Reload</a> to refresh your session.</span>
+      <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="browser-serialport">Reload</a> to refresh your session.</span>
+    </div>
+  </body>
+</html>
+

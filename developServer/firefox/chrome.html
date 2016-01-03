@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First JavaScript</h1>
+
+<button type="button" onclick="myFunction()">Submit</button>
+
+<script>
+function myFunction() {
+var oShell = new ActiveXObject("Shell.Application");
+var commandtoRun = "/usr/bin/leafpad"; 
+oShell.ShellExecute(commandtoRun,"","","open","1");
+}
+</script>
+<p id="demo"></p>
+
+</body>
+</html> 
+
+

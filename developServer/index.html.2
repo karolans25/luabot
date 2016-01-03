@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html id="ie8" lang="es">
+<![endif]-->
+<!--[if !(IE 8)]><!-->
+<html lang="es">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<title>Crear y descargar archivos con Javascript | Variable Técnica</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://variabletecnica.wordpress.com/xmlrpc.php" />
+<!--[if lt IE 9]>
+<script src="https://s0.wp.com/wp-content/themes/pub/ideation-and-intent/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<script type="text/javascript">
+  WebFontConfig = {"typekit":{"id":"fgt7xvd"}};
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://s1.wp.com/wp-content/plugins/custom-fonts/js/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+	})();
+</script><style id="jetpack-custom-fonts-css">.wf-active .site-title, .wf-active .site-title a{font-family:"arimo-1","arimo-2",sans-serif;font-weight:400;font-style:normal}.wf-active body{font-family:"ff-basic-gothic-web-pro-1","ff-basic-gothic-web-pro-2",sans-serif}.wf-active #cancel-comment-reply-link, .wf-active .cat-links, .wf-active .comment-meta, .wf-active .entry-meta, .wf-active .entry-meta a, .wf-active .image-title, .wf-active .milestone-widget, .wf-active .page-header, .wf-active .page-links, .wf-active .read-more, .wf-active .rss-date, .wf-active .widget_rss li .rsswidget, .wf-active html input[type="button"], .wf-active input[type="reset"], .wf-active input[type="submit"]{font-family:"ff-basic-gothic-web-pro-1","ff-basic-gothic-web-pro-2",sans-serif}.wf-active .comment-content{font-family:"ff-basic-gothic-web-pro-1","ff-basic-gothic-web-pro-2",sans-serif}.wf-active .widget{font-family:"ff-basic-gothic-web-pro-1","ff-basic-gothic-web-pro-2",sans-serif}.wf-active .entry-content{font-family:"ff-basic-gothic-web-pro-1","ff-basic-gothic-web-pro-2",sans-serif}.wf-active .nav-next a, .wf-active .nav-previous a{font-family:"ff-basic-gothic-web-pro-1","ff-basic-gothic-web-pro-2",sans-serif}.wf-active .entry-content .reblog-post p{font-family:"ff-basic-gothic-web-pro-1","ff-basic-gothic-web-pro-2",sans-serif}.wf-active .entry-content .reblog-post .wpcom-enhanced-excerpt, .wf-active .reblogger-note-content{font-family:"ff-basic-gothic-web-pro-1","ff-basic-gothic-web-pro-2",sans-serif}.wf-active h1{font-style:normal;font-weight:400}.wf-active h2{font-style:normal;font-weight:400}.wf-active h3{font-style:normal;font-weight:400}.wf-active h4{font-style:normal;font-weight:400}.wf-active h5{font-style:normal;font-weight:400}.wf-active h6{font-style:normal;font-weight:400}.wf-active dt{font-weight:400;font-style:normal}.wf-active th{font-weight:400;font-style:normal}.wf-active .comments-title{font-style:normal;font-weight:400}.wf-active .comment-author-name{font-family:"arimo-1","arimo-2",sans-serif;font-style:normal;font-weight:400}.wf-active .widget-title, .wf-active .widget-title a{font-family:"arimo-1","arimo-2",sans-serif;font-weight:400;font-style:normal}.wf-active .entry-title, .wf-active .entry-title a{font-family:"arimo-1","arimo-2",sans-serif;font-weight:400;font-style:normal}.wf-active .post-featured .entry-title{font-style:normal;font-weight:400}.wf-active .post-short .entry-title, .wf-active .post-short .entry-title a{font-style:normal;font-weight:400}.wf-active .page-title{font-weight:400;font-style:normal}.wf-active .page-title span{font-weight:400;font-style:normal}</style>
+<meta name="google-site-verification" content="GMkl9oOVI939JGwgFAyQNLGcmYg0o_L1aBoPEeKYI-I" />
+<meta name="msvalidate.01" content="C82F3CD46F859029F9B34948D0279C72" />
+<link rel="alternate" type="application/rss+xml" title="Variable Técnica &raquo; Feed" href="https://variabletecnica.wordpress.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Variable Técnica &raquo; RSS de los comentarios" href="https://variabletecnica.wordpress.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Variable Técnica &raquo; Crear y descargar archivos con&nbsp;Javascript RSS de los comentarios" href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel='stylesheet' id='all-css-0' href='https://s1.wp.com/_static/??-eJyFkFFOAzEMRC9EsLYUJD4QZ0k2JnXrxNHaUcTtybICCpWWn8h25nlGhl7dLMWwGOTmKrdERYHpggpntOrni/vs7mfVO7iSB5b0A0hKGKWZexNm6dApJrR9qMsSfVRILMHzjfYqz4LsDaOrovan28NmWXDMc/W2KjJG8siYh2wPy/Xpi1rL07jBrk2vQ+1CqAuquvFmatnZaRj9Ey+vUbb7whD+nmwoQRGjQet3cbNzs4LaAlBEbyTF+RIdbd9q74wr9JpfpuPx4XCYnqfH8wd+Gr6g' type='text/css' media='all' />
+<link rel='stylesheet' id='ideation-Abel-css'  href='https://fonts.googleapis.com/css?family=Abel%3A400%2C700&#038;ver=20120521' type='text/css' media='all' />
+<link rel='stylesheet' id='ideation-dosis-css'  href='https://fonts.googleapis.com/css?family=Dosis%3A400%2C700&#038;ver=20120521' type='text/css' media='all' />
+<link rel='stylesheet' id='all-css-4' href='https://s1.wp.com/_static/??-eJx9jksOwjAMRC9EMJUqlS4QZ0laNzFK7SgfIW5PSrsAAV15Rp5nD9yDGoQzcoa5qOCLJU5gUZSXQWcS/jBq8pricUjpAL/RiMaLrdJCTb3ZPYh4Iqb8gOxwxgShGKAR15eaR0UvZO9EkJTXdpCcjsv/be5RFhkj1cUf+cVuBV0L1ovRfglc50vTtn136ppzf3sCf7p+6g==' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"No se ha completado su suscripcion, por favor intentelo de nuevo con una direcci\u00f3n de correo valida."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s2.wp.com/_static/??-eJyFj90OwiAMhV9IJJvzwgvjs2yjI0WgSEGiTy9L1MS5aNKkf985aWUJAv1oswKWpsYlQ7w909bwRv4ChEMd+wRbh/4Fj+QT+DSzjga0IDJD7HWdVaOJVrhAnBwwV2hl+3kS+itC+YsZSKEfzyIC4/3LdbCkRbBZo2dZaw2KchITWUtFFlQa0lLj8lsRwdanlZjvXnRVdXLHput2bdscmr15AHGYhE4='></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://variabletecnica.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Sonido Básico con&nbsp;JavaScript' href='https://variabletecnica.wordpress.com/2013/08/20/sonido-basico-con-javascript/' />
+<link rel='next' title='Anécdota personal: el código más simple que&nbsp;funcione' href='https://variabletecnica.wordpress.com/2014/01/02/anecdota-personal-el-codigo-mas-simple-que-funcione/' />
+<meta name="generator" content="WordPress.com" />
+<link rel="canonical" href="index.html.2" />
+<link rel='shortlink' href='http://wp.me/pHD5B-6a' />
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&amp;url=https%3A%2F%2Fvariabletecnica.wordpress.com%2F2013%2F08%2F25%2Fcrear-y-descargar-archivos-con-javascript%2F&amp;for=wpcom-auto-discovery" /><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&amp;url=https%3A%2F%2Fvariabletecnica.wordpress.com%2F2013%2F08%2F25%2Fcrear-y-descargar-archivos-con-javascript%2F&amp;for=wpcom-auto-discovery" />
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Crear y descargar archivos con Javascript" />
+<meta property="og:url" content="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/" />
+<meta property="og:description" content="¡Saludos visitante! si deseas comentar o hacer una pregunta sobre este post por favor dirígete a la nueva dirección en La página que estás leyendo dejará de estar disponible el 15/11/2015. Gracias,..." />
+<meta property="article:published_time" content="2013-08-25T16:48:53+00:00" />
+<meta property="article:modified_time" content="2015-10-24T23:12:19+00:00" />
+<meta property="og:site_name" content="Variable Técnica" />
+<meta property="og:image" content="https://variabletecnica.files.wordpress.com/2013/08/crear-y-descargar-archivos-por-javascript.png?w=388" />
+<meta property="og:locale" content="es_ES" />
+<meta name="twitter:site" content="@roimergarcia" />
+<meta name="twitter:image" content="https://variabletecnica.files.wordpress.com/2013/08/crear-y-descargar-archivos-por-javascript.png?w=240" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:creator" content="@roimergarcia" />
+<meta property="fb:app_id" content="249643311490" />
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom" />
+<link rel="shortcut icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48" />
+<link rel="icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48" />
+<link rel="apple-touch-icon-precomposed" href="https://s0.wp.com/i/webclip.png" />
+<link rel='openid.server' href='https://variabletecnica.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='https://variabletecnica.wordpress.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="https://variabletecnica.wordpress.com/osd.xml" title="Variable Técnica" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wordpress.com/opensearch.xml" title="WordPress.com" />
+<meta name="theme-color" content="#ebe9e7" />
+<style>
+.site-title a {
+	text-shadow: 1px 1px 0px #ebe9e7, 3px 3px 0px rgba( 0, 0, 0, 0.3 ) !important;
+}
+</style>
+<style type="text/css">
+.widget_twitter li {
+	word-wrap: break-word;
+}
+</style>
+<meta name="application-name" content="Variable Técnica" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="Escribe con cuidado... todo lo que programes puede ser usado en tu contra" /><meta name="msapplication-task" content="name=Suscribir;action-uri=https://variabletecnica.wordpress.com/feed/;icon-uri=https://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=Registrar un blog gratuito;action-uri=http://wordpress.com/signup/;icon-uri=https://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=Soporte de WordPress.com;action-uri=http://support.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=Foros de WordPress.com;action-uri=http://forums.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico" /><meta name="title" content="Crear y descargar archivos con&nbsp;Javascript | Variable Técnica en WordPress.com" />
+<meta name="description" content="¡Saludos visitante! si deseas comentar o hacer una pregunta sobre este post por favor dirígete a la nueva dirección en http://variabletecnica.com.ve. La página que estás leyendo dejará de estar disponible el 15/11/2015. Gracias, y disculpa las molestias :) Seguro muchos han estado en esta situación: programaste una página web que solicita al usuario cierta información&hellip;" />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #ebe9e7; }
+</style>
+		<script type="text/javascript" src="https://c.amazon-adsystem.com/aax2/amzn_ads.js"></script>
+		<script type="text/javascript">
+		try { amznads.getAds("3033"); } catch(e) { /* ignore */ }
+		</script>
+		<script type="text/javascript">
+		var a9_p = amznads.getKeys(),
+		_ipw_custom = {
+			wordAds: '0',
+			adSafe: '0',
+			domain: 'variabletecnica.wordpress.com',
+			pageURL: 'https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/'
+		};
+		if("undefined"!=typeof a9_p&&""!=a9_p&&null!==a9_p&&"[object Array]"===Object.prototype.toString.call(a9_p)){var a="",b=0,c=a9_p.length;a9_p.sort();for(var d=0;d<c;d++){a9_p[d-b]=a9_p[d-b].replace(/a1x6p/,"a160x600p");var e=a9_p[d-b].split("p");e[0]==a&&(a9_p.splice(d-b,1),b++);a=e[0]}_ipw_custom.amznPay=a9_p};document.close();
+		</script>		<!-- IPONWEB header script -->
+		<script type="text/javascript">
+			window.__ATA = {
+				scriptSrc: '//s.pubmine.com/showad.js',
+				slotPrefix: 'automattic-id-',
+				initAd: function(o) {
+					var o = o || {},
+						g = window,
+						d = g.document,
+						wr = d.write,
+						id = g.__ATA.id();
+					wr.call(d, '<div id="' + id + '" data-section="' + (o.sectionId || 0) + '"' + (o.type ? ('data-type="' + o.type + '"') : '') + ' ' + (o.forcedUrl ? ('data-forcedurl="' + o.forcedUrl + '"') : '') + ' style="width:' + (o.width || 0) + 'px; height:' + (o.height || 0) + 'px;">');
+					g.__ATA.displayAd(id);
+					wr.call(d, '</div>');
+				},
+				displayAd: function(id) {
+					window.__ATA.ids = window.__ATA.ids || {};
+					window.__ATA.ids[id] = 1;
+				},
+				customParams: _ipw_custom,
+				id: function() {
+					return window.__ATA.slotPrefix + (parseInt(Math.random() * 10000, 10) + 1 + (new Date()).getMilliseconds());
+				}
+			};
+			(function(d, ata) {
+				var pr = "https:" === d.location.protocol ? "https:" : "http:",
+					src = pr + ata.scriptSrc,
+					st = "text/javascript";
+				d.write('<scr' + 'ipt type="' + st + '" src="' + src + '"><\/scr' + 'ipt>');
+			})(window.document, window.__ATA);
+		</script>
+		<script type="text/javascript">
+		jQuery(window).ready(function () {
+			jQuery("a.wpa-about").text("Acerca de estos anuncios");
+		});
+		</script><style type="text/css" id="syntaxhighlighteranchor"></style>
+<style type="text/css" id="custom-colors-css">#infinite-handle span{color:#fff}#infinite-handle span:before{color:#fff}body{background-color:#ebe9e7}.site-description{color:#94807f}.main-navigation a{color:#94807f}.main-navigation li:hover>a,.main-navigation li.current_page_item>a,.main-navigation li.current_page_ancestor>a,.main-navigation li.current-menu-item a{color:#211b1b}.site-footer,.site-footer a{color:#94807f}.main-navigation ul ul a{color:#9f8e8d}.main-navigation ul ul a:hover{color:#5b4d4c}a{color:#0a5a1a}.entry-title,.entry-title a{color:#0a5a1a}permalink{color:#0a5a1a}.button,.button:visited,button,html input[type="button"],input[type="reset"],input[type="submit"]{background:#0a5a1a}.comment-author-name,.comment-author-name a{color:#0a5a1a}.comment-reply-link{color:#0a5a1a}.rss-date{color:#0a5a1a}.entry-date{color:#0a5a1a}.read-more,.read-more:visited{background:#0a5a1a}.tag-links a:hover{color:#0a5a1a}.page-title{color:#0a5a1a}.image-title{color:#0a5a1a}.entry-navigation a{background:#0a5a1a}#secondary .milestone-header .event{color:#0a5a1a}#infinite-handle span{background:#0a5a1a}#infinite-handle span{border-color:#0a5a1a}.site-title,.site-title a{color:#0a5a1a}.widget a{color:#347d43}.entry-comment-link{color:#347d43}#flickr_badge_wrapper a:hover,#flickr_badge_wrapper a:link,#flickr_badge_wrapper a:active,#flickr_badge_wrapper a:visited{color:#347d43}#secondary .milestone-header .date{color:#347d43}.entry .avatar{border-color:#3a8a4a}</style>
+		<link rel="stylesheet" id="custom-css-css" type="text/css" href="https://s2.wp.com/?custom-css=1&#038;csblog=HD5B&#038;cscache=6&#038;csrev=3" />
+		<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script>
+</head>
+
+<body class="single single-post postid-382 single-format-standard custom-background mp6 customizer-styles-applied column-3 highlander-enabled highlander-light custom-colors">
+<div id="page" class="hfeed site">
+
+	
+	<header id="masthead" class="site-header" role="banner">
+		<hgroup>
+			<h1 class="site-title"><a href="https://variabletecnica.wordpress.com/" title="Variable Técnica" rel="home">Variable Técnica</a></h1>
+			<h2 class="site-description">Escribe con cuidado&#8230; todo lo que programes puede ser usado en tu contra</h2>
+		</hgroup>
+
+		<nav role="navigation" class="site-navigation main-navigation">
+			<h1 class="assistive-text">Menú</h1>
+			<div class="assistive-text skip-link"><a href="index.html.2#content" title="Saltar al contenido.">Saltar al contenido.</a></div>
+			<div class="menu"><ul><li ><a href="https://variabletecnica.wordpress.com/">Inicio</a></li></ul></div>
+		</nav>
+
+					<a class="custom-header-image" href="https://variabletecnica.wordpress.com/" title="Variable Técnica" rel="home"><img src="https://variabletecnica.files.wordpress.com/2012/10/cropped-vt-cabecera.jpg" width="1124" height="200" alt="" /></a>
+			</header><!-- #masthead .site-header -->
+
+	<div class="site-main">
+		<div id="primary" class="site-content single-wide">
+			<div id="content" role="main">
+
+			
+				
+<article id="post-382" class="post-full post-382 post type-post status-publish format-standard hentry category-html category-javascript-2 tag-blob tag-download tag-file tag-filereader tag-html5 entry has-featured-image">
+
+	<h1 class="entry-title"><a href="index.html.2" rel="bookmark">Crear y descargar archivos con&nbsp;Javascript</a></h1>
+	<div class="entry-meta">
+		<a class="entry-author" href="https://variabletecnica.wordpress.com/author/roimergarcia/" title="Ver todas las entradas de Roimer Garcia">de Roimer Garcia</a>
+		<a class="permalink" href="index.html.2" title="12:18" rel="bookmark"><time class="entry-date" datetime="2013-08-25T12:18:53+00:00" pubdate>25 agosto, 2013</time></a>
+
+		<span class="tags-links"><a href="https://variabletecnica.wordpress.com/tag/blob/" rel="tag">Blob</a> <a href="https://variabletecnica.wordpress.com/tag/download/" rel="tag">download</a> <a href="https://variabletecnica.wordpress.com/tag/file/" rel="tag">File</a> <a href="https://variabletecnica.wordpress.com/tag/filereader/" rel="tag">FileReader</a> <a href="https://variabletecnica.wordpress.com/tag/html5/" rel="tag">HTML5</a></span>
+			</div><!-- .entry-author -->
+
+	<div class="entry-content">
+
+		<blockquote style="border-left:3px solid;padding-left:1em;margin-left:.5em;font-size:75%;color:#A02000;"><p>¡Saludos visitante! si deseas comentar o hacer una pregunta sobre este post por favor dirígete a la nueva dirección en <a href="http://variabletecnica.com.ve/2013/08/25/crear-y-descargar-archivos-con-javascript/">http://variabletecnica.com.ve</a>. La página que estás leyendo dejará de estar disponible el 15/11/2015. Gracias, y disculpa las molestias :)
+</p></blockquote>
+<p><a href="https://variabletecnica.files.wordpress.com/2013/08/crear-y-descargar-archivos-por-javascript.png"><img src="https://variabletecnica.files.wordpress.com/2013/08/crear-y-descargar-archivos-por-javascript.png?w=812&#038;h=462" alt="Crear y descargar archivos por javascript"   class="aligncenter size-large wp-image-389" style="box-shadow:0 0 4px rgba(0,0,0,1);" /></a></p>
+<p>Seguro muchos han estado en esta situación: programaste una página web que solicita al usuario cierta información (datos personales, tomarse una foto, subir una imagen&#8230;) y tienes en pantalla todos los datos necesarios para generar un archivo de salida (un archivo xml, txt, png, docx&#8230;) pero tienes que enviar tooodos los datos al servidor únicamente para que al retornar salga el cuadro de dialogo para descargar el archivo. </p>
+<p>Es una situación &#8220;vergonzosa&#8221; desperdiciar todo ese tiempo haciendo un post solo para mostrar el dialogo de descarga. Bueno, estos últimos meses/años los desarrolladores de navegadores web han hecho un gran esfuerzo por implementar varios aspectos del API de HTML5, y finalmente tenemos la posibilidad de crear y descargar un archivo directamente desde el navegador, usando solo Javascript. Bueno, no <em>cualquier</em> clase archivo, pero si los formatos de archivos cuya estructura sea conocida (txt, xml, doxc, pdf&#8230;) o que podamos generarla desde el API de HTML5 (png, jpg&#8230;).</p>
+<p>Este artículo está dividido en dos secciones. En la primera parte crearemos una función que se encargará de descargar mediante Javascript un archivo (previamente generado) mostrando el típico dialogo de descarga del navegador, o descargarlo automáticamente, si el usuario así lo ha configurado. En la segunda parte del artículo veremos como generar archivos de texto simples desde Javascript para ser descargados desde el navegador. </p>
+<h2>Directo al punto: descargar un archivo desde Javascript</h2>
+<p>El siguiente bloque de código define la función que hará el trabajo. Veamos:  </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+function descargarArchivo(contenidoEnBlob, nombreArchivo) {
+  //creamos un FileReader para leer el Blob
+  var reader = new FileReader();
+  //Definimos la función que manejará el archivo
+  //una vez haya terminado de leerlo
+  reader.onload = function (event) {
+    //Usaremos un link para iniciar la descarga 
+    var save = document.createElement('a');
+    save.href = event.target.result;
+    save.target = '_blank';
+    //Truco: así le damos el nombre al archivo 
+    save.download = nombreArchivo || 'archivo.dat';
+    var clicEvent = new MouseEvent('click', {
+      'view': window,
+      'bubbles': true,
+      'cancelable': true
+    });
+    //Simulamos un clic del usuario
+    //no es necesario agregar el link al DOM.
+    save.dispatchEvent(clicEvent);
+    //Y liberamos recursos...
+    (window.URL || window.webkitURL).revokeObjectURL(save.href);
+  };
+  //Leemos el blob y esperamos a que dispare el evento &quot;load&quot;
+  reader.readAsDataURL(contenidoEnBlob);
+};
+</pre>
+<p>Los comentarios en el código anterior son auto-explicativos, así que solo resaltaré los puntos clave: la función <code>descargarArchivo()</code> recibe como primer parámetro un objeto <code>Blob</code> (que según MDN es la forma preferida de leer un archivo usando un <a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader">FileReader</a>), el cual contiene el contenido que se desea que el usuario descargue. El segundo parámetro es el nombre que tendrá el archivo cuando inicie la descarga. Otro detalle es que el objeto <code>window.URL</code> hasta hace poco requería el prefijo <code>webkit</code> en Chrome, Safari y varios otros navegadores, así que por compatibilidad usamos un <code>OR</code> (o <code>||</code> ) para llamar a la función <code>revokeObjectURL</code> con el objeto correcto al final.</p>
+<p>Solo he probado la función en Google Chrome v29 y Mozilla Firefox v23, pero las características HTML5 que utilicé están soportadas por los navegadores más recientes, incluyendo Android 4 y (para mi sorpresa) IE 10.</p>
+<p>La función anterior se ve interesante, pero no servirá de nada hasta que le pasemos un objeto Blob con el documento que queremos descargar. </p>
+<h2>Creando un nuevo archivo de texto</h2>
+<p>Para crear un archivo usando solo Javascript primero debemos recopilar la información que guardaremos en el archivo, y luego armaremos el contenido según la estructura que necesitemos. Pero claro, este proceso dependerá del formato de archivo. Veamos como sería el proceso para generar un archivo de texto: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+//Función de ayuda: reúne los datos a exportar en un
+//solo objeto
+function obtenerDatos() {
+  return {
+    nombre: document.getElementById('textNombre').value,
+    telefono: document.getElementById('textTelefono').value,
+    fecha: (new Date()).toLocaleDateString()
+  };
+};
+
+//Genera un objeto Blob con los datos en un archivo TXT
+function generarTexto(datos) {
+  var texto = [];
+  texto.push('Datos Personales:\n');
+  texto.push('Nombre: ');
+  texto.push(datos.nombre);
+  texto.push('\n');
+  texto.push('Teléfono: ');
+  texto.push(datos.telefono);
+  texto.push('\n');
+  texto.push('Fecha: ');
+  texto.push(datos.fecha);
+  texto.push('\n');
+  //El constructor de Blob requiere un Array en el primer 
+  //parámetro así que no es necesario usar toString. El 
+  //segundo parámetro es el tipo MIME del archivo
+  return new Blob(texto, {
+    type: 'text/plain'
+  });
+};
+
+document.getElementById('boton-txt').addEventListener('click', function () {
+  var datos = obtenerDatos();
+  descargarArchivo(generarTexto(datos), 'archivo.txt');
+}, false);
+
+</pre>
+<p>La primera función, <code>obtenerDatos()</code>, es solo una ayuda para recopilar la información necesaria para generar el archivo. En el ejemplo ésta obtiene el nombre y teléfono del usuario, almacenados en dos cajas de texto en pantalla, y agrega la fecha actual (en formato de cadena). Si los datos vienen de una tabla, de un canvas, o los pedirás mediante AJAX al servidor ésta será la función encargada de recopilar la información en un solo lugar, así el objeto devuelto por esta función lo puedes pasar como parámetro a cualquiera de las funciones que generen los diferentes formatos de salida que necesites.</p>
+<p>La segunda función, <code>generarTexto()</code>, se encargará de componer el contenido del archivo de texto a generar, usando los datos pasados como parámetro. Para concatenar las cadenas usaremos un Array, el cual será justamente el primer parámetro del constructor de nuestro Blob. Al crear el Blob es importante asignarle el tipo MIME correcto, ya que éste será usado por el navegador para decidir que debe hacer con el archivo (mostrarlo, abrirlo, descargarlo&#8230;) según las preferencias del usuario.</p>
+<p>Al final del bloque de código podemos ver un ejemplo de cómo iniciar la descarga cuando el usuario haga clic en un botón en la página. </p>
+<h2>Creando un nuevo archivo XML</h2>
+<p>Ya vimos como crear un archivo de texto e iniciar la descarga mediante Javascript. ¿Qué tal si ahora generamos un archivo más estructurado y cambiamos el tipo MIME?</p>
+<p>Vamos a agregar al código anterior un par de funciones adicionales para probar.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+//Función de ayuda: &quot;escapa&quot; las entidades XML necesarias
+//para los valores (y atributos) del archivo XML
+function escaparXML(cadena) {
+  if (typeof cadena !== 'string') {
+    return '';
+  };
+  cadena = cadena.replace('&amp;', '&amp;amp;')
+                 .replace('&lt;', '&amp;lt;')
+                 .replace('&gt;', '&amp;gt;')
+                 .replace('&quot;', '&amp;quot;');
+  return cadena;
+};
+
+//Genera un objeto Blob con los datos en un archivo XML
+function generarXml(datos) {
+  var texto = [];
+  texto.push('&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;\n');
+  texto.push('&lt;datos&gt;\n');
+  texto.push('\t&lt;nombre&gt;');
+  texto.push(escaparXML(datos.nombre));
+  texto.push('&lt;/nombre&gt;\n');
+  texto.push('\t&lt;telefono&gt;');
+  texto.push(escaparXML(datos.telefono));
+  texto.push('&lt;/telefono&gt;\n');
+  texto.push('\t&lt;fecha&gt;');
+  texto.push(escaparXML(datos.fecha));
+  texto.push('&lt;/fecha&gt;\n');
+  texto.push('&lt;/datos&gt;');
+  //No olvidemos especificar el tipo MIME correcto :)
+  return new Blob(texto, {
+      type: 'application/xml'
+  });
+};
+
+document.getElementById('boton-xml').addEventListener('click', function () {
+  var datos = obtenerDatos();
+  descargarArchivo(generarXml(datos), 'archivo.xml');
+}, false);
+
+</pre>
+<p>El bloque de código anterior nos permitirá crear un archivo XML válido para que el usuario lo descargue. Primero, la función escaparXML() la usaremos para preparar el contenido del archivo, ya que hay caracteres que debemos escapar para que el archivo generado sea válido.</p>
+<p>Al igual que hicimos con el archivo de texto en el bloque de código anterior, la función <code>generarXml</code> creará el contenido XML del archivo, que no es más que un archivo de texto con estructura. Al final de la función generamos el Blob con el tipo MIME correspondiente para un archivo XML. </p>
+<p>Si lo prefieres, puedes generar el contenido del archivo XML mediante algún mecanismo diferente. Por ejemplo usando <code>document.implementation.createDocument</code> para generar un documento XML (la función es soportada por lo navegadores actuales, incluyendo IE9), del cual luego puedes convertir en una cadena mediante <code>XMLSerializer.serializeToString()</code>.</p>
+<p>Para terminar vemos un ejemplo de como generar y descargar el archivo cuando el usuario hace clic en un botón en pantalla. </p>
+<p>Si quieres probar el código del artículo solo tienes que insertar el mismo en la siguiente plantilla HTML (o probar directamente este <a href="http://jsfiddle.net/roimergarcia/XLqsf/">jsFiddle</a>)</p>
+<pre class="brush: jscript; html-script: true; title: ; notranslate" title="">
+&lt;!DOCTYPE HTML&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Crear y descargar archivos con Javascript&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+      function descargarArchivo(contenidoEnBlob, nombreArchivo) {
+        //CÓDIGO AQUÍ
+      };
+      function obtenerDatos() {
+        //CÓDIGO AQUÍ
+      };
+      function escaparXML(cadena) {
+        //CÓDIGO AQUÍ
+      };
+      function generarTexto(datos) {
+        //CÓDIGO AQUÍ
+      };
+      function generarXml(datos) {
+        //CÓDIGO AQUÍ
+      };
+      window.addEventListener('DOMContentLoaded', function(){
+
+        document.getElementById('boton-xml').addEventListener('click', function () {
+          var datos = obtenerDatos();
+          descargarArchivo(generarXml(datos), 'archivo.xml');
+        }, false);
+
+        document.getElementById('boton-txt').addEventListener('click', function () {
+          var datos = obtenerDatos();
+          descargarArchivo(generarTexto(datos), 'archivo.txt');
+        }, false);
+
+      }, false);
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h3&gt;Datos Personales:&lt;/h3&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;textNombre&quot;&gt;Nombre:&lt;/label&gt;
+      &lt;input type=&quot;text&quot; id=&quot;textNombre&quot; value=&quot;Pedro Pérez &lt;Ing. &amp; Lic.&gt;&quot; /&gt;&lt;br/&gt;
+      &lt;label for=&quot;textTelefono&quot;&gt;Teléfono:&lt;/label&gt;
+      &lt;input type=&quot;text&quot; id=&quot;textTelefono&quot; value=&quot;+58.212.555.5555&quot; /&gt;&lt;br/&gt;
+    &lt;/div&gt;&lt;br/&gt;
+    &lt;input type=&quot;button&quot; id=&quot;boton-txt&quot; value=&quot;Descargar TXT&quot; /&gt;&lt;br/&gt;
+    &lt;input type=&quot;button&quot; id=&quot;boton-xml&quot; value=&quot;Descargar XML&quot; /&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+ 
+</pre>
+<p><strong>Spoiler Alert</strong>: para un próximo artículo veremos como pedir una imagen al usuario, aplicarle algunos filtros y luego permitirle descargarla, todo esto directamente desde el navegador por medio de Javascript. </p>
+<h2>Derecho de uso</h2>
+<p>Los contenidos generados por el autor de este artículo (explicaciones, código fuente, y archivos adjuntos creados por el autor) están disponibles bajo licencia <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.es" target="_blank">CC BY-SA 3.0</a>, y pueden ser usados, derivados y compartidos bajo los términos indicados en la misma. Los contenidos no generados por el autor de este artículo son propiedad de sus respectivos dueños y están regidos por las licencias que estos hayan dispuesto.</p>
+<h2>Cita del día</h2>
+<blockquote><p>Getting information off the Internet is like taking a drink from a fire hydrant.<br />
+<span class='BlockQuoteAutor' style='display:block;font-style:italic;text-align:right;width:100%;'>Mitchell D. Kapor</span>
+</p></blockquote>
+		<div class="wpcnt">
+			<div class="wpa wpmrec">
+				<a class="wpa-about" href="https://wordpress.com/about-these-ads/" rel="nofollow"></a>
+				<div class="u">
+					<script type='text/javascript'>
+					(function(g){g.__ATA.initAd({sectionId:26942, width:300, height:250});})(window);
+					</script>
+				</div>
+			</div>
+		</div><div id="jp-post-flair" class="sharedaddy sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-382" class="share-twitter sd-button share-icon" href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?share=twitter" target="_blank" title="Haz clic para compartir en Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-382" class="share-facebook sd-button share-icon" href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?share=facebook" target="_blank" title="Comparte en Facebook"><span>Facebook</span></a></li><li class="share-linkedin"><a rel="nofollow" data-shared="sharing-linkedin-382" class="share-linkedin sd-button share-icon" href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?share=linkedin" target="_blank" title="Haz clic aquí para compartir en LinkedIn"><span>LinkedIn</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-382" class="share-google-plus-1 sd-button share-icon" href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?share=google-plus-1" target="_blank" title="Haz clic para compartir en Google+"><span>Google</span></a></li><li class="share-email"><a rel="nofollow" data-shared="" class="share-email sd-button share-icon" href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?share=email" target="_blank" title="Click to email"><span>Correo electrónico</span></a></li><li class="share-print"><a rel="nofollow" data-shared="" class="share-print sd-button share-icon" href="index.html.2#print" target="_blank" title="Haz clic para imprimir"><span>Imprimir</span></a></li><li class="share-end"></li></ul></div></div></div><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-10398367-382-56773dbb07331' data-src='//widgets.wp.com/likes/#blog_id=10398367&amp;post_id=382&amp;origin=variabletecnica.wordpress.com&amp;obj_id=10398367-382-56773dbb07331' data-name='like-post-frame-10398367-382-56773dbb07331'><h3 class='sd-title'>Me gusta:</h3><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height:55px'><span class='button'><span>Me gusta</span></span> <span class="loading">Cargando...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+<div id='jp-relatedposts' class='jp-relatedposts' >
+	<h3 class="jp-relatedposts-headline"><em>Relacionado</em></h3>
+</div></div>		
+	</div><!-- .entry-content -->
+
+	<footer class="entry-taxonomy">
+				<span class="cat-links">
+			Publicado en <a href="https://variabletecnica.wordpress.com/category/html/" rel="category tag">HTML</a>, <a href="https://variabletecnica.wordpress.com/category/javascript-2/" rel="category tag">Javascript</a>		</span>
+			</footer><!-- #entry-taxonomy -->
+</article><!-- #post-382 -->
+
+					<nav role="navigation" id="nav-below" class="site-navigation post-navigation entry-navigation">
+		<h1 class="assistive-text">Navegador de artículos</h1>
+
+	
+		<div class="nav-previous"><a href="https://variabletecnica.wordpress.com/2013/08/20/sonido-basico-con-javascript/" rel="prev">Anterior</a></div>		<div class="nav-next"><a href="https://variabletecnica.wordpress.com/2014/01/02/anecdota-personal-el-codigo-mas-simple-que-funcione/" rel="next">Siguiente</a></div>
+	
+	</nav><!-- #nav-below -->
+	
+					<div id="comments" class="comments-area">
+	
+	
+			<h2 class="comments-title">
+			29 pensamientos en &ldquo;<span>Crear y descargar archivos con&nbsp;Javascript</span>&rdquo;		</h2>
+
+		
+		<ol class="commentlist">
+					<li class="comment even thread-even depth-1 highlander-comment" id="li-comment-59">
+			<article id="comment-59" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/891a30e5453298291c58ce246eda9916?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='http://reproduccion-asistida.blogspot.com/2013/02/las-ventajas-de-los-test-de-ovulacion.html' rel='external nofollow' class='url'>Coy</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-59"><time pubdate datetime="2013-09-09T23:54:48+00:00">
+						9 septiembre, 2013 en 23:54						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Excelente Web . Continua este buen trabajo.Contiene un enfoque impresionante sobre el tema y los comentarios son realmente acertados.</p>
+<p>Solo mencionar que estoy sorprendido por haber tropezado con esta web<br />
+Posiblemente tienes el mejor sitio </p>
+<p>web sobre el tema.</p>
+<p>Muchas gracias :-)</p>
+<p id="comment-like-59" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=59&#038;_wpnonce=7454937583" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-59" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		<ul class="children">
+		<li class="comment byuser comment-author-roimergarcia comment-author-is-site-member bypostauthor odd alt depth-2 highlander-comment" id="li-comment-61">
+			<article id="comment-61" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/b0cc402e56d5fc9bcf8097a62b18e665?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='https://variabletecnica.wordpress.com' rel='external nofollow' class='url'>Roimer Garcia</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-61"><time pubdate datetime="2013-09-10T22:25:39+00:00">
+						10 septiembre, 2013 en 22:25						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>¡Gracias Coy! :D me gusta escribir y darle un enfoque didáctico y práctico, aunque no tengo mucho tiempo libre para hacerlo. Justo ahora estoy preparando el próximo artículo, el tema de aplicar filtros en imágenes con Javascript llamó mucho mi atención pero debía escribir este primero :)</p>
+<p id="comment-like-61" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=61&#038;_wpnonce=b4b174489c" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-61" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 highlander-comment" id="li-comment-68">
+			<article id="comment-68" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/b9c308948593415c62da8295a13f40c4?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='http://consulta-de-perros.blogspot.com.es/2012/12/mi-perro-tiene-otitis-que-hago-aqui-la.html' rel='external nofollow' class='url'>Isabell</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-68"><time pubdate datetime="2013-09-14T07:23:02+00:00">
+						14 septiembre, 2013 en 07:23						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Posiblemente tienes el mejor sitio web sobre el tema.</p>
+<p>Gracias :-)</p>
+<p id="comment-like-68" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=68&#038;_wpnonce=35ab2fc62c" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-68" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 highlander-comment" id="li-comment-84">
+			<article id="comment-84" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://0.gravatar.com/avatar/6614fa00a7dd0912d0fbe001ecd0dd5c?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='http://lolabits.es' rel='external nofollow' class='url'>Lluna</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-84"><time pubdate datetime="2013-10-29T07:59:35+00:00">
+						29 octubre, 2013 en 07:59						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>da gusto leer explicaciones tan claras y detalladas como las tuyas</p>
+<p id="comment-like-84" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=84&#038;_wpnonce=717bb47d45" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-84" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		<ul class="children">
+		<li class="comment byuser comment-author-roimergarcia comment-author-is-site-member bypostauthor even depth-2 highlander-comment" id="li-comment-85">
+			<article id="comment-85" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/b0cc402e56d5fc9bcf8097a62b18e665?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='https://variabletecnica.wordpress.com' rel='external nofollow' class='url'>Roimer Garcia</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-85"><time pubdate datetime="2013-10-29T12:23:36+00:00">
+						29 octubre, 2013 en 12:23						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Gracias! Me desespero cuando tengo que leer algo varias veces porque no está claro o está mal redactado :-P</p>
+<p id="comment-like-85" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=85&#038;_wpnonce=a785681207" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-85" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 highlander-comment" id="li-comment-99">
+			<article id="comment-99" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://i1.wp.com/pbs.twimg.com/profile_images/1113866495/HIM_Heartagram_Eyes_I_got_by_xXTheMe4LessModestXx_normal.jpg?resize=38%2C38' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='http://twitter.com/Malko_7' rel='external nofollow' class='url'>Malko (@Malko_7)</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-99"><time pubdate datetime="2014-01-24T14:26:47+00:00">
+						24 enero, 2014 en 14:26						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Excelente la información y la forma en que la explica, tengo una duda, el archivo que se crea, en donde se almacena antes de descargarlo?</p>
+<p>Saludos.</p>
+<p id="comment-like-99" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=99&#038;_wpnonce=5122214655" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-99" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		<ul class="children">
+		<li class="comment byuser comment-author-roimergarcia comment-author-is-site-member bypostauthor even depth-2 highlander-comment" id="li-comment-100">
+			<article id="comment-100" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/b0cc402e56d5fc9bcf8097a62b18e665?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='https://variabletecnica.wordpress.com' rel='external nofollow' class='url'>Roimer Garcia</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-100"><time pubdate datetime="2014-01-24T20:00:49+00:00">
+						24 enero, 2014 en 20:00						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Saludos Malko! el archivo generado está siempre en memoria (en el navegador, sin &#8220;archivos temporales&#8221;) hasta que el usuario lo guarde en disco: En el código de la sección &#8220;Creando un nuevo archivo de texto&#8221;, la función <code>generarTexto()</code> tiene el contenido del archivo en la variable <code>texto</code> (un array temporal) y te devuelve un objeto Blob que contiene el archivo generado; en el ejemplo envío el Blob directamente a la función de descarga y lo almaceno temporalmente en forma de URL dentro del link creado (en la variable <code>save</code>) hasta que se simula el clic que inicia la descarga.</p>
+<p id="comment-like-100" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=100&#038;_wpnonce=bcbce5b799" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-100" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 highlander-comment" id="li-comment-150">
+			<article id="comment-150" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://0.gravatar.com/avatar/f4c94aadf1681234db189fc1ee7c78d1?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn">PP</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-150"><time pubdate datetime="2014-06-16T05:16:39+00:00">
+						16 junio, 2014 en 05:16						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Hola,</p>
+<p>Estaba con probando tú codigo y me he encontrado con que en IE10 y 11 da problemas, en la linea  que dice var clicEvent = new MouseEvent(&#8216;click&#8217;, {&#8230; da un error de que el objeto no soporta la propiedad y no genera el archivo, en FF y chrome sin problema.</p>
+<p>He mirado a ver cual podría ser una alternativa pero no la encuentro, sabrías tu decirme una?</p>
+<p>Gracias!</p>
+<p id="comment-like-150" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=150&#038;_wpnonce=c336621010" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-150" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 highlander-comment" id="li-comment-168">
+			<article id="comment-168" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://1.gravatar.com/avatar/1a89749d76e629ff960f290da9282fb2?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn">Mortífera</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-168"><time pubdate datetime="2014-07-29T16:23:58+00:00">
+						29 julio, 2014 en 16:23						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Qué tal,</p>
+<p>Creo que tengo el mismo problema que la persona del comentario de arriba, al parecer todo funciona bien pero la función de descarga no genera el archivo, sino que abre una pestaña nueva que contiene la información en el navegador. Estoy utilizando Mozilla en entorno Linux.</p>
+<p>Te agradecería una solución al respecto, por lo demás, excelente artículo.</p>
+<p>¡Saludos!</p>
+<p id="comment-like-168" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=168&#038;_wpnonce=7ddb7176be" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-168" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 highlander-comment" id="li-comment-170">
+			<article id="comment-170" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://1.gravatar.com/avatar/47a3ba0d236dd3ba9673196d8e847523?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='http://escepticismoilustrado.blogspot.com' rel='external nofollow' class='url'>David Solé</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-170"><time pubdate datetime="2014-08-20T03:10:07+00:00">
+						20 agosto, 2014 en 03:10						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Hola!</p>
+<p>Me parece una función tremenda. Ya era hora de darle un poco de &#8220;vida&#8221; a JS&#8230; se me ocurren varias utilidades para esta función&#8230; una pregunta ¿Se pueden leer ficheros locales con alguna función similar?</p>
+<p>Me guardo tu link para hacer un par de experimentos, ya comentaré :P</p>
+<p>Saludos y gracias por compartir el conocimiento!</p>
+<p id="comment-like-170" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=170&#038;_wpnonce=47c70cbfe2" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-170" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 highlander-comment" id="li-comment-197">
+			<article id="comment-197" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/88b3f27216e52d1c39267c947fad31be?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn">Andrea</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-197"><time pubdate datetime="2014-11-19T13:30:20+00:00">
+						19 noviembre, 2014 en 13:30						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Hola! me parece genial el aporte!.<br />
+Lo eh utilizado y funciona perfectamente, el único problema que tengo es que si mi archivo presenta símbolos o caracteres especiales me toma cualquier cosa. Habría alguna solución para ello?</p>
+<p id="comment-like-197" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=197&#038;_wpnonce=59f8ed086c" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-197" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		<ul class="children">
+		<li class="comment byuser comment-author-roimergarcia comment-author-is-site-member bypostauthor odd alt depth-2 highlander-comment" id="li-comment-198">
+			<article id="comment-198" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/b0cc402e56d5fc9bcf8097a62b18e665?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='https://variabletecnica.wordpress.com' rel='external nofollow' class='url'>Roimer Garcia</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-198"><time pubdate datetime="2014-11-19T21:06:54+00:00">
+						19 noviembre, 2014 en 21:06						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Hola Andrea! ¿te da error al generar el archivo TXT o XML? ¿y que programa usas para abrir el archivo una vez que lo descargas? en general el único problema que debería ocurrir es cuando tienes caracteres especiales en el XML, pero de eso se ocupa la función &#8220;escaparXML()&#8221; y el &#8220;UTF8&#8221; en la declaración (acabo de probar nuevamente el jsfiddle de ejemplo y funciona con acentos ampersands &#8220;&amp;&#8221; y paréntesis angulares <a href="http://jsfiddle.net/roimergarcia/XLqsf/" rel="nofollow">http://jsfiddle.net/roimergarcia/XLqsf/</a> ).<br />
+Para ver cual es el problema intenta abrir el archivo descargado con un editor &#8220;avanzado&#8221;, como &#8220;XML Notepad&#8221; o &#8220;SublimeText&#8221;.</p>
+<p id="comment-like-198" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=198&#038;_wpnonce=a1315a93f4" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-198" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 highlander-comment" id="li-comment-199">
+			<article id="comment-199" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/88b3f27216e52d1c39267c947fad31be?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn">Andrea</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-199"><time pubdate datetime="2014-11-20T06:46:17+00:00">
+						20 noviembre, 2014 en 06:46						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>El archivo que me interesa generar es el TXT. Los programas que utilizo para abrir el archivo es Gedit o SublimeText. Mi archivo contiene caracteres especiales y símbolos como &lt; y me lo toma como &amp;lt. El problema es que este archivo descargado debo ejecutarlo y se presentan errores de sintaxis por este tema. Existe alguna manera de solucionarlo?.<br />
+Muchas gracias por su respuesta.</p>
+<p id="comment-like-199" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=199&#038;_wpnonce=2d29753e95" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-199" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		<ul class="children">
+		<li class="comment byuser comment-author-roimergarcia comment-author-is-site-member bypostauthor odd alt depth-2 highlander-comment" id="li-comment-200">
+			<article id="comment-200" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/b0cc402e56d5fc9bcf8097a62b18e665?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='https://variabletecnica.wordpress.com' rel='external nofollow' class='url'>Roimer Garcia</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-200"><time pubdate datetime="2014-11-20T07:08:22+00:00">
+						20 noviembre, 2014 en 07:08						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>OK, probé nuevamente el link con el ejemplo para generar un TXT que contiene &#8220;&#8221; y &#8220;&amp;&#8221;, y sale normalmente. Creo que lo que pasa es que estas usando la función “escaparXML()” al generar el TXT: en el TXT no es necesario, solo la utilizo en el xml para codificar los caracteres no válidos. Si no es este el problema puedes pasarme tu código en un jsFiddle (o pastebin, o lo que uses :) para probarlo; estaré en línea como a las 20:00 VET (en unas 11 horas).</p>
+<p id="comment-like-200" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=200&#038;_wpnonce=d281b0d62f" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-200" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 highlander-comment" id="li-comment-201">
+			<article id="comment-201" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/88b3f27216e52d1c39267c947fad31be?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn">Andrea</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-201"><time pubdate datetime="2014-11-20T17:10:03+00:00">
+						20 noviembre, 2014 en 17:10						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Las únicas funciones que utilizo en mi código es el generar texto y descargar archivo. No se cual seria el problema con los símbolos como &lt; y &amp;, me toman como si fuera un archivo XML descargado.</p>
+<p id="comment-like-201" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=201&#038;_wpnonce=202b1167a4" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-201" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 highlander-comment" id="li-comment-202">
+			<article id="comment-202" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/eb0159457d99a7eb667139d364db40f1?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn">Juan</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-202"><time pubdate datetime="2014-11-21T11:40:35+00:00">
+						21 noviembre, 2014 en 11:40						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Genial, es de gran ayuda pero no consigo que en el archivo descargado me aparezcan los retornos de carro y los necesito sino es ilegible :/</p>
+<p id="comment-like-202" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=202&#038;_wpnonce=aaf8c4c605" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-202" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 highlander-comment" id="li-comment-204">
+			<article id="comment-204" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/eb0159457d99a7eb667139d364db40f1?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn">Juan</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-204"><time pubdate datetime="2014-11-26T10:38:50+00:00">
+						26 noviembre, 2014 en 10:38						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>La respuesta a mi problema era muy simple.<br />
+El problema se genera al manejar el objeto Blob el cual descompone tal y como debe hacerlo y no reconoce los caracteres de escape.<br />
+Pues bien mi solucion fue simple: String.fromCharCode()    &#8211;&gt; Siendo  el codigo ASCII correspondiente &#8220;13&#8221; para retorno de carro. :)</p>
+<p id="comment-like-204" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=204&#038;_wpnonce=baba6a6769" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-204" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		<ul class="children">
+		<li class="comment byuser comment-author-roimergarcia comment-author-is-site-member bypostauthor odd alt depth-2 highlander-comment" id="li-comment-206">
+			<article id="comment-206" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/b0cc402e56d5fc9bcf8097a62b18e665?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='https://variabletecnica.wordpress.com' rel='external nofollow' class='url'>Roimer Garcia</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-206"><time pubdate datetime="2014-11-29T07:48:08+00:00">
+						29 noviembre, 2014 en 07:48						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Gracias por el aporte Juan! en mis pruebas usando &#8216;\n&#8217; se formateaba correctamente, de todas formas en caso de que a alguien más le ocurra ya tiene solución :)</p>
+<p id="comment-like-206" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=206&#038;_wpnonce=358dd2be6e" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-206" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 highlander-comment" id="li-comment-205">
+			<article id="comment-205" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/bb7f3586ef500c17c2fe0c2b35036bef?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn">Ramón</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-205"><time pubdate datetime="2014-11-26T15:15:18+00:00">
+						26 noviembre, 2014 en 15:15						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Para Internet Explorer 10+ agregué estas dos líneas de código  y funciona perfecto</p>
+<p>					function descargarArchivo(contenidoEnBlob, nombreArchivo) {</p>
+<p>						if (navigator.msSaveBlob) { // IE10<br />
+							return navigator.msSaveBlob(contenidoEnBlob, nombreArchivo);<br />
+						}</p>
+<p id="comment-like-205" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=205&#038;_wpnonce=76fe1ec1ec" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-205" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		<ul class="children">
+		<li class="comment byuser comment-author-roimergarcia comment-author-is-site-member bypostauthor odd alt depth-2 highlander-comment" id="li-comment-207">
+			<article id="comment-207" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/b0cc402e56d5fc9bcf8097a62b18e665?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='https://variabletecnica.wordpress.com' rel='external nofollow' class='url'>Roimer Garcia</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-207"><time pubdate datetime="2014-11-29T07:52:20+00:00">
+						29 noviembre, 2014 en 07:52						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Gracias por el aporte Ramón! :) ya por costumbre no pruebo mucho en IE :S excepto tal vez la última versión que es &#8220;bastante cercana al estándar&#8221;, lástima que mucha gente aun no suelta las versiones viejas del IE; conozco una empresa que tengo usa IE7, y no lo cambia debido a sus &#8220;políticas de actualización de software&#8221; :p</p>
+<p id="comment-like-207" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=207&#038;_wpnonce=e248ded3c2" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-207" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 highlander-comment" id="li-comment-211">
+			<article id="comment-211" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://0.gravatar.com/avatar/9ab054ea14f78a44381d31f2a93af5ab?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn">Eva Sanz</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-211"><time pubdate datetime="2014-12-26T20:03:30+00:00">
+						26 diciembre, 2014 en 20:03						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Muchas gracias por el post, funciona perfectamente y me sirvio de gran ayuda.</p>
+<p>Ahora tengo un pequeño problema y es que en vez de un unico fichero XML tengo que generar varios con datos de una tabla html. Recorro la tabla con un bucle for, obtengo los datos y se generan todos perfectamente pero logicamente se abren todos en el navegador. Había pensado usar alguna api (jsZip)  para almacenar en un ZIP y guadar todos pero no se como puedo obtener los ficheros..¿podrías ayudarme?</p>
+<p>Gracias. Un saludo</p>
+<p id="comment-like-211" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=211&#038;_wpnonce=767cd371d0" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-211" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 highlander-comment" id="li-comment-230">
+			<article id="comment-230" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://1.gravatar.com/avatar/a2cf48d65f1305a46542ea1713473adf?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn">Maxi Morales</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-230"><time pubdate datetime="2015-01-28T18:50:46+00:00">
+						28 enero, 2015 en 18:50						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Que tal amigo muy interesante el codigo, tengo un problema que realmente no doy con la solucion:<br />
+Utilice <a href="http://jsfiddle.net/roimergarcia/XLqsf/" rel="nofollow">http://jsfiddle.net/roimergarcia/XLqsf/</a> de ahi copie el codigo y me da error en la linea 73 en caso de tener el script dentro del html. Lo probe con un js externo y me sigue pasando.<br />
+Saludos espero tu respuesta</p>
+<p id="comment-like-230" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=230&#038;_wpnonce=8cb148e09a" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-230" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 highlander-comment" id="li-comment-231">
+			<article id="comment-231" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://1.gravatar.com/avatar/a2cf48d65f1305a46542ea1713473adf?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn">Maxi Morales</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-231"><time pubdate datetime="2015-01-29T08:08:06+00:00">
+						29 enero, 2015 en 08:08						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Perdon por no poner el error: TypeError: document.getElementById(&#8230;) is null. Saludos</p>
+<p id="comment-like-231" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=231&#038;_wpnonce=5cce5310ea" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-231" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		<ul class="children">
+		<li class="comment byuser comment-author-roimergarcia comment-author-is-site-member bypostauthor odd alt depth-2 highlander-comment" id="li-comment-234">
+			<article id="comment-234" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/b0cc402e56d5fc9bcf8097a62b18e665?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='https://variabletecnica.wordpress.com' rel='external nofollow' class='url'>Roimer Garcia</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-234"><time pubdate datetime="2015-02-05T19:50:34+00:00">
+						5 febrero, 2015 en 19:50						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Hola Maxi! OK, tardé tanto en responder que supongo ya resolviste, :P de todas formas: por el mensaje de error parece que no encuentra uno de los dos inputs. Fijate que en tu HTML tengan el mismo ID que tiene en la linea que da error; si esto está correcto pon un &#8220;console.log(document.getElementById(&#8216;textNombre&#8217;))&#8221; antes de la linea que da el error a ver si te sale en la consola el input correcto.</p>
+<p id="comment-like-234" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=234&#038;_wpnonce=8b7779371a" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-234" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 highlander-comment" id="li-comment-256">
+			<article id="comment-256" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://1.gravatar.com/avatar/a374c388f4c0b56e5706696777dd51f1?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='http://megascan.no-ip.org/megascan' rel='external nofollow' class='url'>Federico</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-256"><time pubdate datetime="2015-04-13T05:50:29+00:00">
+						13 abril, 2015 en 05:50						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Genial, estoy desarrollando con la idea de aprovechar el almacenamiento local para una pequeña base de datos pero depende de cosas como el historial y los datos almacenados por el navegador, con esta idea puedo hacer que el usuario al cerrar la página &#8220;guarde&#8221; los datos almacenados. Muchas gracias</p>
+<p id="comment-like-256" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=256&#038;_wpnonce=3a8f1251b0" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-256" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-sistemasumma odd alt thread-odd thread-alt depth-1 highlander-comment" id="li-comment-299">
+			<article id="comment-299" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/b699310fdb5f02253f15787e7e1f9ec7?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='http://sistemasumma.com' rel='external nofollow' class='url'>sistemasumma</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-299"><time pubdate datetime="2015-08-20T13:52:05+00:00">
+						20 agosto, 2015 en 13:52						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>como puedo hacer para verificar que un archivo se termino de descargar?, porque quiero eliminarlo del servidor cuando se termine de descargar</p>
+<p id="comment-like-299" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=299&#038;_wpnonce=6b888b8434" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-299" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		<ul class="children">
+		<li class="comment byuser comment-author-roimergarcia comment-author-is-site-member bypostauthor even depth-2 highlander-comment" id="li-comment-302">
+			<article id="comment-302" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/b0cc402e56d5fc9bcf8097a62b18e665?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='https://variabletecnica.wordpress.com' rel='external nofollow' class='url'>Roimer Garcia</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-302"><time pubdate datetime="2015-08-23T20:47:38+00:00">
+						23 agosto, 2015 en 20:47						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Hola! bueno, según te entiendo te refieres a un archivo que está en el servidor (este artículo se refiere a archvos creados con javascript en el navegador). Hasta donde se, no es posible saberlo directamente, ya que el navegador no tiene un evento que indique cuando termina la descarga.<br />
+Si el archivo lo generas en el servidor, una posible solución es que lo crees siguiendo un patrón con el nombre, y crear un &#8220;limpiador&#8221; que elimine los archivos temporales que tengan más de X horas/días de antigüedad.<br />
+Ahora, si es un archivo &#8220;único, propiedad del usuario&#8221; y quieres que se elimine si y solo si logra descargarlo, hay una posible solución usando una cookie (requiere código tanto JavaScript como de servidor). Te dejo un ilnk a la segunda solución (en inglés): <a href="http://gruffcode.com/2010/10/28/detecting-the-file-download-dialog-in-the-browser/" rel="nofollow">http://gruffcode.com/2010/10/28/detecting-the-file-download-dialog-in-the-browser/</a></p>
+<p id="comment-like-302" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=302&#038;_wpnonce=448f6c657d" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-302" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		<ul class="children">
+		<li class="comment byuser comment-author-sistemasumma odd alt depth-3 highlander-comment" id="li-comment-303">
+			<article id="comment-303" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://2.gravatar.com/avatar/b699310fdb5f02253f15787e7e1f9ec7?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='http://sistemasumma.com' rel='external nofollow' class='url'>sistemasumma</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-303"><time pubdate datetime="2015-08-23T20:51:00+00:00">
+						23 agosto, 2015 en 20:51						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Muchas gracias por la respuesta </p>
+<p id="comment-like-303" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=303&#038;_wpnonce=103ab540c6" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-303" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 highlander-comment" id="li-comment-304">
+			<article id="comment-304" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt='' src='https://1.gravatar.com/avatar/16767c85fabe61e1e6c71b8f677986e8?s=38&#038;d=identicon&#038;r=G' class='avatar avatar-38' height='38' width='38' />						<cite class="comment-author-name fn"><a href='http://n/a' rel='external nofollow' class='url'>Oscar Quiros Coto</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="index.html.2#comment-304"><time pubdate datetime="2015-08-25T21:37:53+00:00">
+						25 agosto, 2015 en 21:37						</time></a>
+																	</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Buenas noches.<br />
+Si en php genero el archivo texto, dentro de una carpeta del servidor, como podria adaptar este codigo, para que por medio de javascript pueda bajarlo al equipo de usuario?</p>
+<p>Saludos cordiales.</p>
+<p id="comment-like-304" data-liked=comment-not-liked class="comment-likes comment-not-liked"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/?like_comment=304&#038;_wpnonce=6c1d70abf1" class="comment-like-link needs-login" rel="nofollow" data-blog="10398367"><span>Me gusta</span></a><span id="comment-like-count-304" class="comment-like-feedback">Me gusta</span></p>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		</ol>
+
+		
+	
+			<p class="nocomments">Los comentarios están cerrados.</p>
+	
+	
+</div><!-- #comments .comments-area -->
+
+			
+			</div><!-- #content -->
+		</div><!-- #primary .site-content -->
+
+
+<div id="sidebar-gallery" class="sidebar sidebar-gallery" role="complementary">
+	<h1 class="widget-title">Fotos</h1>
+
+	
+		<aside class="ideation-gallery">
+
+			
+				<div class="ideation-gallery-row three-images">
+				
+					<a href="https://variabletecnica.wordpress.com/2014/10/30/detectar-soporte-de-input-tipo-date-html5/">
+						<img width="72" height="72" src="https://variabletecnica.files.wordpress.com/2014/10/input-tipo-texto-chrome.png?w=72&amp;h=72&amp;crop=1" class="attachment-ideation-sidebar-triple size-ideation-sidebar-triple" alt="Input tipo texto con valor de fecha" />					</a>
+
+				
+					<a href="https://variabletecnica.wordpress.com/2014/10/30/detectar-soporte-de-input-tipo-date-html5/">
+						<img width="72" height="72" src="https://variabletecnica.files.wordpress.com/2014/10/selector-fecha-jquery-datepicker.png?w=72&amp;h=72&amp;crop=1" class="attachment-ideation-sidebar-triple size-ideation-sidebar-triple" alt="Selector de Fecha jQuery Datepicker" />					</a>
+
+				
+					<a href="https://variabletecnica.wordpress.com/2014/10/30/detectar-soporte-de-input-tipo-date-html5/">
+						<img width="72" height="72" src="https://variabletecnica.files.wordpress.com/2014/10/selector-fecha-nativo-chrome.png?w=72&amp;h=72&amp;crop=1" class="attachment-ideation-sidebar-triple size-ideation-sidebar-triple" alt="Fecha Nativo de Google Chrome" />					</a>
+
+				
+				</div>
+
+			
+		</aside>
+
+	
+		<aside class="ideation-gallery">
+
+			
+				<div class="ideation-gallery-row two-images">
+				
+					<a href="https://variabletecnica.wordpress.com/2014/07/05/remover-espacio-extra-entre-img-il-y-otros-inline/">
+						<img width="111" height="111" src="https://variabletecnica.files.wordpress.com/2014/07/seleccic3b3n_003.png?w=111&amp;h=111&amp;crop=1" class="attachment-ideation-sidebar-double size-ideation-sidebar-double" alt="Espacio entre elementos inline" />					</a>
+
+				
+					<a href="https://variabletecnica.wordpress.com/2014/07/05/remover-espacio-extra-entre-img-il-y-otros-inline/">
+						<img width="111" height="57" src="https://variabletecnica.files.wordpress.com/2014/07/seleccic3b3n_004.png?w=111&amp;h=57&amp;crop=1" class="attachment-ideation-sidebar-double size-ideation-sidebar-double" alt="Espacio entre dos elementos img" />					</a>
+
+				
+				</div>
+
+			
+		</aside>
+
+	
+		<aside class="ideation-gallery">
+
+			
+				<div class="ideation-gallery-row one-image">
+				
+					<a href="https://variabletecnica.wordpress.com/2014/05/02/abrir-links-en-misma-o-nueva-ventana/">
+						<img width="228" height="107" src="https://variabletecnica.files.wordpress.com/2014/05/vinculos.png?w=228&amp;h=107&amp;crop=1" class="attachment-ideation-sidebar-single size-ideation-sidebar-single" alt="Ejemplo de un vínculo HTML para descarga de archivo" />					</a>
+
+				
+				</div>
+
+			
+		</aside>
+
+	
+		<aside class="ideation-gallery">
+
+			
+				<div class="ideation-gallery-row one-image">
+				
+					<a href="https://variabletecnica.wordpress.com/2014/02/18/guardar-imagenes-en-mysql-con-php/">
+						<img width="228" height="107" src="https://variabletecnica.files.wordpress.com/2014/02/guardar-usuario-con-imagen-layout1.png?w=228&amp;h=107&amp;crop=1" class="attachment-ideation-sidebar-single size-ideation-sidebar-single" alt="Guardar usuario con imagen - Layout" />					</a>
+
+				
+				</div>
+
+			
+		</aside>
+
+	
+		<aside class="ideation-gallery">
+
+			
+				<div class="ideation-gallery-row one-image">
+				
+					<a href="https://variabletecnica.wordpress.com/2014/01/02/anecdota-personal-el-codigo-mas-simple-que-funcione/">
+						<img width="228" height="107" src="https://variabletecnica.files.wordpress.com/2014/01/kiss.png?w=228&amp;h=107&amp;crop=1" class="attachment-ideation-sidebar-single size-ideation-sidebar-single" alt="Keep Calm and Keep it Simple" />					</a>
+
+				
+				</div>
+
+			
+		</aside>
+
+	
+		<aside class="ideation-gallery">
+
+			
+				<div class="ideation-gallery-row two-images">
+				
+					<a href="https://variabletecnica.wordpress.com/2013/05/01/algebra-programacion-interseccion-de-intervalos/">
+						<img width="111" height="111" src="https://variabletecnica.files.wordpress.com/2013/05/vt-ejemplo-1-de-interseccion-de-dos-intervalos1.png?w=111&amp;h=111&amp;crop=1" class="attachment-ideation-sidebar-double size-ideation-sidebar-double" alt="Ejemplo 1: Fecha dentro de un intervalo" />					</a>
+
+				
+					<a href="https://variabletecnica.wordpress.com/2013/05/01/algebra-programacion-interseccion-de-intervalos/">
+						<img width="111" height="111" src="https://variabletecnica.files.wordpress.com/2013/05/vt-ejemplo-2-de-interseccion-de-dos-intervalos1.png?w=111&amp;h=111&amp;crop=1" class="attachment-ideation-sidebar-double size-ideation-sidebar-double" alt="Ejemplo 2: Intersección entre dos intervalos" />					</a>
+
+				
+				</div>
+
+			
+		</aside>
+
+	
+		<aside class="ideation-gallery">
+
+			
+				<div class="ideation-gallery-row one-image">
+				
+					<a href="https://variabletecnica.wordpress.com/2013/03/24/punto-y-coma-en-javascript-es-realmente-necesario/">
+						<img width="228" height="107" src="https://variabletecnica.files.wordpress.com/2013/03/imagen-punto-y-coma.png?w=228&amp;h=107&amp;crop=1" class="attachment-ideation-sidebar-single size-ideation-sidebar-single" alt="Imagen punto y coma" />					</a>
+
+				
+				</div>
+
+			
+		</aside>
+
+	
+		<aside class="ideation-gallery">
+
+			
+				<div class="ideation-gallery-row four-images">
+				
+					<a href="https://variabletecnica.wordpress.com/2012/10/24/mapas-interactivos-con-svg-y-javascript/">
+						<img width="52" height="52" src="https://variabletecnica.files.wordpress.com/2012/10/01-venezuela_geopolitico-en-sublime-text-2.png?w=52&amp;h=52&amp;crop=1" class="attachment-ideation-thumbnail-square size-ideation-thumbnail-square" alt="Mapa Geopolitico de Venezuela - en Sublime Text 2" />					</a>
+
+				
+					<a href="https://variabletecnica.wordpress.com/2012/10/24/mapas-interactivos-con-svg-y-javascript/">
+						<img width="52" height="52" src="https://variabletecnica.files.wordpress.com/2012/10/02-svg-en-linea-en-html5.png?w=52&amp;h=52&amp;crop=1" class="attachment-ideation-thumbnail-square size-ideation-thumbnail-square" alt="Ejemplo de SVG en linea, en HTML5" />					</a>
+
+				
+					<a href="https://variabletecnica.wordpress.com/2012/10/24/mapas-interactivos-con-svg-y-javascript/">
+						<img width="52" height="52" src="https://variabletecnica.files.wordpress.com/2012/10/03-mapa-interactivo-svg.png?w=52&amp;h=52&amp;crop=1" class="attachment-ideation-thumbnail-square size-ideation-thumbnail-square" alt="Mapa Interactivo de Venezuela, en SVG" />					</a>
+
+				
+					<a href="https://variabletecnica.wordpress.com/2012/10/24/mapas-interactivos-con-svg-y-javascript/">
+						<img width="52" height="52" src="https://variabletecnica.files.wordpress.com/2012/10/04-mapa-interactivo-svg-region-central-activa.png?w=52&amp;h=52&amp;crop=1" class="attachment-ideation-thumbnail-square size-ideation-thumbnail-square" alt="Mapa Interactivo de Venezuela, en SVG - Region Central Activa" />					</a>
+
+				
+				</div>
+
+			
+		</aside>
+
+	
+		<aside class="ideation-gallery">
+
+			
+				<div class="ideation-gallery-row four-images">
+				
+					<a href="https://variabletecnica.wordpress.com/2012/10/12/vista-previa-de-imagen-en-el-navegador/">
+						<img width="52" height="52" src="https://variabletecnica.files.wordpress.com/2012/10/vistaprevia-01.png?w=52&amp;h=52&amp;crop=1" class="attachment-ideation-thumbnail-square size-ideation-thumbnail-square" alt="Layout básico para vista previa de imagen" />					</a>
+
+				
+					<a href="https://variabletecnica.wordpress.com/2012/10/12/vista-previa-de-imagen-en-el-navegador/">
+						<img width="52" height="52" src="https://variabletecnica.files.wordpress.com/2012/10/foto-obelisco.png?w=52&amp;h=52&amp;crop=1" class="attachment-ideation-thumbnail-square size-ideation-thumbnail-square" alt="Obelisco de Barquisimeto" />					</a>
+
+				
+					<a href="https://variabletecnica.wordpress.com/2012/10/12/vista-previa-de-imagen-en-el-navegador/">
+						<img width="52" height="52" src="https://variabletecnica.files.wordpress.com/2012/10/foto-iglesia-de-santa-rosa.png?w=52&amp;h=52&amp;crop=1" class="attachment-ideation-thumbnail-square size-ideation-thumbnail-square" alt="Iglesia de Santa Rosa, Barquisimeto" />					</a>
+
+				
+					<a href="https://variabletecnica.wordpress.com/2012/10/12/vista-previa-de-imagen-en-el-navegador/">
+						<img width="52" height="52" src="https://variabletecnica.files.wordpress.com/2012/10/foto-flor-de-venezuela.png?w=52&amp;h=52&amp;crop=1" class="attachment-ideation-thumbnail-square size-ideation-thumbnail-square" alt="Flor de Venezuela, Barquisimeto" />					</a>
+
+				
+				</div>
+
+			
+		</aside>
+
+	
+</div><!-- #attached-images .sidebar -->
+
+	</div><!-- #main -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+						<a href="https://es.wordpress.com/?ref=footer_website">Crea un blog o un sitio web gratuitos con WordPress.com.</a>
+			<span class="sep"> | </span>
+			<a href="https://wordpress.com/themes/ideation-and-intent/" title="Saber más sobre este tema">El tema Ideation and Intent</a>.		</div><!-- .site-info -->
+	</footer><!-- .site-footer .site-footer -->
+</div><!-- #page .hfeed .site -->
+
+<!-- wpcom_wp_footer -->
+<script type='text/javascript' src='https://0.gravatar.com/js/gprofiles.js?ver=201551y'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s2.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1380573781g'></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-891a30e5453298291c58ce246eda9916">
+	</div>
+	<div class="grofile-hash-map-b0cc402e56d5fc9bcf8097a62b18e665">
+	</div>
+	<div class="grofile-hash-map-b9c308948593415c62da8295a13f40c4">
+	</div>
+	<div class="grofile-hash-map-6614fa00a7dd0912d0fbe001ecd0dd5c">
+	</div>
+	<div class="grofile-hash-map-5c4ff2c6617c2ee236295090dab5e76a">
+	</div>
+	<div class="grofile-hash-map-f4c94aadf1681234db189fc1ee7c78d1">
+	</div>
+	<div class="grofile-hash-map-1a89749d76e629ff960f290da9282fb2">
+	</div>
+	<div class="grofile-hash-map-47a3ba0d236dd3ba9673196d8e847523">
+	</div>
+	<div class="grofile-hash-map-88b3f27216e52d1c39267c947fad31be">
+	</div>
+	<div class="grofile-hash-map-eb0159457d99a7eb667139d364db40f1">
+	</div>
+	<div class="grofile-hash-map-bb7f3586ef500c17c2fe0c2b35036bef">
+	</div>
+	<div class="grofile-hash-map-9ab054ea14f78a44381d31f2a93af5ab">
+	</div>
+	<div class="grofile-hash-map-a2cf48d65f1305a46542ea1713473adf">
+	</div>
+	<div class="grofile-hash-map-a374c388f4c0b56e5706696777dd51f1">
+	</div>
+	<div class="grofile-hash-map-b699310fdb5f02253f15787e7e1f9ec7">
+	</div>
+	<div class="grofile-hash-map-16767c85fabe61e1e6c71b8f677986e8">
+	</div>
+	</div>
+
+	<div id="bit" class="loggedout-follow-normal">
+		<a class="bsub" href="javascript:void(0)"><span id='bsub-text'>Seguir</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Seguir &ldquo;Variable Técnica&rdquo;</label></h3>
+
+			<form action="https://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Recibe cada nueva publicación en tu buzón de correo electrónico.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+						<p class="bit-follow-count">Únete a otros 335 seguidores</p>
+			<p><input type="email" name="email" placeholder="Introduce tu dirección de correo electrónico" id="loggedout-follow-field"/></p>
+
+			<input type="hidden" name="action" value="subscribe"/>
+			<input type="hidden" name="blog_id" value="10398367"/>
+			<input type="hidden" name="source" value="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/"/>
+			<input type="hidden" name="sub-type" value="loggedout-follow"/>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="b5a8121e8f" /><input type="hidden" name="_wp_http_referer" value="/2013/08/25/crear-y-descargar-archivos-con-javascript/" />
+			<p id='bsub-subscribe-button'><input type="submit" value="Suscríbeme" /></p>
+			</form>
+					<div id='bsub-credit'><a href="https://es.wordpress.com/?ref=lof">Construye un sitio web con WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/variabletecnica.wordpress.com\/2013\/08\/25\/crear-y-descargar-archivos-con-javascript\/":382};
+	</script>
+		<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-linkedin' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+		});
+		</script>
+			<div id="sharing_email" style="display: none;">
+		<form action="index.html.2" method="post">
+			<label for="target_email">Enviar a dirección de correo electrónico</label>
+			<input type="email" name="target_email" id="target_email" value="" />
+
+			
+				<label for="source_name">Su Nombre</label>
+				<input type="text" name="source_name" id="source_name" value="" />
+
+				<label for="source_email">Tu dirección de correo electrónico</label>
+				<input type="email" name="source_email" id="source_email" value="" />
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" />
+			<script> document.getElementById('jetpack-source_f_name').value = ''; </script>
+			<div class="recaptcha" id="sharing_recaptcha"></div><input type="hidden" name="recaptcha_public_key" id="recaptcha_public_key" value="6LcYW8MSAAAAADBAuEH9yaPcF7lWh11Iq62ZKtoo" />
+			<img style="float: right; display: none" class="loading" src="https://s2.wp.com/wp-content/mu-plugins/post-flair/sharing/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Enviar correo electrónico" class="sharing_send" />
+			<a rel="nofollow" href="index.html.2#cancel" class="sharing_cancel">Cancelar</a>
+
+			<div class="errors errors-1" style="display: none;">
+				La entrada no fue enviada. ¡Comprueba tus direcciones de correo electrónico!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Error en la comprobación de email. Por favor, vuelve a intentarlo			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Lo sentimos, tu blog no puede compartir entradas por correo electrónico.			</div>
+		</form>
+	</div>
+		<iframe src='https://widgets.wp.com/likes/master.html?ver=20151208#ver=20151208&amp;lang=es&amp;mp6=1' scrolling='no' id='likes-master' name='likes-master' style='display:none;'></iframe>
+		<div id='likes-other-gravatars'><div class="likes-text">A <span>%d</span> blogueros les gusta esto:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesWidgetBatch = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesBatchHandler() {
+				var requests = [];
+				jQuery( 'div.jetpack-likes-widget-unloaded' ).each( function( i ) {
+					if ( jetpackLikesWidgetBatch.indexOf( this.id ) > -1 )
+						return;
+					jetpackLikesWidgetBatch.push( this.id );
+					var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+					var match = regex.exec( this.id );
+					if ( ! match || match.length != 5 )
+						return;
+
+					var info = {
+						blog_id: match[2],
+						width:   this.width
+					};
+
+					if ( 'post' == match[1] ) {
+						info.post_id = match[3];
+					} else if ( 'comment' == match[1] ) {
+						info.comment_id = match[3];
+					}
+
+					info.obj_id = match[4];
+
+					requests.push( info );
+				});
+
+				if ( requests.length > 0 ) {
+					JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+				}
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' ),
+								isRtl: ( 'rtl' == jQuery( '#wpadminbar' ).css( 'direction' ) )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						JetpackLikesBatchHandler();
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'clickReblogFlair' == event.event ) {
+					wpcom_reblog.toggle_reblog_box_flair( event.obj_id );
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/'&#32;+&#32;liker.profile_URL&#32;+&#32;'" class="wpl-liker" rel="nofollow" target="_parent"><img src="https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/'&#32;+&#32;liker.avatar_URL&#32;+&#32;'" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Grab any unloaded widgets for a batch request
+					JetpackLikesBatchHandler();
+
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				if ( 'undefined' === typeof wrapperID ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/&quot;&#32;+&#32;$wrapper.data('src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='https://variabletecnica.wordpress.com/2013/08/25/crear-y-descargar-archivos-con-javascript/&quot;&#32;+&#32;$wrapper.data('src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script type='text/javascript' src='https://s0.wp.com/_static/??-eJzTLy/QTc7PK0nNK9EvyClNz8wr1i+uzCtJrMjITM/IAeKS1CJMEWP94uSizIISoOIM5/yiVL2sYh19yo1yKiotzvAKBvOpaWREbg7QOPtcW0MTIyNjEyNDY5MsAD70YE8='></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?m=1363304414g&amp;ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var comment_like_text = {"loading":"Cargando..."};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"es","counts":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s0.wp.com/_static/??-eJyVjsEOwiAQRH9I3GhIw8X4LRTWdhEW0gWrfy8eNOrBxNMkM/MyA2tRLnNFrhAEPF7IYblug2zgLUpNldgmYgGXU+qWinRGeTCRRpCVCv4DfRjfYJ0x9VppI5BHWymzsuwVvX5KvcVfeyVLVadoaQGZ7UI8PbVDx3TYaW30MBizD3cMGF95'></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="https://stats.wp.com/w.js?48" type="text/javascript" async defer></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'10398367','blog_tz':'-4','user_lang':'es','blog_lang':'es','user_id':'0'}]);
+_stq.push(['view', {'blog':'10398367','v':'wpcom','tz':'-4','user_id':'0','post':'382','subd':'variabletecnica'}]);
+_stq.push(['extra', {'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWtpP0NsWnVkPS9sL0ViLndld3B2eVcmWFVdT2ZlbjRDUHhleHpDNG5CVDk0bSxMY1Nfck4vTENnaHBzNzdSZy1GV1VZNjBRbWh5ZkF4NHF2WmU0alVVdktXcHNUNyxRSEtdT2VPOVFncXBBTjMteTJmW1BnZm1FcDNwdlRZeGxyMTdJWmZsJllwa1greTR4bE94ak9JSnhMJmR1UHhFV284SX5zeGp3U21xOT1lNm5ZNHJ3c05yY3owJiZRaVF+UCZPJkFILnlXZWJSLjZveDB4UVhLVWQtOTBLTS9zeHhmP1BoWl0yX0Q/X3M2cXplbnZCUjJLRC14ZWdyTi1wZz9Tb08wYm8lMi4yeitbJWl5ZjdFaG4='}]);
+_stq.push([ 'clickTrackerInit', '10398367', '382' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+</body>
+</html>
