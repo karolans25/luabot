@@ -7,10 +7,10 @@ echo "|- webIDENodeJS.sh"
 echo "|- tools-ESP8266/"
 echo "|- serverNode/"
 echo "|- webIDEnodejs/"
-echo "De lo contrario no se ejecutará correctamente"
-echo "Por defecto el navegador que se lanzara sera iceweasel. si usa 
+echo "De lo contrario no se ejecutará correctamente."
+echo "Por defecto el navegador que se lanzara sera iceweasel. Si usa 
 otro navegador comente y descomente el de su eleccion."
-echo "Atentamente grupo pinguinoTux"
+echo "Att: grupo pinguinoTux"
 # descomente una de las lineas a ejecutar dependiendo del navegador que use.
 ## Navegador chrome
 #google-chrome ./webIDEnodejs/index.html &

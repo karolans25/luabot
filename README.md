@@ -18,5 +18,19 @@ nodejs.
 	* navegador web con solporte para HTML5
 
 Uso:
-Ejecute el script llamado webNodeJS.sh si tiene problemas lea
-las indicaciones.
+Ejecute el script llamado webNodeJS.
+
+Compruebe que tenga instalado python 2.7 con el modulo python-serial y un navegador de internet.
+Además, este script debe estar al nivel de los directorios webIDEnodejs, serverNode, tools-ESP8266 como en este ejemplo:
+
+```
+|- webIDENodeJS.sh
+|- tools-ESP8266/
+|- serverNode/
+|- webIDEnodejs/
+```
+De lo contrario no se ejecutará correctamente.
+Por defecto el navegador que se lanzara sera iceweasel. Si usa 
+otro navegador comente y descomente el de su eleccion.
+
+Att: grupo pinguinoTux
