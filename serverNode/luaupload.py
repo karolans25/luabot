@@ -1,1 +1,1 @@
-/home/johnny/proyectos/luabot/tools-ESP8266/esp8266-luaupload/luaupload.py
+../tools-ESP8266/esp8266-luaupload/luaupload.py

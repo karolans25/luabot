@@ -32,7 +32,7 @@ var server = http.createServer(app).listen(app.get('port'),app.get('ip'));
 console.log("Server On");
 
 function saveInit(datoIn){
-	fs.writeFile('init.lua', datoIn, function(err) {
+	fs.writeFile('./serverNode/init.lua', datoIn, function(err) {
 		if(err)	{
 			console.log(err);
 		}
@@ -43,7 +43,7 @@ function saveInit(datoIn){
 }
 
 function upload(){
-	exec('./luaupload.py upload -p /dev/ttyUSB0 -b 9600 init.lua',
+	exec('./serverNode/luaupload.py upload -p /dev/ttyUSB0 -b 9600 ./serverNode/init.lua',
 		function(error, stdout, stderr) {
 			console.log('stdout: '+ stdout);
 			console.log('stderr ' + stderr);

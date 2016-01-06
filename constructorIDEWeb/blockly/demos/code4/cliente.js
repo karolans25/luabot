@@ -1,1 +1,0 @@
-/home/johnny/proyectos/luabot/serverNode/cliente.js
