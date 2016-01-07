@@ -1,0 +1,82 @@
+Getting Blockly to run as a packaged app requires the following changes:
+
+    No in-page Javascript
+    No JavaScript is allowed between <script></script> tags - it can only reside in js files. This is easy to arrange.
+
+    No in-page Javascript, even when specifying event handlers
+    Event handler attributes, such as onclick in the following example, are not allowed.
+
+        <td id="tab_blocks" class="tabon" onclick="tabClick(this.id)">{$ij.MSG.blocks}</td>
+
+    Instead, the element must be found using the id or class, and the onclick member set in code. For the above element the code might look something like:
+
+    var tabons = tabs.getElementsByClassName("tabon");
+    for (var i = 0; i < tabons.length; i++)
+    {
+        tabons[i].onclick =
+            function ()
+            {
+                tabClick(this.id);
+            };
+    }
+
+    No document.write()
+    All use of document.write() must be replaced by equivalent dom API calls. For example, I replaced...
+
+            document.writeln('<script type="text/javascript" src="../../language/' + file + '"><' + '/script>');
+
+    ...with...
+            var scriptEl = document.createElement("script");
+        var typeAttr = document.createAttribute("type");
+        typeAttr.nodeValue = "text/javascript";
+        scriptEl.setAttributeNode(typeAttr);
+        var srcAttr = document.createAttribute("src");
+        srcAttr.nodeValue = "../../language/" + file;
+        scriptEl.setAttributeNode(srcAttr);
+        headEl.appendChild(scriptEl);
+
+    No window.prompt()
+    I've replaced calls to window.prompt() with code that uses goog.ui.prompt from the closure library. This is going to take a bit work to tidy up.
+
+    No use of eval()
+    I don't need the parts of Blockly that employ eval(), so haven't come up with a solution yet.
+
+I'm open to suggestions on how to proceed from here. Branch and merge?
+
+Murray
+
+Hi Neil,
+ 
+I gave the body element the id "code_body", then at the top of common.js I put:
+ 
+( function()
+    {
+        document.getElementById("code_body").innerHTML = codepage.start(
+            {},
+            null,
+            {MSG: MSG, frameSrc: frameSrc.join('&')}
+        );
+        //etc.
+        //etc.
+    }
+) ();
+ 
+Murray
+
+"All event handlers have now been removed from Blockly apps..."
+ 
+It looks like we're already heading in the same direction.
+The version of Blockly that I've modified is quite old - it's been very much a part time activity for me (unfortunately).
+ 
+For the sake of openness, here is the github repository containing my version of Blockly: https://github.com/murray-lang/Babuino
+I'm a bit uncomfortable opening it up because a lot of stuff in there that needs to be gotten rid of and done again properly. For example, I had trouble getting Blockly to work using blockly_uncompressed.js, so to keep things moving I ran blockly_compressed.js through a beautifier and modified that. Also, to get goog.ui.prompt to work in this corrupted structure I ended up copying the bits of the closure library that I needed into a separate folder and commenting out the provide/require declarations that clashed with what is provided by blockly_compressed.js.
+ 
+Bear in mind that I didn't enter into this knowing how Blockly hung together. I know a little more now, and can see that I need to use the Java and Python and make file scheme that you set up in order to dispense with my kludges.
+There needs to be a little refactoring to use goog.ui.prompt cleanly as well.
+ 
+I guess with your inside knowledge of Blockly you can incorporate the changes very quickly.
+ 
+Please note that I've used document.currentScript. This is implemented in Chrome, so is not a problem with packaged apps, but it could be problematic for other browsers (I don't know).
+ 
+Murray
+

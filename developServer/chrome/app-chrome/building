@@ -1,0 +1,451 @@
+
+
+
+
+
+
+<!DOCTYPE html><html lang="en" class="devsite"><head><script>var a=window.devsite||{};window.devsite=a;a.readyCallbacks=[];window.devsite.readyCallbacks=a.readyCallbacks;a.ready=function(c){a.readyCallbacks.push(c)};window.devsite.ready=a.ready;a.timing={};window.devsite=a;window.devsite.timing=a.timing;a.timing.timers=[];a.timing.tick=function(c,b,g){for(var d=0;d<a.timing.timers.length;d++)a.timing.timers[d].tick(c,b,g)};window.devsite.timing.tick=a.timing.tick;a.timing.report=function(c){a.setTimeout(function(){for(var b=0;b<a.timing.timers.length;b++)window.jstiming.report(a.timing.timers[b],c)},500)};
+a.timing.init=function(c){a.timing.timers.push(window.jstiming.load);if(c){var b=new window.jstiming.Timer;b.name=c;a.timing.timers.push(b)}document.addEventListener&&window.addEventListener&&(document.addEventListener("DOMContentLoaded",a.timing.handleDomContentLoaded,!1),window.addEventListener("load",a.timing.handleLoad,!1))};a.timing.handleDomContentLoaded=function(){a.timing.tick("ol");document.removeEventListener("DOMContentLoaded",a.timing.handleDomContentLoaded,!1)};
+a.timing.handleLoad=function(){window.removeEventListener("load",a.timing.handleLoad,!1);var c=document.querySelector("#devsite-request-elapsed");c&&(c=parseInt(c.getAttribute("data-request-elapsed"),10))&&(a.timing.tick("_st_start",null,1),a.timing.tick("st","_st_start",1+c));a.timing.tick("prt");a.timing.report()};(function(){function c(b){this.t={};this.tick=function(b,c,d){var e=void 0!=d?d:(new Date).getTime();this.t[b]=[e,c];if(void 0==d)try{window.console.timeStamp("CSI/"+b)}catch(f){}};this.tick("start",null,b)}var b;window.performance&&(b=window.performance.timing);var g=b?new c(b.responseStart):new c;window.jstiming={Timer:c,load:g};if(b){var d=b.navigationStart,f=b.responseStart;0<d&&f>=d&&(window.jstiming.srt=f-d)}if(b){var e=window.jstiming.load;0<d&&f>=d&&(e.tick("_wtsrt",void 0,d),e.tick("wtsrt_",
+"_wtsrt",f),e.tick("tbsd_","wtsrt_"))}try{b=null,window.chrome&&window.chrome.csi&&(b=Math.floor(window.chrome.csi().pageT),e&&0<d&&(e.tick("_tbnd",void 0,window.chrome.csi().startE),e.tick("tbnd_","_tbnd",d))),null==b&&window.gtbExternal&&(b=window.gtbExternal.pageT()),null==b&&window.external&&(b=window.external.pageT,e&&0<d&&(e.tick("_tbnd",void 0,window.external.startE),e.tick("tbnd_","_tbnd",d))),b&&(window.jstiming.pt=b)}catch(h){}})();
+devsite.timing.init('DocPage');</script><link href="building" rel="canonical"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://plus.google.com/+GoogleDevelopers/" rel="publisher"><link rel="alternate"
+              href="https://developers.google.com/blockly/hacking/building?hl=en"
+              hreflang="en"><meta name="xsrf_token" content="ICJhW-R96jb5D3vNOgGBVTAiYU-qxX3GufZu7WMvs4w6MTQ1MjE4MjQyOTYzMjU1MA" /><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,700|Material+Icons"
+            rel="stylesheet"><link rel="stylesheet"
+            href="https://developers.google.com/_static/e6b50e0a44/css/devsite-google-blue.css"><link rel="shortcut icon" href="https://developers.google.com/_static/e6b50e0a44/images/favicon.png"><link rel="apple-touch-icon" href="https://developers.google.com/_static/e6b50e0a44/images/touch-icon.png"><link rel="search"
+            type="application/opensearchdescription+xml"
+            title="Google Developers"
+            href="https://developers.google.com/s/opensearch.xml"><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><style></style><script>devsite.timing.tick('cl');</script><meta property="og:site_name" content="Google Developers"><meta property="og:type" content="website"><meta property="og:url" content="https://developers.google.com/blockly/hacking/building"><meta property="og:locale" content="en"><script>
+    var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'en';
+  </script><title>Building Blockly &nbsp;|&nbsp;
+      Blockly &nbsp;|&nbsp;
+      Google Developers</title><meta property="og:title" content="Building Blockly"></head><body class="devsite-doc-page
+                 devsite-header-no-tabs"
+          id="top_of_page"><div class="devsite-wrapper"><header class="devsite-top-section
+               
+               devsite-header-no-tabs"><div class="devsite-top-logo-row-wrapper-wrapper"><div class="devsite-top-logo-row-wrapper"><div class="devsite-top-logo-row devsite-full-site-width"><a class="devsite-logo gc-analytics-event" href="https://developers.google.com/"
+           data-category="Site-Wide Custom Events" data-label="Site logo"><div class="devsite-logo-icon"></div><div class="devsite-logo-wordmark"></div></a><div class="devsite-search-wrapper devsite-history-enabled"><form class="devsite-search-form" action="https://developers.google.com/s/results/" method="GET" id="top-search"><div id="searchbox" class="devsite-searchbox"><input placeholder='Search'
+                     type="text"
+                     class="devsite-search-field devsite-search-query"
+                     name="q"
+                     value=""
+                     autocomplete="off"><div class="devsite-search-image material-icons"></div></div><input type="hidden"
+                   name="p"
+                   id="search_project"
+                   value="/blockly"
+                   data-project-name="Blockly"
+                   data-project-path="/blockly"
+                   data-query-match=""><input type="hidden" id="suggest-category-label-2" value="Pages in Blockly" /><input type="hidden" id="suggest-category-label-3" value="Reference in Blockly" /><input type="hidden" id="suggest-category-label-1" value="Products" /><input type="hidden" id="suggest-all-results-label" value="See all results for" /></form></div><div class="devsite-user-wrapper"><a href="https://www.google.com/accounts/ServiceLogin?passive=true&continue=https%3A%2F%2Fdevelopers.google.com%2Fblockly%2Fhacking%2Fbuilding&service=ahsid"
+             class="devsite-user-signin devsite-top-button button gc-analytics-event"
+             data-category="Site-Wide Custom Events" data-label="Sign in button">
+            
+            Sign in
+          </a></div><button type="button" class="devsite-search-button button-flat material-icons"></button></div></div></div><div class="devsite-collapsible-section"><div class="devsite-header-background devsite-full-site-width"
+         ><div class="devsite-site-nav-row devsite-full-site-width"><nav class="devsite-site-nav devsite-nav"><ul class="devsite-site-nav-list"><li class="devsite-breadcrumb-wrapper
+                
+                       devsite-breadcrumb-parent
+                "><a href="https://developers.google.com/products/"
+                 class="devsite-breadcrumb gc-analytics-event"
+                 data-category="Site-Wide Custom Events"
+                 data-label="Breadcrumb: parent" data-value="1">
+                Products
+              </a></li><li class="devsite-breadcrumb-wrapper
+                
+                       devsite-breadcrumb-parent
+                "><div class="devsite-breadcrumb-guillemet material-icons"></div><a href="https://developers.google.com/edu/"
+                 class="devsite-breadcrumb gc-analytics-event"
+                 data-category="Site-Wide Custom Events"
+                 data-label="Breadcrumb: parent" data-value="2">
+                Google for Education
+              </a></li><li class="devsite-breadcrumb-wrapper
+                
+                       devsite-breadcrumb-project
+                "><div class="devsite-breadcrumb-guillemet material-icons"></div><a href="https://developers.google.com/blockly/"
+                 class="devsite-breadcrumb gc-analytics-event"
+                 data-category="Site-Wide Custom Events"
+                 data-label="Breadcrumb: project" data-value="3">
+                Blockly
+              </a></li><li class="devsite-breadcrumb-wrapper
+                
+                       devsite-breadcrumb-self
+                "><div class="devsite-breadcrumb-guillemet material-icons"></div><a href="building#top_of_page"
+                 class="devsite-breadcrumb gc-analytics-event"
+                 data-category="Site-Wide Custom Events"
+                 data-label="Breadcrumb: current_page" data-value="4">
+                Building Blockly
+              </a></li></ul></nav></div><div class="devsite-product-id-row devsite-full-site-width"><div class="devsite-product-id-row-links-container"><a class="devsite-product-name gc-analytics-event" href="https://developers.google.com/blockly/"
+        data-category="Site-Wide Custom Events" data-label="Project name (header)">
+      Blockly
+    </a></div></div></div></div></header><script>
+  if (window.jQuery) {
+    $(document).ready(function() {
+      if (window.devsite && window.devsite.search) {
+        
+        window.devsite.search.init('en', false, null)
+      }
+    });
+  }
+</script><div id="gc-wrapper"itemscope itemtype="http://schema.org/Article"><input class="google-analytics-id-json" type="hidden" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: &quot;en&quot;, &quot;dimension4&quot;: &quot;Blockly&quot;, &quot;dimension5&quot;: &quot;en&quot;, &quot;dimension3&quot;: false, &quot;dimension1&quot;: &quot;Signed out&quot;, &quot;dimension8&quot;: null}, &quot;gaid&quot;: &quot;UA-24532603-1&quot;}"><input class="google-analytics-id-json" type="hidden" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: &quot;en&quot;, &quot;dimension4&quot;: &quot;Blockly&quot;, &quot;dimension5&quot;: &quot;en&quot;, &quot;dimension3&quot;: false, &quot;dimension1&quot;: &quot;Signed out&quot;, &quot;dimension8&quot;: null}, &quot;gaid&quot;: &quot;UA-49880327-1&quot;}">
+
+        
+          <div class="devsite-article-mask"></div>
+          <div class="devsite-site-mask"></div>
+          
+            
+  <nav class="devsite-section-nav-responsive devsite-nav" tabindex="0">
+    <ul class="devsite-nav-expandable"><li class="devsite-nav-item devsite-nav-item-section-expandable"><a class="devsite-nav-title devsite-nav-title-no-path " track-type="leftNav"track-name="expandNavSectionNoLink"track-metadata-position="0">About</a><a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-type="leftNav"track-name="expandNavSectionArrow" track-metadata-position="0"></a><ul class="devsite-nav-section devsite-nav-section-collapsed"><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/about/showcase" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Showcase</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/about/faq" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">FAQ</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/about/future" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Future</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/about/alternatives" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Alternatives</a></li></ul></li><li class="devsite-nav-item devsite-nav-item-section-expandable"><a class="devsite-nav-title devsite-nav-title-no-path " track-type="leftNav"track-name="expandNavSectionNoLink"track-metadata-position="0">Installation</a><a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-type="leftNav"track-name="expandNavSectionArrow" track-metadata-position="0"></a><ul class="devsite-nav-section devsite-nav-section-collapsed"><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/overview" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Overview</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/injecting-fixed-size" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Fixed Size</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/injecting-resizable" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Resizable</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/toolbox" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Toolbox</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/grid" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Grid</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/zoom" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Zoom</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/code-generators" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Code Generators</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/js-interpreter" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">JS Interpreter</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/cloud-storage" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Cloud Storage</a></li></ul></li><li class="devsite-nav-item devsite-nav-item-section-expandable"><a class="devsite-nav-title devsite-nav-title-no-path " track-type="leftNav"track-name="expandNavSectionNoLink"track-metadata-position="0">Custom Blocks</a><a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-type="leftNav"track-name="expandNavSectionArrow" track-metadata-position="0"></a><ul class="devsite-nav-section devsite-nav-section-collapsed"><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/overview" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Overview</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/block-factory" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Block Factory</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/defining-blocks" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Defining Blocks</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/json-definition" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">JSON Definition</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/type-checks" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Type Checks</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/dropdown-menus" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Dropdown Menus</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/mutators" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Mutators</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/generating-code" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Generating Code</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/operator-precedence" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Operator Precedence</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/caching-arguments" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Caching Arguments</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/code-structure" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Code Structure</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/language" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Language Guidelines</a></li></ul></li><li class="devsite-nav-item devsite-nav-item-section-expandable"><a class="devsite-nav-title devsite-nav-title-no-path " track-type="leftNav"track-name="expandNavSectionNoLink"track-metadata-position="0">Hacking</a><a class="devsite-nav-toggle devsite-nav-toggle-expanded material-icons" track-type="leftNav"track-name="expandNavSectionArrow" track-metadata-position="0"></a><ul class="devsite-nav-section devsite-nav-section-expanded"><li class="devsite-nav-item devsite-nav-active"><a href="building" class="devsite-nav-title gc-analytics-event devsite-nav-active" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Building</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/hacking/closure" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Closure</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/hacking/contributing" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Contributing</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/hacking/translating" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Translating</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/hacking/unit-testing" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Unit Testing</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/hacking/mistakes" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click">Mistakes</a></li></ul></li><li class="devsite-nav-item devsite-nav-external devsite-nav-has-status"><a href="https://blockly-demo.appspot.com/static/demos/index.html" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click"><span class="devsite-nav-text">Samples</span><span class="devsite-nav-icon-wrapper"><span class="devsite-nav-icon material-icons" title="External"></span></span></a></li><li class="devsite-nav-item devsite-nav-external devsite-nav-has-status"><a href="https://groups.google.com/forum/#!forum/blockly" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Hamburger menu" data-action="Link Click"><span class="devsite-nav-text">Support</span><span class="devsite-nav-icon-wrapper"><span class="devsite-nav-icon material-icons" title="External"></span></span></a></li></ul>
+  </nav>
+
+          
+          <div class="devsite-main-content clearfix">
+
+          
+          
+
+          
+  
+  
+    
+    
+      
+  <nav class="devsite-section-nav devsite-nav">
+    <ul class="devsite-nav-expandable"><li class="devsite-nav-item devsite-nav-item-section-expandable"><a class="devsite-nav-title devsite-nav-title-no-path " track-type="leftNav"track-name="expandNavSectionNoLink"track-metadata-position="0">About</a><a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-type="leftNav"track-name="expandNavSectionArrow" track-metadata-position="0"></a><ul class="devsite-nav-section devsite-nav-section-collapsed"><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/about/showcase" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Showcase</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/about/faq" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">FAQ</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/about/future" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Future</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/about/alternatives" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Alternatives</a></li></ul></li><li class="devsite-nav-item devsite-nav-item-section-expandable"><a class="devsite-nav-title devsite-nav-title-no-path " track-type="leftNav"track-name="expandNavSectionNoLink"track-metadata-position="0">Installation</a><a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-type="leftNav"track-name="expandNavSectionArrow" track-metadata-position="0"></a><ul class="devsite-nav-section devsite-nav-section-collapsed"><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/overview" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Overview</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/injecting-fixed-size" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Fixed Size</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/injecting-resizable" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Resizable</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/toolbox" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Toolbox</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/grid" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Grid</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/zoom" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Zoom</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/code-generators" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Code Generators</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/js-interpreter" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">JS Interpreter</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/installation/cloud-storage" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Cloud Storage</a></li></ul></li><li class="devsite-nav-item devsite-nav-item-section-expandable"><a class="devsite-nav-title devsite-nav-title-no-path " track-type="leftNav"track-name="expandNavSectionNoLink"track-metadata-position="0">Custom Blocks</a><a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-type="leftNav"track-name="expandNavSectionArrow" track-metadata-position="0"></a><ul class="devsite-nav-section devsite-nav-section-collapsed"><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/overview" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Overview</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/block-factory" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Block Factory</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/defining-blocks" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Defining Blocks</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/json-definition" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">JSON Definition</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/type-checks" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Type Checks</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/dropdown-menus" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Dropdown Menus</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/mutators" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Mutators</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/generating-code" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Generating Code</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/operator-precedence" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Operator Precedence</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/caching-arguments" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Caching Arguments</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/code-structure" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Code Structure</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/custom-blocks/language" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Language Guidelines</a></li></ul></li><li class="devsite-nav-item devsite-nav-item-section-expandable"><a class="devsite-nav-title devsite-nav-title-no-path " track-type="leftNav"track-name="expandNavSectionNoLink"track-metadata-position="0">Hacking</a><a class="devsite-nav-toggle devsite-nav-toggle-expanded material-icons" track-type="leftNav"track-name="expandNavSectionArrow" track-metadata-position="0"></a><ul class="devsite-nav-section devsite-nav-section-expanded"><li class="devsite-nav-item devsite-nav-active"><a href="building" class="devsite-nav-title gc-analytics-event devsite-nav-active" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Building</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/hacking/closure" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Closure</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/hacking/contributing" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Contributing</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/hacking/translating" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Translating</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/hacking/unit-testing" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Unit Testing</a></li><li class="devsite-nav-item"><a href="https://developers.google.com/blockly/hacking/mistakes" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Mistakes</a></li></ul></li><li class="devsite-nav-item devsite-nav-external devsite-nav-has-status"><a href="https://blockly-demo.appspot.com/static/demos/index.html" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click"><span class="devsite-nav-text">Samples</span><span class="devsite-nav-icon-wrapper"><span class="devsite-nav-icon material-icons" title="External"></span></span></a></li><li class="devsite-nav-item devsite-nav-external devsite-nav-has-status"><a href="https://groups.google.com/forum/#!forum/blockly" class="devsite-nav-title gc-analytics-event " track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click"><span class="devsite-nav-text">Support</span><span class="devsite-nav-icon-wrapper"><span class="devsite-nav-icon material-icons" title="External"></span></span></a></li></ul>
+  </nav>
+
+    
+
+    
+  <nav class="devsite-page-nav devsite-nav"></nav>
+
+
+      <article class="devsite-article">
+        <div class="devsite-article-inner">
+  
+          
+  
+
+
+
+  
+  <div class="devsite-expand-section-nav-container">
+  
+    <button type="button" class="devsite-expand-section-nav button-flat material-icons"></button>
+  
+  
+  <h1 itemprop="name" class="devsite-page-title">
+    Building Blockly
+  </h1>
+  
+  </div>
+  
+    <nav class="devsite-page-nav-embedded devsite-nav"></nav>
+  
+  <div class="devsite-article-body clearfix" itemprop="articleBody">
+    
+
+<p>Blockly is made up of over a hundred JavaScript files.  Loading these over the
+Internet is a sluggish experience for end users.  To make Blockly load faster,
+it can be compressed down to half a dozen files totaling about 150kb.</p>
+<p>Blockly comes with both the source code and compressed files, so there is no need
+to build Blockly unless you are hacking in the <code>core</code>, <code>blocks</code>, <code>generators</code>,
+or <code>msg</code> directories.</p>
+<p>Compressing Blockly is extremely simple.  Assuming you have Python 2.x
+installed, just run <code>build.py</code> in Blockly's root directory:</p>
+<pre class="prettyprint">
+python build.py
+</pre>
+
+<p>This command takes about 20 seconds and uses Google's online Closure Compiler to
+rebuild several key files:</p>
+<ul>
+<li>The contents of the <code>core/</code> directory and the relevant bits of
+    <code>closure-library/</code> become <code>blockly_compressed.js</code>.</li>
+<li>An alternative file named <code>blockly_uncompressed.js</code> is generated (see below).</li>
+<li>The contents of the <code>blocks/</code> directory becomes <code>blocks_compressed.js</code>.</li>
+<li>The contents of the <code>generators/</code> directory becomes
+    <code>javascript_compressed.js</code>, <code>python_compressed.js</code>, <code>php_compressed.js</code>,
+    and <code>dart_compressed.js</code>.</li>
+<li>Any changes to <code>messages.js</code> file are mapped onto the <code>msg/json</code> files,
+    after which the <code>msg/js</code> files are regenerated.</li>
+</ul>
+<h2 id="compressed_mode">Compressed Mode</h2>
+<p>As a result of compression, Blockly can be loaded with a small number of
+HTTP requests:</p>
+<pre class="prettyprint">
+&lt;script src="blockly_compressed.js"&gt;&lt;/script&gt;
+&lt;script src="blocks_compressed.js"&gt;&lt;/script&gt;
+&lt;script src="javascript_compressed.js"&gt;&lt;/script&gt;
+&lt;script src="msg/js/en.js"&gt;&lt;/script&gt;
+</pre>
+
+<p>Remember that as a developer you probably have a better Internet connection than
+your users.  Compressing the code makes a tremendous difference for users.</p>
+<h2 id="uncompressed_mode">Uncompressed Mode</h2>
+<p>That said, compressed code is simply awful for developers.  No JavaScript
+developer should tolerate a build step between editing code and seeing
+the result.  And no JavaScript developer should have to debug compressed code.
+When developing Blockly, use uncompressed mode.  Let's pull apart the four
+scripts listed above and find their uncompressed versions:</p>
+<h3 id="core">Core</h3>
+<pre class="prettyprint">
+&lt;script src="blockly_compressed.js"&gt;&lt;/script&gt;
+</pre>
+
+<p>This one is easy.  Just change "compressed" to "<strong>un</strong>compressed":</p>
+<pre class="prettyprint">
+&lt;script src="blockly_uncompressed.js"&gt;&lt;/script&gt;
+</pre>
+
+<p>The <code>blockly_uncompressed.js</code> file is generated by the build script and loads
+all the required <code>core/</code> and <code>closure-library/</code> files.</p>
+<h3 id="blocks">Blocks</h3>
+<pre class="prettyprint">
+&lt;script src="blocks_compressed.js"&gt;&lt;/script&gt;
+</pre>
+
+<p>If one is hacking the default blocks, replace the compressed blocks file
+with the original source files:</p>
+<pre class="prettyprint">
+&lt;script src="blocks/logic.js"&gt;&lt;/script&gt;
+&lt;script src="blocks/loops.js"&gt;&lt;/script&gt;
+&lt;script src="blocks/math.js"&gt;&lt;/script&gt;
+&lt;script src="blocks/text.js"&gt;&lt;/script&gt;
+&lt;script src="blocks/lists.js"&gt;&lt;/script&gt;
+&lt;script src="blocks/colour.js"&gt;&lt;/script&gt;
+&lt;script src="blocks/variables.js"&gt;&lt;/script&gt;
+&lt;script src="blocks/procedures.js"&gt;&lt;/script&gt;
+</pre>
+
+<h3 id="generators">Generators</h3>
+<pre class="prettyprint">
+&lt;script src="javascript_compressed.js"&gt;&lt;/script&gt;
+</pre>
+
+<p>If one is hacking the default blocks, replace the compressed blocks file with
+the original source files (change "javascript" to "python", or "dart" as needed):</p>
+<pre class="prettyprint">
+&lt;script src="generators/javascript.js"&gt;&lt;/script&gt;
+&lt;script src="generators/javascript/logic.js"&gt;&lt;/script&gt;
+&lt;script src="generators/javascript/loops.js"&gt;&lt;/script&gt;
+&lt;script src="generators/javascript/math.js"&gt;&lt;/script&gt;
+&lt;script src="generators/javascript/text.js"&gt;&lt;/script&gt;
+&lt;script src="generators/javascript/lists.js"&gt;&lt;/script&gt;
+&lt;script src="generators/javascript/colour.js"&gt;&lt;/script&gt;
+&lt;script src="generators/javascript/variables.js"&gt;&lt;/script&gt;
+&lt;script src="generators/javascript/procedures.js"&gt;&lt;/script&gt;
+</pre>
+
+<h3 id="language">Language</h3>
+<pre class="prettyprint">
+&lt;script src="msg/js/en.js"&gt;&lt;/script&gt;
+</pre>
+
+<p>Replace the language file (<code>en</code>, <code>ru</code>, <code>vi</code>, etc) with <code>messages.js</code>:</p>
+<pre class="prettyprint">
+&lt;script src="msg/messages.js"&gt;&lt;/script&gt;
+</pre>
+
+<h2 id="playground">Playground</h2>
+<p>When hacking in Blockly's core, the playground is a tremendously useful tool.
+Just point your browser at <code>tests/playground.html</code>.  As a preview, here is the
+<a href="https://blockly-demo.appspot.com/static/tests/playground.html">playground on the demo sever</a>.
+The playground features:</p>
+<ul>
+<li>All code is uncompressed for rapid development.</li>
+<li>All the default blocks (except for some deprecated ones).</li>
+<li>All the language generators (JavaScript, Python, PHP, and Dart).</li>
+<li>Import and export programs as XML.</li>
+<li>Switch between LTR and RTL layout.</li>
+<li>Airstrike for stress-testing the renderer.</li>
+</ul>
+<p>At Google, virtually all of Blockly's development occurs using the playground.
+Builds are only done before pushing a new version to production.</p>
+
+  </div>
+
+  
+        
+<div class="devsite-content-footer">
+  
+  
+  
+    <p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="https://developers.google.com/site-policies">Site Policies</a>.</p>
+  
+
+  
+    
+    <p class="devsite-content-footer-date" itemprop="datePublished"
+       content="2015-05-28T18:03:45.923980">
+      
+      Last updated May 28, 2015.
+    </p>
+  
+
+</div>
+
+        </div>
+      </article>
+  
+
+          </div>
+        
+
+<footer class="devsite-site-footer"><nav class="devsite-site-footer-nav devsite-nav devsite-full-site-width"><ul class="devsite-site-footer-column-list"><li class="devsite-site-footer-column"><ul class="devsite-site-footer-list"><li class="devsite-site-footer-item"><h3>Connect</h3></li><li class="devsite-site-footer-item"><a href="https://googledevelopers.blogspot.com/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Blog Link">Blog</a></li><li class="devsite-site-footer-item"><a href="https://www.facebook.com/pages/Google-Developers/967415219957038" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Facebook Link">Facebook</a></li><li class="devsite-site-footer-item"><a href="https://plus.google.com/+GoogleDevelopers/posts" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer G+ Link">Google+</a></li><li class="devsite-site-footer-item"><a href="https://medium.com/google-developers" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Medium Link">Medium</a></li><li class="devsite-site-footer-item"><a href="https://twitter.com/googledevs" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Twitter Link">Twitter</a></li><li class="devsite-site-footer-item"><a href="https://www.youtube.com/user/GoogleDevelopers" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer YouTube Link">YouTube</a></li></ul></li><li class="devsite-site-footer-column"><ul class="devsite-site-footer-list"><li class="devsite-site-footer-item"><h3>Programs</h3></li><li class="devsite-site-footer-item"><a href="https://www.womentechmakers.com/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Women Techmakers">Women Techmakers</a></li><li class="devsite-site-footer-item"><a href="https://developers.google.com/agency/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Agency">Agency Program</a></li><li class="devsite-site-footer-item"><a href="https://developers.google.com/groups/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Groups">Google Developer Groups</a></li><li class="devsite-site-footer-item"><a href="https://developers.google.com/experts/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Experts">Google Developer Experts</a></li><li class="devsite-site-footer-item"><a href="https://developers.google.com/startups/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Startups">Startup Launchpad</a></li></ul></li><li class="devsite-site-footer-column"><ul class="devsite-site-footer-list"><li class="devsite-site-footer-item"><h3>Developer Consoles</h3></li><li class="devsite-site-footer-item"><a href="https://console.developers.google.com/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Developers Console">Google Developers Console</a></li><li class="devsite-site-footer-item"><a href="https://play.google.com/apps/publish/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Play Developers Console">Google Play Console</a></li><li class="devsite-site-footer-item"><a href="https://cast.google.com/publish/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Cast SDK Developer Console">Cast SDK Console</a></li><li class="devsite-site-footer-item"><a href="https://chrome.google.com/webstore/developer/dashboard" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Chrome Web Store Developer Dashboard">Chrome Web Store Dashboard</a></li></ul></li><li class="devsite-site-footer-column"><ul class="devsite-site-footer-list"><li class="devsite-site-footer-item"><h3>Explore</h3></li><li class="devsite-site-footer-item"><a href="https://developers.google.com/android/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android">Android</a></li><li class="devsite-site-footer-item"><a href="https://developers.google.com/ios/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer iOS">iOS</a></li><li class="devsite-site-footer-item"><a href="https://developers.google.com/web/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Web">Web</a></li><li class="devsite-site-footer-item"><a href="https://developers.google.com/games/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Games">Games</a></li><li class="devsite-site-footer-item"><a href="https://developers.google.com/products/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Products">All Products</a></li><li class="devsite-site-footer-item"><a href="https://www.google.com/about/careers/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer more careers">Careers</a></li></ul></li></ul></nav></footer><footer class="devsite-utility-footer"><nav class="devsite-utility-footer-nav devsite-nav devsite-full-site-width"><span class="devsite-utility-footer-links"><a href="https://developers.google.com/site-terms/">Terms</a>
+      &nbsp; | &nbsp;
+      
+      <a href="https://www.google.com/intl/en/privacy/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Privacy Link">Privacy</a></span><form class="devsite-utility-footer-language" id="setlang" action="https://developers.google.com/i18n/setlang/" method="post"><input type="hidden" name="xsrf_token" value="ICJhW-R96jb5D3vNOgGBVTAiYU-qxX3GufZu7WMvs4w6MTQ1MjE4MjQyOTYzMjU1MA" /><input type="hidden" name="next" value="/blockly/hacking/building" /><select id="footer_language" name="language"><option value="ar"
+              >
+            العربيّة
+          </option><option value="bg"
+              >
+            български
+          </option><option value="ca"
+              >
+            català
+          </option><option value="zh-cn"
+              >
+            简体中文
+          </option><option value="zh-tw"
+              >
+            繁體中文
+          </option><option value="hr"
+              >
+            Hrvatski
+          </option><option value="cs"
+              >
+            česky
+          </option><option value="da"
+              >
+            dansk
+          </option><option value="nl"
+              >
+            Nederlands
+          </option><option value="en"
+               selected="selected" >
+            English
+          </option><option value="fa"
+              >
+            فارسی
+          </option><option value="fi"
+              >
+            suomi
+          </option><option value="fr"
+              >
+            français
+          </option><option value="de"
+              >
+            Deutsch
+          </option><option value="el"
+              >
+            Ελληνικά
+          </option><option value="he"
+              >
+            עברית
+          </option><option value="hi"
+              >
+            Hindi
+          </option><option value="hu"
+              >
+            Magyar
+          </option><option value="id"
+              >
+            Bahasa Indonesia
+          </option><option value="it"
+              >
+            italiano
+          </option><option value="ja"
+              >
+            日本語
+          </option><option value="ko"
+              >
+            한국어
+          </option><option value="lv"
+              >
+            latviešu
+          </option><option value="lt"
+              >
+            Lietuviškai
+          </option><option value="nb"
+              >
+            norsk (bokmål)
+          </option><option value="nn"
+              >
+            norsk (nynorsk)
+          </option><option value="pl"
+              >
+            polski
+          </option><option value="pt-br"
+              >
+            Português Brasileiro
+          </option><option value="pt"
+              >
+            Português
+          </option><option value="ro"
+              >
+            Română
+          </option><option value="ru"
+              >
+            Русский
+          </option><option value="sr"
+              >
+            српски
+          </option><option value="sk"
+              >
+            slovenský
+          </option><option value="sl"
+              >
+            Slovenščina
+          </option><option value="es"
+              >
+            español
+          </option><option value="es-419"
+              >
+            Español (América Latina)
+          </option><option value="sv"
+              >
+            svenska
+          </option><option value="th"
+              >
+            ภาษาไทย
+          </option><option value="tr"
+              >
+            Türkçe
+          </option><option value="uk"
+              >
+            Українська
+          </option><option value="vi"
+              >
+            Tiếng Việt
+          </option></select></form></nav></footer></div><script async defer src="https://www.gstatic.com/feedback/api.js"></script><script src="https://developers.google.com/_static/e6b50e0a44/js/jquery_ui-bundle.js"></script><script src="https://developers.google.com/_static2/e6b50e0a44/jsi18n/"></script><script src="https://developers.google.com/_static/e6b50e0a44/js/script_foot_closure.js"></script><script src="https://developers.google.com/_static/e6b50e0a44/js/script_foot.js"></script><script>
+        devsite.timing.tick('jl');
+        (function($) {
+          devsite.devsite.Init($, 'devsite',
+              '[]', '',
+              'en', true,
+              'e6b50e0a44', '',
+              true,
+              {"098dafe57affddc137df300142652cfd": false, "6749dcb526ce9bde6993550c7d928d24": true, "993b1906435224595bd618f6f331ee45": true}, '/blockly',
+              'https://developers.google.com/');
+        })(jQuery);
+
+        
+        devsite.localInit = function() {
+          
+        };
+      </script><script>
+      $('#setlang select').each(function() {
+        if (navigator.userAgent.match(/msie/i)) {
+          $(this).change(function() {
+            $('#setlang').submit();
+          });
+        } else {
+          $(this).kdSelect({'change': function() {
+            $('#setlang').submit();
+          }});
+        }
+      });
+      </script></div><script>
+        var dataLayer = [{"scriptsafe": null, "projectName": "Blockly", "language": {"requested": "en", "served": "en"}, "signedIn": "False", "internalUser": "False"}];
+      
+      </script></body><span id="devsite-request-elapsed" data-request-elapsed="137.110233307"></span></html>

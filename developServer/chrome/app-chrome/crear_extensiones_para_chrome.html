@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>Como crear extensiones en Google Chrome</title>
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"1fee3fb61088a9195a795e50349786b8",petok:"12a8d2077c09f4c01f5a7b1635f37fa0c65c6ae2-1452118809-1800",zone:"maestrosdelweb.com",rocket:"0",apps:{"ga_key":{"ua":"UA-309831-1","ga_bs":"2"}},sha2test:0}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=38857570ac/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link href='http://fonts.googleapis.com/css?family=Quicksand|Montserrat' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,700,400italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://www.maestrosdelweb.com/wp-content/themes/mdw5/style.css"/>
+<link rel="apple-touch-icon" href="http://www.maestrosdelweb.com/wp-content/themes/mdw5/images/ipad-icon.png"/>
+<link rel="icon" type="image/png" href="http://www.maestrosdelweb.com/wp-content/themes/mdw5/images/favicon.png"/>
+<script data-main="http://www.maestrosdelweb.com/wp-content/themes/mdw5/js/main.js" src="http://www.maestrosdelweb.com/wp-content/themes/mdw5/js/require.js"></script>
+<meta property="fb:app_id" content="189109253508"/>
+ 
+<link rel="canonical" href="index.html"/>
+<link rel="publisher" href="http://plus.google.com/112142655562359332904"/>
+<meta property="og:locale" content="es_ES"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Como crear extensiones en Google Chrome"/>
+<meta property="og:description" content="Bienvenidos a este pequeño curso intensivo (espero, igualmente completo), para aprender a hacer extensiones para Google Chrome. Crearemos una demostración completa de una extensión básica aprovechando el nuevo API creado en Foros del Web. Para comprender mejor este texto, es necesario tener los conocimientos básicos de HTML, CSS y Javascript; aunque si te estás aventurando &hellip;"/>
+<meta property="og:url" content="http://www.maestrosdelweb.com/crear-extensiones-google-chrome/"/>
+<meta property="og:site_name" content="Maestros del Web"/>
+<meta property="article:publisher" content="https://www.facebook.com/maestrosdelweb"/>
+<meta property="article:tag" content="chome store"/>
+<meta property="article:tag" content="daPhyre"/>
+<meta property="article:tag" content="extensiones"/>
+<meta property="article:tag" content="forosdelweb"/>
+<meta property="article:tag" content="google chrome"/>
+<meta property="article:section" content="Desarrollo Web"/>
+<meta property="article:published_time" content="2011-10-19T12:03:47+00:00"/>
+<meta property="article:modified_time" content="2014-09-29T15:44:54+00:00"/>
+<meta property="og:updated_time" content="2014-09-29T15:44:54+00:00"/>
+<meta property="og:image" content="http://www.maestrosdelweb.com/images/2011/10/daphyre.jpg"/>
+<meta property="og:image" content="http://www.maestrosdelweb.com/images/2011/10/chrome-store.jpg"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:description" content="Bienvenidos a este pequeño curso intensivo (espero, igualmente completo), para aprender a hacer extensiones para Google Chrome. Crearemos una demostración completa de una extensión básica aprovechando el nuevo API creado en Foros del Web. Para comprender mejor este texto, es necesario tener los conocimientos básicos de HTML, CSS y Javascript; aunque si te estás aventurando [&hellip;]"/>
+<meta name="twitter:title" content="Como crear extensiones en Google Chrome"/>
+<meta name="twitter:site" content="@maestros"/>
+<meta name="twitter:domain" content="Maestros del Web"/>
+<meta name="twitter:image:src" content="http://www.maestrosdelweb.com/images/2011/10/daphyre.jpg"/>
+<meta name="twitter:creator" content="@eutobar"/>
+ 
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.maestrosdelweb.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.3.1"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">img.wp-smiley,img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-0.1em!important;background:none!important;padding:0!important;}</style>
+<link rel='stylesheet' id='simple-pagination-css-css' href='http://www.maestrosdelweb.com/wp-content/plugins/simple-pagination/css/default.css?ver=2.1.7' type='text/css' media='screen'/>
+<link rel='stylesheet' id='wp-paginate-css' href='http://www.maestrosdelweb.com/wp-content/plugins/wp-paginate/wp-paginate.css?ver=1.3.1' type='text/css' media='screen'/>
+<script type='text/javascript' src='http://www.maestrosdelweb.com/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://www.maestrosdelweb.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<meta name="generator" content="WordPress 4.3.1"/>
+<meta name="description" content="Foros del web es una comunidad que alberga a varios desarrolladores alrededor del mundo, Karl Ta&uuml;fer, de origen mexicano, conocido ..."/>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-309831-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-309831-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+<body class="single single-post postid-20514 single-format-standard">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.0";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+<div class="content">
+<header class="header">
+<div class="wrapper clearfix header-wrapper">
+<figure class="logo-container logo sprite">
+<a href="http://www.maestrosdelweb.com" title="Maestros del Web">Maestros del Web</a>
+</figure>
+<nav class="menu right">
+<ul>
+<div class="menu-mobile">
+<li class="menu-item only-mobile logo">
+<figure class="logo-container sprite">
+</figure>
+</li>
+<li id="menu-item-39614" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39614"><a href="http://www.maestrosdelweb.com/editorial/">Editoriales</a></li>
+<li id="menu-item-39615" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39615"><a href="http://www.maestrosdelweb.com/guias/">Guías</a></li>
+<li id="menu-item-39616" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39616"><a href="https://platzi.com/cursos/">Cursos</a></li>
+</div>
+<li class="menu-item mobile only-mobile"></li>
+<li class="menu-item search search-open"></li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="search-section">
+<div class="wrapper">
+<div class="search-container">
+<form class="search-form" method="get" id="searchform" action="http://www.maestrosdelweb.com/">
+<input type="text" name="s" id="s" class="search-box" placeholder="Buscar"/>
+<button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+<a class="search-close"></a>
+</form>
+</div>
+</div>
+</div>
+<section class="post-container">
+<article class="post">
+<div class="post-header">
+<div class="wrapper">
+<span class="post-type">
+<a href="http://www.maestrosdelweb.com/desarrollo-web/">Desarrollo Web</a> </span>
+<figure class="post-image-container">
+<img width="200" height="85" src="http://www.maestrosdelweb.com/images/2011/10/chrome-extensions.jpg" class="attachment-top" alt="chrome-extensions"/> </figure>
+<div class="post-wrapper">
+<h1 class="post-title">Como crear extensiones en Google Chrome</h1>
+</div>
+</div>
+</div>
+<div class="wrapper">
+<div class="post-wrapper">
+<p class="post-summary">Foros del web es una comunidad que alberga a varios desarrolladores alrededor del mundo, Karl Taüfer, de origen mexicano, conocido como DaPhyre, es colaborador de foros del web y en esta ocasión nos enseña a crear paso a paso extensiones en el navegador Google Chrome. </p>
+<div class="post-meta clearfix">
+<figure class="author-picture-container">
+<img src="http://www.maestrosdelweb.com/wp-content/authors/eutobar-73.jpg" alt="Eugenia Tobar" width="40" height="40"/> </figure>
+<strong class="author-name">Eugenia Tobar</strong>
+<span class="post-date">octubre 19 2011</span>
+</div>
+<div class="social-top">
+<div class="fb-share-button" data-href="http://www.maestrosdelweb.com/crear-extensiones-google-chrome/" data-layout="box_count"></div>
+<a class="twitter-share-button" href="index.html" data-via="maestros" data-count="vertical" data-lang="es">
+Twittear
+</a>
+<script type="text/javascript">
+	window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+	</script>
+<script src="http://apis.google.com/js/platform.js" async defer>
+		{lang: 'es'}
+	</script>
+<div class="g-plusone" data-size="tall"></div>
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">
+	  lang: es_ES
+	</script>
+<script type="IN/Share" data-counter="top"></script>
+</div>
+<div class="social-top-mobile">
+<div class="fb-share-button" data-href="http://www.maestrosdelweb.com/crear-extensiones-google-chrome/" data-layout="button_count"></div>
+<a class="twitter-share-button" href="index.html" data-via="maestros" data-lang="es">
+Twittear
+</a>
+<script type="text/javascript">
+	window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+	</script>
+<script src="http://apis.google.com/js/platform.js" async defer>
+	  {lang: 'es'}
+	</script>
+<div class="g-plusone" data-size="medium"></div>
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">
+	  lang: es_ES
+	</script>
+<script type="IN/Share" data-counter="right"></script>
+</div>
+<div class="post-content clearfix">
+<p><img style="float:right;padding:5px" src="http://www.maestrosdelweb.com/images/2011/10/daphyre.jpg" alt="Daphyre-photo"/>Bienvenidos a este pequeño curso intensivo (espero, igualmente completo), para aprender a hacer extensiones para <a href="http://www.google.com/chrome?hl=es">Google Chrome</a>. Crearemos una demostración completa de una extensión básica aprovechando el nuevo API creado en <a href="http://www.forosdelweb.com/">Foros del Web</a>.</p>
+<p>Para comprender mejor este texto, es necesario tener los conocimientos básicos de <a href="http://www.maestrosdelweb.com/editorial/htmlhis/">HTML</a>, <a href="http://www.maestrosdelweb.com/?cat=22">CSS</a> y <a href="http://www.maestrosdelweb.com/category/editorial/desarrollo-web/javascript/">Javascript</a>; aunque si te estás aventurando a crear tus propias extensiones para Google Chrome, seguramente ya tienes dichos conocimientos.</p>
+<p>Quiero suponer que ya has realizado el curso básico <a href="http://code.google.com/chrome/extensions/getstarted.html">“Hello World”</a> que viene en la página de <a href="http://www.chromeextensions.org/">Chrome extensions</a>. De igual forma, en este curso repasaremos lo básico.</p>
+<h3>1. Información básica de la extensión</h3>
+<p>Lo primero, es crear una carpeta que contendrá nuestra extensión y dentro de ella, un archivo llamado <code>manifest.json</code>; aquí viene toda la información básica de nuestra extensión:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+{
+  &quot;name&quot;: &quot;Credencial FdW&quot;,
+  &quot;version&quot;: &quot;1.0&quot;,
+  &quot;description&quot;: &quot;Ejemplo de extensión de Google Chrome que muestra tus datos en Foros del Web.&quot;,
+  &quot;icons&quot;: {
+     &quot;16&quot;: &quot;icon16.png&quot;,
+     &quot;48&quot;: &quot;icon48.png&quot;,
+     &quot;128&quot;: &quot;icon128.png&quot;
+            },
+  &quot;browser_action&quot;: {
+    &quot;default_title&quot;: &quot;Credencial FdW&quot;,
+    &quot;default_icon&quot;: &quot;icon.png&quot;
+  },
+  &quot;permissions&quot;: [
+    &quot;http://www.forosdelweb.com/&quot;
+  ]
+}
+</pre>
+<p>Necesitarás tener también dentro de la carpeta las imágenes correspondientes. <code>icon.png</code> es la imagen de 19x19px que se mostrará en la esquina superior de tu navegador, mientras que los íconos <code>icon16.png</code>, <code>icon48.png</code> e <code>icon128.png</code> (cada uno del tamaño que mencionan) son opcionales para funciones extras de la extensión, aunque es buena práctica tenerlos en la medida de lo posible.</p>
+<p>Instalemos la extensión en tu computadora para comprobar que lo haz hecho bien. Escribe en la barra de navegación <em>chrome://extensions</em> y si está inactivo, activa el <em>modo programador</em> del lado derecho de la página. Aparecerán inmediatamente abajo tres botones, haz clic en el primero <em>Cargar extensión sin empaquetar</em> y navega hasta seleccionar la carpeta donde tienes la extensión que estás desarrollando.</p>
+<p>Si lo has hecho correctamente, aparecerá en la parte superior de tu navegador el ícono de tu extensión, el cual en estos momentos no hace función alguna.</p>
+<h3>2. Pop-up</h3>
+<p>Agreguemos algo de función a tu extensión. Modifica de tu <code>manifest.json</code> los <em>browser action</em>, agregando un <code>default_popup </code>:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+  &quot;browser_action&quot;: {
+    &quot;default_title&quot;: &quot;Credencial FdW&quot;,
+    &quot;default_icon&quot;: &quot;icon.png&quot;,
+    &quot;default_popup&quot;: &quot;popup.html&quot;
+  },
+
+</pre>
+<p>Esto mostrará la página popup.html al presionar el ícono. Por supuesto, habrá que crear dicha página antes. Comencemos por algo básico, mostrar un enlace que abra la página de Foros del Web. Copia esto en el archivo <code>popup.html</code>:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body{
+  min-width:360px;
+}
+a{
+  color:#f90;
+  text-decoration:none;
+}
+a:hover{
+  text-decoration:underline;
+}
+p{
+  font:0.8em sans-serif;
+}
+h1{
+  font:1em sans-serif;
+  color:#fff;
+  background:#000;
+  padding:5px
+}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;h1&gt;Credencial FdW&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.forosdelweb.com&quot;&gt;Foros del Web&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+<p>Ve de nuevo a <em>chrome://extensions</em> y de tu extensión, selecciona la opción <em>Cargar de nuevo</em>. Si lo has hecho correctamente, al presionar el ícono, aparecerá una caja popup mostrando nuestro enlace hacia Foros del Web. Al presionar nuestro enlace&#8230; ¡Espera un segundo! ¡El enlace no abre!</p>
+<p>Seguramente tras pensarlo un poco, podrás darte cuenta que la página <code>popup.html</code> no puede abrir un enlace sobre si mismo, por lo que tenemos que indicarle que lo abra en una nueva ventana/pestaña de Google Chrome y eso se hace con el comando <code>window.open</code> de javascript. Para conservar nuestros enlaces y sus propiedades, podemos hacerlo de esta forma:</p>
+<pre class="brush: xml; title: ; notranslate" title="">&lt;a href=&quot;http://www.forosdelweb.com&quot; onclick=&quot;window.open(this.href)&quot;&gt;Foros del Web&lt;/a&gt;</pre>
+<p>Ahora si, al cargar de nuevo nuestra extensión, el enlace se abrirá sin problemas.</p>
+<h3>3. Obtener datos de una página</h3>
+<p>Demos un poco de funcionalidad a nuestra extensión, aprovechando los datos proporcionados por el <a href="http://www.forosdelweb.com/usercp.php?fdwapi=1">API de foros del web</a>, crearemos una credencial con los datos del usuario conectado. Antes de cerrar la etiqueta <code>head</code>, crearemos una etiqueta <code>script</code> con las siguientes líneas:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+var xhr=new XMLHttpRequest();
+xhr.open('GET', 'http://www.forosdelweb.com/usercp.php?fdwapi=1', true);
+xhr.onreadystatechange=function(){
+  if(xhr.readyState==4){
+    var xmlDoc=new DOMParser().parseFromString(xhr.responseText,'text/xml');
+
+    var userinfo=xmlDoc.getElementsByTagName('userinfo')[0];
+    if(!userinfo){
+      document.getElementsByTagName('body')[0].innerHTML='&lt;h1&gt;Credencial FdW&lt;/h1&gt;&lt;p&gt;Desconectado.&lt;/p&gt;';
+      return;
+    }
+    else{
+      var data='&lt;h1&gt;Credencial FdW&lt;/h1&gt;';
+      data+='&lt;img src='+userinfo.getAttribute('avatar')+' class=&quot;avatar&quot;&gt;';
+      data+='&lt;p&gt;&lt;b&gt;ID:&lt;/b&gt; '+userinfo.getAttribute('userid');
+      data+='&amp;emsp;&lt;b&gt;Username:&lt;/b&gt; '+userinfo.getAttribute('username')+'&lt;/p&gt;';
+      data+='&lt;p&gt;&lt;b&gt;Karma:&lt;/b&gt; '+userinfo.getAttribute('karma');
+      data+='&amp;emsp;&lt;b&gt;Posts:&lt;/b&gt; '+userinfo.getAttribute('posts')+'&lt;/p&gt;';
+      data+='&lt;p&gt;&lt;b&gt;Friend Requests:&lt;/b&gt; '+userinfo.getAttribute('friendrequest');
+      data+='&amp;emsp;&lt;b&gt;Private Messages:&lt;/b&gt; '+userinfo.getAttribute('privatemessage');
+      data+='&amp;emsp;&lt;b&gt;Visitor Messages:&lt;/b&gt; '+userinfo.getAttribute('visitormessage')+'&lt;/p&gt;';
+      data+='&lt;p&gt;&lt;a href=&quot;http://www.forosdelweb.com&quot; onclick=&quot;window.open(this.href)&quot;&gt;Foros del Web&lt;/a&gt;';
+      data+='&amp;emsp;&lt;a href=&quot;http://www.forosdelweb.com/usercp.php&quot; onclick=&quot;window.open(this.href)&quot;&gt;Panel de Control&lt;/a&gt;&lt;/p&gt;';
+      document.getElementsByTagName('body')[0].innerHTML=data;
+    }
+  }
+  else return;
+}
+xhr.send(null);
+&lt;/script&gt;
+
+</pre>
+<p>Lo explicaré de la forma más breve posible. Al comienzo creamos un nuevo XHR (XMLHttpRequest) mediante el cual abrimos el XML del API de Foros del Web. En cuanto la página haya sido cargada, asignaremos los datos a la variable xmlDoc. Convertimos el responseText en un DOM con DOMParser, ya que si intentamos asignar directamente el responseXML, por alguna extraña razón no logra leerlo correctamente y regresa un error.</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+var xhr=new XMLHttpRequest();
+xhr.open('GET', 'http://www.forosdelweb.com/usercp.php?fdwapi=1', true);
+xhr.onreadystatechange=function(){
+  if(xhr.readyState==4){
+    var xmlDoc=new DOMParser().parseFromString(xhr.responseText,'text/xml');
+[/sorucecode]
+Una vez obtenido el xmlDoc, extraemos de él la etiqueta userinfo, que contiene todos los datos básicos de nuestro usuario. Comparamos con un if si la etiqueta ha sido hallada, si no es así, significa que el usuario no está conectado y asignaremos a nuestro body dicha información.
+
+1
+
+    var userinfo=xmlDoc.getElementsByTagName('userinfo')[0];
+    if(!userinfo){
+      document.getElementsByTagName('body')[0].innerHTML='&lt;h1&gt;Credencial FdW&lt;/h1&gt;&lt;p&gt;Desconectado.&lt;/p&gt;';
+      return;
+    }
+
+</pre>
+<p>De lo contrario, si la etiqueta ha sido hallada, agregaremos todos los datos del usuario a una variable y posteriormente los agregaremos al body. Nótese que se ponen dos enlaces (A la página principal y al panel de control) y que a ambos se les asigna el javascript que vimos anteriormente para que pueda abrirlos.</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+else{
+      var data='&lt;h1&gt;Credencial FdW&lt;/h1&gt;';
+      data+='&lt;img src='+userinfo.getAttribute('avatar')+' class=&quot;avatar&quot;&gt;';
+      data+='&lt;p&gt;&lt;b&gt;ID:&lt;/b&gt; '+userinfo.getAttribute('userid');
+      data+='&amp;emsp;&lt;b&gt;Username:&lt;/b&gt; '+userinfo.getAttribute('username')+'&lt;/p&gt;';
+      data+='&lt;p&gt;&lt;b&gt;Karma:&lt;/b&gt; '+userinfo.getAttribute('karma');
+      data+='&amp;emsp;&lt;b&gt;Posts:&lt;/b&gt; '+userinfo.getAttribute('posts')+'&lt;/p&gt;';
+      data+='&lt;p&gt;&lt;b&gt;Friend Requests:&lt;/b&gt; '+userinfo.getAttribute('friendrequest');
+      data+='&amp;emsp;&lt;b&gt;Private Messages:&lt;/b&gt; '+userinfo.getAttribute('privatemessage');
+      data+='&amp;emsp;&lt;b&gt;Visitor Messages:&lt;/b&gt; '+userinfo.getAttribute('visitormessage')+'&lt;/p&gt;';
+      data+='&lt;p&gt;&lt;a href=&quot;http://www.forosdelweb.com&quot; onclick=&quot;window.open(this.href)&quot;&gt;Foros del Web&lt;/a&gt;';
+      data+='&amp;emsp;&lt;a href=&quot;http://www.forosdelweb.com/usercp.php&quot; onclick=&quot;window.open(this.href)&quot;&gt;Panel de Control&lt;/a&gt;&lt;/p&gt;';
+      document.getElementsByTagName('body')[0].innerHTML=data;
+    }
+
+</pre>
+<p>No olvides al final cerrar el xhr enviándole una variable null. Por último, modificaremos nuestro body original, para que muestre que se está conectando a la página mientras obtiene los datos:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+
+&lt;body&gt;
+&lt;h1&gt;Credencial FdW&lt;/h1&gt;
+&lt;p&gt;Conectando...&lt;/p&gt;
+&lt;/body&gt;
+
+</pre>
+<h3>4. Background</h3>
+<p>Ahora nuestra extensión es funcional, pero tener que revisar nuestra credencial cada 5 minutos para ver si tenemos nuevas notificaciones, no es lo más ideal. Además de los popup, las extensiones de Chrome ofrecen otra opción importante que son las páginas de fondo, que a continuación mostraremos uno de sus usos prácticos.</p>
+<p>Primero, regresaremos a editar nuestro <code>manifest.json</code> y agregaremos nuestra página de fondo justo después de la descripción:</p>
+<p> <code>"background_page": "background.html",</code></p>
+<p>Después crearemos la nueva página <code>background.html</code> y le agregaremos estos datos:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var counter=0;
+var timerVar=null;
+var timerDelay=300000;
+
+// Badge colors
+var BADGE_ACTIVE = {color:[204,0,51,255]};
+var BADGE_LOADING = {color:[204,204,51,255]};
+var BADGE_INACTIVE = {color:[153,153,153,255]};
+
+function loadData(){
+  var xhr=new XMLHttpRequest();
+  xhr.open('GET','http://www.forosdelweb.com/usercp.php?fdwapi=1',true);
+  xhr.onreadystatechange=function(){
+    if(xhr.readyState == 4){
+      var xmlDoc=new DOMParser().parseFromString(xhr.responseText,'text/xml');
+
+      chrome.browserAction.setBadgeBackgroundColor(BADGE_INACTIVE);
+      var userinfo=xmlDoc.getElementsByTagName('userinfo')[0];
+      if(!userinfo){
+        chrome.browserAction.setIcon({path:'icon-gray.png'});
+        chrome.browserAction.setTitle({title: 'Credencial FdW\n--Desconectado--'});
+        chrome.browserAction.setBadgeText({text: '?'});
+        return;
+      }
+      else{
+        counter=0;
+        var notifications=xmlDoc.getElementsByTagName('notification');
+        for (var i=0;i&lt;notifications.length;i++){
+          if(notifications[i].getAttribute('highlight')=='true'){
+            counter++;
+          }
+        }
+        chrome.browserAction.setIcon({path:'icon.png'});
+        chrome.browserAction.setTitle({title: 'Credencial FdW\n--Conectado--'});
+        if(counter&gt;0){
+          chrome.browserAction.setBadgeText({text: counter+''});
+          chrome.browserAction.setBadgeBackgroundColor(BADGE_ACTIVE);
+        }
+        else
+          chrome.browserAction.setBadgeText({text: ''});
+      }
+    }
+    else return;
+  }
+  xhr.send(null);
+  window.clearTimeout(timerVar);
+  timerVar=window.setTimeout(loadData,timerDelay);
+}
+
+function init() {
+  chrome.browserAction.setIcon({path:'icon-gray.png'});
+  chrome.browserAction.setBadgeText({text: '...'});
+  chrome.browserAction.setBadgeBackgroundColor(BADGE_LOADING);
+  loadData();
+}
+&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload=&quot;init()&quot;&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+<p>Como esta página no será mostrada, nuestro body no contiene nada, sin embargo, es importante, ya que al terminar de ser cargada la página, llamará a nuestra función init(). La función init se encarga de establecer variables predeterminadas (Que en nuestro caso no tenemos) e indica que nuestra extensión se está conectado a los datos. Al final, llamará a loadData().</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+
+function init() {
+  chrome.browserAction.setIcon({path:'icon-gray.png'});
+  chrome.browserAction.setBadgeText({text: '...'});
+  chrome.browserAction.setBadgeBackgroundColor(BADGE_LOADING);
+  loadData();
+}
+
+</pre>
+<p>Nótese que llamamos a una nueva imagen llamada <code>icon-gray.png</code>, que no es mas que nuestra imagen <code>icon.png</code> pero en gris, la cual será mostrada cuando nuestra extensión se encuentre desconectada. No olvides crearla y agregarla a la carpeta, de lo contrario, la extensión se mostrará vacía.</p>
+<p>La función loadData comienza similar que nuestro script en el popup, usando userinfo para verificar si el usuario está conectado o no. Si no lo está, el ícono se quedará de color gris, el &#8220;title&#8221; mostrará que estamos desconectados, y aparecerá un “?” en la pequeña caja que anteriormente dijimos sería de color gris (BADGE_INACTIVE).</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+
+      chrome.browserAction.setBadgeBackgroundColor(BADGE_INACTIVE);
+      if(!userinfo){
+        chrome.browserAction.setIcon({path:'icon-gray.png'});
+        chrome.browserAction.setTitle({title: 'Credencial FdW\n--Desconectado--'});
+        chrome.browserAction.setBadgeText({text: '?'});
+        return;
+      }
+
+</pre>
+<p>Por el contrario, si el usuario está conectado, comenzaremos el contador desde cero, y buscaremos cada notificación cuyo “highlight” sea verdadero (O sea, las nuevas notificaciones), la cual agregaremos al contador. Finalmente, cambiaremos el ícono al original con color, el title mostrará que estamos conectados, si hay mensajes, mostraremos en la pequeña cajita cuántos son y pondremos el fondo de la cajita roja (BADGE_ACTIVE). Si no estamos conectados, asignaremos a la cajita un texto vacío, que hará que esta no se muestre.</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+
+      else{
+        counter=0;
+        var notifications=xmlDoc.getElementsByTagName('notification');
+        for (var i=0;i&lt;notifications.length;i++){
+          if(notifications[i].getAttribute('highlight')=='true'){
+            counter++;
+          }
+        }
+        chrome.browserAction.setIcon({path:'icon.png'});
+        chrome.browserAction.setTitle({title: 'Credencial FdW\n--Conectado--'});
+        if(counter&gt;0){
+          chrome.browserAction.setBadgeText({text: counter+''});
+          chrome.browserAction.setBadgeBackgroundColor(BADGE_ACTIVE);
+        }
+        else
+          chrome.browserAction.setBadgeText({text: ''});
+      }
+
+</pre>
+<p>Finalmente, enviaremos nulo a nuestro xhr y asignaremos un Timeout de 5 segundos (300000 milisegundos) antes que volvamos a recargar los datos para verificar de nuevo si hay nuevas notificaciones. Nótese que antes de esto, limpiamos el Timeout, para evitar crear procesos extras en caso de ser llamada antes de tiempo.</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+
+  xhr.send(null);
+  window.clearTimeout(timerVar);
+  timerVar=window.setTimeout(loadData,timerDelay);
+
+</pre>
+<p>Cuando actualicemos nuestra extensión, veremos estos cambios. Si tenemos notificaciones se mostrarán en la caja roja, si no las tenemos se mostrará como era originalmente y si estamos desconectados, se mostrará una caja gris.</p>
+<p>Mucha gente prefiere crear extensiones “más prácticas”, que en lugar de mostrar un popup al abrir la extensión, desean que esta abra directo la página correspondiente. Para lograr esto, primero se debe eliminar la línea del popup de nuestro <code>manifes.json</code> y luego se debe agregar un escucha de clic a la extensión en nuestro background, en el caso de nuestro código, al final antes de cerrar el script:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+
+chrome.browserAction.onClicked.addListener(function(tab){
+  window.open('http://www.forosdelweb.com/');
+  loadData();
+});
+</pre>
+<p>Como podremos ver, aprovechamos la oportunidad para, además de abrir la página, recargar los datos para tenerlos más frescos. Si la extensión que estás haciendo ahora utilizará el popup o abrirá la página al hacer clic sobre ella, será tu decisión.</p>
+<h3>5. Options</h3>
+<p>Para finalizar, veremos esta última opción importante que nos ofrecen las extensiones para Chrome, que son precisamente, las opciones. Para ejemplificar su uso, mostraré como realizar dos opciones populares: Permitir que el usuario decida cada cuantos minutos se actualice la información de la extensión y si desea o no reproducir un sonido cuando haya nuevos mensajes (tendrás que conseguir un sonido para ello).</p>
+<p>Comenzaremos por agregar nuestra página de opciones al manifest.json, justo después de la página background:</p>
+<p> <code>"options_page": "options.html",</code></p>
+<p>Luego, por supuesto, crearemos la página options.html y le agregaremos el código correspondiente:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body{
+  font-family:sans-serif;
+}
+h1{
+  color:#fff;
+  background:#000;
+  padding:5px
+}
+&lt;/style&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var saveButton;
+var playSoundCheckbox;
+var refreshIntervalTextbox;
+
+function save(){
+  localStorage.refreshInterval = (refreshIntervalTextbox.value &amp;&amp; parseInt(refreshIntervalTextbox.value)&gt;=1) ? parseInt(refreshIntervalTextbox.value)*60000 : 300000;
+  localStorage.playSound = playSoundCheckbox.checked ? 'yes' : 'no';
+
+  init();
+  chrome.extension.getBackgroundPage().init();
+}
+
+function init(){
+  playSoundCheckbox = document.getElementById(&quot;play-sound&quot;);
+  refreshIntervalTextbox = document.getElementById(&quot;refresh-interval&quot;);
+  saveButton = document.getElementById(&quot;save-button&quot;);
+
+  playSoundCheckbox.checked = (localStorage.playSound) ? (localStorage.playSound == 'yes') : true;
+  refreshIntervalTextbox.value = (parseInt(localStorage.refreshInterval)) ? parseInt(localStorage.refreshInterval)/60000 + '' : &quot;5&quot;;
+
+  disableSave();
+}
+
+function enableSave(){saveButton.disabled = false;}
+function disableSave(){saveButton.disabled = true;}
+&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload=&quot;init();&quot;&gt;
+&lt;h1&gt;&lt;img src=&quot;icon48.png&quot; alt=&quot;[icon]&quot; /&gt; Credencial FdW&lt;/h1&gt;
+&lt;h2&gt;Opciones&lt;/h2&gt;
+&lt;p&gt;&lt;label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;play-sound&quot; onclick=&quot;enableSave()&quot; /&gt; Al haber nuevos mensajes, reproducir un sonido.&lt;/label&gt; [por defecto: si]&lt;/p&gt;
+&lt;p&gt;Intervalo de actualizacion (minutos):&lt;input type=&quot;text&quot; id=&quot;refresh-interval&quot; oninput=&quot;enableSave()&quot; /&gt; [por defecto: 5]&lt;/p&gt;
+&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;Guardar&quot; id=&quot;save-button&quot; onclick=&quot;save()&quot; /&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+<p>Como vemos en nuestro body, estamos poniendo un checkbox para tomar una decisión si/no y un textbox para tomar una decisión libre (En este caso, un número). Al cargar llamamos a nuestro init(), el cual asigna nuestros elementos del body a variables para manejarlos más fácil, busca si ya tenemos valores guardados en nuestro localstorage y si no, muestra los predeterminados. Al final, deshabilitamos el botón de guardar.</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+
+function init(){
+  playSoundCheckbox = document.getElementById(&quot;play-sound&quot;);
+  refreshIntervalTextbox = document.getElementById(&quot;refresh-interval&quot;);
+  saveButton = document.getElementById(&quot;save-button&quot;);
+
+  playSoundCheckbox.checked = (localStorage.playSound) ? (localStorage.playSound == 'yes') : true;
+  refreshIntervalTextbox.value = (parseInt(localStorage.refreshInterval)) ? parseInt(localStorage.refreshInterval)/60000 + '' : &quot;5&quot;;
+
+  disableSave();
+}
+
+</pre>
+<p>Dos funciones se encargan de deshabilitar o habilitar nuestro botón de guardar, las cuales son llamadas en el momento en que se hace un cambio a nuestros datos (onclick para el checkbox y oninput para el textbox). Por último, tenemos la función save(), que guarda los datos y posteriormente llama a la función init(), tanto local, como la de background, para que esta comience a funcionar con los nuevos datos.</p>
+<p>En el caso del checkbox, para guardar el dato, tenemos que verificar si está activado para guardar “yes” o “no” en caso opuesto:</p>
+<p> <code>localStorage.playSound = playSoundCheckbox.checked ? 'yes' : 'no';</code></p>
+<p>Guardar un string es más sencillo, ya que solo hay que guardar el dato de forma directa:</p>
+<p> <code>localStorage.someString = someStringTextbox.value;</code></p>
+<p>Pero en caso de tener que guardar un número, primero debemos de verificar que no esté vacío el texto y luego que este sea un número en verdad, o de lo contrario, guardar el texto predeterminado:</p>
+<p> <code> localStorage.refreshInterval = (refreshIntervalTextbox.value &#038;&#038; parseInt(refreshIntervalTextbox.value)) ? parseInt(refreshIntervalTextbox.value) : 5;</code></p>
+<p>Además, en nuestro caso particular debemos de verificar que el número sea mayor de 1, o la extensión se estaría actualizando una y otra vez sin parar causando un error. También debemos multiplicar el valor final por 60000, que es la cantidad de milisegundos en un minuto, unidad en que solicitamos nuestro valor.</p>
+<p>Ahora que ya tenemos nuestro options.html, debemos regresar a nuestro background.html para agregar los nuevos cambios. Primero, agregar las nuevas variables para nuestro sonido, justo al comienzo de nuestro script, después de timerDelay:</p>
+<p><code><br/>
+var playSound=true;<br/>
+var audio=new Audio('sound.aac');<br/>
+</code></p>
+<p>Después, inicializar las variables en nuestra función init():</p>
+<p><code><br/>
+function init(){<br/>
+timerDelay=parseInt(localStorage.refreshInterval || '300000');<br/>
+playSound=(localStorage.playSound)?(localStorage.playSound=='yes'):true;<br/>
+</code></p>
+<p>Con respecto a timerDelay no habrá que hacer más cambios, pero para playSound, tendremos que agregar una variable llamada “lastCounter” a la que se le asignará el valor de Counter antes que este regrese a cero y pase por el contador de notificaciones y al final comparar si hay nuevas notificaciones para reproducir el sonido:<br/>
+<code><br/>
+if(playSound &#038;&#038; counter>lastCounter)<br/>
+audio.play();<br/>
+</code></p>
+<h3>6. Publicar en la tienda web</h3>
+<p>Ahora que ya tenemos las bases para crear una extensión para Google Chrome, seguro que te gustaría publicarla para que todo el mundo pueda utilizarla. La forma más sencilla y posiblemente de mayor alcance, sería utilizar la <a href="https://chrome.google.com/webstore?hl=es-419">tienda web de Chrome</a>.</p>
+<p><img style="float:right;padding:5px" src="http://www.maestrosdelweb.com/images/2011/10/chrome-store.jpg" alt="Chrome-store"/>Primero, selecciona todos tus archivos y comprímelos en una carpeta zip. Después, ingresa al <a href="https://chrome.google.com/webstore/developer/dashboard">Dashboard de Google Chrome</a> y sigue los pasos para publicarla; si no te has registrado antes, te lo pedirá en este momento. Te pedirá además algo de información y unos screenshots de tu extensión. Una vez que termines de seguir los pasos, tu extensión sera pública para todo el mundo. ¡Felicidades!</p>
+<p>Revisa la <a href="http://code.google.com/chrome/extensions/devguide.html">documentación completa de extensiones</a>, los <a href="http://code.google.com/chrome/extensions/samples.html">códigos fuente de otras extensiones</a> o cualquier extensión que instales (Cuida de no violar copyright y dar los créditos apropiados si usas códigos de terceros). Si en algún momento quedaste inseguro con este texto, puedes revisar los <a href="https://docs.google.com/viewer?a=v&#038;pid=explorer&#038;chrome=true&#038;srcid=0Byc4-5H1l6YTYjUxYjYwYzctMTYwZC00NWFjLWJmZDgtZTVkYjgyYzYyMzU4&#038;hl=es">archivos finales</a>.</p>
+<p><strong>¡Felices códigos!</strong> 😉</p>
+<p>Si tienes dudas al respecto puedes encontrar a daPhyre en <a href="http://www.forosdelweb.com/miembros/daphyre/">Foros del web</a> o contactarlo directamente a su <a href="http://www.maestrosdelweb.com/crear-extensiones-google-chrome/crx@ayotli.com">correo</a>. </p>
+</div>
+<div class="social-bottom">
+<div class="fb-share-button" data-href="http://www.maestrosdelweb.com/crear-extensiones-google-chrome/" data-layout="box_count"></div>
+<a class="twitter-share-button" href="index.html" data-via="maestros" data-count="vertical" data-lang="es">
+Twittear
+</a>
+<script type="text/javascript">
+	window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+	</script>
+<script src="http://apis.google.com/js/platform.js" async defer>
+		{lang: 'es'}
+	</script>
+<div class="g-plusone" data-size="tall"></div>
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">
+	  lang: es_ES
+	</script>
+<script type="IN/Share" data-counter="top"></script>
+</div>
+<div class="author-extend">
+<figure class="author-picture-container only-l-640">
+<img src="http://www.maestrosdelweb.com/wp-content/authors/eutobar-73.jpg" alt="Eugenia Tobar" width="100" height="100"/> </figure>
+<div class="author-data">
+<strong class="author-name">Eugenia Tobar</strong>
+<a class="twitter_author_link" href="https://twitter.com/eutobar/"><span class="author-twitter">eutobar</span></a><p class="author-description">Editora de Maestros del Web con experiencia en la gestión de contenido, manejo de comunidades en redes sociales y organizadora de eventos sobre capacitación tecnológica.</p> </div>
+</div>
+</div>
+</div>
+</article>
+</section>
+<section class="recomended-posts">
+<div class="post-wrapper inline-space">
+</div>
+</section>
+<section class="comments">
+<div class="post-wrapper">
+<div class="fb-comments" data-href="http://www.maestrosdelweb.com/desarrollo-web/crear-extensiones-google-chrome/" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
+<ul class="commentlist">
+<li>
+<img src="http://www.maestrosdelweb.com/wp-content/themes/mdw5/images/avatar-default-48px.png" alt="Avatar de Pablo Morales"/>
+<cite><a href='http://blog.pablo-morales.com' rel='external nofollow' class='url'>Pablo Morales</a></cite>
+<p>Muy bueno che.</p>
+</li>
+<li>
+<img src="http://www.maestrosdelweb.com/wp-content/themes/mdw5/images/avatar-default-48px.png" alt="Avatar de Christian Van Der Henst S."/>
+<cite><a href='http://www.maestrosdelweb.com' rel='external nofollow' class='url'>Christian Van Der Henst S.</a></cite>
+<p>Me encanta el potencial de crear extensiones, es un market que tiene cada vez más fuerza y hacen falta aplicaciones.</p>
+</li>
+<li>
+<img src="http://www.maestrosdelweb.com/wp-content/themes/mdw5/images/avatar-default-48px.png" alt="Avatar de luis alberto"/>
+<cite>luis alberto</cite>
+<p>Buen aporte no no diria que excelente&#8230;..<br/>
+solo que te falto decir que hay que pagar unos dollares para subir algo a la tienda&#8230;.</p>
+</li>
+<li>
+<img src="http://www.maestrosdelweb.com/wp-content/themes/mdw5/images/avatar-default-48px.png" alt="Avatar de Tropiezos en la red &raquo; Blog Archive &raquo; Enlaces interesantes #36"/>
+<cite><a href='http://www.tropiezosenlared.com/enlaces-interesantes-36/' rel='external nofollow' class='url'>Tropiezos en la red &raquo; Blog Archive &raquo; Enlaces interesantes #36</a></cite>
+<p>[&#8230;] Como crear extensiones para Google Chrome (maestrosdelweb.com). [&#8230;]</p>
+</li>
+<li>
+<img src="http://www.maestrosdelweb.com/wp-content/themes/mdw5/images/avatar-default-48px.png" alt="Avatar de daPhyre"/>
+<cite><a href='http://octabot.net' rel='external nofollow' class='url'>daPhyre</a></cite>
+<p>Me enteré de esta noticia, mas no sabía que aun estaba en vigor&#8230; Como había empezado antes de esta regla, olvidé su existencia&#8230; Pero creo recordar que había otras alternativas para comprobar la identidad&#8230; La verdad lo desconozco&#8230;</p>
+</li>
+<li>
+<img src="http://www.maestrosdelweb.com/wp-content/themes/mdw5/images/avatar-default-48px.png" alt="Avatar de Crear extensiones en Google Chrome | Manuales gratis"/>
+<cite><a href='http://www.conocimientosweb.info/manual/crear-extensiones-en-google-chrome/' rel='external nofollow' class='url'>Crear extensiones en Google Chrome | Manuales gratis</a></cite>
+<p>[&#8230;] y Javascript; aunque si te estás aventurando a crear tus propias extensiones para Google Chrome. Descargar este archivo Reportar recurso Procesando el [&#8230;]</p>
+</li>
+<li>
+<img src="http://www.maestrosdelweb.com/wp-content/themes/mdw5/images/avatar-default-48px.png" alt="Avatar de Ivan Arriola"/>
+<cite>Ivan Arriola</cite>
+<p>Hola, muchas gracias por el curso.</p>
+<p>Me gustaría saber si es posible crear aplicaciones que trabajen con sitios web que no te pertenecen, por ejemplo un &#8220;launcher&#8221; de alguna web app.</p>
+<p>En la chrome webstore se que existen muchas aplicaciones así, al momento de publicar la app, te pide que verifiques que te pertenece el sitio web.</p>
+<p>Saludos!</p>
+</li>
+<li>
+<img src="http://www.maestrosdelweb.com/wp-content/themes/mdw5/images/avatar-default-48px.png" alt="Avatar de daPhyre"/>
+<cite><a href='http://octabot.net' rel='external nofollow' class='url'>daPhyre</a></cite>
+<p>El ejemplo mostrado es de una extensión, y con estas, no hay problema alguno de trabajar con sitios web que no te pertenecen. Pero los &#8220;launcher&#8221; (Apps) caen en otra categoría, y para estos si es necesario que el sitio web sea de tu pertenencia.</p>
+<p>¡Mucha suerte en tus desarrollos!</p>
+</li>
+<li>
+<img src="http://www.maestrosdelweb.com/wp-content/themes/mdw5/images/avatar-default-48px.png" alt="Avatar de Bobcat"/>
+<cite><a href='http://www.facebook.com/' rel='external nofollow' class='url'>Bobcat</a></cite>
+<p>At last! Soeonme with the insight to solve the problem!</p>
+</li>
+<li>
+<img src="http://www.maestrosdelweb.com/wp-content/themes/mdw5/images/avatar-default-48px.png" alt="Avatar de cwnmnohorpe"/>
+<cite><a href='http://ruxlyknglauf.com/' rel='external nofollow' class='url'>cwnmnohorpe</a></cite>
+<p>jr2ELa <a href="http://mwjvsndqkymq.com/" rel="nofollow">mwjvsndqkymq</a></p>
+</li>
+</ul>
+</div>
+</section>
+</div>  
+<script type='text/javascript' src='http://www.maestrosdelweb.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='http://www.maestrosdelweb.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js?ver=3.0.9b'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://www.maestrosdelweb.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://www.maestrosdelweb.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeRDark.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = true;
+	SyntaxHighlighter.all();
+</script>
+ 
+<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-P5K95S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-P5K95S');</script>
+ 
+</body>
+</html>
+ 
