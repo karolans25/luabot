@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/QAPage">
+<head>
+
+<title>javascript - onClick within Chrome Extension not working - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com"/>
+    <meta property="og:type" content="website" />    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&a" />
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="onClick within Chrome Extension not working" />
+    <meta name="twitter:description" property="og:description" itemprop="description" content="This seems to be the easiest thing to do, but it&#39;s just not working. In a normal browser the .html and .js files works perfectly, but in the Chrome extension the onClick function is not performing ..." />
+    <meta property="og:url" content="http://stackoverflow.com/questions/13591983/onclick-within-chrome-extension-not-working"/>
+    <link rel="canonical" href="onclick-within-chrome-extension-not-working" />
+
+    
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://cdn.sstatic.net/Js/stub.en.js?v=e5852343f40d"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.sstatic.net/stackoverflow/all.css?v=0a13ed13b7f0">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;onClick within Chrome Extension not working&#39;" href="http://stackoverflow.com/feeds/question/13591983">
+            <meta name="twitter:app:country" content="US" />
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:iphone" content="871299723" />
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/13591983/onclick-within-chrome-extension-not-working" />
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:ipad" content="871299723" />
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/13591983/onclick-within-chrome-extension-not-working" />
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/13591983/onclick-within-chrome-extension-not-working">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:13591983});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '13591983');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1452263189,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableSocialMediaInSharePopup":true},"user":{"fkey":"b37662fce0849c4544f61a0eec002ea1","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"abcd316a1c1a","js/moderator.en.js":"66f1dfab09e6","js/full-anon.en.js":"b434fc9d318e","js/full.en.js":"f28c682f5124","js/wmd.en.js":"1fe766780f9f","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"6adc01174d2a","js/help.en.js":"dbd4f489eff2","js/tageditor.en.js":"796c53111255","js/tageditornew.en.js":"94b3e8c7bd73","js/inline-tag-editing.en.js":"c8fe23f81191","js/revisions.en.js":"64b510d9ea2d","js/review.en.js":"d921cc381982","js/tagsuggestions.en.js":"7dfec0d2a2d7","js/post-validation.en.js":"9abb0e0d293a","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"5850a09d0153","js/keyboard-shortcuts.en.js":"97f6d2bd9aa4","js/external-editor.en.js":"cf58cc6630ef","js/external-editor.en.js":"cf58cc6630ef","js/snippet-javascript.en.js":"433470c8fb5e","js/snippet-javascript-codemirror.en.js":"765241c710b4"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+</head>
+<body class="question-page new-topbar">
+    <noscript><div id="noscript-padding"></div></noscript>
+    
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:6 })"
+>chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/"
+       class="current-site-link site-link js-gps-track"
+       data-id="1"
+       data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com"
+       class="site-link js-gps-track"
+       data-id="552"
+       data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track"
+                       href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=multicollider"
+                            data-gps-track="site_switcher.click({ item_type:9 })"
+>
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f13591983%2fonclick-within-chrome-extension-not-working" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:10 })"
+>Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f13591983%2fonclick-within-chrome-extension-not-working" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:11 })"
+>log in</a> to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/"
+               class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track"
+               data-gps-track="site_switcher.show"
+               title="A list of all 151 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+    <a href="onclick-within-chrome-extension-not-working#"
+       class="topbar-icon icon-inbox yes-hover js-inbox-button"
+       title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="onclick-within-chrome-extension-not-working#"
+       class="topbar-icon icon-achievements yes-hover js-achievements-button "
+       data-unread-class=""
+       title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f13591983%2fonclick-within-chrome-extension-not-working" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f13591983%2fonclick-within-chrome-extension-not-working" class="login-link">log in</a>
+
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                            <a href="onclick-within-chrome-extension-not-working#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240" />
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/" >
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs">Jobs<span class="nav-jobs-beta">beta</span></a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                                            </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion"  href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Stack Overflow is a community of 4.7 million programmers, just like you, helping each other.
+            <br/>
+                <br/>Join them; it only takes a minute:<br/>
+            <br/>
+            <a href="http://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f13591983%2fonclick-within-chrome-extension-not-working" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Join the Stack Overflow community to:</b>
+            <ol id="hiw">
+                <li id="q">Ask programming questions
+                </li>
+                <li id="an">Answer and help your peers
+                </li>
+                <li id="b">Get recognized for your expertise
+                </li>
+            </ol>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <script>
+        StackExchange.ready(function () {
+
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+
+    </script>
+</div>
+			<div id="question-header">
+                <h1 itemprop="name"><a href="onclick-within-chrome-extension-not-working" class="question-hyperlink">onClick within Chrome Extension not working</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="13591983"  id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk411027492",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk411027492">
+            </div>    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="13591983">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">18</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="onclick-within-chrome-extension-not-working#" title="This is a favorite question (click again to undo)">favorite</a>
+        <div class="favoritecount"><b>9</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>This seems to be the easiest thing to do, but it's just not working. In a normal browser the .html and .js files works perfectly, but in the Chrome extension the <code>onClick</code> function is not performing what it's supposed to do.</p>
+
+<p>.js file:</p>
+
+<pre><code>function hellYeah(text) {
+  document.getElementById("text-holder").innerHTML = text;
+}
+</code></pre>
+
+<p>.html file:</p>
+
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;
+      Getting Started Extension's Popup
+    &lt;/title&gt;
+    &lt;script src="popup.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="text-holder"&gt;
+      ha
+    &lt;/div&gt;
+    &lt;br /&gt;
+    &lt;a onClick=hellYeah("xxx")&gt;
+      hyhy
+    &lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>So basically once the user clicks "hyhy", "ha" should change into "xxx". And again - it works perfectly in the browser but does not work in the extension. Do you know why? Just in case I'm attaching the manifest.json below as well.</p>
+
+<p>Thanks in advance!</p>
+
+<p>manifest.json:</p>
+
+<pre><code>{
+  "name": "My First Extension",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "The first extension that I made.",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "http://api.flickr.com/"
+  ]
+}
+</code></pre>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/javascript" class="post-tag" title="show questions tagged &#39;javascript&#39;" rel="tag">javascript</a> <a href="http://stackoverflow.com/questions/tagged/google-chrome-extension" class="post-tag" title="show questions tagged &#39;google-chrome-extension&#39;" rel="tag"><img src="http://i.stack.imgur.com/EdUwb.png" height="16" width="18" alt="" class="sponsor-tag-img">google-chrome-extension</a> <a href="http://stackoverflow.com/questions/tagged/onclick" class="post-tag" title="show questions tagged &#39;onclick&#39;" rel="tag">onclick</a> 
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/13591983" title="short permalink to this question" class="short-link" id="link-post-13591983">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/13591983/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/13591983/revisions" title="show all edits to this post">edited <span title="2014-09-08 09:02:17Z" class="relativetime">Sep 8 '14 at 9:02</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/934239/xan"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/f6278534f82406052d8aac1da327b84c?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/934239/xan">Xan</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 26554" dir="ltr">26.6k</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="28 silver badges"><span class="badge2"></span><span class="badgecount">28</span></span><span title="50 bronze badges"><span class="badge3"></span><span class="badgecount">50</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2012-11-27 19:54:24Z" class="relativetime">Nov 27 '12 at 19:54</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1857696/teezee"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/1a8c58f0014de88d37491d60bacdbafd?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1857696/teezee">teeZee</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">122</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-13591983" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-13591983" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="onclick-within-chrome-extension-not-working#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								3 Answers
+                                <span style="display:none;" itemprop="answerCount">3</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/13591983/onclick-within-chrome-extension-not-working?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active">
+            active</a>
+        <a href="http://stackoverflow.com/questions/13591983/onclick-within-chrome-extension-not-working?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/13591983/onclick-within-chrome-extension-not-working?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="13592045"></a>
+<div id="answer-13592045" class="answer accepted-answer" data-answerid="13592045"  itemscope itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="13592045">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">33</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Chrome Extensions don't allow you to have inline JavaScript (<a href="http://developer.chrome.com/extensions/contentSecurityPolicy.html#JSExecution">documentation</a>). You are going to have to do something similar to this.</p>
+
+<p>Assign an ID to the link (<code>&lt;a onClick=hellYeah("xxx")&gt;</code> becomes <code>&lt;a id="link"&gt;</code>), and use <a href="https://developer.mozilla.org/en-US/docs/DOM/element.addEventListener"><code>addEventListener</code></a> to bind the event. Put the following in your <code>popup.js</code> file:</p>
+
+<pre><code>document.addEventListener('DOMContentLoaded', function() {
+    var link = document.getElementById('link');
+    // onClick's logic below:
+    link.addEventListener('click', function() {
+        hellYeah('xxx');
+    });
+});
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/13592045" title="short permalink to this answer" class="short-link" id="link-post-13592045">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/13592045/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/13592045/revisions" title="show all edits to this post">edited <span title="2012-11-27 20:40:31Z" class="relativetime">Nov 27 '12 at 20:40</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/938089/rob-w"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/c916d92c098426d84778a7910cc32b39?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/938089/rob-w">Rob W</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 178440" dir="ltr">178k</span><span title="26 gold badges"><span class="badge1"></span><span class="badgecount">26</span></span><span title="382 silver badges"><span class="badge2"></span><span class="badgecount">382</span></span><span title="408 bronze badges"><span class="badge3"></span><span class="badgecount">408</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-11-27 19:58:50Z" class="relativetime">Nov 27 '12 at 19:58</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1013842/david"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/a96df56622faba21e8f5a903b106dfc3?s=32&amp;d=identicon&amp;r=PG&amp;f=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1013842/david">David</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,396</span><span title="9 silver badges"><span class="badge2"></span><span class="badgecount">9</span></span><span title="23 bronze badges"><span class="badge3"></span><span class="badgecount">23</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-13592045" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="1"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-18631287" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Are there any errors in the Developer Console?</span>
+                    &ndash;&nbsp;<a href="http://stackoverflow.com/users/1013842/david"
+                       title="2396 reputation"
+                       class="comment-user">David</a>
+                <span class="comment-date" dir="ltr"><span title="2012-11-27 20:22:44Z" class="relativetime-clean">Nov 27 '12 at 20:22</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-18631329" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I&#39;m not sure if I can format stuff in the comments, sorry for that. Can&#39;t get it to work with the following: &lt;!doctype html&gt; &lt;html&gt;   &lt;head&gt;      		&lt;title&gt; 			Getting Started Extension&#39;s Popup 		&lt;/title&gt;      &lt;script src=&quot;popup.js&quot;&gt;&lt;/script&gt; 		&lt;script type=&quot;text/javascript&quot;&gt; 			window.onload = function() { 			  var link = document.getElementById(&quot;link&quot;); 			  link.addEventListener(&quot;onclick&quot;,hellYeah(&quot;xxx&quot;),false); 			} 		&lt;/script&gt;   &lt;/head&gt;  	&lt;body&gt; 		&lt;div id=&quot;text-holder&quot;&gt; 			ha 		&lt;/div&gt; 		&lt;br /&gt; 		&lt;div id=&quot;link&quot;&gt; 			hyhy 		&lt;/div&gt; 	&lt;/body&gt;  &lt;/html&gt;</span>
+                    &ndash;&nbsp;<a href="http://stackoverflow.com/users/1857696/teezee"
+                       title="122 reputation"
+                       class="comment-user owner">teeZee</a>
+                <span class="comment-date" dir="ltr"><span title="2012-11-27 20:24:12Z" class="relativetime-clean">Nov 27 '12 at 20:24</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-18631357" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I got something like this: &quot;Refused to execute inline script because it violates the following Content Security Policy directive: &quot;script-src &#39;self&#39; chrome-extension-resource:&quot;.&quot;</span>
+                    &ndash;&nbsp;<a href="http://stackoverflow.com/users/1857696/teezee"
+                       title="122 reputation"
+                       class="comment-user owner">teeZee</a>
+                <span class="comment-date" dir="ltr"><span title="2012-11-27 20:25:17Z" class="relativetime-clean">Nov 27 '12 at 20:25</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-18631480" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Javascript cannot be in your HTML file for extensions. You have to load all javascript from an external source. Something like <code>&lt;script src=&quot;javascript.js&quot;&gt;&lt;&#47;script&gt;</code></span>
+                    &ndash;&nbsp;<a href="http://stackoverflow.com/users/1013842/david"
+                       title="2396 reputation"
+                       class="comment-user">David</a>
+                <span class="comment-date" dir="ltr"><span title="2012-11-27 20:31:21Z" class="relativetime-clean">Nov 27 '12 at 20:31</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-18632536" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Works perfectly now, thank you so much!</span>
+                    &ndash;&nbsp;<a href="http://stackoverflow.com/users/1857696/teezee"
+                       title="122 reputation"
+                       class="comment-user owner">teeZee</a>
+                <span class="comment-date" dir="ltr"><span title="2012-11-27 21:10:35Z" class="relativetime-clean">Nov 27 '12 at 21:10</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-13592045" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link  dno"
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   ></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href="onclick-within-chrome-extension-not-working#" onclick="">show <b>1</b> more comment</a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1109765649",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1109765649">
+            </div>
+  
+<a name="25721457"></a>
+<div id="answer-25721457" class="answer" data-answerid="25721457"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="25721457">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<h2>Reason</h2>
+
+<p>This does not work, because Chrome <a href="https://developer.chrome.com/extensions/contentSecurityPolicy#JSExecution">forbids any kind of inline code</a> in extensions via Content Security Policy.</p>
+
+<blockquote>
+  <p>Inline JavaScript will not be executed. This restriction bans both inline <code>&lt;script&gt;</code> blocks <strong>and</strong> inline event handlers (e.g. <code>&lt;button onclick="..."&gt;</code>).</p>
+</blockquote>
+
+<h2>How to detect</h2>
+
+<p>If this is indeed the problem, Chrome would produce the following error in the console:</p>
+
+<blockquote>
+  <p>Refused to execute inline script because it violates the following Content Security Policy directive: "script-src 'self' chrome-extension-resource:". Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution.</p>
+</blockquote>
+
+<p>To access a popup's JavaScript console (which is useful for debug in general), right-click your extension's button and select "Inspect popup" from the context menu.</p>
+
+<p>More information on debugging a popup is available <a href="https://developer.chrome.com/extensions/tut_debugging">here</a>.</p>
+
+<h2>How to fix</h2>
+
+<p>One needs to remove all inline JavaScript. There is <a href="https://developer.chrome.com/extensions/contentSecurityPolicy#JSExecution">a guide in Chrome documentation</a>.</p>
+
+<p>Suppose the original looks like:</p>
+
+<pre><code>&lt;a onclick="handler()"&gt;Click this&lt;/a&gt; &lt;!-- Bad --&gt;
+</code></pre>
+
+<p>One needs to remove the <code>onclick</code> attribute and give the element a unique id:</p>
+
+<pre><code>&lt;a id="click-this"&gt;Click this&lt;/a&gt; &lt;!-- Fixed --&gt;
+</code></pre>
+
+<p>And then attach the listener from a script (which must be in a <code>.js</code> file, suppose <code>popup.js</code>):</p>
+
+<pre><code>// Pure JS:
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("click-this").addEventListener.("click", handler);
+});
+
+// The handler also must go in a .js file
+function handler() {
+  /* ... */
+}
+</code></pre>
+
+<p>Note the wrapping in a <code>DOMContentLoaded</code> event. This ensures that the element exists at the time of execution. Now add the script tag, for instance in the <code>&lt;head&gt;</code> of the document:</p>
+
+<pre><code>&lt;script src="popup.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Alternative if you're using jQuery:</p>
+
+<pre><code>// jQuery
+$(document).ready(function() {
+  $("#click-this").click(handler);
+});
+</code></pre>
+
+<h2>Relaxing the policy</h2>
+
+<p>Q: The error mentions ways to allow inline code. I don't want to / can't change my code, how do I enable inline scripts?</p>
+
+<p>A: Despite what the error says, you <a href="https://developer.chrome.com/extensions/contentSecurityPolicy#relaxing-inline-script"><strong>cannot</strong> enable inline script</a>: </p>
+
+<blockquote>
+  <p>There is no mechanism for relaxing the restriction against executing inline JavaScript. In particular, setting a script policy that includes <code>'unsafe-inline'</code> will have no effect.</p>
+</blockquote>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/25721457" title="short permalink to this answer" class="short-link" id="link-post-25721457">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/25721457/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <a href="http://stackoverflow.com/posts/25721457/revisions" title="show all edits to this post"><span title="2014-09-08 09:46:57Z" class="relativetime">Sep 8 '14 at 9:46</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Sep 8 &#39;14 at 9:46. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-25721457" href="http://stackoverflow.com/posts/25721457/revisions" title="show revision history for this post">
+        Xan
+        </a>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-25721457" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-25721457" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="onclick-within-chrome-extension-not-working#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="31819824"></a>
+<div id="answer-31819824" class="answer" data-answerid="31819824"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="31819824">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I had the same problem, and didn´t want to rewrite the code, so I wrote a function to modify the code and create the inline declarated events:</p>
+
+<pre><code>function compile(qSel){
+    var matches = [];
+    var match = null;
+    var c = 0;
+
+    var html = $(qSel).html();
+    var pattern = /(&lt;(.*?)on([a-zA-Z]+)\s*=\s*('|")(.*)('|")(.*?))(&gt;)/mg;
+
+    while (match = pattern.exec(html)) {
+        var arr = [];
+        for (i in match) {
+            if (!isNaN(i)) {
+                arr.push(match[i]);
+            }
+        }
+        matches.push(arr);
+    }
+    var items_with_events = [];
+    var compiledHtml = html;
+
+    for ( var i in matches ){
+        var item_with_event = {
+            custom_id : "my_app_identifier_"+i,
+            code : matches[i][5],
+            on : matches[i][3],
+        };
+        items_with_events.push(item_with_event);
+        compiledHtml = compiledHtml.replace(/(&lt;(.*?)on([a-zA-Z]+)\s*=\s*('|")(.*)('|")(.*?))(&gt;)/m, "&lt;$2 custom_id='"+item_with_event.custom_id+"' $7 $8");
+    }
+
+    $(qSel).html(compiledHtml);
+
+    for ( var i in items_with_events ){
+        $("[custom_id='"+items_with_events[i].custom_id+"']").bind(items_with_events[i].on, function(){
+            eval(items_with_events[i].code);
+        });
+    }
+}
+
+$(document).ready(function(){
+    compile('#content');
+})
+</code></pre>
+
+<p>This should remove all inline events from the selected node, and recreate them with jquery instead.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/31819824" title="short permalink to this answer" class="short-link" id="link-post-31819824">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/31819824/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-08-04 21:39:15Z" class="relativetime">Aug 4 '15 at 21:39</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2732811/sergio0983"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/8d95722809a50bd77b0db27ac80519f5?s=32&amp;d=identicon&amp;r=PG&amp;f=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2732811/sergio0983">sergio0983</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">646</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="9 bronze badges"><span class="badge3"></span><span class="badgecount">9</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-31819824" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-53360998" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">this code is not executing properly please guide me in proper way</span>
+                    &ndash;&nbsp;<a href="http://stackoverflow.com/users/2842403/employeegts"
+                       title="101 reputation"
+                       class="comment-user">employeegts</a>
+                <span class="comment-date" dir="ltr"><span title="2015-09-24 12:10:35Z" class="relativetime-clean">Sep 24 '15 at 12:10</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-31819824" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="onclick-within-chrome-extension-not-working#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+									<a name='new-answer'></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/13591983/answer/submit" method="post"  class="post-form">
+						    <input type="hidden" id="post-id" value="13591983" />
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" />
+                            <input type="hidden" name="referrer" value=""/>
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.options.snippets.enabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="b37662fce0849c4544f61a0eec002ea1">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item dno new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f13591983%2fonclick-within-chrome-extension-not-working%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                                    
+                                var $window = $(window),
+                                    onScroll = function(e) {
+                                        var $elem = $('.new-login-left'),
+                                            docViewTop = $window.scrollTop(),
+                                            docViewBottom = docViewTop + $window.height(),
+                                            elemTop = $elem.offset().top,
+                                            elemBottom = elemTop + $elem.height();							
+                                        if ((docViewTop < elemTop) && (docViewBottom > elemBottom))  {
+                                            StackExchange.using('gps', function() { StackExchange.gps.track('embedded_signup_form.view', { location: 'question_page' }); });
+                                            $window.unbind('scroll', onScroll);
+                                        }
+                                    };
+                                $window.on('scroll', onScroll);
+                                    
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid" />
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false" />
+                    <input type="hidden" name="use-google" class="use-google" value="false" />
+                    <input type="button" class="submit-openid" value="Submit" style="display:none" />
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f13591983%2fonclick-within-chrome-extension-not-working%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="onclick-within-chrome-extension-not-working#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href='http://stackexchange.com/legal/privacy-policy' target='_blank'>privacy policy</a> and <a href='http://stackexchange.com/legal/terms-of-service' target='_blank'>terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1" />								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you&#39;re looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/javascript" class="post-tag" title="show questions tagged &#39;javascript&#39;" rel="tag">javascript</a> <a href="http://stackoverflow.com/questions/tagged/google-chrome-extension" class="post-tag" title="show questions tagged &#39;google-chrome-extension&#39;" rel="tag"><img src="http://i.stack.imgur.com/EdUwb.png" height="16" width="18" alt="" class="sponsor-tag-img">google-chrome-extension</a> <a href="http://stackoverflow.com/questions/tagged/onclick" class="post-tag" title="show questions tagged &#39;onclick&#39;" rel="tag">onclick</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2012-11-27 19:54:24Z"><b>3 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>22090 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/13591983/onclick-within-chrome-extension-not-working?lastactivity" class="lastactivity-link" title="2015-08-04 21:39:15Z">5 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Blog
+                </div>
+                <hr />
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="http://blog.stackoverflow.com/2016/01/winter-bash-2015-hats-off/" class="question-hyperlink">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://blog.stackoverflow.com/2016/01/winter-bash-2015-hats-off/" class="question-hyperlink">Winter Bash 2015: Hats Off</a>
+                </div>
+                <br class="cbt" />
+            </div>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="http://blog.stackoverflow.com/2016/01/podcast-70-david-was-wrong-and-jason-was-right/" class="question-hyperlink">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://blog.stackoverflow.com/2016/01/podcast-70-david-was-wrong-and-jason-was-right/" class="question-hyperlink">Podcast #70 - David Was Wrong And Jason Was Right</a>
+                </div>
+                <br class="cbt" />
+            </div>
+                <div class="bulletin-title">
+                    Upcoming Events
+                </div>
+                <hr />
+    <div class="spacer">
+        
+    <div class="bulletin-item-type"><a href="http://meta.stackoverflow.com/questions/314186/stack-overflow-annual-survey-2016?so" class="question-hyperlink"><div class="favicon favicon-stackoverflow" title="Stack Overflow"></div></a></div>
+    <div class="bulletin-item-content">
+        <a href="http://meta.stackoverflow.com/questions/314186/stack-overflow-annual-survey-2016?so" class="question-hyperlink">Take the Stack Overflow Developer Survey</a>
+        <div>ends <span title="2016-01-21 01:00:00Z">Jan 21</span></div>
+    </div>
+    <br class="cbt" />
+</div>
+    </div>
+</div>			
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk489456642",[17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk489456642">
+            </div>
+        <div id="hireme">
+            <script>
+;var _extends=Object.assign||function(n){for(var i,r,t=1;t<arguments.length;t++){i=arguments[t];for(r in i)Object.prototype.hasOwnProperty.call(i,r)&&(n[r]=i[r])}return n};(function(n){function f(){return(new Date).getTime()}function rt(n,t){return n.split(/\&/g).reduce(function(n,t){var i=t.split("=");return n[v(i[0])]=v(i[1]),n},t||{})}function ut(n,t){return Object.keys(n).filter(function(n){return t.indexOf(n)!==-1}).map(function(t){return u(t)+"="+u(n[t])}).join("&")}function y(n){return i.querySelectorAll(n)}function r(n){return i.querySelector(n)}function p(n,t,r){var u=i.createElement("script"),e="onreadystatechange",o="onload",f="readyState",s=!1;u.async=!0;u.src=n;typeof t=="function"&&(u[o]=u[e]=function(){s||u[f]&&u[f]!=="loaded"&&u[f]!=="complete"||(s=!0,typeof t=="function"&&t(u),u[o]=u[e]=null,r&&u.parentNode.removeChild(u))});nt.appendChild(u)}function w(n){var t=i.createElement("link");t.type="text/css";t.rel="stylesheet";t.href=n;tt.appendChild(t)}function ft(){return[].map.call(y(".post-taglist .post-tag"),function(n){return n.innerText}).join(";")||null}function et(){var n=t.StackExchange,i="options",r="user";return n&&n[i]&&n[i][r]&&n[i][r].accountId}function ot(n){var t,i;return n=rt(s.hash?s.hash.substr(1):"",n||{}),t=n.ac||n.accountId||et(),t&&(n.ac=t),n.tags||(i=ft(),i&&(n.tags=i)),n}function b(n){return n.innerHTML.replace(/\s+$/g,"")}function st(n,t,i,u){var c=r(n);if(c===null)return function(){};var h=null,s=null,l=f(),a=function a(){b(c)?(o(h),u(!1,f()-l)):s=e(a,t)};return s=e(a,t),i&&(h=e(function(){o(s);u(!0,f()-l)},i)),function(){o(s);o(h)}}function ht(){var t="careers1",i="careers3",u=!d()||r("#careersadsdoublehigh"),f=u?1:2,n=[f+"=hireme"];return r("#"+t)&&n.push("5="+t),r("#"+i)&&n.push("6="+i),n.join("&")}function k(n,i){var r=ot(_extends({},g,{zones:ht()})),u,e;n&&(r.azt=1);i&&(r.lw=i);typeof t.innerWidth=="number"&&(r.bw=t.innerWidth);u=["zones","ip","ac","eng","prov","tags","theme","at","remote","seed","lw","azt","sysadmin","bw","nocpm"];e=l+"?"+ut(r,u);c=f();p(e)}function ct(n){function h(){u.forEach(w);e.forEach(function(n){lt(n,i[n],s,o)});typeof t.clc_after_load=="function"&&t.clc_after_load()}var i=n.cr,r=n.h,u=n.st,e=Object.keys(i),o=c?f()-c:0,s="//"+r+"/ct";h()}function lt(n,t,i,f){var h=t.cl,c=t.cn,o=t.an,l=t.utm,s=(h||[]).join(" "),e=r("#"+n);e&&(s&&(e.className+=" "+s),e.innerHTML=c.replace("&pt=0","&pt="+(f||0)),e.onmousedown=function(n){for(var t=n.target,r,f,s;t.tagName!=="A"&&t!==e;)t=t.parentNode;t!==e&&(r=[],o&&r.push("an="+o),f=[].filter.call(t.attributes,function(n){return/^data-/.test(n.name)}),f.length>0&&f.forEach(function(n){var t=n.name.replace(/^data-/,"");r.push(u(t)+"="+u(n.value))}),r.push("utm="+u(it+l)),s="",r.length>0&&(s="?"+r.join("&")),t.href=i+s)})}function d(){return y(h).length>0}function at(n){var t=i.createElement("a");return t.href=n,t.host}function vt(){var t,n;d()?(n=st(h,20,t,function(n,t){k(n,t)}),e(function(){var u=r(h),t;b(u)||(u.parentNode.removeChild(u),typeof n=="function"&&n(),t=i.createElement("img"),t.src="//"+at(l)+"/to.gif",t.style.display="none",i.body.appendChild(t))},2e3)):k()}var l=n.u,a=n.o,g=a===undefined?{}:a,t=window,s=t.location,u=t.encodeURIComponent,v=t.decodeURIComponent,i=t.document,nt=i.body,tt=i.getElementsByTagName("head")[0],e=t.setTimeout,o=t.clearTimeout,it="&utm_source="+s.hostname+"&utm_medium=ad&utm_campaign=",h="#sidebar [id^=adzerk].everyonelovesstackoverflow",c=0;t.clc={init:ct,load:vt,ls:p,as:w}}).call(null, {"u":"//clc.stackoverflow.com/p.js"});var allowedHosts=["stackoverflow.com","serverfault.com"];(allowedHosts[0]==="*"||allowedHosts.indexOf(location.hostname)!==-1)&&window.clc.load();            </script>
+        </div>
+			<div class="module" id="chat-feature">
+    
+
+    
+<h4><a href="http://chat.stackoverflow.com" id="h-chat-link">Visit Chat</a></h4>
+
+<div class="related" id="ad502-rooms"></div>
+<script>
+// <!--
+    StackExchange.ready(
+    function () {
+        var options = {
+            chatUrl: 'http://chat.stackoverflow.com',
+            reloadUrl: '/api/recent-chat',
+            preloadData: {"activeUsers":141,"activeRooms":63,"rooms":[{"name":"JavaScript","id":17,"lastPost":1452258853,"posts":3109580,"users":[{"name":"Caprica Six","id":1839506,"emailhash":"!https://i.stack.imgur.com/Sej2t.jpg?s=128\u0026g=1","lastPost":1452258821},{"name":"GNi33","id":809950,"emailhash":"!https://i.stack.imgur.com/mIOhV.jpg?s=128\u0026g=1","lastPost":1452258819},{"name":"crl","id":3183756,"emailhash":"!https://i.stack.imgur.com/Akzmi.png?s=128\u0026g=1","lastPost":1452258817},{"name":"Neoares","id":3337752,"emailhash":"!https://i.stack.imgur.com/amtjk.jpg?s=128\u0026g=1","lastPost":1452258811},{"name":"Ben Fortune","id":2615209,"emailhash":"c455958b4e9f556e6c26923e1e6ca8c3","lastPost":1452258764},{"name":"click here","id":5037442,"emailhash":"75199ed4754399c03e62267158d9445b","lastPost":1452258719},{"name":"Oliver Salzburg","id":259953,"emailhash":"ec198cb6fc38d98bb88dd390e0bed8e3","lastPost":1452257422}],"messages":[{"date":1452258853,"user":"Ben Fortune","userid":2615209}],"singleImage":false,"tags":["ecmascript","es6","javascript","nodejs","promises","xandercoded"]},{"name":"Lounge\u003cC++\u003e","id":10,"lastPost":1452258858,"posts":4373435,"users":[{"name":"Mgetz","id":332733,"emailhash":"!https://i.stack.imgur.com/BR7yE.jpg?s=128\u0026g=1","lastPost":1452258597},{"name":"Elim Garak","id":5253689,"emailhash":"!https://i.stack.imgur.com/EDXhw.jpg?s=128\u0026g=1","lastPost":1452258552},{"name":"Mr. kbok","id":361535,"emailhash":"072972927ced123af3164764258ec186","lastPost":1452258517},{"name":"Angry Shoe","id":493122,"emailhash":"1f90ae01c2e24801c2df9189179b0ccd","lastPost":1452258470},{"name":"Borgleader","id":583833,"emailhash":"791a00235c66b6c32effd4291101087f","lastPost":1452258381},{"name":"Alex M.","id":932887,"emailhash":"!https://i.stack.imgur.com/kSYhF.png?s=128\u0026g=1","lastPost":1452258326},{"name":"Cat Plus Plus","id":16102,"emailhash":"0c4f4df702b23c8983f57d7113e809c8","lastPost":1452258307}],"messages":[{"date":1452258858,"user":"Mr. kbok","userid":361535}],"singleImage":false,"tags":["c++","c++11","c++14","c++-faq","nooble2016"]}]} 
+        };
+
+        StackExchange.chatAd.init(options);
+    });
+// -->
+</script>
+
+</div>  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/15766495" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/15766495/chrome-extension-onclick-event-not-triggering-alert-popup" class="question-hyperlink">Chrome extension: onclick() event not triggering alert() popup</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/25505982" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/25505982/button-onclick-not-working-in-chrome-app" class="question-hyperlink">Button onClick not working in Chrome app</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/17356101" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/17356101/why-is-javascript-not-working-in-chrome-extension" class="question-hyperlink">Why is JavaScript not working in Chrome extension?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/25508721" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">-1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/25508721/cant-change-website-with-chrome-extension-solved" class="question-hyperlink">Can&#39;t change website with chrome extension? SOLVED</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/30281757" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">-2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/30281757/svg-reference-external-javascript-function" class="question-hyperlink">svg reference external javascript function</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/33823830" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/33823830/chrome-extension-inline-script-refused-error" class="question-hyperlink">Chrome-Extension Inline Script Refused Error</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/32871152" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/32871152/chrome-extension-submit-button-to-activate-script" class="question-hyperlink">Chrome Extension: Submit button to activate script</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/32165583" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/32165583/content-security-policy-error-in-google-chrome-extension-for-using-radio-button" class="question-hyperlink">Content-Security-Policy error in google chrome extension for using radio button</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/33444750" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/33444750/need-help-to-pass-message-from-popup-html-to-content-js-in-chrome-extension" class="question-hyperlink">Need help to Pass Message from popup.html to content.js in chrome extension</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/15657644" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">11</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/15657644/javascript-throwing-refused-to-execute-inline-event-handler-because-it-violate" class="question-hyperlink">Javascript throwing : Refused to execute inline event handler because it violates the following Content Security Policy directive: "script-src &#39;self&#39;</a>
+</div>					<div class="spacer more">
+				<a href="http://stackoverflow.com/questions/linked/13591983">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer">
+<a href="http://stackoverflow.com/q/111102" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">5156
+    </div>
+</a><a href="http://stackoverflow.com/questions/111102/how-do-javascript-closures-work" class="question-hyperlink">How do JavaScript closures work?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/5514347" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/5514347/perform-custom-onclick-action-before-web-apps-default-action-in-a-chrome-extens" class="question-hyperlink">Perform custom onClick action before web app&#39;s default action in a Chrome extension</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/5531273" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/5531273/run-jquery-in-chrome-extension-action-when-user-clicks-button" class="question-hyperlink">Run Jquery In Chrome Extension Action When User Clicks Button?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/11852515" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/11852515/chrome-extension-edit-a-text-field" class="question-hyperlink">Chrome Extension - edit a text field</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/13431903" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/13431903/document-ready-doesnt-work-in-chrome-extension" class="question-hyperlink">$(document).ready doesn&#39;t work in chrome extension?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/14436053" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/14436053/chrome-extension-onclick-with-popup" class="question-hyperlink">Chrome Extension Onclick() with Popup</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/18897550" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/18897550/how-can-i-call-functions-defined-in-a-chrome-extension-from-regular-websites" class="question-hyperlink">How can I call functions defined in a Chrome Extension from regular websites?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/19205823" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/19205823/run-javascript-in-chrome-extension-basic" class="question-hyperlink">Run Javascript in Chrome Extension -&gt; Basic?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/22738056" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/22738056/onclick-not-working-for-chrome-extension" class="question-hyperlink">onclick not working for Chrome Extension?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/25107229" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/25107229/how-to-fill-out-a-textfield-within-a-form-on-a-webpage-from-a-chrome-extension" class="question-hyperlink">How to fill out a textfield within a form on a webpage from a chrome extension?</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" 
+           class="js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li >
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1603975/why-is-it-unacceptable-to-say-the-range-is-a-function-of-the-domain" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is it unacceptable to say &quot;the range is a function of the domain&quot;?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/72878/why-do-traps-have-an-attack-bonus" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do traps have an attack bonus?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-salesforce" title="Salesforce Stack Exchange"></div><a href="http://salesforce.stackexchange.com/questions/104642/error-when-saving-visualforce-email-template-error-invalid-field" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:459 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Error when saving VisualForce email template &quot;Error: Invalid Field&quot;
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/103527/best-way-to-emulate-matlabs-bsxfun-using-map-and-similar-functions" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Best way to emulate MATLAB&#39;s bsxfun using Map and similar functions
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/109950/overarching-term-for-authentication-and-authorization" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Overarching term for &#39;authentication&#39; and &#39;authorization&#39;?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/114076/are-frodo-and-bilbo-immortal-after-they-go-to-valinor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are Frodo and Bilbo immortal after they go to Valinor?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-cooking" title="Seasoned Advice"></div><a href="http://cooking.stackexchange.com/questions/65161/labelling-food-for-the-freezer" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Labelling Food for the Freezer
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-ux" title="User Experience Stack Exchange"></div><a href="http://ux.stackexchange.com/questions/88804/clicking-a-breadcrumb-link-trigger-browser-back-button-or-forward" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:102 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Clicking a Breadcrumb Link, Trigger Browser Back Button, or Forward?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/68866/superstitious-hotel-elevator" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Superstitious hotel elevator
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/113959/how-do-you-go-from-naboo-to-tatooine-without-the-hyperdrive" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do you go from Naboo to Tatooine without the hyperdrive?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-mechanics" title="Motor Vehicle Maintenance &amp; Repair Stack Exchange"></div><a href="http://mechanics.stackexchange.com/questions/24382/how-urgent-is-it-to-replace-worn-out-cv-boots" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:224 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How Urgent is it to Replace Worn Out CV Boots
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/57849/if-i-file-as-head-of-household-how-does-my-estranged-wife-file-usa" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    If I file as head of household, how does my estranged wife file? (USA)
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/113945/why-did-c-3po-not-have-a-red-arm-at-the-end-of-the-force-awakens" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did C-3PO not have a red arm at the end of The Force Awakens?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/61028/consequences-of-being-arrested-by-mistake-in-the-usa" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Consequences of being arrested by mistake in the USA
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-politics" title="Politics Stack Exchange"></div><a href="http://politics.stackexchange.com/questions/9670/direct-voting-on-every-issue-referendum-new-political-system" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Direct voting on every issue (referendum) - new political system
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-serverfault" title="Server Fault"></div><a href="http://serverfault.com/questions/747626/should-postfix-run-chrooted-if-it-already-is-in-it-a-freebsd-jail" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:2 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should Postfix run chrooted if it already is in it a FreeBSD jail?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/113895/how-was-seven-of-nine-the-seventh-of-nine-people-to-be-assimilated" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How was Seven of Nine the seventh of nine people to be assimilated?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/68864/make-bracket-squares" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Make Bracket Squares
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/254035/move-lines-2-3-after-line-5-using-awk" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Move lines 2 3 after line 5 using awk
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="http://dba.stackexchange.com/questions/125617/how-to-drop-all-triggers-in-a-single-database" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to drop all triggers in a single database?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-boardgames" title="Board &amp; Card Games Stack Exchange"></div><a href="http://boardgames.stackexchange.com/questions/28316/is-there-any-way-to-stop-someone-from-sacrificing-a-golden-urn" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:147 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there any way to stop someone from sacrificing a Golden Urn?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-es" title="Stack Overflow en español"></div><a href="http://es.stackoverflow.com/questions/2237/ventajas-de-utilizar-const-sobre-var-en-javascript" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:637 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Ventajas de utilizar const sobre var en JavaScript
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/68685/the-rien-number" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    The Rien Number
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/60979/travelling-as-an-unmarried-western-couple-in-indonesia" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Travelling as an unmarried Western couple in Indonesia
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="onclick-within-chrome-extension-not-working#" 
+           class="show-more js-show-more js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/13591983" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/13591983/ivc/af35');});
+</script>
+<noscript>
+    <div><img src="http://stackoverflow.com/posts/13591983/ivc/af35" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com">chat</a>
+                    <a href="http://data.stackexchange.com">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tr>
+            <th colspan=3>
+                Technology
+            </th>
+            <th >
+                Life / Arts
+            </th>
+            <th >
+                Culture / Recreation
+            </th>
+            <th >
+                Science
+            </th>
+            <th >
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine&#174; CMS">ExpressionEngine&#174; Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo &#169; 2016 Stack Exchange Inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.1.8.3153
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () {
+        ados_setKeywords('javascript,google-chrome-extension,onclick');; ados_load();
+    });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');
+                        ga('set', 'dimension2', '|javascript|google-chrome-extension|onclick|');         ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+            
+    </body>
+</html>

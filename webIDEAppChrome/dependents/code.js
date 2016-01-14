@@ -512,8 +512,23 @@ Code.discard = function() {
 
 // Load the Code demo's language strings.
 // Invocar desde index.html
-document.write('<script src="./msg/' + Code.LANG + '.js"></script>\n');
+// Los cambios realizados funcionana para apps de google chrome
+var script0 = document.createElement("script");
+var script0Attr1 = document.createAttribute("src");
+script0Attr1.nodeValue = './msg/' + Code.LANG +'.js';
+script0.setAttributeNode(script0Attr1);
+
+//script0.type = 'text/javascript';
+goog.global.document.getElementsByTagName("head")[0].appendChild(script0);
+//document.write('<script src="./msg/' + Code.LANG + '.js"></script>\n');
+
 // Load Blockly's language strings.
-document.write('<script src="./dependents/msg/js/' + Code.LANG + '.js"></script>\n');
+var script1 = document.createElement("script");
+var script1Attr1 = document.createAttribute("src");
+script1Attr1.nodeValue = './dependents/msg/js/' + Code.LANG +'.js';
+script1.setAttributeNode(script1Attr1);
+//script1.type = 'text/javascript';
+goog.global.document.getElementsByTagName("head")[0].appendChild(script1);
+//document.write('<script src="./dependents/msg/js/' + Code.LANG + '.js"></script>\n');
 
 window.addEventListener('load', Code.init);
