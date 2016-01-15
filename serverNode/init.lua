@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function retardo(segundos)
 	for i = 1, segundos do
 		for j = 1, 1000 do
@@ -46,3 +47,16 @@ tmr.alarm(0, 250, 1, function()
 		gpio.write(foco, gpio.LOW)
 	end
 end)
+=======
+led = 1
+gpio.mode(led, gpio.OUTPUT);
+print('El led es una salida')
+for count = 1, 10 do
+  print('vamos a encender el led')
+  gpio.write(led, gpio.HIGH)
+  tmr.delay(10000000)
+  print('vamos a apagar el led')
+  gpio.write(led, gpio.LOW)
+end
+print('Hemos terminado')
+>>>>>>> c03d834279b350836ddafab9111a256608000ac3

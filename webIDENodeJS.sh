@@ -19,4 +19,14 @@ echo "Att: grupo pinguinoTux"
 ## Navegador icewasel
 iceweasel ./webIDEnodejs/index.html &
 ## Servidor nodejs
-./serverNode/node-v5.3.0-linux-x86/bin/node ./serverNode/index.js
+### ARCHITECTURE
+if [ `uname -m` == "x86_64" ]; then
+	ARCH=64
+	echo "Host is a ${ARCH}-bit GNU/Linux."
+	./serverNode/node-v5.4.1-linux-x64//bin/node ./serverNode/index.js
+else
+	ARCH=32
+	echo "Host is a ${ARCH}-bit GNU/Linux."
+	./serverNode/node-v5.3.0-linux-x86/bin/node ./serverNode/index.js
+fi
+
