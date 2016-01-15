@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 // Constructor de temporizador
-Blockly.Blocks['timer_delay'] = {
-  init: function() {
-    this.appendValueInput("timer")
-        .setCheck("Number")
-        .appendField("demora");
-=======
 Blockly.Blocks['timer_delay'] = {
   init: function() {
     this.appendValueInput("delay")
@@ -13,7 +6,6 @@ Blockly.Blocks['timer_delay'] = {
         .appendField("Detener todo durante");
     this.appendDummyInput()
         .appendField("microsegundos");
->>>>>>> c03d834279b350836ddafab9111a256608000ac3
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -23,15 +15,6 @@ Blockly.Blocks['timer_delay'] = {
   }
 };
 
-<<<<<<< HEAD
-// Se especifica lo que hace el timer
-Blockly.Lua['timer_delay'] = function(block) {
-  var value_timer = Blockly.Lua.valueToCode(block, 'timer', Blockly.Lua.ORDER_ATOMIC);
-  // TODO: Assemble Lua into code variable.
-  var code = 'tmr.delay(' + value_timer + ')\n';
-  return code;
-};
-=======
 Blockly.Lua['timer_delay'] = function(block) {
   var value_delay = Blockly.Lua.valueToCode(block, 'delay', Blockly.Lua.ORDER_ATOMIC);
   // TODO: Assemble Lua into code variable.
@@ -99,4 +82,3 @@ Blockly.Lua['timer_stop'] = function(block) {
   'tmr.stop(' + dropdown_id_alarmer + ')\n';
   return code;
 };
->>>>>>> c03d834279b350836ddafab9111a256608000ac3
