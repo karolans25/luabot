@@ -47,6 +47,7 @@ Blockly.Blocks['timer_alarm'] = {
 	    .setCheck(null)
 	    .appendField("Cuando se activa hacer:");
 	this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(65);
     this.setTooltip('');
