@@ -61,9 +61,8 @@ Blockly.Lua['timer_alarm'] = function(block) {
   var value_repeat = Blockly.Lua.valueToCode(block, 'repeat', Blockly.Lua.ORDER_ATOMIC);
   var statements_do = Blockly.Lua.statementToCode(block, 'do');
   // TODO: Assemble Lua into code variable.
-  var code = 'tmr.alarm(' + value_id + ', ' + value_delay + ', ' + value_repeat + ', function() '
-	+ statements_do
-  + ' end )\n';	
+  var code = 'tmr.alarm(' + value_id + ', ' + value_delay + ', ' + value_repeat + ', function()\n'
+	+ statements_do + 'end )\n';	
   return code;
 };
 
