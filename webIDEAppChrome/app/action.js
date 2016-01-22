@@ -30,9 +30,28 @@ function upload() {
 	document.getElementById ("terminal0").value = ">> UpLoad esp8266";
 }
 
+var counter_code = 0;	// Contador para el string del code a enviar
+var code_blockly= "";	// Codigo recibido por parte de blockly
+var send_code = false;	// Aprobacion de envio de codigo
+
 function runProgram() {
-	// Funcon llamada desde serial.js
-	writeSerial("musica");
+	// Funcon llamada e serial.js
+	code_blockly = ';\n' + Blockly.Lua.workspaceToCode(Code.workspace);
+	//console.log("Codigo de blockly \n " + code_blockly);
+	//console.log("longitude de code_blockly: ");
+	console.log(code_blockly.length);
+	send_code = true;
+	counter_code = 0;
+	writeSerial(code_blockly[counter_code]);
+}
+
+var str2array = function(str){
+	var array = new Array(str.length);
+	for (var i = 0; i < array.length; i++) {
+		array[i] = str[i];
+	}
+	//console.log(array);
+	return array;
 }
 
 /*

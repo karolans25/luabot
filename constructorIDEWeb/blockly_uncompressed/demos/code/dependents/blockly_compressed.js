@@ -1,0 +1,1 @@
+../../constructorIDEWeb/blockly_app/blockly_compressed.js
