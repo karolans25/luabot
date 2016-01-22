@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>nodemcu-tool</title>
+
+    <meta name="description" content="Command line tool to upload and manage files on your NodeMCU / ESP8266 Module.">
+    <meta name="keywords" content="embedded,upload,serial,wifi,esp8266,nodemcu,terminal,lua,cli">
+    <meta name="twitter:url" content="https://www.npmjs.com/package/nodemcu-tool">
+    <meta name="twitter:title" content="npm: nodemcu-tool">
+    <meta name="twitter:description" content="Command line tool to upload and manage files on your NodeMCU / ESP8266 Module.">
+
+
+  <meta http-equiv="cleartype" content="on" />
+
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="description" content="npm is the package manager for javascript">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1,user-scalable=yes">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-startup-image-1024x748.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-startup-image-1536x2008.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-startup-image-2048x1496.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-startup-image-320x460.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-startup-image-640x1096.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-startup-image-640x920.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-startup-image-768x1004.png">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-230x230.png" sizes="230x230">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/coast-228x228.png" sizes="228x228">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="https://www.npmjs.com/static/images/touch-icons/manifest.json">
+  <link rel="shortcut icon" href="https://www.npmjs.com/static/images/touch-icons/favicon.ico">
+  <link rel="yandex-tableau-widget" href="https://www.npmjs.com/static/images/touch-icons/yandex-browser-manifest.json">
+  <meta property="og:image" content="https://www.npmjs.com/static/images/touch-icons/open-graph.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-TileColor" content="#cb3837">
+  <meta name="msapplication-TileImage" content="/static/images/touch-icons/mstile-144x144.png">
+  <meta name="msapplication-config" content="/static/images/touch-icons/browserconfig.xml">
+  <meta name="theme-color" content="#cb3837">
+
+  <link rel="canonical" href="nodemcu-tool">
+  <link rel="stylesheet" media="all" href="https://www.npmjs.com/static/css/index.8183d065.css">
+  <link rel="search" type="application/opensearchdescription+xml" href="https://www.npmjs.com/opensearch.xml" title="npm">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <![endif]-->
+
+
+  <script src="https://www.npmjs.com/static/js/index.min.e41ddaf7.js"></script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebSite" data-crumb="4N1qCRHoHSFUJusJVE56fSLWa9km4cmHXQTUp0k2J4B">
+  <meta itemprop="url" content="https://www.npmjs.com/">
+
+    <nav>
+        <a href="nodemcu-tool#" id="npm-expansions" data-event-trigger="click" data-event-name="npm-expansions">node package manager</a>
+        <a href="https://www.npmjs.com/npm/on-site">npm On-Site</a>
+        <a href="https://www.npmjs.com/npm/private-packages" data-event-trigger="click" data-event-name="private-modules-nav-link">npm Private Packages</a>
+        <a href="https://www.npmjs.com/npm/open-source">npm Open Source</a>
+        <a href="https://docs.npmjs.com">documentation</a>
+        <a href="https://www.npmjs.com/support">support</a>
+    </nav>
+
+  <header>
+    <div id='npm-logo'>
+      <a href="https://www.npmjs.com/"><img src="https://www.npmjs.com/static/images/npm-logo.svg" alt="npm logo" /></a>
+    </div>
+
+
+      <div id="user-info" class="anonymous">
+          <a href="https://www.npmjs.com/login"><img alt="" src="https://www.npmjs.com/static/images/wombat-avatar-small.png" /></a>
+          <ul class="single">
+              <li><a href="https://www.npmjs.com/signup">sign up</a> or <a href="https://www.npmjs.com/login">log in</a></li>
+          </ul>
+
+      </div>
+
+
+    <form id="npm-search" action="https://www.npmjs.com/search" method="get" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+      <meta itemprop="target" content="https://www.npmjs.com/search?q={q}">
+      <div id="site-search-container">
+          <input name="q" value="" type="search" id="site-search" placeholder="find packages" tabindex="1" autocorrect="off" autocapitalize="off" itemprop="query-input" />
+      </div>
+      <input type="submit" id="site-search-submit" />
+    </form>
+
+  </header>
+
+    <div class="container content">
+      
+<div class="content-column">
+
+  <h1 class="package-name">
+    <a href="nodemcu-tool">nodemcu-tool</a>
+      <i class="icon-public"></i>
+  </h1>
+  <p class="package-description">Command line tool to upload and manage files on your NodeMCU / ESP8266 Module.</p>
+
+  <form class="star">
+    <input type="hidden" name="name" value="nodemcu-tool">
+    <input id="star-input" type="checkbox" name="isStarred" value="true" >
+    <label for="star-input" class="icon-star"></label>
+      <input type="hidden" name="crumb" value="4N1qCRHoHSFUJusJVE56fSLWa9km4cmHXQTUp0k2J4B"/>
+  </form>
+
+  <div id="readme" class="markdown">
+      <h1 id="user-content-nodemcu-tool" class="deep-link package-name-redundant"><a href="nodemcu-tool#nodemcu-tool">NodeMCU-Tool</a></h1>
+<p>Upload/Download LUA files to your ESP8266 module with NodeMCU firmware.</p>
+<p><strong>Simple. Command Line. Cross-Platform. File Management. <a href="http://nodemcu.com/index_en.html">NodeMCU</a>.</strong></p>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;npm&#xA0;install&#xA0;nodemcu-tool</span></span></div></pre></code></pre>
+<p><img src="https://github.com/AndiDittrich/NodeMCU-Tool/raw/master/video.gif"></p>
+<h2 id="user-content-tool-summary" class="deep-link"><a href="nodemcu-tool#tool-summary">Tool Summary</a></h2>
+<p>NodeMCU Tool allows you to</p>
+<ul>
+<li>Upload LUA files to your ESP8266/NodeMCU module</li>
+<li>Upload any file-types (binary save)</li>
+<li>Download any file-type (binary save)</li>
+<li>Delete files</li>
+<li>Format the file system</li>
+<li>Simple Serial Terminal to interact with NodeMCU</li>
+<li>Show existing files on your module</li>
+<li>Precompile LUA files live on NodeMCU</li>
+<li>Optimize LUA files before uploading by stripping comments (saves flash memory)</li>
+<li>Use the <strong>NodeMcuConnector API</strong> in your own projects</li>
+<li>Project based configurations</li>
+<li>Run files on NodeMCU and display the output</li>
+</ul>
+<p>directly from the command line.</p>
+<p><em>Successful tested on Windows10, Debian 8.2 and Ubuntu 14 LTS - works out of the box without any tweaks</em></p>
+<h2 id="user-content-terminology" class="deep-link"><a href="nodemcu-tool#terminology">Terminology</a></h2>
+<ul>
+<li><strong>NodeMCU</strong> Original <a href="http://nodemcu.com/index_en.html">NodeMCU</a> Module <strong>OR</strong> any <a href="http://espressif.com/en/products/esp8266/">ESP8266</a> platform with <a href="https://github.com/nodemcu/nodemcu-firmware">NodeMCU Firmware</a></li>
+<li><strong>Upload</strong> Transfer files from your PC to NodeMCU/ESP8266 module</li>
+<li><strong>Download</strong> Transfer files/obtaining information from the module</li>
+</ul>
+<h2 id="user-content-installationrequirements" class="deep-link"><a href="nodemcu-tool#installationrequirements">Installation/Requirements</a></h2>
+<h3 id="user-content-for-experienced-users" class="deep-link"><a href="nodemcu-tool#for-experienced-users">For Experienced Users</a></h3>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;npm&#xA0;install&#xA0;nodemcu-tool</span></span></div></pre></code></pre>
+<h3 id="user-content-for-beginners" class="deep-link"><a href="nodemcu-tool#for-beginners">For Beginners</a></h3>
+<p>In case you&apos;re not familiar with <a href="https://nodejs.org">Node.js</a> and <a href="https://www.npmjs.com">NPM</a> it&apos;s recommended to read some <a href="https://docs.npmjs.com/getting-started/what-is-npm">basic introductions</a> first!</p>
+<p>Depending on your Module-Type you have to install the platform-specific driver for the usb-serial-interface.
+The original NodeMCU v0.9 comes with a CH341 chip with may requires manual driver installation. Modern versions like 1.0 use a CP210x chip with work out of the box on most common systems.
+Other ESP8266 platforms may user other interfaces - please refer to their user manuals!</p>
+<ul>
+<li>Install <a href="https://nodejs.org/en/download/">Node.js</a> on your system (in case it&apos;s not already there)</li>
+<li>Open a Terminal window and install <strong>NodeMCU-Tool</strong> with NPM
+Local installation (within current directory): <code>npm install nodemcu-tool</code></li>
+<li>Now you&apos;re ready to upload custom lua files</li>
+</ul>
+<h2 id="user-content-first-steps" class="deep-link"><a href="nodemcu-tool#first-steps">First Steps</a></h2>
+<p>After installing <strong>NodeMCU-Tool</strong> you should open a <strong>new</strong> terminal window and check if the tool is working by obtaining the current version. It should output the current semantic-version tag.
+Depending on your installation type (global ==&gt; file is registered into your path) you can use the tool directly or you have to go into the module directory:</p>
+<h3 id="user-content-for-global-installations" class="deep-link"><a href="nodemcu-tool#for-global-installations">For Global Installations</a></h3>
+<pre><code class="highlight bash"><pre class="editor editor-colors"><div class="line"><span class="text"><span>$&#xA0;nodemcu-tool&#xA0;--version</span></span></div><div class="line"><span class="text"><span>1.0.0</span></span></div></pre></code></pre>
+<h3 id="user-content-for-local-installations" class="deep-link"><a href="nodemcu-tool#for-local-installations">For Local Installations</a></h3>
+<pre><code class="highlight bash"><pre class="editor editor-colors"><div class="line"><span class="text"><span>$&#xA0;cd&#xA0;node_modules/nodemcu-tool/bin</span></span></div><div class="line"><span class="text"><span>$&#xA0;./nodemcu-tool&#xA0;--version</span></span></div><div class="line"><span class="text"><span>1.0.0</span></span></div></pre></code></pre>
+<h3 id="user-content-create-the-initial-file-system" class="deep-link"><a href="nodemcu-tool#create-the-initial-file-system">Create the initial File System</a></h3>
+<p>This will remove all existing files on the module but is required when running the module <strong>for the first time</strong></p>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;mkfs</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Do&#xA0;you&#xA0;really&#xA0;want&#xA0;to&#xA0;format&#xA0;the&#xA0;filesystem&#xA0;and&#xA0;delete&#xA0;all&#xA0;file&#xA0;</span><span class="keyword operator shell"><span>?</span></span><span>&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>no</span><span class="punctuation definition shell"><span>)</span></span></span><span>&#xA0;yes</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Connected</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Version:&#xA0;0.9.5&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;ChipID:&#xA0;0xd1aa&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;FlashID:&#xA0;0x1640e0</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Formatting&#xA0;the&#xA0;file&#xA0;system...this&#xA0;will&#xA0;take&#xA0;around&#xA0;</span><span class="keyword operator shell"><span>~</span></span><span>30s</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;File&#xA0;System&#xA0;created&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;format&#xA0;</span><span class="keyword control shell"><span>done</span></span><span>.</span></span></div></pre></code></pre>
+<h3 id="user-content-upload-a-new-file" class="deep-link"><a href="nodemcu-tool#upload-a-new-file">Upload a new File</a></h3>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;upload&#xA0;--port=/dev/ttyUSB0&#xA0;--optimize&#xA0;helloworld.lua</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Connected</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Version:&#xA0;0.9.5&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;ChipID:&#xA0;0xd1aa&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;FlashID:&#xA0;0x1640e0</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Uploading&#xA0;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>main.lua</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span><span>&#xA0;...</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Data&#xA0;Transfer&#xA0;</span><span class="support function builtin shell"><span>complete</span></span><span class="keyword operator shell"><span>!</span></span></span></div></pre></code></pre>
+<p><strong>Run It directly and view the output</strong></p>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;run&#xA0;helloworld.lua</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Connected</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Version:&#xA0;0.9.5&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;ChipID:&#xA0;0xd1aa&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;FlashID:&#xA0;0x1640e0</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Running&#xA0;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>helloworld.lua</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span></span></div><div class="line"><span class="source shell"><span class="keyword operator shell"><span>&gt;</span></span><span>-----------------------------</span><span class="keyword operator shell"><span>&gt;</span></span></span></div><div class="line"><span class="source shell"><span>Hello&#xA0;World</span><span class="keyword operator shell"><span>!</span></span></span></div><div class="line"><span class="source shell"><span>YEAH</span><span class="keyword operator shell"><span>!</span><span>!</span><span>!</span></span><span>&#xA0;HELLO&#xA0;WORLD</span><span class="keyword operator shell"><span>!</span><span>!</span><span>!</span></span></span></div><div class="line"><span class="source shell"><span>String:&#xA0;Lorem&#xA0;ipsum&#xA0;dolor&#xA0;sit&#xA0;amet,&#xA0;consetetur&#xA0;sadipscing&#xA0;elitr</span></span></div><div class="line"><span class="source shell"><span class="keyword operator shell"><span>&gt;</span></span><span>-----------------------------</span><span class="keyword operator shell"><span>&gt;</span></span></span></div></pre></code></pre>
+<h2 id="user-content-project-based-configuration" class="deep-link"><a href="nodemcu-tool#project-based-configuration">Project based configuration</a></h2>
+<p>In case you&apos;re using different serial port or the baudrate-settings, it&apos;s possible to create a configuration file with specific settings for your project.
+To initially create the configuration file, use the <code>init</code> command:</p>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;init</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Creating&#xA0;project&#xA0;based&#xA0;configuration&#xA0;file..</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Baudrate&#xA0;</span><span class="keyword control shell"><span>in</span></span><span>&#xA0;Bit&#xA0;per&#xA0;Seconds,&#xA0;e.g.&#xA0;9600&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>default</span><span class="punctuation definition shell"><span>)</span></span></span><span>&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>9600</span><span class="punctuation definition shell"><span>)</span></span></span><span>&#xA0;9600</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Serial&#xA0;connection&#xA0;to&#xA0;use,&#xA0;e.g.&#xA0;COM1&#xA0;or&#xA0;/dev/ttyUSB2&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>/dev/ttyUSB0</span><span class="punctuation definition shell"><span>)</span></span></span><span>&#xA0;COM3</span></span></div></pre></code></pre>
+<p>This will create a JSON based configuration file named <code>.nodemcutool</code> in your <strong>current ddirectory</strong> - you can edit this file manually</p>
+<h3 id="user-content-example-configuration" class="deep-link"><a href="nodemcu-tool#example-configuration">Example Configuration</a></h3>
+<p>In this Example, the baudrate is changed to 19.2k and COM3 is selected as default port. Additionally the <code>--optimize</code> and <code>--compile</code> flags are set permanently.</p>
+<pre><code class="highlight json"><pre class="editor editor-colors"><div class="line"><span class="source json"><span class="meta structure dictionary json"><span class="punctuation definition dictionary begin json"><span>{</span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>&quot;</span></span><span>baudrate</span><span class="punctuation definition string end json"><span>&quot;</span></span></span><span class="meta structure dictionary json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&#xA0;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>&quot;</span></span><span>19200</span><span class="punctuation definition string end json"><span>&quot;</span></span></span><span class="punctuation separator dictionary json"><span>,</span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>&quot;</span></span><span>port</span><span class="punctuation definition string end json"><span>&quot;</span></span></span><span class="meta structure dictionary json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&#xA0;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>&quot;</span></span><span>COM3</span><span class="punctuation definition string end json"><span>&quot;</span></span></span><span class="punctuation separator dictionary json"><span>,</span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>&quot;</span></span><span>compile</span><span class="punctuation definition string end json"><span>&quot;</span></span></span><span class="meta structure dictionary json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&#xA0;</span><span class="constant language json"><span>true</span></span><span class="punctuation separator dictionary json"><span>,</span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="string quoted double json"><span class="punctuation definition string begin json"><span>&quot;</span></span><span>optimize</span><span class="punctuation definition string end json"><span>&quot;</span></span></span><span class="meta structure dictionary json"><span class="punctuation separator dictionary key-value json"><span>:</span></span><span>&#xA0;</span><span class="constant language json"><span>true</span></span></span></span></span></div><div class="line"><span class="source json"><span class="meta structure dictionary json"><span class="punctuation definition dictionary end json"><span>}</span></span></span></span></div></pre></code></pre>
+<h3 id="user-content-configuration-keys" class="deep-link"><a href="nodemcu-tool#configuration-keys">Configuration Keys</a></h3>
+<p>All configuration options are <strong>optional</strong></p>
+<ul>
+<li><strong>baudrate</strong> (int) - the default baudrate in bits per second</li>
+<li><strong>port</strong> (string) - the comport to use</li>
+<li><strong>compile</strong> (boolean) - compile lua files after upload</li>
+<li><strong>optimize</strong> (boolean) - optimize files before uploading</li>
+</ul>
+<h3 id="user-content-notes" class="deep-link"><a href="nodemcu-tool#notes">Notes</a></h3>
+<ul>
+<li>NodeMCU-Tool will only search in the <strong>current directory</strong> for the <code>.nodemcutool</code> file!</li>
+<li>All default options can be overwritten by using the command line options</li>
+<li>The <code>.nodemcutool</code> file is only recognized in <code>CLI Mode</code> <strong>NOT</strong> in <code>API Mode</code></li>
+</ul>
+<h2 id="user-content-usage" class="deep-link"><a href="nodemcu-tool#usage">Usage</a></h2>
+<h4 id="user-content-general-syntax" class="deep-link"><a href="nodemcu-tool#general-syntax">General Syntax</a></h4>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;[options]&#xA0;</span><span class="support function builtin shell"><span>command</span></span><span>&#xA0;[args..]</span></span></div></pre></code></pre>
+<h3 id="user-content-connection" class="deep-link"><a href="nodemcu-tool#connection">Connection</a></h3>
+<p>To configure the connection settings you can use the global options <code>--port &lt;port&gt;</code> and <code>--baud &lt;baudrate&gt;</code> to select the serial port and baudrate.
+The default values are <strong>9600bps</strong> as baudrate and <strong>/dev/ttyUSB0</strong> as serial device</p>
+<p><strong>Example</strong></p>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;--port=/dev/ttyUSB1&#xA0;--baudrate=115200&#xA0;run&#xA0;</span><span class="support function builtin shell"><span>test</span></span><span>.lua</span></span></div></pre></code></pre>
+<h3 id="user-content-show-help" class="deep-link"><a href="nodemcu-tool#show-help">Show Help</a></h3>
+<p>To get an overview of all available commands, just call the tool with the <code>--help</code> option.</p>
+<p><strong>Example</strong></p>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;--help</span></span></div><div class="line"><span class="source shell"><span>&#xA0;</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;Usage:&#xA0;nodemcu-tool&#xA0;[options]&#xA0;[</span><span class="support function builtin shell"><span>command</span></span><span>]</span></span></div><div class="line"><span class="source shell"><span>&#xA0;</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;Commands:</span></span></div><div class="line"><span class="source shell"><span>&#xA0;</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;fsinfo&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Show&#xA0;file&#xA0;system&#xA0;info&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>current&#xA0;files,&#xA0;memory&#xA0;usage</span><span class="punctuation definition shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;run&#xA0;</span><span class="keyword operator shell"><span>&lt;</span></span><span>file</span><span class="keyword operator shell"><span>&gt;</span></span><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Executes&#xA0;an&#xA0;existing&#xA0;.lua&#xA0;or&#xA0;.lc&#xA0;file&#xA0;on&#xA0;NodeMCU</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;upload&#xA0;[options]&#xA0;</span><span class="keyword operator shell"><span>&lt;</span></span><span>file</span><span class="keyword operator shell"><span>&gt;</span></span><span>&#xA0;&#xA0;Upload&#xA0;LUA&#xA0;files&#xA0;to&#xA0;NodeMCU&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>ESP8266</span><span class="punctuation definition shell"><span>)</span></span></span><span>&#xA0;target</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;remove&#xA0;</span><span class="keyword operator shell"><span>&lt;</span></span><span>file</span><span class="keyword operator shell"><span>&gt;</span></span><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Removes&#xA0;a&#xA0;file&#xA0;from&#xA0;NodeMCU&#xA0;filesystem</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;mkfs&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Format&#xA0;the&#xA0;SPIFFS&#xA0;filesystem&#xA0;-&#xA0;ALL&#xA0;FILES&#xA0;ARE&#xA0;REMOVED</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;terminal&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Opens&#xA0;a&#xA0;Terminal&#xA0;connection&#xA0;to&#xA0;NodeMCU</span></span></div><div class="line"><span class="source shell"><span>&#xA0;</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;Options:</span></span></div><div class="line"><span class="source shell"><span>&#xA0;</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;-h,&#xA0;--help&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;output&#xA0;usage&#xA0;information</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;-V,&#xA0;--version&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;output&#xA0;the&#xA0;version&#xA0;number</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;-p,&#xA0;--port&#xA0;</span><span class="keyword operator shell"><span>&lt;</span></span><span>port</span><span class="keyword operator shell"><span>&gt;</span></span><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Serial&#xA0;port&#xA0;device&#xA0;name&#xA0;e.g.&#xA0;/dev/ttyUSB0,&#xA0;COM1</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;-b,&#xA0;--baud&#xA0;</span><span class="keyword operator shell"><span>&lt;</span></span><span>baudrate</span><span class="keyword operator shell"><span>&gt;</span></span><span>&#xA0;&#xA0;Serial&#xA0;Port&#xA0;Baudrate&#xA0;</span><span class="keyword control shell"><span>in</span></span><span>&#xA0;bps,&#xA0;default&#xA0;9600</span></span></div></pre></code></pre>
+<h3 id="user-content-upload-files" class="deep-link"><a href="nodemcu-tool#upload-files">Upload Files</a></h3>
+<p>The most important task of this tool: upload local files to the module.</p>
+<p><strong>Syntax</strong> <code>nodemcu-tool [options] upload &lt;local-filename&gt;</code></p>
+<p><strong>Options</strong></p>
+<ul>
+<li><code>--optimize</code> | Remove Comments, Whitespaces and empty lines from the file before upload</li>
+<li><code>--compile</code>  | Compiles the uploaded .lua file into executable bytecode and removes the source .lua file (performance)</li>
+</ul>
+<p><strong>Example 1</strong></p>
+<p>Upload and optimize the file &quot;test.lua&quot;</p>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;--port=/dev/ttyUSB1&#xA0;--optimize&#xA0;--compile&#xA0;upload&#xA0;</span><span class="support function builtin shell"><span>test</span></span><span>.lua</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Connected</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Version:&#xA0;0.9.5&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;ChipID:&#xA0;0xd1aa&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;FlashID:&#xA0;0x1640e0</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Uploading&#xA0;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>toolkit/test.lua</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span><span>&#xA0;...</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Data&#xA0;Transfer&#xA0;</span><span class="support function builtin shell"><span>complete</span></span><span class="keyword operator shell"><span>!</span></span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;compiling&#xA0;lua&#xA0;file..</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Success</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Original&#xA0;LUA&#xA0;file&#xA0;removed</span></span></div></pre></code></pre>
+<p><strong>Example 2</strong></p>
+<p>Upload and precompile a new main file</p>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;--compile&#xA0;upload&#xA0;main.lua</span></span></div></pre></code></pre>
+<p><strong>Example 3</strong></p>
+<p>Upload a text file.</p>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;upload&#xA0;HelloWorld.txt</span></span></div></pre></code></pre>
+<h3 id="user-content-download-files" class="deep-link"><a href="nodemcu-tool#download-files">Download Files</a></h3>
+<p>To backup files or fetch recorded data, NodeMCU-Tool allows you to download these files from NodeMCU using the <code>download</code> command.
+A file with the same name as the remote-file is created in the current working directory.</p>
+<p><strong>Syntax</strong> <code>nodemcu-tool [options] download &lt;remote-filename&gt;</code></p>
+<p><strong>Example</strong></p>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;download&#xA0;main.lua</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Connected</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Version:&#xA0;0.9.5&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;ChipID:&#xA0;0xd1aa&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;FlashID:&#xA0;0x1640e0</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Downloading&#xA0;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>main.lua</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span><span>&#xA0;...</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Data&#xA0;Transfer&#xA0;</span><span class="support function builtin shell"><span>complete</span></span><span class="keyword operator shell"><span>!</span></span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;File&#xA0;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>main.lua</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span><span>&#xA0;created</span></span></div></pre></code></pre>
+<h3 id="user-content-delete-files" class="deep-link"><a href="nodemcu-tool#delete-files">Delete Files</a></h3>
+<p>To delete files on your Module use the <code>remove</code> command</p>
+<p><strong>Syntax</strong> <code>nodemcu-tool [options] remove &lt;remote-filename&gt;</code></p>
+<p><strong>Example</strong></p>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;remove&#xA0;</span><span class="support function builtin shell"><span>test</span></span><span>.lua</span></span></div><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;remove&#xA0;</span><span class="support function builtin shell"><span>test</span></span><span>.lc</span></span></div></pre></code></pre>
+<h3 id="user-content-file-system-info" class="deep-link"><a href="nodemcu-tool#file-system-info">File System Info</a></h3>
+<p>Maybe you want to retrieve the flash free space or get a list of all files stored in the SPIFFS</p>
+<p><strong>Syntax</strong> <code>nodemcu-tool [options] fsinfo</code></p>
+<p><strong>Example</strong></p>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;fsinfo</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Connected</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Version:&#xA0;0.9.5&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;ChipID:&#xA0;0xd1aa&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;FlashID:&#xA0;0x1640e0</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Free&#xA0;Disk&#xA0;Space:&#xA0;3339&#xA0;KB&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;Total:&#xA0;3346&#xA0;KB</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Files&#xA0;stored&#xA0;into&#xA0;Flash&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>SPIFFS</span><span class="punctuation definition shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>-&#xA0;init.lua&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>871&#xA0;Bytes</span><span class="punctuation definition shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>-&#xA0;telnet-server.lc&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>784&#xA0;Bytes</span><span class="punctuation definition shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>-&#xA0;wifi.lc&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>988&#xA0;Bytes</span><span class="punctuation definition shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>-&#xA0;main.lua&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>255&#xA0;Bytes</span><span class="punctuation definition shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>-&#xA0;</span><span class="support function builtin shell"><span>test</span></span><span>.lc&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>264&#xA0;Bytes</span><span class="punctuation definition shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>-&#xA0;terminal-server.lc&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>852&#xA0;Bytes</span><span class="punctuation definition shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>-&#xA0;package.json&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>397&#xA0;Bytes</span><span class="punctuation definition shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>-&#xA0;LICENSE.md&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>1089&#xA0;Bytes</span><span class="punctuation definition shell"><span>)</span></span></span></span></div></pre></code></pre>
+<h3 id="user-content-format-the-file-system" class="deep-link"><a href="nodemcu-tool#format-the-file-system">Format the File System</a></h3>
+<p>To store file in the SPI Flash, the file system needs to be initialized. This have to be done <strong>before uploading</strong> any files to the modules.
+Otherwise no file will be stored. This command also allows you to delete all files on the module.</p>
+<p><strong>Syntax</strong> <code>nodemcu-tool [options] mkfs</code></p>
+<p><strong>Example</strong></p>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;mkfs</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Do&#xA0;you&#xA0;really&#xA0;want&#xA0;to&#xA0;format&#xA0;the&#xA0;filesystem&#xA0;and&#xA0;delete&#xA0;all&#xA0;file&#xA0;</span><span class="keyword operator shell"><span>?</span></span><span>&#xA0;</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span>no</span><span class="punctuation definition shell"><span>)</span></span></span><span>&#xA0;yes</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU-Tool]&#xA0;Connected</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Version:&#xA0;0.9.5&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;ChipID:&#xA0;0xd1aa&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;FlashID:&#xA0;0x1640e0</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Formatting&#xA0;the&#xA0;file&#xA0;system...this&#xA0;will&#xA0;take&#xA0;around&#xA0;</span><span class="keyword operator shell"><span>~</span></span><span>30s</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;File&#xA0;System&#xA0;created&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;format&#xA0;</span><span class="keyword control shell"><span>done</span></span><span>.</span></span></div></pre></code></pre>
+<h3 id="user-content-runexecute-files" class="deep-link"><a href="nodemcu-tool#runexecute-files">Run/Execute Files</a></h3>
+<p>For testing purpose, you can execute uploaded scripts (lua, lc) with the tool and capture the output (the <code>dofile()</code> function is invoked).</p>
+<p><strong>Syntax</strong> <code>nodemcu-tool [options] run &lt;remote-filename&gt;</code></p>
+<p><strong>Example</strong></p>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;run&#xA0;</span><span class="support function builtin shell"><span>test</span></span><span>.lua</span></span></div><div class="line"><span class="source shell"><span>[NodeMcuConnector]&#xA0;Connecting..</span></span></div><div class="line"><span class="source shell"><span>[NodeMcuConnector]&#xA0;ONLINE.&#xA0;Fetching&#xA0;device&#xA0;data..</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Version:&#xA0;0.9.5&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;ChipID:&#xA0;0xd1aa&#xA0;</span><span class="keyword operator shell"><span>|</span></span><span>&#xA0;FlashID:&#xA0;0x1640e0</span></span></div><div class="line"><span class="source shell"><span>[NodeMCU]&#xA0;Running&#xA0;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>test.lua</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span></span></div><div class="line"><span class="source shell"><span>Hello&#xA0;World</span><span class="keyword operator shell"><span>!</span></span></span></div><div class="line"><span class="source shell"><span>HELLO&#xA0;WORLD</span><span class="keyword operator shell"><span>!</span><span>!</span><span>!</span></span></span></div><div class="line"><span class="source shell"><span>HEllo&#xA0;HEllo&#xA0;Hello</span></span></div><div class="line"><span class="source shell"><span>String:&#xA0;Lorem&#xA0;ipsum&#xA0;dolor&#xA0;sit&#xA0;amet,&#xA0;consetetur&#xA0;sadipscing&#xA0;elitr</span></span></div></pre></code></pre>
+<h3 id="user-content-terminal-mode" class="deep-link"><a href="nodemcu-tool#terminal-mode">Terminal Mode</a></h3>
+<p><strong>Notice - This Mode is currently experimental and may not work with all versions of node.js (tested with v4.2.3)</strong></p>
+<p>The Terminal mode will open a direct serial connection to NodeMCU and passes all keyboard inputs to the module.
+This allows you to interact with the module during development without the need of an additional serial terminal.
+You can quit the terminal session by pressing <code>ctrl+c</code></p>
+<p><strong>Syntax</strong> <code>nodemcu-tool [options] terminal</code></p>
+<p><strong>Example</strong></p>
+<pre><code class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>$&#xA0;nodemcu-tool&#xA0;terminal</span></span></div><div class="line"><span class="source shell"><span>[SerialTerminal]&#xA0;Starting&#xA0;Terminal&#xA0;Mode&#xA0;-&#xA0;press&#xA0;ctrl+c&#xA0;to&#xA0;</span><span class="support function builtin shell"><span>exit</span></span></span></div><div class="line"><span class="source shell"><span>dofile</span><span class="meta scope shell"><span class="punctuation definition shell"><span>(</span></span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>test.lc</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span><span class="punctuation definition shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>Hello&#xA0;World</span><span class="keyword operator shell"><span>!</span></span></span></div><div class="line"><span class="source shell"><span>HELLO&#xA0;WORLD</span><span class="keyword operator shell"><span>!</span><span>!</span><span>!</span></span></span></div><div class="line"><span class="source shell"><span>HEllo&#xA0;HEllo&#xA0;Hello</span></span></div><div class="line"><span class="source shell"><span>String:&#xA0;Lorem&#xA0;ipsum&#xA0;dolor&#xA0;sit&#xA0;amet,&#xA0;consetetur&#xA0;sadipscing&#xA0;elitr</span></span></div><div class="line"><span class="source shell"><span class="keyword operator shell"><span>&gt;</span></span><span>&#xA0;[SerialTerminal]&#xA0;Connection&#xA0;closed</span></span></div></pre></code></pre>
+<h2 id="user-content-behind-the-scene" class="deep-link"><a href="nodemcu-tool#behind-the-scene">Behind the Scene</a></h2>
+<p>Many beginners may ask how the tool is working because there is no binary interface documented like FTP to access files.</p>
+<p>The answer is quite simple: <strong>NodeMCU-Tool</strong> implements a serial terminal connection to the Module and runs some command line based lua commands like file.open(), file.write() to access the filesystem. That&apos;s it!</p>
+<p>Since Version 1.2 it&apos;s also possible to transfer <strong>binary</strong> files to your device. NodeMCU-Tool uses a hexadecimal encode/decoding to transfer the files binary save!
+The required encoding (file downloads) / decoding (file uploads) functions are automatically uploaded on each operation.</p>
+<h2 id="user-content-low-level-api" class="deep-link"><a href="nodemcu-tool#low-level-api">Low Level API</a></h2>
+<p>It&apos;s possible to use the underlying &quot;NodeMcuConnector&quot; in your own projects to communicate with a NodeMCU based device.
+For more details, take a look into the sources!</p>
+<p><strong>Low Level Example</strong>
+Run <code>node.compile()</code> on NodeMCU and display the output</p>
+<pre><code class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="storage modifier js"><span>var</span></span><span>&#xA0;_connector&#xA0;</span><span class="keyword operator js"><span>=</span></span><span>&#xA0;</span><span class="support function js"><span>require</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span>nodemcu-tool</span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span class="meta brace round js"><span>)</span></span><span class="meta delimiter method period js"><span>.</span></span><span>Connector</span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;</span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&#xA0;create&#xA0;a&#xA0;new&#xA0;connector&#xA0;instance</span><span>&#xA0;</span></span></span></div><div class="line"><span class="source js"><span class="storage modifier js"><span>var</span></span><span>&#xA0;con&#xA0;</span><span class="keyword operator js"><span>=</span></span><span>&#xA0;</span><span class="meta class instance constructor"><span class="keyword operator js"><span>new</span></span><span>&#xA0;</span><span class="entity name type instance js"><span>_connector</span></span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span>/dev/ttyUSB4</span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&#xA0;</span><span class="constant numeric js"><span>9600</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;</span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&#xA0;open&#xA0;the&#xA0;serial&#xA0;connection</span><span>&#xA0;</span></span></span></div><div class="line"><span class="source js"><span>con</span><span class="meta delimiter method period js"><span>.</span></span><span>connect</span><span class="meta brace round js"><span>(</span></span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span class="punctuation definition begin js"><span>(</span></span><span class="variable function js"><span>err</span></span><span>,&#xA0;</span><span class="variable function js"><span>response</span></span><span class="punctuation definition end js"><span>)</span></span></span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span class="punctuation comment js"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span></span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&#xA0;get&#xA0;version,&#xA0;flashid&#xA0;...&#xA0;message</span><span>&#xA0;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.log</span></span><span class="meta brace round js"><span>(</span></span><span>response</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span></span></div><div class="line"><span class="source js"><span class="punctuation comment js"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span></span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&#xA0;run&#xA0;a&#xA0;command&#xA0;on&#xA0;the&#xA0;LUA&#xA0;command&#xA0;line</span><span>&#xA0;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;con</span><span class="meta delimiter method period js"><span>.</span></span><span>executeCommand</span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span>node.compile(&quot;testfile.lua&quot;);</span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&#xA0;</span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span class="punctuation definition begin js"><span>(</span></span><span class="variable function js"><span>err</span></span><span>,&#xA0;</span><span class="variable function js"><span>echo</span></span><span>,&#xA0;</span><span class="variable function js"><span>response</span></span><span class="punctuation definition end js"><span>)</span></span></span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="keyword control js"><span>if</span></span><span>&#xA0;</span><span class="meta brace round js"><span>(</span></span><span>err</span><span class="meta brace round js"><span>)</span></span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.error</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span>IO&#xA0;Error&#xA0;-&#xA0;</span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&#xA0;err</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="meta brace curly js"><span>}</span></span><span class="keyword control js"><span>else</span></span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.log</span></span><span class="meta brace round js"><span>(</span></span><span>response</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="meta brace curly js"><span>}</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre></code></pre>
+<h2 id="user-content-faq" class="deep-link"><a href="nodemcu-tool#faq">FAQ</a></h2>
+<h3 id="user-content-the-serial-file-transfer-is-pretty-slow" class="deep-link"><a href="nodemcu-tool#the-serial-file-transfer-is-pretty-slow">The serial file transfer is pretty slow</a></h3>
+<p>By default, the serial connection uses a 9600 baud with 8N1 - this means maximal 960 bytes/s raw data rate.
+Due to the limitations of a line-wise file upload, these maximal transfer rate cannot be reached, because every line has to be processed by the lua interpreter and NodeMCU-Tool is waiting for it&apos;s response.
+It&apos;s recommended to use the <code>--optimize</code> flag to strip whitespaces before uploading</p>
+<h2 id="user-content-any-questions--report-a-bug--enhancements-" class="deep-link"><a href="nodemcu-tool#any-questions--report-a-bug--enhancements-">Any Questions ? Report a Bug ? Enhancements ?</a></h2>
+<p>Please open a new issue on <a href="https://github.com/AndiDittrich/NodeMCU-Tool/issues">GitHub</a></p>
+<h2 id="user-content-license" class="deep-link"><a href="nodemcu-tool#license">License</a></h2>
+<p>NodeMCU-Tool is OpenSource and licensed under the Terms of <a href="http://opensource.org/licenses/MIT">The MIT License (X11)</a>. You&apos;re welcome to <a href="https://github.com/AndiDittrich/NodeMCU-Tool/blob/master/CONTRIBUTE.md">contribute</a>!</p>
+
+  </div>
+
+</div>
+
+<div class="sidebar">
+    <div class="marketing"><h3 id="-socks-for-docs-http-npm-me-b4-socks-for-docs-"><a href="http://npm.me/b4" title="Socks for docs">Socks for docs!</a></h3>
+<p>We need help with npm and its docs. And you need wombat socks.&nbsp; <a href="http://npm.me/b4" title="Socks for docs">Fortunately&nbsp;for&nbsp;you&hellip;</a></p>
+</div>
+
+    <div class="autoselect-wrapper npm-install icon-download">
+      <input type="text" value="npm install nodemcu-tool" readonly>
+      <p><a href="https://www.npmjs.com/package/nodemcu-tool/tutorial">how? learn more</a></p>
+    </div>
+
+	<ul class="box">
+      <li class="last-publisher">
+          <a href="https://www.npmjs.com/~andidittrich">
+            <img src="https://s.gravatar.com/avatar/e2d6bb43dd14f26a469cf8ffdcd4dacf?size=100&amp;default=retro" alt="andidittrich" />
+            <span>andidittrich</span>
+          </a>
+          published
+          <span data-date="2016-01-11T00:17:47.348Z" data-date-format="relative">
+            2016-01-11T00:17:47.348Z
+          </span>
+      </li>
+
+    <li>
+      <strong>1.3.1</strong>
+      is the latest
+        of 5 releases
+    </li>
+
+      <li>
+        <a href="https://github.com/andidittrich/NodeMCU-Tool">github.com/andidittrich/NodeMCU-Tool</a>
+      </li>
+
+
+      <li>
+          <a href="http://opensource.org/licenses/MIT">MIT</a>
+        <span> license</span>
+      </li>
+  </ul>
+
+    <h3 title="collaborators">
+      <a href="https://www.npmjs.com/package/nodemcu-tool/access">Collaborators</a>
+    </h3>
+
+    <ul class="humans collaborators">
+        <li>
+            <a href="https://www.npmjs.com/~andidittrich" rel="tipsy" title="andidittrich">
+                <img src="https://s.gravatar.com/avatar/e2d6bb43dd14f26a469cf8ffdcd4dacf?size=100&amp;default=retro" alt="andidittrich">
+            </a>
+        </li>
+
+
+    </ul>
+
+    <h3>Stats</h3>
+    <ul class="box">
+
+        <li>
+          <strong class="pretty-number daily-downloads">2</strong>
+          downloads in the last day
+        </li>
+        <li>
+          <strong class="pretty-number weekly-downloads">28</strong>
+          downloads in the last week
+        </li>
+        <li>
+          <strong class="pretty-number monthly-downloads">156</strong>
+          downloads in the last month
+        </li>
+
+        <li id="issues" data-ghapi="https://api.github.com/repos/AndiDittrich/NodeMCU-Tool">
+          <span class="original">Have an issue? <a href="https://github.com/AndiDittrich/NodeMCU-Tool/issues">File it.</a></span>
+            <span class="enhanced" style="display:none">
+              <a href="https://github.com/AndiDittrich/NodeMCU-Tool/issues"></a> on GitHub
+            </span>
+        </li>
+
+        <li id="pull_requests" style="display:none">
+          <a href="https://github.com/AndiDittrich/NodeMCU-Tool/pulls"></a> on GitHub
+        </li>
+
+    </ul>
+
+      <h3>Try it out</h3>
+      <ul class="box">
+        <li class="tonicdev"><a href="https://tonicdev.com/npm/nodemcu-tool" target="_blank">Test nodemcu-tool in your browser.</a></li>
+      </ul>
+
+  <h3>Keywords</h3>
+  <p class="list-of-links">
+        <a href="https://www.npmjs.com/browse/keyword/embedded">embedded</a>, 
+        <a href="https://www.npmjs.com/browse/keyword/upload">upload</a>, 
+        <a href="https://www.npmjs.com/browse/keyword/serial">serial</a>, 
+        <a href="https://www.npmjs.com/browse/keyword/wifi">wifi</a>, 
+        <a href="https://www.npmjs.com/browse/keyword/esp8266">esp8266</a>, 
+        <a href="https://www.npmjs.com/browse/keyword/nodemcu">nodemcu</a>, 
+        <a href="https://www.npmjs.com/browse/keyword/terminal">terminal</a>, 
+        <a href="https://www.npmjs.com/browse/keyword/lua">lua</a>, 
+        <a href="https://www.npmjs.com/browse/keyword/cli">cli</a>
+  </p>
+
+  <h3>Dependencies (5)</h3>
+  <p class="list-of-links">
+          <a href="https://www.npmjs.com/package/serialport">serialport</a>,
+          <a href="https://www.npmjs.com/package/prompt">prompt</a>,
+          <a href="https://www.npmjs.com/package/commander">commander</a>,
+          <a href="https://www.npmjs.com/package/colors">colors</a>,
+                <a href="https://www.npmjs.com/package/cli-progress">cli-progress</a>
+  </p>
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "nodemcu-tool",
+      "description": "Command line tool to upload and manage files on your NodeMCU / ESP8266 Module.",
+      "url": "https://www.npmjs.com/package/nodemcu-tool",
+      "keywords": "embedded,upload,serial,wifi,esp8266,nodemcu,terminal,lua,cli",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+         "@type": "Offer",
+         "price": "0.00"
+      }
+    }
+  </script>
+
+    <div class="hiring-container" data-template="sidebar"></div>
+
+</div>
+
+
+    </div>
+
+  <footer>
+
+    <div class="container">
+
+
+        <ul class="columnar">
+          <li>
+            <h3>You Need Help</h3>
+            <ul class="links">
+              <li><a href="https://docs.npmjs.com">Documentation</a></li>
+              <li><a href="https://www.npmjs.com/support">Support / Contact Us</a></li>
+              <li><a href="http://status.npmjs.org/">Registry Status</a></li>
+              <li><a href="https://github.com/npm/newww/issues">Website Issues</a></li>
+              <li><a href="https://github.com/npm/npm/issues">CLI Issues</a></li>
+              <li><a href="https://www.npmjs.com/security">Security</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <h3>About npm</h3>
+            <ul class="links">
+              <li><a href="https://www.npmjs.com/about">About npm, Inc</a></li>
+              <li><a href="https://www.npmjs.com/jobs">Jobs</a></li>
+              <li><a href="https://www.npmjs.com/npm-weekly">npm Weekly</a></li>
+              <li><a href="http://blog.npmjs.org">Blog</a></li>
+              <li><a href="https://twitter.com/npmjs">Twitter</a></li>
+              <li><a href="https://github.com/npm">GitHub</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <h3>Legal Stuff</h3>
+            <ul class="links">
+              <li><a href="https://www.npmjs.com/policies/terms">Terms of Use</a></li>
+              <li><a href="https://www.npmjs.com/policies/conduct">Code of Conduct</a></li>
+              <li><a href="https://www.npmjs.com/policies/disputes">Package Name Disputes</a></li>
+              <li><a href="https://www.npmjs.com/policies/privacy">Privacy Policy</a></li>
+              <li><a href="https://www.npmjs.com/policies/receiving-reports">Reporting Abuse</a></li>
+              <li><a href="https://www.npmjs.com/policies/">Other policies</a></li>
+            </ul>
+          </li>
+        </ul>
+
+
+    </div>
+
+    <div class="container centered">
+      <a href="https://www.npmjs.com/" id="npm-loves-you">
+        npm loves you
+      </a>
+    </div>
+
+  </footer>
+  
+  <script defer src="https://www.npmjs.com/static/js/vendor.min.76ac749e.js"></script>
+  <script defer async src="https://cdn.optimizely.com/js/3318080746.js"></script>
+  <script defer async src='https://img.en25.com/i/elqCfg.min.js'></script><!-- Eloqua -->
+</body>
+</html>
+
+<!-- pid=6286 bb7429b95729b0a8c86d4b21011b580fc41d3f39 https://www.npmjs.com www-12-west.internal.npmjs.com  -->
