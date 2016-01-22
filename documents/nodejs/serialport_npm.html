@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>serialport</title>
+
+    <meta name="description" content="Welcome your robotic javascript overlords. Better yet, program them!">
+    <meta name="keywords" content="">
+    <meta name="twitter:url" content="https://www.npmjs.com/package/serialport">
+    <meta name="twitter:title" content="npm: serialport">
+    <meta name="twitter:description" content="Welcome your robotic javascript overlords. Better yet, program them!">
+
+
+  <meta http-equiv="cleartype" content="on" />
+
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="description" content="npm is the package manager for javascript">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1,user-scalable=yes">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-startup-image-1024x748.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-startup-image-1536x2008.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-startup-image-2048x1496.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-startup-image-320x460.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-startup-image-640x1096.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-startup-image-640x920.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-startup-image-768x1004.png">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-230x230.png" sizes="230x230">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/coast-228x228.png" sizes="228x228">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="https://www.npmjs.com/static/images/touch-icons/manifest.json">
+  <link rel="shortcut icon" href="https://www.npmjs.com/static/images/touch-icons/favicon.ico">
+  <link rel="yandex-tableau-widget" href="https://www.npmjs.com/static/images/touch-icons/yandex-browser-manifest.json">
+  <meta property="og:image" content="https://www.npmjs.com/static/images/touch-icons/open-graph.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-TileColor" content="#cb3837">
+  <meta name="msapplication-TileImage" content="/static/images/touch-icons/mstile-144x144.png">
+  <meta name="msapplication-config" content="/static/images/touch-icons/browserconfig.xml">
+  <meta name="theme-color" content="#cb3837">
+
+  <link rel="canonical" href="serialport">
+  <link rel="stylesheet" media="all" href="https://www.npmjs.com/static/css/index.8183d065.css">
+  <link rel="search" type="application/opensearchdescription+xml" href="https://www.npmjs.com/opensearch.xml" title="npm">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <![endif]-->
+
+
+  <script src="https://www.npmjs.com/static/js/index.min.e41ddaf7.js"></script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebSite" data-crumb="uaqplRhvXmMv1T4uMXSNaQ295EEYwGbrIgxBgFr2H0n">
+  <meta itemprop="url" content="https://www.npmjs.com/">
+
+    <nav>
+        <a href="serialport#" id="npm-expansions" data-event-trigger="click" data-event-name="npm-expansions">node package manager</a>
+        <a href="https://www.npmjs.com/npm/on-site">npm On-Site</a>
+        <a href="https://www.npmjs.com/npm/private-packages" data-event-trigger="click" data-event-name="private-modules-nav-link">npm Private Packages</a>
+        <a href="https://www.npmjs.com/npm/open-source">npm Open Source</a>
+        <a href="https://docs.npmjs.com">documentation</a>
+        <a href="https://www.npmjs.com/support">support</a>
+    </nav>
+
+  <header>
+    <div id='npm-logo'>
+      <a href="https://www.npmjs.com/"><img src="https://www.npmjs.com/static/images/npm-logo.svg" alt="npm logo" /></a>
+    </div>
+
+
+      <div id="user-info" class="anonymous">
+          <a href="https://www.npmjs.com/login"><img alt="" src="https://www.npmjs.com/static/images/wombat-avatar-small.png" /></a>
+          <ul class="single">
+              <li><a href="https://www.npmjs.com/signup">sign up</a> or <a href="https://www.npmjs.com/login">log in</a></li>
+          </ul>
+
+      </div>
+
+
+    <form id="npm-search" action="https://www.npmjs.com/search" method="get" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+      <meta itemprop="target" content="https://www.npmjs.com/search?q={q}">
+      <div id="site-search-container">
+          <input name="q" value="" type="search" id="site-search" placeholder="find packages" tabindex="1" autocorrect="off" autocapitalize="off" itemprop="query-input" />
+      </div>
+      <input type="submit" id="site-search-submit" />
+    </form>
+
+  </header>
+
+    <div class="container content">
+      
+<div class="content-column">
+
+  <h1 class="package-name">
+    <a href="serialport">serialport</a>
+      <i class="icon-public"></i>
+  </h1>
+  <p class="package-description">Welcome your robotic javascript overlords. Better yet, program them!</p>
+
+  <form class="star">
+    <input type="hidden" name="name" value="serialport">
+    <input id="star-input" type="checkbox" name="isStarred" value="true" >
+    <label for="star-input" class="icon-star"></label>
+      <input type="hidden" name="crumb" value="uaqplRhvXmMv1T4uMXSNaQ295EEYwGbrIgxBgFr2H0n"/>
+  </form>
+
+  <div id="readme" class="markdown">
+      <p><a href="https://travis-ci.org/voodootikigod/node-serialport"><img src="https://travis-ci.org/voodootikigod/node-serialport.png?branch=master" class="badge"></a>
+<a href="https://gitter.im/voodootikigod/node-serialport"><img src="https://badges.gitter.im/voodootikigod/node-serialport.png" class="badge"></a>
+<a href="https://david-dm.org/voodootikigod/node-serialport"><img src="https://david-dm.org/voodootikigod/node-serialport.png" class="badge"></a></p>
+<p>For all discussions, designs, and clarifications, we recommend you join our Gitter Chat room: <a href="https://gitter.im/voodootikigod/node-serialport">https://gitter.im/voodootikigod/node-serialport</a></p>
+<hr>
+<p>Imagine a world where you can write JavaScript to control blenders, lights, security systems, or even robots. Yes, I said robots. That world is here and now with node-serialport. It provides a very simple interface to the low level serial port code necessary to program <a href="http://www.arduino.cc/">Arduino</a> chipsets, <a href="http://www.smarthome.com/manuals/protocol.txt">X10</a> wireless communications, or even the rising <a href="http://www.z-wave.com/modules/ZwaveStart/">Z-Wave</a> and <a href="http://www.zigbee.org/">Zigbee</a> standards. The physical world is your oyster with this goodie. For a full break down of why we made this, please read <a href="http://www.voodootikigod.com/nodebots-the-rise-of-js-robotics">NodeBots - The Rise of JS Robotics</a>.</p>
+<hr>
+<p>For getting started with node-serialport, we recommend you begin with the following articles:</p>
+<ul>
+<li><a href="http://nexxylove.tumblr.com/post/20159263403/arduino-node-security-sensor-hacking">Arduino Node Security Sensor Hacking</a> - A great all around &quot;how do I use this&quot; article.</li>
+<li><a href="http://www.voodootikigod.com/nodebots-the-rise-of-js-robotics">NodeBots - The Rise of JS Robotics</a> - A survey article of why one would want to program robots in JS.</li>
+<li><a href="https://github.com/rwldrn/johnny-five#setup-and-assemble-arduino">Johnny-Five Getting Started Guide</a> - Introduction to using the high level Johnny-Five library (awesome).</li>
+</ul>
+<h2 id="user-content-to-install" class="deep-link"><a href="serialport#to-install">To Install</a></h2>
+<p>For most &quot;standard&quot; use cases (node v0.10.x on mac, linux, windows on a x86 or x64 processor), node-serialport will install nice and easy with a simple</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text"><span>npm&#xA0;install&#xA0;serialport</span></span></div></pre></code></pre>
+<h3 id="user-content-installation-special-cases" class="deep-link"><a href="serialport#installation-special-cases">Installation Special Cases</a></h3>
+<p>We are using <a href="https://github.com/mapbox/node-pre-gyp">node-pre-gyp</a> to compile and post binaries of the library for most common use cases (linux, mac, windows on standard processor platforms). If you are on a special case, node-serialport will work, but it will compile the binary when you install.</p>
+<p>This assumes you have everything on your system necessary to compile ANY native module for Node.js. This may not be the case, though, so please ensure the following are true for your system before filing an issue about &quot;Does not install&quot;. For all operatings systems, please ensure you have Python 2.x installed AND not 3.0, node-gyp (what we use to compile) requires Python 2.x.</p>
+<h4 id="user-content-windows" class="deep-link"><a href="serialport#windows">Windows:</a></h4>
+<ul>
+<li>Windows 7 or Windows 8.1 are supported.</li>
+<li>Install <a href="http://www.microsoft.com/visualstudio/eng/2013-downloads#d-2013-express">Visual Studio Express 2013 for Windows Desktop</a>.</li>
+<li>If you are hacking on an Arduino, be sure to install <a href="http://arduino.cc/en/Guide/windows#toc4">the drivers</a>.</li>
+<li>Install <a href="http://nodejs.org/">node.js</a> matching the bitness (32 or 64) of your operating system.</li>
+<li>Install <a href="http://www.python.org/download/releases/2.7.6/">Python 2.7.6</a> matching the bitness of your operating system.  For any questions, please refer to their <a href="http://docs.python.org/2/faq/windows.html">FAQ</a>. Default settings are perfect.</li>
+<li>Open the &apos;Visual Studio Command Prompt&apos; and add Python to the path.</li>
+</ul>
+<h4 id="user-content-mac-os-x" class="deep-link"><a href="serialport#mac-os-x">Mac OS X:</a></h4>
+<p>Ensure that you have at a minimum the xCode Command Line Tools installed appropriate for your system configuration. If you recently upgraded the OS, it probably removed your installation of Command Line Tools, please verify before submitting a ticket. To compile <code>node-serialport</code> with Node.js 4.x+, you will need to use g++ v4.8 or higher.</p>
+<h4 id="user-content-desktop-debianubuntu-linux" class="deep-link"><a href="serialport#desktop-debianubuntu-linux">Desktop (Debian/Ubuntu) Linux:</a></h4>
+<p>You know what you need for your system, basically your appropriate analog of build-essential. Keep rocking! Ubuntu renamed the <code>node</code> binary <code>nodejs</code> which can cause problems building <code>node-serialport</code>. The fix is simple, install the <a href="https://packages.debian.org/sid/nodejs-legacy">nodejs-legacy package</a> that symlinks <code>/usr/bin/nodejs =&gt; /usr/bin/node</code> or install the more up to date nodejs package from <a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager#ubuntu-mint-elementary-os">Chris Lea&apos;s PPA</a>.</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text"><span>#&#xA0;Ubuntu&#xA0;node</span></span></div><div class="line"><span class="text"><span>sudo&#xA0;apt-get&#xA0;install&#xA0;nodejs&#xA0;nodejs-legacy</span></span></div><div class="line"><span class="text"><span>&#xA0;</span></span></div><div class="line"><span class="text"><span>#&#xA0;Or&#xA0;Chris&#xA0;Lea&apos;s&#xA0;PPA&#xA0;Node&#xA0;(more&#xA0;up&#xA0;to&#xA0;date)</span></span></div><div class="line"><span class="text"><span>sudo&#xA0;add-apt-repository&#xA0;ppa:chris-lea/node.js</span></span></div><div class="line"><span class="text"><span>sudo&#xA0;apt-get&#xA0;update</span></span></div><div class="line"><span class="text"><span>sudo&#xA0;apt-get&#xA0;install&#xA0;nodejs</span></span></div><div class="line"><span class="text"><span>&#xA0;</span></span></div><div class="line"><span class="text"><span>sudo&#xA0;apt-get&#xA0;install&#xA0;build-essential</span></span></div><div class="line"><span class="text"><span>npm&#xA0;install&#xA0;serialport</span></span></div></pre></code></pre>
+<h4 id="user-content-raspberry-pi-linux" class="deep-link"><a href="serialport#raspberry-pi-linux">Raspberry Pi Linux:</a></h4>
+<ul>
+<li>Starting with a a vanilla New Out of the Box Software (NOOBS) Raspbian image</li>
+<li>Log into your Raspberry Pi through whatever means works best and ensure you are on a terminal prompt for the remaining steps. This could be local or through an SSH (or a serial connection if you like).</li>
+<li>Issue the following commands to ensure you are up to date:</li>
+</ul>
+<pre><code class="highlight bash"><pre class="editor editor-colors"><div class="line"><span class="text"><span>&#xA0;&#xA0;&#xA0;sudo&#xA0;apt-get&#xA0;update</span></span></div><div class="line"><span class="text"><span>&#xA0;&#xA0;&#xA0;sudo&#xA0;apt-get&#xA0;upgrade&#xA0;-y</span></span></div></pre></code></pre>
+<ul>
+<li>Download and install node.js:</li>
+</ul>
+<pre><code class="highlight bash"><pre class="editor editor-colors"><div class="line"><span class="text"><span>&#xA0;&#xA0;&#xA0;wget&#xA0;</span><span class="markup underline link hyperlink"><span>https://node-arm.herokuapp.com/node_archive_armhf.deb</span></span></span></div><div class="line"><span class="text"><span>&#xA0;&#xA0;&#xA0;sudo&#xA0;dpkg&#xA0;-i&#xA0;node_archive_armhf.deb</span></span></div></pre></code></pre>
+<p>More information can be found at <a href="http://node-arm.herokuapp.com/">node-arm</a>.</p>
+<ul>
+<li>Install using npm, note this will take a while as it is actually compiling code and that ARM processor is getting a workout.</li>
+</ul>
+<pre><code class="highlight bash"><pre class="editor editor-colors"><div class="line"><span class="text"><span>&#xA0;&#xA0;&#xA0;npm&#xA0;install&#xA0;serialport</span></span></div></pre></code></pre>
+<h2 id="user-content-to-use" class="deep-link"><a href="serialport#to-use">To Use</a></h2>
+<p>Opening a serial port:</p>
+<pre><code class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="storage modifier js"><span>var</span></span><span>&#xA0;SerialPort&#xA0;</span><span class="keyword operator js"><span>=</span></span><span>&#xA0;</span><span class="support function js"><span>require</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>serialport</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta brace round js"><span>)</span></span><span class="meta delimiter method period js"><span>.</span></span><span>SerialPort</span></span></div><div class="line"><span class="source js"><span class="storage modifier js"><span>var</span></span><span>&#xA0;serialPort&#xA0;</span><span class="keyword operator js"><span>=</span></span><span>&#xA0;</span><span class="meta class instance constructor"><span class="keyword operator js"><span>new</span></span><span>&#xA0;</span><span class="entity name type instance js"><span>SerialPort</span></span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>/dev/tty-usbserial1</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&#xA0;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;baudrate</span><span class="keyword operator js"><span>:</span></span><span>&#xA0;</span><span class="constant numeric js"><span>57600</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre></code></pre>
+<p>When opening a serial port, you can specify (in this order).</p>
+<ol>
+<li>Path to Serial Port - required.</li>
+<li>Options - optional and described below.</li>
+</ol>
+<h2 id="user-content-open-event" class="deep-link"><a href="serialport#open-event">open event</a></h2>
+<p>You MUST wait for the open event to be emitted before reading/writing to the serial port. The open happens asynchronously so installing &apos;data&apos; listeners and writing
+before the open event might result in... nothing at all.</p>
+<p>Assuming you are connected to a serial console, you would for example:</p>
+<pre><code class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span>serialPort</span><span class="meta delimiter method period js"><span>.</span></span><span>on</span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>open</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&#xA0;</span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span>&#xA0;</span><span class="punctuation definition begin js"><span>(</span></span><span class="punctuation definition end js"><span>)</span></span></span><span>&#xA0;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.log</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span>open</span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;serialPort</span><span class="meta delimiter method period js"><span>.</span></span><span>on</span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span>data</span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&#xA0;</span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span class="punctuation definition begin js"><span>(</span></span><span class="variable function js"><span>data</span></span><span class="punctuation definition end js"><span>)</span></span></span><span>&#xA0;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.log</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span>data&#xA0;received:&#xA0;</span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span>&#xA0;</span><span class="keyword operator js"><span>+</span></span><span>&#xA0;data</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;</span><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;serialPort</span><span class="meta delimiter method period js"><span>.</span></span><span class="support function dom js"><span>write</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>ls</span><span class="constant character js"><span>\n</span></span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&#xA0;</span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span class="punctuation definition begin js"><span>(</span></span><span class="variable function js"><span>err</span></span><span>,&#xA0;</span><span class="variable function js"><span>results</span></span><span class="punctuation definition end js"><span>)</span></span></span><span>&#xA0;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.log</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span>err&#xA0;</span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span>&#xA0;</span><span class="keyword operator js"><span>+</span></span><span>&#xA0;err</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.log</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span>results&#xA0;</span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span>&#xA0;</span><span class="keyword operator js"><span>+</span></span><span>&#xA0;results</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;</span><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre></code></pre>
+<p>You can also call the open function, in this case instantiate the serialport with an additional flag.</p>
+<pre><code class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="storage modifier js"><span>var</span></span><span>&#xA0;SerialPort&#xA0;</span><span class="keyword operator js"><span>=</span></span><span>&#xA0;</span><span class="support function js"><span>require</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>serialport</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta brace round js"><span>)</span></span><span class="meta delimiter method period js"><span>.</span></span><span>SerialPort</span></span></div><div class="line"><span class="source js"><span class="storage modifier js"><span>var</span></span><span>&#xA0;serialPort&#xA0;</span><span class="keyword operator js"><span>=</span></span><span>&#xA0;</span><span class="meta class instance constructor"><span class="keyword operator js"><span>new</span></span><span>&#xA0;</span><span class="entity name type instance js"><span>SerialPort</span></span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>/dev/tty-usbserial1</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&#xA0;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;baudrate</span><span class="keyword operator js"><span>:</span></span><span>&#xA0;</span><span class="constant numeric js"><span>57600</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&#xA0;</span><span class="constant language boolean false js"><span>false</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span><span>&#xA0;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&#xA0;this&#xA0;is&#xA0;the&#xA0;openImmediately&#xA0;flag&#xA0;[default&#xA0;is&#xA0;true]</span><span>&#xA0;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;</span></span></div><div class="line"><span class="source js"><span>serialPort</span><span class="meta delimiter method period js"><span>.</span></span><span class="support function dom js"><span>open</span></span><span class="meta brace round js"><span>(</span></span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span>&#xA0;</span><span class="punctuation definition begin js"><span>(</span></span><span class="variable function js"><span>error</span></span><span class="punctuation definition end js"><span>)</span></span></span><span>&#xA0;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;</span><span class="keyword control js"><span>if</span></span><span>&#xA0;</span><span class="meta brace round js"><span>(</span></span><span>&#xA0;error&#xA0;</span><span class="meta brace round js"><span>)</span></span><span>&#xA0;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.log</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span>failed&#xA0;to&#xA0;open:&#xA0;</span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span class="keyword operator js"><span>+</span></span><span>error</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;</span><span class="meta brace curly js"><span>}</span></span><span>&#xA0;</span><span class="keyword control js"><span>else</span></span><span>&#xA0;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.log</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span>open</span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;serialPort</span><span class="meta delimiter method period js"><span>.</span></span><span>on</span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span>data</span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&#xA0;</span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span class="punctuation definition begin js"><span>(</span></span><span class="variable function js"><span>data</span></span><span class="punctuation definition end js"><span>)</span></span></span><span>&#xA0;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.log</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span>data&#xA0;received:&#xA0;</span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span>&#xA0;</span><span class="keyword operator js"><span>+</span></span><span>&#xA0;data</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;serialPort</span><span class="meta delimiter method period js"><span>.</span></span><span class="support function dom js"><span>write</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>ls</span><span class="constant character js"><span>\n</span></span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&#xA0;</span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span class="punctuation definition begin js"><span>(</span></span><span class="variable function js"><span>err</span></span><span>,&#xA0;</span><span class="variable function js"><span>results</span></span><span class="punctuation definition end js"><span>)</span></span></span><span>&#xA0;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.log</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span>err&#xA0;</span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span>&#xA0;</span><span class="keyword operator js"><span>+</span></span><span>&#xA0;err</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.log</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span>results&#xA0;</span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span>&#xA0;</span><span class="keyword operator js"><span>+</span></span><span>&#xA0;results</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;</span><span class="meta brace curly js"><span>}</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre></code></pre>
+<h2 id="user-content-list-ports" class="deep-link"><a href="serialport#list-ports">List Ports</a></h2>
+<p>You can also list the ports along with some metadata as well.</p>
+<pre><code class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="storage modifier js"><span>var</span></span><span>&#xA0;serialPort&#xA0;</span><span class="keyword operator js"><span>=</span></span><span>&#xA0;</span><span class="support function js"><span>require</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>serialport</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>serialPort</span><span class="meta delimiter method period js"><span>.</span></span><span>list</span><span class="meta brace round js"><span>(</span></span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span>&#xA0;</span><span class="punctuation definition begin js"><span>(</span></span><span class="variable function js"><span>err</span></span><span>,&#xA0;</span><span class="variable function js"><span>ports</span></span><span class="punctuation definition end js"><span>)</span></span></span><span>&#xA0;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;ports</span><span class="meta delimiter method period js"><span>.</span></span><span>forEach</span><span class="meta brace round js"><span>(</span></span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span class="punctuation definition begin js"><span>(</span></span><span class="variable function js"><span>port</span></span><span class="punctuation definition end js"><span>)</span></span></span><span>&#xA0;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.log</span></span><span class="meta brace round js"><span>(</span></span><span>port</span><span class="meta delimiter method period js"><span>.</span></span><span>comName</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.log</span></span><span class="meta brace round js"><span>(</span></span><span>port</span><span class="meta delimiter method period js"><span>.</span></span><span>pnpId</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.log</span></span><span class="meta brace round js"><span>(</span></span><span>port</span><span class="meta delimiter method period js"><span>.</span></span><span>manufacturer</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;</span><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre></code></pre>
+<h2 id="user-content-parsers" class="deep-link"><a href="serialport#parsers">Parsers</a></h2>
+<p>Out of the box, node-serialport provides two parsers one that simply emits the raw buffer as a data event and the other which provides familiar &quot;readline&quot; style parsing. To use the readline parser, you must provide a delimiter as such:</p>
+<pre><code class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="storage modifier js"><span>var</span></span><span>&#xA0;serialport&#xA0;</span><span class="keyword operator js"><span>=</span></span><span>&#xA0;</span><span class="support function js"><span>require</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>serialport</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span class="storage modifier js"><span>var</span></span><span>&#xA0;SerialPort&#xA0;</span><span class="keyword operator js"><span>=</span></span><span>&#xA0;serialport</span><span class="meta delimiter method period js"><span>.</span></span><span>SerialPort</span><span class="punctuation terminator statement js"><span>;</span></span><span>&#xA0;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&#xA0;localize&#xA0;object&#xA0;constructor</span><span>&#xA0;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;</span></span></div><div class="line"><span class="source js"><span class="storage modifier js"><span>var</span></span><span>&#xA0;sp&#xA0;</span><span class="keyword operator js"><span>=</span></span><span>&#xA0;</span><span class="meta class instance constructor"><span class="keyword operator js"><span>new</span></span><span>&#xA0;</span><span class="entity name type instance js"><span>SerialPort</span></span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>/dev/tty-usbserial1</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&#xA0;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;parser</span><span class="keyword operator js"><span>:</span></span><span>&#xA0;serialport</span><span class="meta delimiter method period js"><span>.</span></span><span>parsers</span><span class="meta delimiter method period js"><span>.</span></span><span>readline</span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span class="constant character js"><span>\n</span></span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta brace round js"><span>)</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre></code></pre>
+<p>To use the raw parser, you just provide the function definition (or leave undefined):</p>
+<pre><code class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="storage modifier js"><span>var</span></span><span>&#xA0;serialport&#xA0;</span><span class="keyword operator js"><span>=</span></span><span>&#xA0;</span><span class="support function js"><span>require</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>serialport</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span class="storage modifier js"><span>var</span></span><span>&#xA0;SerialPort&#xA0;</span><span class="keyword operator js"><span>=</span></span><span>&#xA0;serialport</span><span class="meta delimiter method period js"><span>.</span></span><span>SerialPort</span><span class="punctuation terminator statement js"><span>;</span></span><span>&#xA0;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&#xA0;localize&#xA0;object&#xA0;constructor</span><span>&#xA0;</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;</span></span></div><div class="line"><span class="source js"><span class="storage modifier js"><span>var</span></span><span>&#xA0;sp&#xA0;</span><span class="keyword operator js"><span>=</span></span><span>&#xA0;</span><span class="meta class instance constructor"><span class="keyword operator js"><span>new</span></span><span>&#xA0;</span><span class="entity name type instance js"><span>SerialPort</span></span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>/dev/tty-usbserial1</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&#xA0;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;parser</span><span class="keyword operator js"><span>:</span></span><span>&#xA0;serialport</span><span class="meta delimiter method period js"><span>.</span></span><span>parsers</span><span class="meta delimiter method period js"><span>.</span></span><span>raw</span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre></code></pre>
+<p>You can get updates of new data from the Serial Port as follows:</p>
+<pre><code class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span>serialPort</span><span class="meta delimiter method period js"><span>.</span></span><span>on</span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>data</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&#xA0;</span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span>&#xA0;</span><span class="punctuation definition begin js"><span>(</span></span><span class="variable function js"><span>data</span></span><span class="punctuation definition end js"><span>)</span></span></span><span>&#xA0;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;sys</span><span class="meta delimiter method period js"><span>.</span></span><span>puts</span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>here:&#xA0;</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="keyword operator js"><span>+</span></span><span>data</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre></code></pre>
+<p>You can write to the serial port by sending a string or buffer to the write method as follows:</p>
+<pre><code class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span>serialPort</span><span class="meta delimiter method period js"><span>.</span></span><span class="support function dom js"><span>write</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>OMG&#xA0;IT&#xA0;WORKS</span><span class="constant character js"><span>\r</span></span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre></code></pre>
+<p>Enjoy and do cool things with this code.</p>
+<h2 id="user-content-reference-guide" class="deep-link"><a href="serialport#reference-guide">Reference Guide</a></h2>
+<h2 id="user-content-methods" class="deep-link"><a href="serialport#methods">Methods</a></h2>
+<h3 id="user-content-serialport-path-options-openimmediately-callback" class="deep-link"><a href="serialport#serialport-path-options-openimmediately-callback">SerialPort (path, options, openImmediately, callback)</a></h3>
+<p>Create a new serial port on <code>path</code>.</p>
+<p><strong><em>path</em></strong></p>
+<p>The system path of the serial port to open. For example, <code>/dev/tty</code> on Mac/Linux or <code>COM1</code> on Windows.</p>
+<p><strong><em>options (optional)</em></strong></p>
+<p>Port configuration options.</p>
+<ul>
+<li><code>baudRate</code> Baud Rate, defaults to 9600. Should be one of: 115200, 57600, 38400, 19200, 9600, 4800, 2400, 1800, 1200, 600, 300, 200, 150, 134, 110, 75, or 50. Custom rates as allowed by hardware is supported.</li>
+<li><code>dataBits</code> Data Bits, defaults to 8. Must be one of: 8, 7, 6, or 5.</li>
+<li><code>stopBits</code> Stop Bits, defaults to 1. Must be one of: 1 or 2.</li>
+<li><code>parity</code> Parity, defaults to &apos;none&apos;. Must be one of: &apos;none&apos;, &apos;even&apos;, &apos;mark&apos;, &apos;odd&apos;, &apos;space&apos;</li>
+<li><code>rtscts</code></li>
+<li><code>xon</code></li>
+<li><code>xoff</code></li>
+<li><code>xany</code></li>
+<li><code>flowControl</code></li>
+<li><code>bufferSize</code> Size of read buffer, defaults to 255. Must be an integer value.</li>
+<li><code>parser</code> The parser engine to use with read data, defaults to rawPacket strategy which just emits the raw buffer as a &quot;data&quot; event. Can be any function that accepts EventEmitter as first parameter and the raw buffer as the second parameter.</li>
+<li><code>encoding</code></li>
+<li><code>dataCallback</code></li>
+<li><code>disconnectedCallback</code></li>
+<li><code>platformOptions</code> - sets platform specific options, see below.</li>
+</ul>
+<p><strong>Note, we have added support for either all lowercase OR camelcase of the options (thanks @jagautier), use whichever style you prefer.</strong></p>
+<h4 id="user-content-unix-platform-options" class="deep-link"><a href="serialport#unix-platform-options">Unix Platform Options</a></h4>
+<p>An object with the following properties:</p>
+<ul>
+<li><code>vmin</code> (default: 1) - see <a href="http://linux.die.net/man/3/termios"><code>man termios</code></a></li>
+<li><code>vtime</code> (default: 0) - see <a href="http://linux.die.net/man/3/termios"><code>man termios</code></a></li>
+</ul>
+<p><strong><em>openImmediately (optional)</em></strong></p>
+<p>Attempts to open a connection to the serial port on <code>process.nextTick</code>. The default is <code>true</code>. Set to <code>false</code> to manually call <code>open()</code> at a later time, but note you&apos;ll need to use factory error listener in the case of constructor errors.</p>
+<p><strong><em>callback (optional)</em></strong></p>
+<p>Called when a connection has been opened. The callback should be a function that looks like: <code>function (error) { ... }</code></p>
+<h3 id="user-content-open-callback" class="deep-link"><a href="serialport#open-callback">.open (callback)</a></h3>
+<p>Opens a connection to the given serial port.</p>
+<p><strong><em>callback (optional)</em></strong></p>
+<p>Called when a connection has been opened. NOTE: Will NOT be called if openImmediately is set to false as open will not be performed. The callback should be a function that looks like: <code>function (error) { ... }</code></p>
+<h3 id="user-content-isopen" class="deep-link"><a href="serialport#isopen">.isOpen()</a></h3>
+<p>Returns <code>true</code> if the port is open.</p>
+<h3 id="user-content-write-buffer-callback" class="deep-link"><a href="serialport#write-buffer-callback">.write (buffer, callback)</a></h3>
+<p>Writes data to the given serial port.</p>
+<p><strong><em>buffer</em></strong></p>
+<p>The <code>buffer</code> parameter accepts a <a href="http://nodejs.org/api/buffer.html"><code>Buffer</code> </a> object, or a type that is accepted by the <code>Buffer</code> constructor (ex. an array of bytes or a string).</p>
+<p><strong><em>callback (optional)</em></strong></p>
+<p>Called once the write operation returns. The callback should be a function that looks like: <code>function (error) { ... }</code> <em>Note: The write operation is non-blocking. When it returns, data may still have not actually been written to the serial port. See <code>drain()</code>.</em></p>
+<h3 id="user-content-pause-" class="deep-link"><a href="serialport#pause-">.pause ()</a></h3>
+<p>Pauses an open connection.</p>
+<h3 id="user-content-resume-" class="deep-link"><a href="serialport#resume-">.resume ()</a></h3>
+<p>Resumes a paused connection.</p>
+<h3 id="user-content-flush-callback" class="deep-link"><a href="serialport#flush-callback">.flush (callback)</a></h3>
+<p>Flushes data received but not read. See <a href="http://linux.die.net/man/3/tcflush"><code>tcflush()</code></a> for Mac/Linux and <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa364439"><code>FlushFileBuffers</code></a> for Windows.</p>
+<p><strong><em>callback (optional)</em></strong></p>
+<p>Called once the flush operation returns. The callback should be a function that looks like: <code>function (error) { ... }</code></p>
+<h3 id="user-content-drain-callback" class="deep-link"><a href="serialport#drain-callback">.drain (callback)</a></h3>
+<p>Waits until all output data has been transmitted to the serial port. See <a href="http://linux.die.net/man/3/tcdrain"><code>tcdrain()</code></a> for more information.</p>
+<p><strong><em>callback (optional)</em></strong></p>
+<p>Called once the drain operation returns. The callback should be a function that looks like: <code>function (error) { ... }</code></p>
+<p><strong>Example</strong></p>
+<p>Writes <code>data</code> and waits until it has finish transmitting to the target serial port before calling the callback.</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text"><span>function&#xA0;writeAndDrain&#xA0;(data,&#xA0;callback)&#xA0;{</span></span></div><div class="line"><span class="text"><span>&#xA0;&#xA0;sp.write(data,&#xA0;function&#xA0;()&#xA0;{</span></span></div><div class="line"><span class="text"><span>&#xA0;&#xA0;&#xA0;&#xA0;sp.drain(callback);</span></span></div><div class="line"><span class="text"><span>&#xA0;&#xA0;});</span></span></div><div class="line"><span class="text"><span>}</span></span></div></pre></code></pre>
+<h3 id="user-content-close-callback" class="deep-link"><a href="serialport#close-callback">.close (callback)</a></h3>
+<p>Closes an open connection.</p>
+<p><strong><em>callback (optional)</em></strong></p>
+<p>Called once a connection is closed. Closing a connection will also remove all event listeners. The callback should be a function that looks like: <code>function (error) { ... }</code></p>
+<h2 id="user-content-events" class="deep-link"><a href="serialport#events">Events</a></h2>
+<h3 id="user-content-onopen-callback" class="deep-link"><a href="serialport#onopen-callback">.on(&apos;open&apos;, callback)</a></h3>
+<h3 id="user-content-ondata-callback" class="deep-link"><a href="serialport#ondata-callback">.on(&apos;data&apos;, callback)</a></h3>
+<h3 id="user-content-onclose-callback" class="deep-link"><a href="serialport#onclose-callback">.on(&apos;close&apos;, callback)</a></h3>
+<h3 id="user-content-onerror-callback" class="deep-link"><a href="serialport#onerror-callback">.on(&apos;error&apos;, callback)</a></h3>
+<p>&#xA0;
+&#xA0;</p>
+<hr>
+<p>&#xA0;
+&#xA0;</p>
+
+  </div>
+
+</div>
+
+<div class="sidebar">
+    <div class="marketing"><h3 id="-npm-on-site-http-npm-me-a1-npm-on-site-"><a href="http://npm.me/a1" title="npm On-Site">npm On-Site</a></h3>
+<p>Host your own private, on-premises npm registry. Free 30-day trial.&nbsp; <a href="http://npm.me/a1" title="npm On-Site">Learn&nbsp;more&hellip;</a></p>
+</div>
+
+    <div class="autoselect-wrapper npm-install icon-download">
+      <input type="text" value="npm install serialport" readonly>
+      <p><a href="https://www.npmjs.com/package/serialport/tutorial">how? learn more</a></p>
+    </div>
+
+	<ul class="box">
+      <li class="last-publisher">
+          <a href="https://www.npmjs.com/~jjrosent">
+            <img src="https://s.gravatar.com/avatar/0ec7f85406a1ebfe88040b2e90927c27?size=100&amp;default=retro" alt="jjrosent" />
+            <span>jjrosent</span>
+          </a>
+          published
+          <span data-date="2016-01-05T22:13:00.303Z" data-date-format="relative">
+            2016-01-05T22:13:00.303Z
+          </span>
+      </li>
+
+    <li>
+      <strong>2.0.6</strong>
+      is the latest
+        of 69 releases
+    </li>
+
+      <li>
+        <a href="https://github.com/voodootikigod/node-serialport">github.com/voodootikigod/node-serialport</a>
+      </li>
+
+
+      <li>
+          <a href="http://opensource.org/licenses/MIT">MIT</a>
+        <span> license</span>
+      </li>
+  </ul>
+
+    <h3 title="collaborators">
+      <a href="https://www.npmjs.com/package/serialport/access">Collaborators</a>
+    </h3>
+
+    <ul class="humans collaborators">
+        <li>
+            <a href="https://www.npmjs.com/~voodootikigod" rel="tipsy" title="voodootikigod">
+                <img src="https://s.gravatar.com/avatar/3f2c6598b33748884142e339049d0d81?size=100&amp;default=retro" alt="voodootikigod">
+            </a>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/~jjrosent" rel="tipsy" title="jjrosent">
+                <img src="https://s.gravatar.com/avatar/0ec7f85406a1ebfe88040b2e90927c27?size=100&amp;default=retro" alt="jjrosent">
+            </a>
+        </li>
+
+
+    </ul>
+
+    <h3>Stats</h3>
+    <ul class="box">
+
+        <li>
+          <strong class="pretty-number daily-downloads">1815</strong>
+          downloads in the last day
+        </li>
+        <li>
+          <strong class="pretty-number weekly-downloads">9082</strong>
+          downloads in the last week
+        </li>
+        <li>
+          <strong class="pretty-number monthly-downloads">33002</strong>
+          downloads in the last month
+        </li>
+
+        <li id="issues" data-ghapi="https://api.github.com/repos/voodootikigod/node-serialport">
+          <span class="original">Have an issue? <a href="https://github.com/voodootikigod/node-serialport/issues">File it.</a></span>
+            <span class="enhanced" style="display:none">
+              <a href="https://github.com/voodootikigod/node-serialport/issues"></a> on GitHub
+            </span>
+        </li>
+
+        <li id="pull_requests" style="display:none">
+          <a href="https://github.com/voodootikigod/node-serialport/pulls"></a> on GitHub
+        </li>
+
+    </ul>
+
+      <h3>Try it out</h3>
+      <ul class="box">
+        <li class="tonicdev"><a href="https://tonicdev.com/npm/serialport" target="_blank">Test serialport in your browser.</a></li>
+      </ul>
+
+  <h3>Keywords</h3>
+  <p class="list-of-links">
+      None
+  </p>
+
+  <h3>Dependencies (8)</h3>
+  <p class="list-of-links">
+          <a href="https://www.npmjs.com/package/sf">sf</a>,
+          <a href="https://www.npmjs.com/package/optimist">optimist</a>,
+          <a href="https://www.npmjs.com/package/node-pre-gyp-github">node-pre-gyp-github</a>,
+          <a href="https://www.npmjs.com/package/node-pre-gyp">node-pre-gyp</a>,
+          <a href="https://www.npmjs.com/package/nan">nan</a>,
+          <a href="https://www.npmjs.com/package/debug">debug</a>,
+          <a href="https://www.npmjs.com/package/bindings">bindings</a>,
+                <a href="https://www.npmjs.com/package/async">async</a>
+  </p>
+
+    <h3><a href="https://www.npmjs.com/browse/depended/serialport">Dependents</a></h3>
+    <p class="list-of-links dependents">
+
+          <a href="https://www.npmjs.com/package/pimatic-johnny-five">pimatic-johnny-five</a>,
+        
+          <a href="https://www.npmjs.com/package/johnny-five">johnny-five</a>,
+        
+          <a href="https://www.npmjs.com/package/cncjs">cncjs</a>,
+        
+          <a href="https://www.npmjs.com/package/iot-client">iot-client</a>,
+        
+          <a href="https://www.npmjs.com/package/node-x10-comm">node-x10-comm</a>,
+        
+          <a href="https://www.npmjs.com/package/openbci-sdk">openbci-sdk</a>,
+        
+          <a href="https://www.npmjs.com/package/nodejs-atu-socket">nodejs-atu-socket</a>,
+        
+          <a href="https://www.npmjs.com/package/digimesh">digimesh</a>,
+        
+          <a href="https://www.npmjs.com/package/flashmagic.js">flashmagic.js</a>,
+        
+          <a href="https://www.npmjs.com/package/avrgirl-arduino">avrgirl-arduino</a>,
+        
+          <a href="https://www.npmjs.com/package/particle-cli">particle-cli</a>,
+        
+          <a href="https://www.npmjs.com/package/breakout-server">breakout-server</a>,
+        
+          <a href="https://www.npmjs.com/package/mcom">mcom</a>,
+        
+          <a href="https://www.npmjs.com/package/uarmforjs">uarmforjs</a>,
+        
+          <a href="https://www.npmjs.com/package/irobot-roomba">irobot-roomba</a>,
+        
+          <a href="https://www.npmjs.com/package/telehash-nix-usb">telehash-nix-usb</a>,
+        
+          <a href="https://www.npmjs.com/package/cncserver">cncserver</a>,
+        
+          <a href="https://www.npmjs.com/package/noolite">noolite</a>,
+        
+          <a href="https://www.npmjs.com/package/tinyg">tinyg</a>,
+        
+          <a href="https://www.npmjs.com/package/electroknit">electroknit</a>,
+        
+          <a href="https://www.npmjs.com/package/nodemcu-tool">nodemcu-tool</a>,
+        
+          <a href="https://www.npmjs.com/package/node-red-contrib-gpio">node-red-contrib-gpio</a>,
+        
+          <a href="https://www.npmjs.com/package/homeduino">homeduino</a>,
+        
+          <a href="https://www.npmjs.com/package/nhb-balance">nhb-balance</a>,
+        
+          <a href="https://www.npmjs.com/package/modem-serial">modem-serial</a>,
+        
+          <a href="https://www.npmjs.com/package/gsmjs">gsmjs</a>,
+        
+          <a href="https://www.npmjs.com/package/sphero-pwn">sphero-pwn</a>,
+        
+          <a href="https://www.npmjs.com/package/gladys">gladys</a>,
+        
+          <a href="https://www.npmjs.com/package/indulge">indulge</a>,
+        
+          <a href="https://www.npmjs.com/package/reflecta">reflecta</a>,
+        
+          <a href="https://www.npmjs.com/package/obdjs">obdjs</a>,
+        
+          <a href="https://www.npmjs.com/package/elitech-reader">elitech-reader</a>,
+        
+          <a href="https://www.npmjs.com/package/octalbonescript">octalbonescript</a>,
+        
+          <a href="https://www.npmjs.com/package/r-pi-brick">r-pi-brick</a>,
+        
+          <a href="https://www.npmjs.com/package/proxid">proxid</a>,
+        
+          <a href="https://www.npmjs.com/package/home-controller">home-controller</a>,
+        
+          <a href="https://www.npmjs.com/package/osc">osc</a>,
+        
+          <a href="https://www.npmjs.com/package/sim900js">sim900js</a>,
+        
+          <a href="https://www.npmjs.com/package/hybridgroup-spheron">hybridgroup-spheron</a>,
+        
+          <a href="https://www.npmjs.com/package/node-red-node-serialport">node-red-node-serialport</a>,
+        
+          <a href="https://www.npmjs.com/package/gt511c3">gt511c3</a>,
+        
+          <a href="https://www.npmjs.com/package/x10-remote">x10-remote</a>,
+        
+          <a href="https://www.npmjs.com/package/nodebots-interchange">nodebots-interchange</a>,
+        
+          <a href="https://www.npmjs.com/package/arduino-test-runner">arduino-test-runner</a>,
+        
+          <a href="https://www.npmjs.com/package/spark-cli">spark-cli</a>,
+        
+          <a href="https://www.npmjs.com/package/sensorjs">sensorjs</a>,
+        
+          <a href="https://www.npmjs.com/package/bluetooth-programmer">bluetooth-programmer</a>,
+        
+          <a href="https://www.npmjs.com/package/serialdevice">serialdevice</a>,
+        
+          <a href="https://www.npmjs.com/package/iridium-sbd">iridium-sbd</a>,
+                  <a href="https://www.npmjs.com/package/espruino">espruino</a>,
+        <a href="https://www.npmjs.com/browse/depended/serialport">and more</a>
+    </p>
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "serialport",
+      "description": "Welcome your robotic javascript overlords. Better yet, program them!",
+      "url": "https://www.npmjs.com/package/serialport",
+      "keywords": "",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+         "@type": "Offer",
+         "price": "0.00"
+      }
+    }
+  </script>
+
+    <div class="hiring-container" data-template="sidebar"></div>
+
+</div>
+
+
+    </div>
+
+  <footer>
+
+    <div class="container">
+
+
+        <ul class="columnar">
+          <li>
+            <h3>You Need Help</h3>
+            <ul class="links">
+              <li><a href="https://docs.npmjs.com">Documentation</a></li>
+              <li><a href="https://www.npmjs.com/support">Support / Contact Us</a></li>
+              <li><a href="http://status.npmjs.org/">Registry Status</a></li>
+              <li><a href="https://github.com/npm/newww/issues">Website Issues</a></li>
+              <li><a href="https://github.com/npm/npm/issues">CLI Issues</a></li>
+              <li><a href="https://www.npmjs.com/security">Security</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <h3>About npm</h3>
+            <ul class="links">
+              <li><a href="https://www.npmjs.com/about">About npm, Inc</a></li>
+              <li><a href="https://www.npmjs.com/jobs">Jobs</a></li>
+              <li><a href="https://www.npmjs.com/npm-weekly">npm Weekly</a></li>
+              <li><a href="http://blog.npmjs.org">Blog</a></li>
+              <li><a href="https://twitter.com/npmjs">Twitter</a></li>
+              <li><a href="https://github.com/npm">GitHub</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <h3>Legal Stuff</h3>
+            <ul class="links">
+              <li><a href="https://www.npmjs.com/policies/terms">Terms of Use</a></li>
+              <li><a href="https://www.npmjs.com/policies/conduct">Code of Conduct</a></li>
+              <li><a href="https://www.npmjs.com/policies/disputes">Package Name Disputes</a></li>
+              <li><a href="https://www.npmjs.com/policies/privacy">Privacy Policy</a></li>
+              <li><a href="https://www.npmjs.com/policies/receiving-reports">Reporting Abuse</a></li>
+              <li><a href="https://www.npmjs.com/policies/">Other policies</a></li>
+            </ul>
+          </li>
+        </ul>
+
+
+    </div>
+
+    <div class="container centered">
+      <a href="https://www.npmjs.com/" id="npm-loves-you">
+        npm loves you
+      </a>
+    </div>
+
+  </footer>
+  
+  <script defer src="https://www.npmjs.com/static/js/vendor.min.76ac749e.js"></script>
+  <script defer async src="https://cdn.optimizely.com/js/3318080746.js"></script>
+  <script defer async src='https://img.en25.com/i/elqCfg.min.js'></script><!-- Eloqua -->
+</body>
+</html>
+
+<!-- pid=6130 bb7429b95729b0a8c86d4b21011b580fc41d3f39 https://www.npmjs.com www-12-west.internal.npmjs.com  -->
