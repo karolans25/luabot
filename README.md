@@ -10,6 +10,8 @@
 
 ## web y nodejs ##
 
+![luabot_nodejs.png](https://bitbucket.org/repo/zbxzr5/images/2923158634-luabot_nodejs.png)
+
 Se requiere tres aplicaciones para poder ejecutar luabot con 
 nodejs.
  
@@ -32,5 +34,12 @@ Además, este script debe estar al nivel de los directorios webIDEnodejs, server
 De lo contrario no se ejecutará correctamente.
 Por defecto el navegador que se lanzara sera iceweasel. Si usa 
 otro navegador comente y descomente el de su eleccion.
+
+## App Google Chrome ##
+
+Solo se debe buscar en la tienda e instalar
+
+![luabot_app.png](https://bitbucket.org/repo/zbxzr5/images/3758267904-luabot_app.png)
+
 
 Att: grupo pinguinoTux
