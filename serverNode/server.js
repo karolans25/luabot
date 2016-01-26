@@ -53,6 +53,17 @@ function upload(){
 		});	
 }
 
+function upload(){
+	exec('./serverNode/luaupload.py upload -p /dev/ttyUSB0 -b 9600 ./serverNode/init.lua',
+		function(error, stdout, stderr) {
+			console.log('stdout: '+ stdout);
+			console.log('stderr ' + stderr);
+			if( error !== null) {
+				console.log('exec error: ' + error);
+			}
+		});	
+}
+
 // SOCKET.IO
 
 var io = require('socket.io').listen(server);

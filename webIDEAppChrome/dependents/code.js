@@ -246,7 +246,8 @@ Code.LANG = Code.getLang();
  * List of tab names.
  * @private
  */
-Code.TABS_ = ['blocks', 'lua'/*, 'xml'*/];
+// xml es necesario para guardar los programas realizados con blockly
+Code.TABS_ = ['blocks', 'lua', 'xml'];
 
 Code.selected = 'blocks';
 
@@ -257,7 +258,7 @@ Code.selected = 'blocks';
 Code.tabClick = function(clickedName) {
   // If the XML tab was open, save and render the content.
   if (document.getElementById('tab_xml').className == 'tabon') {
-    var xmlTextarea = document.getElementById('content_xml');
+	var xmlTextarea = document.getElementById('content_xml');
     var xmlText = xmlTextarea.value;
     var xmlDom = null;
     try {
@@ -392,8 +393,8 @@ Code.init = function() {
 
   Code.tabClick(Code.selected);
 
-  Code.bindClick('trashButton',
-      function() {Code.discard(); Code.renderContent();});
+  //Code.bindClick('trashButton',
+  //    function() {Code.discard(); Code.renderContent();});
   Code.bindClick('runButton', Code.runJS);
   // Disable the link button if page isn't backed by App Engine storage.
   var linkButton = document.getElementById('linkButton');

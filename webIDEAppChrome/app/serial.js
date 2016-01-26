@@ -1,8 +1,8 @@
 var connectionId = -1;
 
-/**************************************
- * Buffer a string
- * ***********************************/
+/************************************************************************
+ * 			BEGIN ARRAY_BUFFER TO STRING
+ ***********************************************************************/
 
 /* Interprets an ArrayBuffer as UTF-8 encoded string data. */
 var ab2str = function(buf) {
@@ -11,16 +11,33 @@ var ab2str = function(buf) {
   return decodeURIComponent(escape(encodedString));
 };
 
+/************************************************************************
+ * 			END ARRAY_BUFFER TO STRING
+ ***********************************************************************/
 
-/**************************************
- *	Read port
- * ************************************
+
+/*************************************************************************
+ *							BEGIN READ_PORT
+ * ***********************************************************************
  * Esta funcion está diseña explícitamenta para
  * el esp8266 con el firmware nodeMCU de lua.
- * Esta función es el callback para leer el serial port*/
+ * Esta función es el callback para leer el serial port.
+ * Para obtener datos (inforamción) del puerto serial se debe iniciar
+ * el evento sigiente donde el callback es la función onReceiveCallback.
+ * 
+ * chrome.serial.onReceive.addListener(onReceiveCallback)
+ * onReceiveCallback depende de la función ab2str (ARRAY_BUFFER TO STRING)
+ * 
+ * Att: Grupo Pinguino Tux
+ * 
+ * **********************************************************************/
 
 var stringReceived = ''; 	// Almacena la información recibida 
 var str_before = "";		// Almacena un caracter de un estado anterior
+var serialMessage = "";		// Mensage de confirmación de puerto serial
+var send_code = false;		// Aprobación de envío de código
+var code_blockly = "";		// Código recibido por parte de blockly
+var counter_code = 0;		// Contador para el string del code a enviar
 
 var onReceiveCallback = function(info) {
 	if ( info.connectionId && info.data) {
@@ -36,8 +53,10 @@ var onReceiveCallback = function(info) {
 			
 			if (send_code == true){
 				//console.log("count "+counter_code);
-				// Esta es una de las partes más delicadas de l programa ya que tiene la responsabilidad de avanzar o detenerse
-				// Dependiendo sí el esp8266 devuelve o no el prompt despues de un newline (\n).
+				// Esta es una de las partes más delicadas de l programa ya que
+				// tiene la responsabilidad de avanzar o detenerse
+				// Dependiendo sí el esp8266 devuelve o no el prompt después de 
+				// un newline (\n).
 				if ((str_1 == code_blockly[counter_code]) || (str == '\n> ') || (str == '\n>> ') || (str == '> ') || (str == '>> ') || ('> ' == (str_before + str_1))){
 					//console.log("?: " + str_1);
 					//console.log("??: " + str);
@@ -47,7 +66,10 @@ var onReceiveCallback = function(info) {
 						writeSerial(code_blockly[counter_code]);
 					}else{
 						send_code = false;
-						console.log(counter_code);	// Retorna el fin de conteo que será igual al tamaño del code_blockly
+						// Retorna el fin de conteo que será igual al tamaño 
+						// del code_blockly
+						console.log(counter_code);
+						jAlert(serialMessage, 'Comunicación con ESP8266', function(){});
 					}
 				}
 			}
@@ -62,6 +84,12 @@ var onReceiveCallback = function(info) {
 //var readSerial =  function(){
 //	chrome.serial.onReceive.addListener(onReceiveCallback);
 //}
+
+/*************************************************************************
+ *							END READ_PORT
+ * ***********************************************************************
+
+
 
 /***************************************
  * 		Replace charInString

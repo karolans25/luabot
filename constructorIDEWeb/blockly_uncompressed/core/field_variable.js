@@ -163,9 +163,14 @@ Blockly.FieldVariable.dropdownChange = function(text) {
     Blockly.hideChaff();
     //var newVar = window.prompt(promptText, defaultText);
     var newVar = document.getElementById("terminal0").value;
+    var tempStatus1 = "";
+	if(newVar==""){
+		tempStatus1 = "Escriba primero el nombre de la variable aquí >>"
+	}
+	document.getElementById('statusInfo').innerText=tempStatus1;
     document.getElementById("terminal0").value = "";
-    console.log(newVar);
-    // Merge runs of whitespace.  Strip leading and trailing whitespace.
+	
+	// Merge runs of whitespace.  Strip leading and trailing whitespace.
     // Beyond this, all names are legal.
     if (newVar) {
       newVar = newVar.replace(/[\s\xa0]+/g, ' ').replace(/^ | $/g, '');
