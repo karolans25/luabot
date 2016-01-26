@@ -49,9 +49,12 @@ function saveFile() {
 }
 
 function upload() {
-	var code = Blockly.Lua.workspaceToCode(Code.workspace);
-	socket.emit('upload', code);  
-	document.getElementById('statusInfo').innerText = ">> UpLoad esp8266";
+	var result = window.prompt('Tenga en cuenta que si un programa no funciona correctamente puede generarle problemas que LuaBot NO sea capaz de solucionar.\n\nAsegúrese que funciona bien ejecutando primero el programa con el botón RUN (cohete).\n\n¿Desea subir el programa al init.lua del ESP? Si/No','si');
+	if (result == "si" || result == "yes" || result == "Si" || result == "Yes" || result == "SI" || result == "YES"){
+		var code = Blockly.Lua.workspaceToCode(Code.workspace);
+		socket.emit('upload', code);  
+		document.getElementById('statusInfo').innerText = ">> UpLoad esp8266";
+	}
 }
 
 function run() {

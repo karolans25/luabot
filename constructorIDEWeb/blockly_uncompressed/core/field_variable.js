@@ -165,8 +165,10 @@ Blockly.FieldVariable.dropdownChange = function(text) {
     var newVar = document.getElementById("terminal0").value;
     var tempStatus1 = "";
 	if(newVar==""){
-		tempStatus1 = "Escriba primero el nombre de la variable aquí >>"
-	}
+		tempStatus1 = "Escriba primero el nombre de la variable aquí >>";
+		informarEstado('Operación no realizada');
+	}else
+		informarEstado('Cambio en la variable realizado');
 	document.getElementById('statusInfo').innerText=tempStatus1;
     document.getElementById("terminal0").value = "";
 	

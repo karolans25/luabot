@@ -13,6 +13,8 @@
   <script src="./modulesNodeMCU/gpio.js"></script>
   <script src="./modulesNodeMCU/wifi.js"></script>
   <script src="./modulesNodeMCU/html.js"></script>
+  <script src="./modulesNodeMCU/timer.js"></script>
+  <script src="./modulesNodeMCU/pwm.js"></script>
   <script language="javascript" src="./app/action.js"></script>
   <script language="javascript" src="./app/serial.js"></script>
   <!-- fileSystem -->
@@ -61,6 +63,7 @@
             <td id="tab_xml" class="taboff">XML</td>
   			<td class="tabmax">
 				<!-- Para visualizar estados -->
+				<span id = "statusInfo__" ></span>
 				<mark><span id = "statusInfo" ></span></mark>
 				<input id = "terminal0" type = "text" name = Terminal">	
 				<!--my buttons -->
@@ -408,6 +411,18 @@
       <block type="button_statement"></block>
       <block type="button"></block>
       <block type="html_text"></block>
+	</category>
+	<category name="Temporizador">
+      <block type="timer_delay"></block>
+      <block type="timer_alarm"></block>
+      <block type="timer_stop"></block>
+      <block type="timer_now"></block>
+    </category>
+	<category name="PWM">
+      <block type="pwm_setup"></block>
+      <block type="pwm_start"></block>
+      <block type="pwm_stop"></block>
+      <block type="pwm_close"></block>
     </category>
   </xml>
 

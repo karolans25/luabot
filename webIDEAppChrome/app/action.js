@@ -25,7 +25,16 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.getElementById('upload').addEventListener('click', upload);
 	
 	document.getElementById('trashButton').addEventListener('click', clear);
+	document.getElementById('playProgram').addEventListener('onMouseOver', buttonRunInfo);
 });
+
+function buttonRunInfo(){
+	informarEstado('RUN: Corre el programa en el interprete del ESP');
+}
+
+function informarEstado(info){
+	document.getElementById('statusInfo__').textContent='<<' + info + '>>';	
+}
 
 function clear() {
 	
@@ -80,40 +89,45 @@ function blockly_load() {
 function upload() {
 	//document.getElementById ("terminal0").value = ">> UpLoad esp8266";
 	//document.getElementById('labelVariable').innerText = "prueba";		
+	jPrompt('Tenga en cuenta que si un programa no funciona correctamente puede generarle problemas que LuaBot NO sea capaz de solucionar.\n\nAsegúrese que funciona bien ejecutando primero el programa con el botón RUN (cohete).\n\n¿Desea subir el programa al init.lua del ESP? Si/No','si', 'Upload init.lua', function(result){
+		if (result == "si" || result == "yes" || result == "Si" || result == "Yes" || result == "SI" || result == "YES"){
+			
+			var temp_1 = '';
+			var temp_2 = '';
 	
-	var temp_1 = '';
-	var temp_2 = '';
-	
-	code_blockly = Blockly.Lua.workspaceToCode(Code.workspace);
+			code_blockly = Blockly.Lua.workspaceToCode(Code.workspace);
 
-	for (var i = 0; i < code_blockly.length; i++) {
-		if ((temp_1 != '') || (code_blockly[i] != ' ')){
-			if (code_blockly[i] != '\n')
-				temp_1+= code_blockly[i];
-			else{
-				temp_2 += 'file.writeline([[' + temp_1 + ']])\n';
-				temp_1 = '';
-			}
-		}
-	};
-	temp_1 =	'file.remove("init.lua")\n'+
-				'file.open("init.lua", "w")\n'+
-				'file.writeline([[print(1)]])\n'+
-				'file.close()\n'+
-				'file.open("init.lua", "w+")\n'+
-				temp_2 +
-				'file.close()\n';
-				//'node.restart(); // podría ser agregado a temp_1 si
-				//se quiere que depues de guardar el init.lua sea ejecutado
-				//de inmediato. también es posible hace uso del comando
-				// dofile("init.lua"); para ejecutarlo de una vez
-	//console.log(code_blockly);
-	//console.log(temp_1);
-	code_blockly = ';\n' + temp_1;				// Preparando código para enviar serialmente
-	send_code = true;							// Habilitar envío de código
-	counter_code = 0;							// Inicializar de código
-	writeSerial(code_blockly[counter_code]);	// Inicializar arranque de envío
-	serialMessage = 'Programa guardado en el esp8266 como init.lua';
+			for (var i = 0; i < code_blockly.length; i++) {
+				if ((temp_1 != '') || (code_blockly[i] != ' ')){
+					if (code_blockly[i] != '\n')
+						temp_1+= code_blockly[i];
+					else{
+						temp_2 += 'file.writeline([[' + temp_1 + ']])\n';
+						temp_1 = '';
+					}
+				}
+			};
+			temp_1 =	'file.remove("init.lua")\n'+
+						'file.open("init.lua", "w")\n'+
+						'file.writeline([[print(1)]])\n'+
+						'file.close()\n'+
+						'file.open("init.lua", "w+")\n'+
+						temp_2 +
+						'file.close()\n';
+						//'node.restart(); // podría ser agregado a temp_1 si
+						//se quiere que depues de guardar el init.lua sea ejecutado
+						//de inmediato. también es posible hace uso del comando
+						// dofile("init.lua"); para ejecutarlo de una vez
+			//console.log(code_blockly);
+			//console.log(temp_1);
+			code_blockly = ';\n' + temp_1;				// Preparando código para enviar serialmente
+			send_code = true;							// Habilitar envío de código
+			counter_code = 0;							// Inicializar de código
+			writeSerial(code_blockly[counter_code]);	// Inicializar arranque de envío
+			serialMessage = 'Programa guardado en el esp8266 como init.lua';
+		} else
+			informarEstado('Se cancela subir el init.lua a ESP');
+	});
 }
 
 

@@ -31,12 +31,12 @@ function saveAs(fileToSave) {
 function showError(anError) {
 	   var errorEl = error;
 	   errorEl.innerHTML = anError;
-	   printDialog('No se guardó ningún archivo.', 'Atención!!!');
+	   console.log('Acción cancelada.');
 }
 
 // Inicializa y muestra que en efecto no hay errores
 function clearError() {
-	printDialog('Se ha guardado Satisfactoriamente ', 'Error');
+	console.log('none error');
 	// Modo de prueba 
 	// console.log(fileEntry);
 }
@@ -71,6 +71,7 @@ function saveToEntry(fileToSave) {
 		};
 		var blob = new Blob([fileToSave], {type: 'text/plain'});
 		fileWriter.write(blob);
+		informarEstado("Se ha guardado el proyecto");
 	});
 }
 
