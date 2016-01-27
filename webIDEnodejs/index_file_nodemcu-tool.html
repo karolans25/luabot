@@ -29,11 +29,12 @@
 		  </h1>
       </td>
       <td class="farSide">
-        	<button type="button" onclick="saveFile()">
+        	<button id="saveFile" onclick="saveFile()">
 				<img src='./imag/diskette.gif'></button>
-			  Open File>> <input id="openFile" type="file" name="OpenFile"i>
-			  Open Block>> <input id="openBlock" type="file" name="OpenBlock">
-		  <select id="languageMenu"></select>
+			  Abrir>> <input id="openFile" type="file" name="OpenFile"i>
+			  Agregar>> <input id="openBlock" type="file" name="OpenBlock">
+			  <span>Funciones Especiales</span>
+			  <select id="language_Menu"></select>
       </td>
     </tr>
     <tr>
@@ -46,11 +47,12 @@
 			<td class="tabmin">&nbsp;</td>
             <td id="tab_xml" class="taboff">XML</td>
   			<td class="tabmax">
-			<span id = "statusInfo" > Status </span>
+		  	  <span id = "statusInfo" > Status </span>
 				<input id = "terminal0" type = "text" name = "Terminal">	
-        		<button type="button" onclick="upload()">
+			  <select id="serialPort"></select>
+				<button id="upload" onclick="upload()">
 					<img src='./imag/subir.gif'></button>
-        		<button type="button" onclick="run()">
+        		<button id="playProgram" onclick="run()">
 					<img src='./imag/run.gif'></button>
               <button id="trashButton" class="notext" title="...">
                 <img src='./dependents/media/1x1.gif' class="trash icon21">

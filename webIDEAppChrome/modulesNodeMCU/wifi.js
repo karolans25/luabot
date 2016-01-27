@@ -1,4 +1,6 @@
-// Modo de Wifi
+/*****************************************************************
+ * 						BEGIN WIFI SET MODE
+ * ***************************************************************/
 
 Blockly.Blocks['wfi_set_mode'] = {
   init: function() {
@@ -17,12 +19,14 @@ Blockly.Blocks['wfi_set_mode'] = {
 Blockly.Lua['wfi_set_mode'] = function(block) {
   var dropdown_modo = block.getFieldValue('modo');
   // TODO: Assemble Lua into code variable.
-  var code = 'wifi.setmode(' + dropdown_modo + ');\n';
+  var code = 'wifi.setmode(' + dropdown_modo + ')\n';
   return code;
 };
 
+/*****************************************************************
+ * 					BEGIN ACCESS POINT CONFIG
+ * ***************************************************************/
 
-// Acces Point
 Blockly.Blocks['wifi_ap_config'] = {
   init: function() {
     this.appendDummyInput()

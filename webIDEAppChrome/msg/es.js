@@ -20,5 +20,11 @@ var MSG = {
   linkAlert: "Comparte tus bloques con este enlace:\n\n%1",
   hashError: "«%1» no corresponde con ningún programa guardado.",
   xmlError: "No se pudo cargar el archivo guardado.  ¿Quizá fue creado con otra versión de Blockly?",
-  badXml: "Error de análisis XML:\n%1\n\nSelecciona OK para abandonar tus cambios o Cancelar para seguir editando el XML."
+  badXml: "Error de análisis XML:\n%1\n\nSelecciona OK para abandonar tus cambios o Cancelar para seguir editando el XML.",
+  buttonRun: "RUN: Ejecuta el programa en el interprete del ESP8266.",
+  buttonUpload: "UPLOAD: Guarda el programa en el init.lua del ESP8266.",
+  buttonSaveAs: "Guardar el proyecto LuaBot con un nuevo nombre.",
+  buttonSave: "Guardar cambios en el proyecto LuaBot.",
+  buttonOpen: "Abrir un nuevo proyecto LuaBot.",
+  buttonOpenBlock: "Agregar un proyecto LuaBot como parte\ndel proyecto que está realizando."
 };

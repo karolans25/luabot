@@ -1,3 +1,7 @@
+/**********************************************************
+ * 					BEGIN GPIO MODE
+ * ********************************************************/
+
 Blockly.Blocks['gpio_mode'] = {
   init: function() {
     this.appendValueInput("gpio")
@@ -18,12 +22,15 @@ Blockly.Lua['gpio_mode'] = function(block) {
   var value_gpio = Blockly.Lua.valueToCode(block, 'gpio', Blockly.Lua.ORDER_ATOMIC);
   var dropdown_gpio_set = block.getFieldValue('gpio_set');
   // TODO: Assemble Lua into code variable.
-  var code = 'gpio.mode(' + value_gpio + ', gpio.' + dropdown_gpio_set + ');\n';
+  var code = 'gpio.mode(' + value_gpio + ', gpio.' + dropdown_gpio_set + ')\n';
   return code;
 };
 
 
-// Write gpio
+/*****************************************************************
+ * 						BEGIN GPIO WRITE
+ * **************************************************************/
+
 Blockly.Blocks['gpio_write'] = {
   init: function() {
     this.appendValueInput("gpio")
@@ -51,8 +58,10 @@ Blockly.Lua['gpio_write'] = function(block) {
   return code;
 };
 
+/*****************************************************************
+ * 						BEGIN GPIO READ
+ * ***************************************************************/
 
-// gpio_Read
 Blockly.Blocks['gpio_read'] = {
   init: function() {
     this.appendValueInput("gpio")
@@ -73,7 +82,10 @@ Blockly.Lua['gpio_read'] = function(block) {
   return [code, Blockly.Lua.ORDER_NONE];
 };
 
-// Toggle gpio
+/*****************************************************************
+ * 						BEGIN GPIO TOGGLE
+ * ***************************************************************/
+
 Blockly.Blocks['gpio_toggle'] = {
   init: function() {
     this.appendValueInput("gpio")

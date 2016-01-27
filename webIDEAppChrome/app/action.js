@@ -32,8 +32,10 @@ function buttonRunInfo(){
 	informarEstado('RUN: Corre el programa en el interprete del ESP');
 }
 
-function informarEstado(info){
-	document.getElementById('statusInfo__').textContent='<<' + info + '>>';	
+
+function informarEstado(info){	
+	var time =new Date();
+	document.getElementById('statusInfo__').textContent='<<'+ time.getHours() + ':'+ time.getMinutes() + '"' + time.getSeconds() + ':$ '+ info + '>>';	
 }
 
 function clear() {

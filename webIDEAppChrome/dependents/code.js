@@ -463,6 +463,15 @@ Code.initLanguage = function() {
   document.getElementById('runButton').title = MSG['runTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
 
+	// Agregando títulos a los botones (Que aparezca el significado al pasar el 
+	// mouse sobre él onMouseOver
+  document.getElementById('saveFileAs').title = MSG['buttonSaveAs'];
+  document.getElementById('saveFile').title = MSG['buttonSave'];
+  document.getElementById('openFile').title = MSG['buttonOpen'];
+  document.getElementById('loadBlock').title = MSG['buttonOpenBlock'];
+  document.getElementById('upload').title = MSG['buttonUpload'];
+  document.getElementById('playProgram').title = MSG['buttonRun'];
+
   var categories = ['catLogic', 'catLoops', 'catMath', 'catText', 'catLists',
                     'catColour', 'catVariables', 'catFunctions'];
   for (var i = 0, cat; cat = categories[i]; i++) {

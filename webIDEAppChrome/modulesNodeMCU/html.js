@@ -1,4 +1,7 @@
-// Página Web
+/***************************************************************
+ * 					BEGIN PAGE HTML
+ * ************************************************************/
+
 Blockly.Blocks['page_html'] = {
   init: function() {
     this.appendDummyInput()
@@ -29,10 +32,10 @@ Blockly.Lua['page_html'] = function(block) {
   var code = 'srv=net.createServer(net.TCP)' +
 	'srv:listen(80,function(conn)\n' +
 	'conn:on("receive", function(client,request)\n' +
-	'local buf = "";\n'+
-	'local _, _, method, path, vars = string.find(request, "([A-Z]+) (.+)?(.+) HTTP");\n' +
+	'local buf = ""\n'+
+	'local _, _, method, path, vars = string.find(request, "([A-Z]+) (.+)?(.+) HTTP")\n' +
 	'if(method == nil)then\n' +
-	'_, _, method, path = string.find(request, "([A-Z]+) (.+) HTTP");\n' +
+	'_, _, method, path = string.find(request, "([A-Z]+) (.+) HTTP")\n' +
 	'end\n' +
 	'local _GET = {}\n' +
 	'if (vars ~= nil)then\n' +
@@ -40,19 +43,21 @@ Blockly.Lua['page_html'] = function(block) {
 	'_GET[k] = v\n' +
 	'end\n' +
 	'end\n' +
-	'buf = buf.."<h1>' + text_title + '</h1>";\n' +
+	'buf = buf.."<h1>' + text_title + '</h1>"\n' +
 	statements_buttons +
 	'local _on,_off = "",""\n' +
 	statements_logic +
-	'client:send(buf);\n' +
-	'client:close();\n' +
-	'collectgarbage();\n' + 
+	'client:send(buf)\n' +
+	'client:close()\n' +
+	'collectgarbage()\n' + 
 	'end)\n' +
 	'end)\n';
   return code;
 };
 
-// Declaración de Botones
+/*****************************************************************
+ * 		BEGIN BUTTON STATEMENT
+ * **************************************************************/
 
 Blockly.Blocks['button_statement'] = {
   init: function() {
@@ -84,7 +89,9 @@ Blockly.Lua['button_statement'] = function(block) {
 };
 
 
-// Uso de Botones
+/***************************************************************
+ * 					BEGIN BUTTON
+ * ************************************************************/
 
 Blockly.Blocks['button'] = {
   init: function() {
@@ -107,7 +114,9 @@ Blockly.Lua['button'] = function(block) {
 };
 
 
-// Texto Pagina Web
+/************************************************************
+ * 					BEGIN HTML TEXT
+ * *********************************************************/
 
 Blockly.Blocks['html_text'] = {
   init: function() {
@@ -126,6 +135,6 @@ Blockly.Blocks['html_text'] = {
 Blockly.Lua['html_text'] = function(block) {
   var text_text = block.getFieldValue('text');
   // TODO: Assemble Lua into code variable.
-  var code = 'buf = buf.."<p>' + text_text + '</p>";\n';
+  var code = 'buf = buf.."<p>' + text_text + '</p>"\n';
   return code;
 };

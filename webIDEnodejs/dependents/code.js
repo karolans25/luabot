@@ -154,7 +154,8 @@ Code.loadBlocks = function(defaultXml) {
 /**
  * Save the blocks and reload with a different language.
  */
-Code.changeLanguage = function() {
+// Comentado por no uso de lenguaje ...Johnny
+/*Code.changeLanguage = function() {
   // Store the blocks for the duration of the reload.
   // This should be skipped for the index page, which has no blocks and does
   // not load Blockly.
@@ -170,16 +171,16 @@ Code.changeLanguage = function() {
       languageMenu.options[languageMenu.selectedIndex].value);
   var search = window.location.search;
   if (search.length <= 1) {
-    search = '?lang=' + newLang;
-  } else if (search.match(/[?&]lang=[^&]*/)) {
-    search = search.replace(/([?&]lang=)[^&]*/, '$1' + newLang);
-  } else {
+    search = '?lang=' + newLang;**********************/ 
+  //} else if (search.match(/[?&]lang=[^&]*/)) { //****************
+//    search = search.replace(/([?&]lang=)[^&]*/, '$1' + newLang);
+/*  } else {
     search = search.replace(/\?/, '?lang=' + newLang + '&');
   }
 
   window.location = window.location.protocol + '//' +
       window.location.host + window.location.pathname + search;
-};
+};*/
 
 /**
  * Bind a function to a button's click event.
@@ -439,7 +440,9 @@ Code.initLanguage = function() {
     return 0;
   };
   languages.sort(comp);
-  // Populate the language selection menu.
+  /*
+   *	NO SELECCIONARÁ CAMBIOS DE IDIOMA
+   * // Populate the language selection menu.
   var languageMenu = document.getElementById('languageMenu');
   languageMenu.options.length = 0;
   for (var i = 0; i < languages.length; i++) {
@@ -452,7 +455,7 @@ Code.initLanguage = function() {
     languageMenu.options.add(option);
   }
   languageMenu.addEventListener('change', Code.changeLanguage, true);
-
+  */
   // Inject language strings.
   document.title += ' ' + MSG['title'];
   document.getElementById('title').textContent = MSG['title'];
@@ -461,6 +464,14 @@ Code.initLanguage = function() {
   document.getElementById('linkButton').title = MSG['linkTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
+
+	// Agregando títulos a los botones (Que aparezca el significado al pasar el 
+	// mouse sobre él onMouseOver
+  document.getElementById('saveFile').title = MSG['buttonSave'];
+  document.getElementById('openFile').title = MSG['buttonOpen'];
+  document.getElementById('openBlock').title = MSG['buttonOpenBlock'];
+  document.getElementById('upload').title = MSG['buttonUpload'];
+  document.getElementById('playProgram').title = MSG['buttonRun'];
 
   var categories = ['catLogic', 'catLoops', 'catMath', 'catText', 'catLists',
                     'catColour', 'catVariables', 'catFunctions'];

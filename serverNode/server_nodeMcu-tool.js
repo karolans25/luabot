@@ -6,7 +6,7 @@ var express = require('express');
 // Comunicación con nodeMCU ESP8266
 //var _connector = require('nodemcu-tool').Connector;
 //var con = new _connector('/dev/ttyUSB0', 9600);
-var serial_port = '/dev/ttyUSB0';
+var serial_port = "";
 
 // Obtener funciones de tipo servidor para guardar en app
 
@@ -87,7 +87,9 @@ function saveProject(fileBlockly) {
 }	
 
 
-// SOCKET.IO
+/* ************************************************
+ * 					BEGIN SOCKET.IO
+ * ***********************************************/
 
 var io = require('socket.io').listen(server);
 
@@ -108,6 +110,13 @@ io.sockets.on('connection', function(socket){
 	socket.on('saveProject', function(data){
 		saveProject(data);
 	});
+	socket.on('getListSerialPort', function() {
+		getListSerialPort();
+	});
+	socket.on('connectOtherPort', function(data){
+		serial_port = data;
+		socket.emit('statusInfo', 'Conectado con el servidor. Puerto serial a usar: ' + serial_port);
+	});
 
 	function list() {
 		exec('mkdir -p ~/luaBot/; ls ~/luaBot/', function(error, stdout, stderr){
@@ -115,11 +124,27 @@ io.sockets.on('connection', function(socket){
 			console.log('stderr ' + stderr);
 			if( error !== null) {				
 				console.log('exec error: ' + error);
-			}
-			socket.emit('saveFile', stdout);
+				socket.emit('statusInfo', error);
+			} else
+				socket.emit('saveFile', stdout);
+		});
+	}	
+	
+	function getListSerialPort() {
+		exec('ls /dev/ttyUSB*', function(error, stdout, stderr){
+			console.log('stdout: '+ stdout);
+			console.log('stderr ' + stderr);
+			if( error !== null) {				
+				console.log('exec error: ' + error);
+			} else
+				socket.emit('sendListSerialPort', stdout);
 		});
 	}	
 });
+
+/* *************************************************
+ * 					END SOCKET.IO
+ * ************************************************/
 
 }
 

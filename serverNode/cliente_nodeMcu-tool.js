@@ -2,8 +2,50 @@ var socket = io.connect('http://localhost:3000');
 
 socket.on('connected', reportarConexion);
 
+socket.on('statusInfo', function (data){
+		document.getElementById("statusInfo").textContent = data;
+});
+
 function reportarConexion() {
 	document.getElementById ("statusInfo").textContent = ">> Connected to server";
+	socket.emit('getListSerialPort');
+}
+
+socket.on('sendListSerialPort', function(data) {
+	listing(data);
+});
+
+function listing(data) {
+	var namePort = [];
+	var tempCounter = 0;
+	namePort[tempCounter] = "";
+	for (var i = 0; i < (data.length-1); i++) {
+		if (data[i] == '\n') {
+			tempCounter ++
+			namePort[tempCounter] = "";
+		}
+		else
+			namePort[tempCounter] += data[i];
+	};
+
+	var	portPicker=document.getElementById('serialPort');
+
+	for (var i = 0; i < namePort.length; i++) {
+		var portOption = document.createElement('option');
+		portOption.value = namePort[i];
+		portOption.textContent = namePort[i];
+		portPicker.appendChild(portOption);
+		if(namePort[0] != "")
+			socket.emit('connectOtherPort', namePort[0]);	
+		portPicker.addEventListener('change', function(){
+			selectingPort(portPicker);
+		}, true);	
+	};	
+}
+
+function selectingPort(portPicker){
+	var selected = portPicker.options[portPicker.selectedIndex].value;
+	socket.emit('connectOtherPort', selected);
 }
 
 socket.on('saveFile', function(data){
