@@ -40,15 +40,22 @@
       				Status:
       				<span id="status">Loading</span>
 					<td>
-						<select id="languageMenu"></select>
 				<button id="saveFileAs">
 					Save As</button>
 				<button id="saveFile">
 					<img src='./imag/diskette.gif'></button>
 				<button id="openFile">
-					Open</button>
+					<img src='./imag/blocklyOpen.png'></button>
 				<button id="loadBlock">
 					Load Block</button>
+				<span>Funciones Especiales</span>
+				<select id="specialFunction">
+					<option value="normalMode">Modo Normal</option>
+					<option value="doFileInit">Ejecutar Init.lua</option>
+					<option value="doFileRun">Ejecutar run.lua</option>
+					<option value="nodeRestart">Reiniciar ESP</option>
+					<option value="fileFormat">Borrar Memoria</option>
+				</select>
 					</td>
 		</td>
 	</tr>

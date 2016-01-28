@@ -25,8 +25,40 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.getElementById('upload').addEventListener('click', upload);
 	
 	document.getElementById('trashButton').addEventListener('click', clear);
-	document.getElementById('playProgram').addEventListener('onMouseOver', buttonRunInfo);
+
+document.getElementById('specialFunction').addEventListener('change', function(){
+	var optionSelected = document.getElementById('specialFunction').options[document.getElementById('specialFunction').selectedIndex].value;
+	executeOption(optionSelected);
+}, true);
 });
+
+/******************************************************
+ * 				BEGIN SPECIAL FUNCTION
+ * **************************************************/
+function executeOption(optionSelected){
+	if (optionSelected == "normalMode") 
+			informarEstado("Función en modo normal");
+	else if	(optionSelected == "doFileInit") 
+			specialSend('dofile("init.lua")', 'Guión init.lua ejecutandose en el interprete del ESP');
+	else if (optionSelected == "doFileRun") 
+			specialSend('dofile("run.lua")', 'Guión run.lua ejecutandose en el interprete del ESP');
+	else if (optionSelected == "nodeRestart")
+			specialSend('node.restart()', 'Reiniciando el ESP');
+	else if (optionSelected == "fileFormat")
+			specialSend('file.format()', 'Borrado y formateo de memoria del ESP');
+
+	function specialSend(data, message){
+		code_blockly = ';\n' + data + '\n';
+		counter_code = 0;
+		send_code = true;
+		serialMessage = message;
+		writeSerial(code_blockly[counter_code]);
+	}
+}
+	
+/****************************************************
+ * 			END SPECIAL FUNCTION
+ * **************************************************/
 
 function buttonRunInfo(){
 	informarEstado('RUN: Corre el programa en el interprete del ESP');
