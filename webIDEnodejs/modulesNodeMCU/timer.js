@@ -6,9 +6,7 @@ Blockly.Blocks['timer_delay'] = {
   init: function() {
     this.appendValueInput("delay")
         .setCheck("Number")
-        .appendField("Detener todo durante");
-    this.appendDummyInput()
-        .appendField("microsegundos");
+        .appendField("Detener todo durante (us): ");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -31,50 +29,16 @@ Blockly.Lua['timer_delay'] = function(block) {
 // Temporiza con un contador
 Blockly.Blocks['timer_alarm'] = {
   init: function() {
-    this.appendValueInput("id")
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["Alarma_0", "0"], ["Alarma_1", "1"], ["Alarma_2", "2"], ["Alarma_3", "3"], ["Alarma_4", "4"], ["Alarma_5", "5"], ["Alarma_6", "6"]]), "id_opt");
+    this.appendValueInput("delay")
         .setCheck("Number")
-        .appendField("Alarma número");
-	
-	this.appendValueInput("delay")
-	    .setCheck("Number")
-	    .appendField("Esperar para activar (milisegundos)")
-	
-	this.appendValueInput("repeat")
-	    .setCheck("Number")
-	    .appendField("Repetir alarma (0:no, 1:si)");
-	
-	this.appendStatementInput("do")
-	    .setCheck(null)
-	    .appendField("Cuando se activa hacer:");
-	this.setInputsInline(false);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(65);
-    this.setTooltip('');
-    this.setHelpUrl('http://www.example.com/');
-  }
-};
-
-Blockly.Lua['timer_alarm'] = function(block) {
-  var value_id = Blockly.Lua.valueToCode(block, 'id', Blockly.Lua.ORDER_ATOMIC);
-  var value_delay = Blockly.Lua.valueToCode(block, 'delay', Blockly.Lua.ORDER_ATOMIC);
-  var value_repeat = Blockly.Lua.valueToCode(block, 'repeat', Blockly.Lua.ORDER_ATOMIC);
-  var statements_do = Blockly.Lua.statementToCode(block, 'do');
-  // TODO: Assemble Lua into code variable.
-  var code = 'tmr.alarm(' + value_id + ', ' + value_delay + ', ' + value_repeat + ', function()\n'
-	+ statements_do + 'end )\n';	
-  return code;
-};
-
-
-
-// timer stop 
-// Detiene la alarma según el id
-Blockly.Blocks['timer_stop'] = {
-  init: function() {
-    this.appendValueInput("id")
-        .setCheck("Number")
-        .appendField("Detener la alarma número")
+        .appendField("Esperar para activar (ms):");
+    this.appendStatementInput("do")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField("Repetir alarma")
+        .appendField(new Blockly.FieldDropdown([["Si", "1"], ["No", "0"]]), "repeat_opt");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -84,29 +48,39 @@ Blockly.Blocks['timer_stop'] = {
   }
 };
 
-Blockly.Lua['timer_stop'] = function(block) {
-  var value_id = Blockly.Lua.valueToCode(block, 'id', Blockly.Lua.ORDER_ATOMIC);
+Blockly.Lua['timer_alarm'] = function(block) {
+  var dropdown_id_opt = block.getFieldValue('id_opt');
+  var value_delay = Blockly.Lua.valueToCode(block, 'delay', Blockly.Lua.ORDER_ATOMIC);
+  var statements_do = Blockly.Lua.statementToCode(block, 'do');
+  var dropdown_repeat_opt = block.getFieldValue('repeat_opt');
   // TODO: Assemble Lua into code variable.
-  var code = 'tmr.stop(' + value_id + ')\n';
+  // var code = 'tmr.alarm(' + value_id + ', ' + value_delay + ', ' + value_repeat + ', function()\n  ' + statements_do + '\n' + 'end )\n';
+  var code = 'tmr.alarm(' + dropdown_id_opt + ', ' + value_delay + ', ' + dropdown_repeat_opt + ', ' + 'function()\n' + statements_do + 'end )';
   return code;
 };
 
 
-Blockly.Blocks['timer_now'] = {
-  init: function() {
-	this.appendDummyInput()
-	    .appendField("Imprimir el valor del contador (us)");
-	this.setInputsInline(true);
-	this.setPreviousStatement(true, null);
-	this.setNextStatement(true, null);
-	this.setColour(65);
-	this.setTooltip('');
-	this.setHelpUrl('http://www.example.com/');
-  }
-};
 
-Blockly.Lua['timer_now'] = function(block) {
+// timer stop 
+// Detiene la alarma según el id
+Blockly.Blocks['timer_stop'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Detener");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["Alarma_0", "0"], ["Alarma_1", "1"], ["Alarma_2", "2"], ["Alarma_3", "3"], ["Alarma_4", "4"], ["Alarma_5", "5"], ["Alarma_6", "6"]]), "id_opt");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(65);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};  
+
+Blockly.Lua['timer_stop'] = function(block) {
+  var dropdown_id_opt = block.getFieldValue('id_opt');
   // TODO: Assemble Lua into code variable.
-  var code = 'print(tmr.now())\n';
+  var code = 'tmr.stop(' + dropdown_id_opt + ')\n';
   return code;
 };
