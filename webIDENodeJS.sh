@@ -18,7 +18,7 @@ echo "Att: grupo pinguinoTux"
 #chromium ./webIDEnodejs/index.html &
 ## Navegador icewasel
 #iceweasel ./webIDEnodejs/index.html &
-iceweasel ./webIDEnodejs/index_file_nodemcu-tool.html &
+firefox ./webIDEnodejs/index_file_nodemcu-tool.html &
 ## Servidor nodejs
 ### ARCHITECTURE
 if [ `uname -m` == "x86_64" ]; then
