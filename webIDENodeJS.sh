@@ -13,12 +13,16 @@ otro navegador comente y descomente el de su eleccion."
 echo "Att: grupo pinguinoTux"
 # descomente una de las lineas a ejecutar dependiendo del navegador que use.
 ## Navegador chrome
-#google-chrome ./webIDEnodejs/index.html &
+google-chrome ./webIDEnodejs/index.html &
 ## Navegador chromium
 #chromium ./webIDEnodejs/index.html &
 ## Navegador icewasel
 #iceweasel ./webIDEnodejs/index.html &
+<<<<<<< HEAD
 firefox ./webIDEnodejs/index_file_nodemcu-tool.html &
+=======
+###iceweasel ./webIDEnodejs/index_file_nodemcu-tool.html &
+>>>>>>> a9c25450546cefcba07bac1354de7ee9c794e433
 ## Servidor nodejs
 ### ARCHITECTURE
 if [ `uname -m` == "x86_64" ]; then
