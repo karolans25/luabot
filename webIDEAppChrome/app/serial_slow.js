@@ -33,9 +33,10 @@ var ab2str = function(buf) {
  * **********************************************************************/
 
 var stringReceived = ''; 	// Almacena la información recibida 
+var str_before = "";		// Almacena un caracter de un estado anterior
 var serialMessage = "";		// Mensage de confirmación de puerto serial
 var send_code = false;		// Aprobación de envío de código
-var code_blockly = [];		// Código recibido por parte de blockly
+var code_blockly = "";		// Código recibido por parte de blockly
 var counter_code = 0;		// Contador para el string del code a enviar
 
 var onReceiveCallback = function(info) {
@@ -44,8 +45,9 @@ var onReceiveCallback = function(info) {
 		if (str.charAt(str.length-1) === '\n') {
 		 	stringReceived += str.substring(0, str.length-1);
 			//onLineReceived(stringReceived); // Por ahora no hay una función de retorno desarrollada para ésta tarea
-			stringReceived = '  ';
+			stringReceived = '';
 		} else {
+			var str_1 = str[str.length-1];
 			stringReceived += str;
 			// console.log("recibiendo: " + str_1); // Muestra lo que recibe
 			
@@ -55,15 +57,13 @@ var onReceiveCallback = function(info) {
 				// tiene la responsabilidad de avanzar o detenerse
 				// Dependiendo sí el esp8266 devuelve o no el prompt después de 
 				// un newline (\n).
-				//console.log('<<' + stringReceived[stringReceived.length-1]);
-				if ((stringReceived[stringReceived.length-1] == ' ') && (stringReceived[stringReceived.length-2] == '>')){
+				if ((str_1 == code_blockly[counter_code]) || (str == '\n> ') || (str == '\n>> ') || (str == '> ') || (str == '>> ') || ('> ' == (str_before + str_1))){
 					//console.log("?: " + str_1);
 					//console.log("??: " + str);
 					//console.log(str_1 + " == " + code_blockly[counter_code]);
 					counter_code ++ ;
 					if (counter_code < code_blockly.length){
-						//console.log(counter_code);
-						writeSerial(code_blockly[counter_code] + '\n');
+						writeSerial(code_blockly[counter_code]);
 					}else{
 						send_code = false;
 						// Retorna el fin de conteo que será igual al tamaño 
@@ -75,7 +75,7 @@ var onReceiveCallback = function(info) {
 			}
 			//console.log("str_1: " + str_1);
 			//console.log("str  : " + str);
-			//str_before = str_1;
+			str_before = str_1;
 		}
 	}
 	//console.log(stringReceived);
