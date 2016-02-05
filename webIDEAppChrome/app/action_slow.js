@@ -48,12 +48,11 @@ function executeOption(optionSelected){
 			specialSend('file.format()', 'Borrado y formateo de memoria del ESP');
 
 	function specialSend(data, message){
-		var temp_code_blockly = ';\n' + data ;
-		code_blockly = temp_code_blockly.split('\n');
+		code_blockly = ';\n' + data + '\n';
 		counter_code = 0;
 		send_code = true;
 		serialMessage = message;
-		writeSerial(code_blockly[counter_code] + '\n');
+		writeSerial(code_blockly[counter_code]);
 	}
 }
 	
@@ -130,12 +129,12 @@ function upload() {
 			var temp_1 = '';
 			var temp_2 = '';
 	
-			var temp_code_blockly = Blockly.Lua.workspaceToCode(Code.workspace);
+			code_blockly = Blockly.Lua.workspaceToCode(Code.workspace);
 
-			for (var i = 0; i < temp_code_blockly.length; i++) {
-				if ((temp_1 != '') || (temp_code_blockly[i] != ' ')){
-					if (temp_code_blockly[i] != '\n')
-						temp_1+= temp_code_blockly[i];
+			for (var i = 0; i < code_blockly.length; i++) {
+				if ((temp_1 != '') || (code_blockly[i] != ' ')){
+					if (code_blockly[i] != '\n')
+						temp_1+= code_blockly[i];
 					else{
 						temp_2 += 'file.writeline([[' + temp_1 + ']])\n';
 						temp_1 = '';
@@ -155,11 +154,10 @@ function upload() {
 						// dofile("init.lua"); para ejecutarlo de una vez
 			//console.log(code_blockly);
 			//console.log(temp_1);
-			temp_code_blockly = ';\n' + temp_1;				// Preparando código para enviar serialmente
+			code_blockly = ';\n' + temp_1;				// Preparando código para enviar serialmente
 			send_code = true;							// Habilitar envío de código
 			counter_code = 0;							// Inicializar de código
-			code_blockly = temp_code_blockly.split('\n'); // split del string
-			writeSerial(code_blockly[counter_code] + '\n');	// Inicializar arranque de envío
+			writeSerial(code_blockly[counter_code]);	// Inicializar arranque de envío
 			serialMessage = 'Programa guardado en el esp8266 como init.lua';
 		} else
 			informarEstado('Se cancela subir el init.lua a ESP');
@@ -169,17 +167,14 @@ function upload() {
 
 function runProgram() {
 	// Funcon llamada e serial.js
-	var temp_code_blockly = ';\n' + Blockly.Lua.workspaceToCode(Code.workspace);
-	
-	code_blockly = temp_code_blockly.split('\n');
-
+	code_blockly = ';\n' + Blockly.Lua.workspaceToCode(Code.workspace);
+	//console.log("Codigo de blockly \n " + code_blockly);
+	//console.log("longitude de code_blockly: ");
 	console.log(code_blockly.length);
-	//console.log("Codigo de blockly \n " + code_blockly[1]);
-	
 	// Se aprueba el envío de código por el puerto serial.
 	send_code = true;
 	counter_code = 0;
-	writeSerial(code_blockly[counter_code] + '\n');
+	writeSerial(code_blockly[counter_code]);
 	// Mensaje que será mostrado como confirmación de envío de codigo al nodeMCU
 	// por el puerto serial.
 	serialMessage = 'Programa cargado en el interprete Lua de nodeMCU';
