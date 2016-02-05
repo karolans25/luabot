@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-jul-07)-stable date = mié 03 feb 2016 19:28:54 COT
+Cmp-Mod V01 Created by CvPcb (2013-jul-07)-stable date = jue 04 feb 2016 14:47:32 COT
 
 BeginCmp
 TimeStamp = /56AB9822;
@@ -51,21 +51,28 @@ EndCmp
 
 BeginCmp
 TimeStamp = /56AB909B;
-Reference = P3;
+Reference = P1;
 ValeurCmp = uart;
 IdModule  = pin_socket_4;
 EndCmp
 
 BeginCmp
-TimeStamp = /56B2762B;
-Reference = P5;
-ValeurCmp = (GND,VCC)_GPIO;
-IdModule  = pin_socket_7x2;
+TimeStamp = /56B38504;
+Reference = P2;
+ValeurCmp = GND_GPIO;
+IdModule  = pin_socket_7;
+EndCmp
+
+BeginCmp
+TimeStamp = /56B38513;
+Reference = P3;
+ValeurCmp = VCC_GPIO;
+IdModule  = pin_socket_7;
 EndCmp
 
 BeginCmp
 TimeStamp = /56B276B6;
-Reference = P6;
+Reference = P4;
 ValeurCmp = salidas_GPIO;
 IdModule  = pin_socket_7;
 EndCmp

@@ -29,10 +29,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:ESP8266
-LIBS:lm1117
-LIBS:w_analog
-LIBS:luabot_v1-cache
+LIBS:luabot_v2-cache
 EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
