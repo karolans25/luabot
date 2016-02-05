@@ -104,3 +104,29 @@ Blockly.JavaScript['gpio_toggle'] = function(block) {
   var code = '';
   return code;
 };
+
+
+/*****************************************************************
+ * 						READ ADC
+ * ***************************************************************/
+
+Blockly.Blocks['gpio_adc'] = {
+  init: function() {
+    this.appendDummyInput()
+	    .appendField("Lectura de voltaje")
+	    .appendField(new Blockly.FieldDropdown([["adc 0", "0"]]), "id");
+	this.setInputsInline(true);
+	this.setOutput(true, "Number");
+	this.setColour(290);
+	this.setTooltip('');
+	this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Lua['gpio_adc'] = function(block) {
+  var dropdown_id = block.getFieldValue('id');
+  // TODO: Assemble Lua into code variable.
+  var code = 'adc.read(' + dropdown_id + ')';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Lua.ORDER_NONE];
+};
