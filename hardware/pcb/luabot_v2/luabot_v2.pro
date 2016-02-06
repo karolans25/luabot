@@ -1,4 +1,4 @@
-update=jue 04 feb 2016 12:14:45 COT
+update=sáb 06 feb 2016 09:04:42 COT
 last_client=pcbnew
 [cvpcb]
 version=1
@@ -25,7 +25,7 @@ DrawSegmentWidth="    0,200000"
 BoardOutlineThickness="    0,150000"
 ModuleOutlineThickness="    0,150000"
 [pcbnew/libraries]
-LibDir=../lib_regletas_footprint;../techinc-kicad-lib
+LibDir=../techinc-kicad-lib;../Librerias-footprint-kicad/mod_logo
 LibName1=sockets
 LibName2=connect
 LibName3=discret
@@ -44,3 +44,4 @@ LibName15=pga_sockets
 LibName16=valves
 LibName17=w_pin_strip
 LibName18=esp8266
+LibName19=w_logo
