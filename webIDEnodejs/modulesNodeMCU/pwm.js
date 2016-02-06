@@ -29,7 +29,7 @@ Blockly.Lua['pwm_setup'] = function(block) {
   var value_frec = Blockly.Lua.valueToCode(block, 'frec', Blockly.Lua.ORDER_ATOMIC);
   var value_duty = Blockly.Lua.valueToCode(block, 'duty', Blockly.Lua.ORDER_ATOMIC);
   // TODO: Assemble Lua into code variable.
-  var code = 'pwm.setup(' + value_pin + ', ' + value_frec + ', ' + value_duty + ')';
+  var code = 'pwm.setup(' + value_pin + ', ' + value_frec + ', ' + value_duty + ')\n';
   return code;
 };
 
@@ -139,7 +139,36 @@ Blockly.Lua['pwm_servo'] = function(block) {
   var dropdown_id = block.getFieldValue('id');
   var value_pin = Blockly.Lua.valueToCode(block, 'pin', Blockly.Lua.ORDER_ATOMIC);
   // TODO: Assemble Lua into code variable.
-  var value_duty = angle_angle;
   var code = 'pwm.setup(' + value_pin + ', 200, ' + value_duty + ')';
+  return code;
+};
+
+
+
+/******************************************************************
+ *               PWM CHANGE DUTY CICLE
+ *****************************************************************/
+Blockly.Blocks['pwm_duty'] = {
+  init: function() {
+    this.appendValueInput("pin")
+        .setCheck("Number")
+        .appendField("Para el pwm del pin:");
+    this.appendValueInput("duty")
+        .setCheck("Number")
+        .appendField("Cambiar el ciclo util:");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(160);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Lua['pwm_duty'] = function(block) {
+  var value_pin = Blockly.Lua.valueToCode(block, 'pin', Blockly.Lua.ORDER_ATOMIC);
+  var value_duty = Blockly.Lua.valueToCode(block, 'duty', Blockly.Lua.ORDER_ATOMIC);
+  // TODO: Assemble Lua into code variable.
+  var code = 'pwm.setduty(' + value_pin + ', ' + value_duty + ' )\n';
   return code;
 };
