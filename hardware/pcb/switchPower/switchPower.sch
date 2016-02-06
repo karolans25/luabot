@@ -29,6 +29,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:w_relay
 LIBS:switchPower-cache
 EELAYER 27 0
 EELAYER END
@@ -102,17 +103,6 @@ F 3 "" H 2700 650 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L RELAY_5V K1
-U 1 1 56B55B37
-P 3450 1150
-F 0 "K1" H 3400 1550 70  0000 C CNN
-F 1 "RELAY_5V" H 3600 650 70  0000 C CNN
-F 2 "~" H 3450 1150 60  0000 C CNN
-F 3 "~" H 3450 1150 60  0000 C CNN
-	1    3450 1150
-	1    0    0    -1  
-$EndComp
-$Comp
 L CONN_2 P3
 U 1 1 56B55B87
 P 4800 1000
@@ -134,7 +124,6 @@ F 3 "" H 4300 1850 60  0000 C CNN
 	1    4300 1850
 	0    1    1    0   
 $EndComp
-NoConn ~ 3850 1100
 $Comp
 L NPN NPN1
 U 1 1 56B55C3A
@@ -238,33 +227,14 @@ Wire Wire Line
 Wire Wire Line
 	1600 850  1600 750 
 Wire Wire Line
-	2450 850  2900 850 
-Wire Wire Line
 	2450 850  2450 1100
 Connection ~ 2700 850 
 Wire Wire Line
-	2450 1500 3050 1500
-Wire Wire Line
 	2700 850  2700 650 
-Wire Wire Line
-	2900 850  2900 1400
-Wire Wire Line
-	2900 1400 3050 1400
 Wire Wire Line
 	4450 1100 4400 1100
 Wire Wire Line
 	4400 1100 4400 1500
-Wire Wire Line
-	3850 1300 4200 1300
-Wire Wire Line
-	4200 1300 4200 1500
-Wire Wire Line
-	3950 1200 4200 1200
-Wire Wire Line
-	4200 1200 4200 900 
-Wire Wire Line
-	4200 900  4450 900 
-Connection ~ 2700 1500
 Wire Wire Line
 	2700 2200 2700 2400
 Wire Wire Line
@@ -287,4 +257,31 @@ Wire Wire Line
 	6650 1600 6650 1900
 Wire Wire Line
 	2700 1800 2700 1500
+Wire Wire Line
+	2450 850  3350 850 
+Wire Wire Line
+	3350 850  3350 1100
+$Comp
+L RELAY_5PINS RLY5
+U 1 1 56B6242E
+P 3750 1300
+F 0 "RLY5" H 3750 1550 60  0000 C CNN
+F 1 "RELAY_5PINS" H 3750 1150 60  0000 C CNN
+F 2 "" H 3750 1300 60  0000 C CNN
+F 3 "" H 3750 1300 60  0000 C CNN
+	1    3750 1300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2450 1500 3600 1500
+Connection ~ 2700 1500
+Wire Wire Line
+	3350 1100 3600 1100
+NoConn ~ 3850 1100
+Wire Wire Line
+	3750 1100 3750 900 
+Wire Wire Line
+	3750 900  4450 900 
+Wire Wire Line
+	3800 1500 4200 1500
 $EndSCHEMATC
