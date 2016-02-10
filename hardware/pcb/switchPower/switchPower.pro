@@ -1,4 +1,4 @@
-update=sáb 06 feb 2016 11:11:25 COT
+update=mié 10 feb 2016 18:08:07 COT
 version=1
 last_client=pcbnew
 [cvpcb]
@@ -68,7 +68,7 @@ DrawSegmentWidth="    0,200000"
 BoardOutlineThickness="    0,150000"
 ModuleOutlineThickness="    0,150000"
 [pcbnew/libraries]
-LibDir=../Librerias-footprint-kicad/mod_conn_kk156;../Librerias-footprint-kicad/mod_conn_kk156;../Librerias-footprint-kicad/mod_relay;../Librerias-footprint-kicad/lib_regletas_footprint
+LibDir=../Librerias-footprint-kicad/mod_conn_kk156;../Librerias-footprint-kicad/mod_conn_kk156;../Librerias-footprint-kicad/mod_relay;../Librerias-footprint-kicad/lib_regletas_footprint;../Librerias-footprint-kicad/mod_logo
 LibName1=sockets
 LibName2=connect
 LibName3=discret
@@ -89,3 +89,4 @@ LibName17=mod_conn_kk156/w_conn_kk156
 LibName18=w_conn_kk156
 LibName19=w_relay
 LibName20=w_pin_strip
+LibName21=w_logo

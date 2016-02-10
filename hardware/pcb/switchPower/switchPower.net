@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/julian/directorioProyecto/luabot/hardware/pcb/switchPower/switchPower.sch)
-    (date "sáb 06 feb 2016 11:42:45 COT")
+    (date "lun 08 feb 2016 11:15:55 COT")
     (tool "eeschema (2013-jul-07)-stable"))
   (components
     (comp (ref K0)
@@ -103,6 +103,21 @@
       (pins
         (pin (num 1) (name P1) (type passive))
         (pin (num 2) (name PM) (type passive))))
+    (libpart (lib w_relay) (part RELAY_5pins)
+      (description "Relay, 1 Form C contact, TE T9AS5x1")
+      (footprints
+        (fp relay_T9AS5x1))
+      (fields
+        (field (name Reference) RLY)
+        (field (name Value) RELAY_5pins)
+        (field (name Footprint) ~)
+        (field (name Datasheet) ~))
+      (pins
+        (pin (num 1) (name ~) (type passive))
+        (pin (num 2) (name ~) (type passive))
+        (pin (num 3) (name ~) (type passive))
+        (pin (num 4) (name ~) (type passive))
+        (pin (num 5) (name ~) (type passive))))
     (libpart (lib conn) (part CONN_3)
       (description "Symbole general de connecteur")
       (fields
@@ -111,20 +126,7 @@
       (pins
         (pin (num 1) (name P1) (type passive))
         (pin (num 2) (name PM) (type power_out))
-        (pin (num 3) (name P3) (type power_out))))
-    (libpart (lib w_relay) (part RELAY_5pins)
-      (description "Relay, 1 Form C contact, TE T9AS5x1")
-      (footprints
-        (fp relay_T9AS5x1))
-      (fields
-        (field (name Reference) RLY)
-        (field (name Value) RELAY_5pins))
-      (pins
-        (pin (num 1) (name ~) (type passive))
-        (pin (num 2) (name ~) (type passive))
-        (pin (num 3) (name ~) (type passive))
-        (pin (num 4) (name ~) (type passive))
-        (pin (num 5) (name ~) (type passive)))))
+        (pin (num 3) (name P3) (type power_out)))))
   (libraries
     (library (logical device)
       (uri /usr/share/kicad/library/device.lib))

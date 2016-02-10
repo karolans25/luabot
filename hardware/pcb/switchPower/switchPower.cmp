@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-jul-07)-stable date = sáb 06 feb 2016 11:06:02 COT
+Cmp-Mod V01 Created by CvPcb (2013-jul-07)-stable date = lun 08 feb 2016 11:29:18 COT
 
 BeginCmp
 TimeStamp = /56B54D12;
@@ -64,9 +64,9 @@ IdModule  = R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /56B60E4D;
-Reference = RL1;
-ValeurCmp = RELAY_T9AS5X1;
+TimeStamp = /56B6242E;
+Reference = RLY5;
+ValeurCmp = RELAY_5PINS;
 IdModule  = relay_hjr-3ff_z;
 EndCmp
 
