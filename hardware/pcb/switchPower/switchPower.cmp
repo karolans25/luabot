@@ -1,0 +1,73 @@
+Cmp-Mod V01 Created by CvPcb (2013-jul-07)-stable date = lun 08 feb 2016 11:29:18 COT
+
+BeginCmp
+TimeStamp = /56B54D12;
+Reference = 1N4004;
+ValeurCmp = DIODE;
+IdModule  = D3;
+EndCmp
+
+BeginCmp
+TimeStamp = /56B54A31;
+Reference = K0;
+ValeurCmp = CONN_3;
+IdModule  = pin_socket_3;
+EndCmp
+
+BeginCmp
+TimeStamp = /56B55C3A;
+Reference = NPN1;
+ValeurCmp = 2N2222;
+IdModule  = TO92;
+EndCmp
+
+BeginCmp
+TimeStamp = /56B55D28;
+Reference = NPN2;
+ValeurCmp = 2N2222A;
+IdModule  = TO92;
+EndCmp
+
+BeginCmp
+TimeStamp = /56B55B96;
+Reference = P2;
+ValeurCmp = CONN_2;
+IdModule  = kk156_26-60-4020;
+EndCmp
+
+BeginCmp
+TimeStamp = /56B55B87;
+Reference = P3;
+ValeurCmp = CONN_2;
+IdModule  = kk156_26-60-4020;
+EndCmp
+
+BeginCmp
+TimeStamp = /56B55E8F;
+Reference = P4;
+ValeurCmp = CONN_2;
+IdModule  = pin_socket_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /56B55C5C;
+Reference = R1;
+ValeurCmp = 10K;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /56B55D5C;
+Reference = R2;
+ValeurCmp = 30k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /56B6242E;
+Reference = RLY5;
+ValeurCmp = RELAY_5PINS;
+IdModule  = relay_hjr-3ff_z;
+EndCmp
+
+EndListe
