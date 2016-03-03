@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.2.20)  3 MAR 2016 08:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.2.20)  3 MAR 2016 08:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -593,22 +593,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
  []
 
-<circuito1.png, id=5, 348.30125pt x 296.10625pt>
-File: circuito1.png Graphic file (type png)
- <use circuito1.png>
-Package pdftex.def Info: circuito1.png used on input line 62.
-(pdftex.def)             Requested size: 121.90726pt x 103.63873pt.
-
-<circuito2.png, id=7, 368.37625pt x 298.11375pt>
+<circuito2.png, id=5, 368.37625pt x 298.11375pt>
 File: circuito2.png Graphic file (type png)
  <use circuito2.png>
-Package pdftex.def Info: circuito2.png used on input line 72.
+Package pdftex.def Info: circuito2.png used on input line 62.
 (pdftex.def)             Requested size: 128.93361pt x 104.34137pt.
+
+<circuito1.png, id=7, 348.30125pt x 296.10625pt>
+File: circuito1.png Graphic file (type png)
+ <use circuito1.png>
+Package pdftex.def Info: circuito1.png used on input line 72.
+(pdftex.def)             Requested size: 121.90726pt x 103.63873pt.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 81.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./circuito1.png> <./circui
-to2.png>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./circuito2.png> <./circui
+to1.png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 81.
  (./cuestionario1.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 81.
@@ -627,7 +627,7 @@ Here is how much of TeX's memory you used:
  29i,7n,26p,234b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on cuestionario1.pdf (1 page, 32488 bytes).
+Output written on cuestionario1.pdf (1 page, 32485 bytes).
 PDF statistics:
  24 PDF objects out of 1000 (max. 8388607)
  17 compressed objects within 1 object stream
