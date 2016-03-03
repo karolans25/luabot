@@ -29,32 +29,7 @@ Blockly.Lua['pwm_setup'] = function(block) {
   var value_frec = Blockly.Lua.valueToCode(block, 'frec', Blockly.Lua.ORDER_ATOMIC);
   var value_duty = Blockly.Lua.valueToCode(block, 'duty', Blockly.Lua.ORDER_ATOMIC);
   // TODO: Assemble Lua into code variable.
-  var code = 'pwm.setup(' + value_pin + ', ' + value_frec + ', ' + value_duty + ')';
-  return code;
-};
-
-
-/******************************************************************
- *               PWM START
- *****************************************************************/
-Blockly.Blocks['pwm_start'] = {
-  init: function() {
-    this.appendValueInput("pwm")
-        .setCheck("Number")
-        .appendField("Iniciar el PWM del pin");
-    this.setInputsInline(false);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(65);
-    this.setTooltip('');
-    this.setHelpUrl('http://www.example.com/');
-  }
-};
-
-Blockly.Lua['pwm_start'] = function(block) {
-  var value_pwm = Blockly.JavaScript.valueToCode(block, 'pwm', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = 'pwm.start(' + value_pwm + ')\n';
+  var code = 'pwm.setup(' + value_pin + ', ' + value_frec + ', ' + value_duty + ')\n' + 'pwm.start(' + value_pin + ')\n';
   return code;
 };
 
@@ -113,33 +88,29 @@ Blockly.Lua['pwm_close'] = function(block) {
 
 
 /******************************************************************
- *               PWM SERVO 
+ *               PWM CHANGE DUTY CICLE
  *****************************************************************/
-Blockly.Blocks['pwm_servo'] = {
+Blockly.Blocks['pwm_duty'] = {
   init: function() {
-    this.appendDummyInput()
-        .appendField("Mover")
-	    .appendField(new Blockly.FieldAngle(90), "angle");
-	this.appendDummyInput()
-	    .appendField(new Blockly.FieldDropdown([["el servomotor 0", "0"], ["el servomotor 1", "1"], ["el servomotor 2", "2"]]), "id");
-	this.appendValueInput("pin")
-	    .setCheck("Number")
-	    .appendField("en el pin:");
-	this.setInputsInline(true);
-	this.setPreviousStatement(true, null);
-	this.setNextStatement(true, null);
-	this.setColour(65);
-	this.setTooltip('');
-	this.setHelpUrl('http://www.example.com/');
+    this.appendValueInput("pin")
+        .setCheck("Number")
+        .appendField("Para el pwm del pin:");
+    this.appendValueInput("duty")
+        .setCheck("Number")
+        .appendField("Cambiar el ciclo util:");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(160);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
   }
 };
 
-Blockly.Lua['pwm_servo'] = function(block) {
-  var angle_angle = block.getFieldValue('angle');
-  var dropdown_id = block.getFieldValue('id');
+Blockly.Lua['pwm_duty'] = function(block) {
   var value_pin = Blockly.Lua.valueToCode(block, 'pin', Blockly.Lua.ORDER_ATOMIC);
+  var value_duty = Blockly.Lua.valueToCode(block, 'duty', Blockly.Lua.ORDER_ATOMIC);
   // TODO: Assemble Lua into code variable.
-  var value_duty = angle_angle;
-  var code = 'pwm.setup(' + value_pin + ', 200, ' + value_duty + ')';
+  var code = 'pwm.setduty(' + value_pin + ', ' + value_duty + ' )\n';
   return code;
 };

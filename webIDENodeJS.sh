@@ -14,18 +14,18 @@ echo "Att: grupo pinguinoTux"
 # descomente una de las lineas a ejecutar dependiendo del navegador que use.
 
 ## Navegador chrome
-#google-chrome ./webIDEnodejs/index.html &
-#google-chrome ./webIDEnodejs/index_file_nodemcu-tool.html &
+#Google-chrome ./webIDEnodejs/index.html &
+google-chrome ./webIDEnodejs/index_file_nodemcu-tool.html &
 
 ## Navegador chromium
 #chromium ./webIDEnodejs/index.html &
 
 ## Navegador icewasel
 #iceweasel ./webIDEnodejs/index.html &
-iceweasel ./webIDEnodejs/index_file_nodemcu-tool.html &
+#iceweasel ./webIDEnodejs/index_file_nodemcu-tool.html &
 
-## Navegador firefox
-#firefox ./webIDEnodejs/index_file_nodemcu-tool.html &
+# Navegador firefox
+# firefox ./webIDEnodejs/index_file_nodemcu-tool.html &
 
 ## Servidor nodejs
 ### ARCHITECTURE
