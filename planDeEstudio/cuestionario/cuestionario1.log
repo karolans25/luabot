@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.2.20)  3 MAR 2016 08:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.2.20)  3 MAR 2016 08:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -589,46 +589,48 @@ LaTeX Font Info:    Try loading font information for OT1+zplm on input line 43.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 56.
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
+ []
 
-LaTeX Warning: Reference `1' on page 1 undefined on input line 56.
+<circuito1.png, id=5, 348.30125pt x 296.10625pt>
+File: circuito1.png Graphic file (type png)
+ <use circuito1.png>
+Package pdftex.def Info: circuito1.png used on input line 62.
+(pdftex.def)             Requested size: 121.90726pt x 103.63873pt.
 
+<circuito2.png, id=7, 368.37625pt x 298.11375pt>
+File: circuito2.png Graphic file (type png)
+ <use circuito2.png>
+Package pdftex.def Info: circuito2.png used on input line 72.
+(pdftex.def)             Requested size: 128.93361pt x 104.34137pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 81.
+ [1
 
-LaTeX Warning: Reference `2' on page 1 undefined on input line 57.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./circuito1.png> <./circui
+to2.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 81.
  (./cuestionario1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 61.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 61.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 81.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 81.
 Package rerunfilecheck Info: File `cuestionario1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 81.
  ) 
 Here is how much of TeX's memory you used:
- 6494 strings out of 494958
- 91341 string characters out of 6179386
- 168472 words of memory out of 5000000
- 9618 multiletter control sequences out of 15000+600000
- 17882 words of font info for 47 fonts, out of 8000000 for 9000
+ 6505 strings out of 494958
+ 91507 string characters out of 6179386
+ 168537 words of memory out of 5000000
+ 9626 multiletter control sequences out of 15000+600000
+ 16433 words of font info for 45 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 29i,6n,26p,283b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,7n,26p,234b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on cuestionario1.pdf (1 page, 32599 bytes).
+e/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
+Output written on cuestionario1.pdf (1 page, 32488 bytes).
 PDF statistics:
- 22 PDF objects out of 1000 (max. 8388607)
- 16 compressed objects within 1 object stream
- 2 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 24 PDF objects out of 1000 (max. 8388607)
+ 17 compressed objects within 1 object stream
+ 4 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
