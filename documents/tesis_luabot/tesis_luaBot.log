@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.2.20)  21 MAR 2016 17:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.2.20)  21 MAR 2016 17:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -683,12 +683,6 @@ Overfull \hbox (19.15404pt too wide) in paragraph at lines 278--279
  [][] 
  []
 
-
-Overfull \hbox (1.14624pt too wide) in paragraph at lines 284--286
-[]\T1/ppl/m/n/10 Según []IEEE Spec-trum[] Los más pop-u-lares para sis-temas em
--be-bidos se puede
- []
-
 <imag/lenguajes2.png, id=112, 635.37375pt x 541.02126pt>
 File: imag/lenguajes2.png Graphic file (type png)
 
@@ -697,20 +691,20 @@ Package pdftex.def Info: imag/lenguajes2.png used on input line 290.
 (pdftex.def)             Requested size: 254.14499pt x 216.40466pt.
  [5 <./imag/chip.png>] [6 <./imag/arduino.jpg> <./imag/lenguajes1.png (PNG copy
 )>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 301.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 307.
  [7 <./imag/lenguajes2.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 301.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 307.
 
 (./tesis_luaBot.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 301.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 301.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 307.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 307.
 Package rerunfilecheck Info: File `tesis_luaBot.out' has not changed.
 (rerunfilecheck)             Checksum: 388653A44DB11C08C7E68C7B8E14176A;405.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 301.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 307.
  ) 
 Here is how much of TeX's memory you used:
- 6658 strings out of 494958
- 93846 string characters out of 6179386
+ 6659 strings out of 494958
+ 93858 string characters out of 6179386
  171960 words of memory out of 5000000
  9717 multiletter control sequences out of 15000+600000
  42491 words of font info for 104 fonts, out of 8000000 for 9000
@@ -721,10 +715,10 @@ are/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-di
 st/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palat
 ino/uplri8a.pfb>
-Output written on tesis_luaBot.pdf (7 pages, 1329234 bytes).
+Output written on tesis_luaBot.pdf (7 pages, 1329800 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
- 142 compressed objects within 2 object streams
- 42 named destinations out of 1000 (max. 500000)
+ 190 PDF objects out of 1000 (max. 8388607)
+ 146 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
  74 words of extra memory for PDF output out of 10000 (max. 10000000)
 
