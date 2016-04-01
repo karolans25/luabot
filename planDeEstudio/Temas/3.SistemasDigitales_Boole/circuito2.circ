@@ -664,7 +664,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(640,860)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
-      <a name="label" val="PCA"/>
+      <a name="label" val="PT"/>
       <a name="labelloc" val="north"/>
     </comp>
     <comp lib="1" loc="(410,550)" name="AND Gate">
@@ -770,7 +770,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </comp>
     <comp lib="0" loc="(40,280)" name="Pin">
       <a name="tristate" val="false"/>
-      <a name="label" val="CA"/>
+      <a name="label" val="T"/>
       <a name="labelloc" val="north"/>
     </comp>
     <comp lib="1" loc="(270,350)" name="NOT Gate">
@@ -848,7 +848,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </comp>
     <comp lib="0" loc="(40,230)" name="Pin">
       <a name="tristate" val="false"/>
-      <a name="label" val="CI"/>
+      <a name="label" val="G"/>
       <a name="labelloc" val="north"/>
     </comp>
     <comp lib="1" loc="(340,1620)" name="AND Gate">
@@ -940,7 +940,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(640,630)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
-      <a name="label" val="PCI"/>
+      <a name="label" val="PG"/>
       <a name="labelloc" val="north"/>
     </comp>
     <comp lib="1" loc="(270,1040)" name="NOT Gate">
