@@ -1,0 +1,90 @@
+\documentclass{article}
+
+\usepackage[papersize={215mm,279mm},tmargin=10mm, 
+bmargin=10mm,lmargin=10mm, rmargin=10mm]{geometry}
+
+%### Hacer uso de símbolos extra ###
+\usepackage{latexsym,amsmath,amssymb,amsfonts}
+
+%### Cambio de la fuente del documento###
+\usepackage{mathpazo} %palatino
+
+%### Incluir Graphicos ###
+\usepackage{graphicx}
+
+%### Comandos especiales para TABLAS ###
+\usepackage{multirow, bigstrut}
+
+%### Hiper referencias y ocultando el link (hidelinks) ###
+\usepackage{hyperref}
+
+%##########################################
+%Formato archivo.tex, entradas de teclado
+%solo dejar uno de los dos archivos activados
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+%###########################################
+\usepackage[T1]{fontenc}
+
+%##########################################
+% Separar palarbras correctamente.
+\hyphenation{co-rres-pon-da}
+
+%Título
+\title{Guia\\Subtítulo}
+
+%Author
+\author{Grupo Pingüino Tux}
+%### Agregar fecha manualmente ###
+%\date{mmm, dia, año}
+
+\begin{document}
+\maketitle
+%\include{dir/arch}
+
+\section{Objetivo}
+\subsection{General}
+Orientar al estudiante para que tenga la capacidad de abstraer del mundo
+real algún evento o cosa y manifestar su comportamiento en un modelo que 
+corresponda a la lógica booleana.
+
+\subsection{Específicos}
+
+\begin{itemize}
+
+\item Ilustrar las funciones lógicas (booleanas) con sus respectivas
+		tablas de verdad.
+
+\item Usar un software que permita la simulación del comportamiento de
+		las funciones lógicas.
+
+\item Abstraer de un circuito eléctrico la lógica digital
+para luego ilustrarla en compuertas lógicas booleanas. 
+
+\end{itemize}
+
+\section{Procedimiento}
+
+\subsection{Compuertas lógicas}
+
+Se debe mostrar cada una de las compuertas lógicas con sus respectivas
+tablas de verdad, iniciando con las que manejan una sola entrada, es
+decir, BUFFER (seguidor), NOT (negador), para luego continuar con la
+las compuertas de dos entradas como lo son: OR (sumador), AND 
+(multplicador), XOR, además, mostrar la combinación de las las compuertas 
+de dos o más entradas con la compuerta negadora que genera los demás casos,
+como son: NOR, NAND, XNOR.
+
+\subsection{Logisim}
+
+\href{http://www.cburch.com/logisim/index_es.html}{Logisim} permimte 
+realizar simulaciones de sistemas secuenciales como 
+combinacionales. Pueden simulase entradas  como teclado y 
+mandos. Se debe tener instalado la máquina virtual de java del S.O. en uso
+para poder correr el archivo .jar.
+
+Se debe de reconocer las compuertas lógicas a través de su símbolos
+esquemáticos. Mostrar las entradas y salidas posibles en el software para
+su rápida asociación con los ejemplos electrónicos (mundo real).
+
+\end{document}
