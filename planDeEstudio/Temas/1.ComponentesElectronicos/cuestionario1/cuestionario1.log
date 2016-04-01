@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.2.11)  31 MAR 2016 19:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.2.20)  31 MAR 2016 20:22
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
 **cuestionario1.tex
 (./cuestionario1.tex
 LaTeX2e <2014/05/01>
-Babel <3.9l> and hyphenation patterns for 32 languages loaded.
+Babel <3.9l> and hyphenation patterns for 5 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -477,8 +477,7 @@ Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
-))
-No file cuestionario1.aux.
+)) (./cuestionario1.aux)
 \openout1 = `cuestionario1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
@@ -541,6 +540,8 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 41.
 LaTeX Info: Redefining \pageref on input line 41.
 LaTeX Info: Redefining \nameref on input line 41.
+
+(./cuestionario1.out) (./cuestionario1.out)
 \@outlinefile=\write3
 \openout3 = `cuestionario1.out'.
 
@@ -594,21 +595,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
  []
 
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 58.
-
-LaTeX Warning: Reference `fig:1' on page 1 undefined on input line 58.
-
-<circuito2.png, id=4, 368.37625pt x 298.11375pt>
+<circuito2.png, id=5, 368.37625pt x 298.11375pt>
 File: circuito2.png Graphic file (type png)
  <use circuito2.png>
 Package pdftex.def Info: circuito2.png used on input line 63.
 (pdftex.def)             Requested size: 128.93361pt x 104.34137pt.
 
-
-LaTeX Warning: Reference `fig:2' on page 1 undefined on input line 70.
-
-<circuito1.png, id=5, 348.30125pt x 296.10625pt>
+<circuito1.png, id=7, 348.30125pt x 296.10625pt>
 File: circuito1.png Graphic file (type png)
  <use circuito1.png>
 Package pdftex.def Info: circuito1.png used on input line 75.
@@ -622,38 +615,24 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 84.
  (./cuestionario1.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 84.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 84.
-
-
-Package rerunfilecheck Warning: File `cuestionario1.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `cuestionario1.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package rerunfilecheck Info: File `cuestionario1.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 84.
  ) 
 Here is how much of TeX's memory you used:
- 6503 strings out of 494353
- 91444 string characters out of 6163060
- 169838 words of memory out of 5000000
- 9668 multiletter control sequences out of 15000+600000
- 17882 words of font info for 47 fonts, out of 8000000 for 9000
- 398 hyphenation exceptions out of 8191
+ 6505 strings out of 494958
+ 91513 string characters out of 6179386
+ 168536 words of memory out of 5000000
+ 9626 multiletter control sequences out of 15000+600000
+ 16433 words of font info for 45 fonts, out of 8000000 for 9000
+ 40 hyphenation exceptions out of 8191
  29i,6n,26p,225b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on cuestionario1.pdf (1 page, 41849 bytes).
+e/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
+Output written on cuestionario1.pdf (1 page, 32486 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
- 18 compressed objects within 1 object stream
+ 24 PDF objects out of 1000 (max. 8388607)
+ 17 compressed objects within 1 object stream
  4 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
