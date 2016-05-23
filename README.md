@@ -4,7 +4,6 @@
 
 * Carolina Pulido
 * Johnny Cubides
-* Julián Murcia
 
 # LUABOT #
 
