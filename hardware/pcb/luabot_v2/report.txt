@@ -1,4 +1,0 @@
-Error: Cannot create output directory '/media/carito/2EED-3DBB/tarjetaCaro'.
-
-Error: Cannot create output directory '/media/carito/2EED-3DBB/tarjetaCaro'.
-
