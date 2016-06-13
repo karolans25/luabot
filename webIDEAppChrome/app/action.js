@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.getElementById('playProgram').addEventListener('click', runProgram);
 	// Botón con Id upload lanza por click la función runProgram()
 	document.getElementById('upload').addEventListener('click', upload);
-	
+	document.getElementById('imageCard').addEventListener('click', launchCard);	
 	document.getElementById('trashButton').addEventListener('click', clear);
 
 document.getElementById('specialFunction').addEventListener('change', function(){
@@ -193,6 +193,13 @@ var str2array = function(str){
 	//console.log(array);
 	return array;
 }
+/****************************************************************
+ * 			IMAGE LAUNCH
+***************************************************************/
+
+function launchCard(){
+	chrome.app.window.create('imageCard.html');
+}	   
 
 /*
 function play() {
