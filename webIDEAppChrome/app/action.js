@@ -198,7 +198,7 @@ var str2array = function(str){
 ***************************************************************/
 
 function launchCard(){
-	chrome.app.window.create('imageCard.html');
+		chrome.app.window.create('imageCard.html');
 }	   
 
 /*
