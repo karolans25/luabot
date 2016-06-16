@@ -7,6 +7,11 @@
 
 # LUABOT #
 
+## App Google Chrome ##
+
+![luabot.png](https://bitbucket.org/repo/zbxzr5/images/3073712873-luabot.png)
+
+
 ## web y nodejs ##
 
 ![luabot_nodejs.png](https://bitbucket.org/repo/zbxzr5/images/2923158634-luabot_nodejs.png)
@@ -34,11 +39,8 @@ De lo contrario no se ejecutará correctamente.
 Por defecto el navegador que se lanzara sera iceweasel. Si usa 
 otro navegador comente y descomente el de su eleccion.
 
-## App Google Chrome ##
+## Hardware ##
 
-Solo se debe buscar en la tienda e instalar
-
-![luabot_app.png](https://bitbucket.org/repo/zbxzr5/images/3758267904-luabot_app.png)
-
+![tarjetaLuabot.jpeg](https://bitbucket.org/repo/zbxzr5/images/1531299591-tarjetaLuabot.jpeg)
 
 Att: grupo pinguinoTux
