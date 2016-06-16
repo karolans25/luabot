@@ -20,10 +20,21 @@ a las cuales se le deben los créditos.
 * [npm](https://www.npmjs.com/)
 * [Apps chrome-chromium](https://developer.chrome.com/apps/first_app)
 * [Kicad](http://kicad-pcb.org/)
-
+* [nodeMCU](https://nodemcu.readthedocs.io/en/master/)
+* [VIM](http://www.vim.org/)
+* [gimp](https://www.gimp.org/)
 ## Características ##
 
 * Módulo WiFi: Preparado para soportar IOT (internet de las cosas) 
+* Interprete: Se hace uso de uno de los niveles más altos de abstracción, el lenguaje Lua.
+* Programación en Bloques: Evita los errores de sintaxis al no requerir hacer uso directo de un lenguaje de programación.
+* Piense usted mismo: hay herramientas que tienen como eslogan "hágalo usted mismo" o "fácil de hacer"  pero eso no implica
+que sepa cómo funciona (copy and paste).
+* Flexibilidad: No se rige sobre un sistema operativo en particular, a pesar de que requiera un navegador de internet, se
+puede hacer uso de cualquiera que cumpla con los mínimos requerimientos.
+* Aplicaciones: Pensado inicialmente para aplicaciones educativas, también puede ser usado para propósitos profesionales,
+(como ejemplo un agrónomo que quiera hacer mediciones de comportamiento pero no tiene conocimientos en programación explícitamente)
+el único requerimiento es pensar.
 
 
 ## Desarrolladores ##
