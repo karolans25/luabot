@@ -2,10 +2,34 @@
 
 ![logo_v1.png](https://bitbucket.org/repo/zbxzr5/images/2514622579-logo_v1.png)
 
+LuaBot es una plataforma que puede ser usada en
+robótica, domótica u otros fines donde sea necesario automatizar un proceso y
+pueda intervenir la electrónica.
+Consta tanto de un hardware y un software, ambos de tipo open source.
+LuaBot es pensado como una herramienta que facilita la programación de
+tareas que necesiten ser automatizadas y/o tele-operadas incorporando elementos 
+básicos para tal fin, además, evita al usuario final la engorrosa tarea de
+aprender un lenguaje de programación, haciendo que éste se ocupe principalmente 
+del algoritmo a desarrollar.
+
+Tener en cuenta que luabot es desarrollado a partir de varias herramientas opensource 
+a las cuales se le deben los créditos.
+
+* [Blockly](https://developers.google.com/blockly/)
+* [NodeJS](https://nodejs.org/en/)
+* [npm](https://www.npmjs.com/)
+* [Apps chrome-chromium](https://developer.chrome.com/apps/first_app)
+* [Kicad](http://kicad-pcb.org/)
+
+## Características ##
+
+* Módulo WiFi: Preparado para soportar IOT (internet de las cosas) 
+
+
 ## Desarrolladores ##
 
-* Carolina Pulido crpulidog@unal.edu.co
-* Johnny Cubides jgcubidesc@unal.edu.co
+* **Carolina Pulido**, crpulidog@unal.edu.co
+* **Johnny Cubides**, jgcubidesc@unal.edu.co
 
 ![Responsabilidades.png](https://bitbucket.org/repo/zbxzr5/images/1206453884-Responsabilidades.png)
 
