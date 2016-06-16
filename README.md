@@ -41,6 +41,12 @@ otro navegador comente y descomente el de su eleccion.
 
 ## Hardware ##
 
-![tarjetaLuabot.jpeg](https://bitbucket.org/repo/zbxzr5/images/1531299591-tarjetaLuabot.jpeg)
+![luabot_v2.jpeg](https://bitbucket.org/repo/zbxzr5/images/4053244832-luabot_v2.jpeg)
+
+![luabot_v2_3D.png](https://bitbucket.org/repo/zbxzr5/images/3490238818-luabot_v2_3D.png)
+
+![tarjetaLuaBot.jpeg](https://bitbucket.org/repo/zbxzr5/images/447031110-tarjetaLuaBot.jpeg)
+
+![moduloPotencia.jpeg](https://bitbucket.org/repo/zbxzr5/images/1306851125-moduloPotencia.jpeg)
 
 Att: grupo pinguinoTux
