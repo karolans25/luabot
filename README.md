@@ -20,14 +20,19 @@ a las cuales se le deben los créditos.
 * [npm](https://www.npmjs.com/)
 * [Apps chrome-chromium](https://developer.chrome.com/apps/first_app)
 * [Kicad](http://kicad-pcb.org/)
+* [ESP8266](http://www.esp8266.com/)
 * [nodeMCU](https://nodemcu.readthedocs.io/en/master/)
 * [VIM](http://www.vim.org/)
 * [gimp](https://www.gimp.org/)
+
 ## Características ##
 
 * Módulo WiFi: Preparado para soportar IOT (internet de las cosas) 
-* Interprete: Se hace uso de uno de los niveles más altos de abstracción, el lenguaje Lua.
-* Programación en Bloques: Evita los errores de sintaxis al no requerir hacer uso directo de un lenguaje de programación.
+* Interprete: Se hace uso de uno de los niveles más altos de abstracción en programación, a pesar de que no se pueda hacer
+un control mayor sobre el hardware u optimizar recursos, permite que la programación sea más amigable con respecto a otros
+paradigmas de programación.
+* Programación en Bloques: La función entre la programación de bloques y el interprete evita los errores de sintaxis haciendo que solo se ocupe el programador
+por la semántica.
 * Piense usted mismo: hay herramientas que tienen como eslogan "hágalo usted mismo" o "fácil de hacer"  pero eso no implica
 que sepa cómo funciona (copy and paste).
 * Flexibilidad: No se rige sobre un sistema operativo en particular, a pesar de que requiera un navegador de internet, se
@@ -88,5 +93,17 @@ otro navegador comente y descomente el de su eleccion.
 ![tarjetaLuaBot.jpeg](https://bitbucket.org/repo/zbxzr5/images/447031110-tarjetaLuaBot.jpeg)
 
 ![moduloPotencia.jpeg](https://bitbucket.org/repo/zbxzr5/images/1306851125-moduloPotencia.jpeg)
+
+## Agradecimientos ##
+
+Carlos Iván Camargo Barreño
+Profesor de Sistemas Embebidos, Facultad De Ingeniería,
+Departamento de Ingeniería Eléctrica y Electrónica
+Universidad Nacional De Colombia.
+
+John Freddy López
+Rector Centro Educativo Los Andes Almendros
+Bogotá Colombia.
+
 
 Att: grupo pinguinoTux
