@@ -2,8 +2,8 @@
 
 ## Desarrolladores ##
 
-* Carolina Pulido
-* Johnny Cubides
+* Carolina Pulido crpulidog@unal.edu.co
+* Johnny Cubides jgcubidesc@unal.edu.co
 
 # LUABOT #
 

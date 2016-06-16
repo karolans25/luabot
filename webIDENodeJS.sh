@@ -8,24 +8,25 @@ echo "|- tools-ESP8266/"
 echo "|- serverNode/"
 echo "|- webIDEnodejs/"
 echo "De lo contrario no se ejecutará correctamente."
-echo "Por defecto el navegador que se lanzara sera iceweasel. Si usa 
+echo "Por defecto el navegador que se lanzara sera Firefox. Si usa 
 otro navegador comente y descomente el de su eleccion."
 echo "Att: grupo pinguinoTux"
 # descomente una de las lineas a ejecutar dependiendo del navegador que use.
 
 ## Navegador chrome
 #Google-chrome ./webIDEnodejs/index.html &
-google-chrome ./webIDEnodejs/index_file_nodemcu-tool.html &
+#google-chrome ./webIDEnodejs/index_file_nodemcu-tool.html &
 
 ## Navegador chromium
 #chromium ./webIDEnodejs/index.html &
+#chromium ./webIDEnodejs/index_file_nodemcu-tool.html &
 
 ## Navegador icewasel
 #iceweasel ./webIDEnodejs/index.html &
 #iceweasel ./webIDEnodejs/index_file_nodemcu-tool.html &
 
 # Navegador firefox
-# firefox ./webIDEnodejs/index_file_nodemcu-tool.html &
+firefox ./webIDEnodejs/index_file_nodemcu-tool.html &
 
 ## Servidor nodejs
 ### ARCHITECTURE
