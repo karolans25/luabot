@@ -7,6 +7,8 @@
 * Carolina Pulido
 * Johnny Cubides
 
+![Responsabilidades.png](https://bitbucket.org/repo/zbxzr5/images/1206453884-Responsabilidades.png)
+
 ## Software ##
 
 
