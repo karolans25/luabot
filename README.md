@@ -1,15 +1,25 @@
-#LuaBot#
+# LUABOT #
+
+![logo_v1.png](https://bitbucket.org/repo/zbxzr5/images/2514622579-logo_v1.png)
 
 ## Desarrolladores ##
 
 * Carolina Pulido crpulidog@unal.edu.co
 * Johnny Cubides jgcubidesc@unal.edu.co
 
-# LUABOT #
+![Responsabilidades.png](https://bitbucket.org/repo/zbxzr5/images/1206453884-Responsabilidades.png)
 
-## web y nodejs ##
+## Software ##
 
-![luabot_nodejs.png](https://bitbucket.org/repo/zbxzr5/images/2923158634-luabot_nodejs.png)
+
+### App Google Chrome ###
+
+![luabot.png](https://bitbucket.org/repo/zbxzr5/images/3073712873-luabot.png)
+
+
+### web y nodejs ###
+
+![luabotNodeJS.jpeg](https://bitbucket.org/repo/zbxzr5/images/3005177225-luabotNodeJS.jpeg)
 
 Se requiere tres aplicaciones para poder ejecutar luabot con 
 nodejs.
@@ -34,11 +44,14 @@ De lo contrario no se ejecutará correctamente.
 Por defecto el navegador que se lanzara sera iceweasel. Si usa 
 otro navegador comente y descomente el de su eleccion.
 
-## App Google Chrome ##
+## Hardware ##
 
-Solo se debe buscar en la tienda e instalar
+![luabot_v2.jpeg](https://bitbucket.org/repo/zbxzr5/images/4053244832-luabot_v2.jpeg)
 
-![luabot_app.png](https://bitbucket.org/repo/zbxzr5/images/3758267904-luabot_app.png)
+![luabot_v2_3D.png](https://bitbucket.org/repo/zbxzr5/images/3490238818-luabot_v2_3D.png)
 
+![tarjetaLuaBot.jpeg](https://bitbucket.org/repo/zbxzr5/images/447031110-tarjetaLuaBot.jpeg)
+
+![moduloPotencia.jpeg](https://bitbucket.org/repo/zbxzr5/images/1306851125-moduloPotencia.jpeg)
 
 Att: grupo pinguinoTux
