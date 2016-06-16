@@ -1,20 +1,23 @@
-#LuaBot#
+# LUABOT #
+
+![logo_v1.png](https://bitbucket.org/repo/zbxzr5/images/2514622579-logo_v1.png)
 
 ## Desarrolladores ##
 
 * Carolina Pulido
 * Johnny Cubides
 
-# LUABOT #
+## Software ##
 
-## App Google Chrome ##
+
+### App Google Chrome ###
 
 ![luabot.png](https://bitbucket.org/repo/zbxzr5/images/3073712873-luabot.png)
 
 
-## web y nodejs ##
+### web y nodejs ###
 
-![luabot_nodejs.png](https://bitbucket.org/repo/zbxzr5/images/2923158634-luabot_nodejs.png)
+![luabotNodeJS.jpeg](https://bitbucket.org/repo/zbxzr5/images/3005177225-luabotNodeJS.jpeg)
 
 Se requiere tres aplicaciones para poder ejecutar luabot con 
 nodejs.
