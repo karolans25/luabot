@@ -45,8 +45,7 @@ el único requerimiento es pensar.
 
 * **Carolina Pulido**, crpulidog@unal.edu.co
 * **Johnny Cubides**, jgcubidesc@unal.edu.co
-
-![Responsabilidades.png](https://bitbucket.org/repo/zbxzr5/images/1206453884-Responsabilidades.png)
+![Responsabilidades.png](https://bitbucket.org/repo/zbxzr5/images/3225728576-Responsabilidades.png)
 
 ## LuaBot Release ##
 
@@ -56,6 +55,7 @@ Se ha liberado la primera versión del software, la cual se instala como extensi
 ## Software ##
 
 El software de LuaBot se presenta en dos alternativas:
+
 1. Como una extensión de google-chrome o extensión para chromium.
 2. Como una aplicación cliente-servidor con la ayuda de nodeJS.
 
