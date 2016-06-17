@@ -48,7 +48,7 @@ el único requerimiento es pensar.
 
 ![Responsabilidades.png](https://bitbucket.org/repo/zbxzr5/images/1206453884-Responsabilidades.png)
 
-## Luabot Release ##
+## LuaBot Release ##
 
 * [LuaBot version 1 2016-06-16](https://bitbucket.org/pinguinotux/luabot/downloads/webIDEAppChrome_version_1.zip)
 Se ha liberado la primera versión del software, la cual se instala como extensión en el navegador Chrome o Chromium.
@@ -60,6 +60,10 @@ El software de LuaBot se presenta en dos alternativas:
 2. Como una aplicación cliente-servidor con la ayuda de nodeJS.
 
 ### App Google Chrome ###
+
+#### How Install ####
+
+[Vídeo para instalar Luabot como extensión de Chromium o google-chrome](https://youtu.be/Y3NwrFeUX0I)
 
 ![luabot.png](https://bitbucket.org/repo/zbxzr5/images/3073712873-luabot.png)
 
