@@ -1,0 +1,16 @@
+SESIÓN 1:
+---------------
+
+1. Se arma el robot con apoyo de cómo hacerlo.
+2. 
+
+Tareas: 
+- ¿Revisar qué sería llamativo para chicos de 10mo?
+- ¿Estático o Dinámico?
+- ¿Cómo implementar la comunicación Wi-fi?
+- ¿Lm 2930 o puente H para motores?
+- 
+Palabras Clave: entrada, salida, caja negra, diagrama de flujo, 
+
+
+
