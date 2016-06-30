@@ -16,6 +16,7 @@
   <script src="./modulesNodeMCU/timer.js"></script>
   <script src="./modulesNodeMCU/pwm.js"></script>
   <script src="./modulesNodeMCU/adc.js"></script>
+  <script src="./modulesNodeMCU/sensores.js"></script>
   <script language="javascript" src="./app/action.js"></script>
   <script language="javascript" src="./app/serial.js"></script>
   <!-- fileSystem -->
@@ -424,6 +425,7 @@
       <block type="button_statement"></block>
       <block type="button"></block>
       <block type="html_text"></block>
+      <block type="variable_html"></block>
     </category>
     <category name="Temporizador">
       <block type="timer_delay_micro"></block>
@@ -441,6 +443,10 @@
     <category name="ADC">
       <block type="adc_reader"></block>
     </category>
+	<category name="Sensores">
+		<block type='hc_sr04'></block>
+		<block type='read_hc_sr04'></block>
+	</category>
   </xml>
 </body>
 </html>

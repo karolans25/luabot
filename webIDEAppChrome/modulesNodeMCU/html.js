@@ -138,3 +138,29 @@ Blockly.Lua['html_text'] = function(block) {
   var code = 'buf = buf.."<p>' + text_text + '</p>"\n';
   return code;
 };
+
+/************************************************************
+ * 					BEGIN HTML TEXT AND VARIABLE
+ * *********************************************************/
+
+Blockly.Blocks['variable_html'] = {
+  init: function() {
+    this.appendValueInput("text_add_variable")
+        .setCheck(null)
+        .appendField("Texto Web + Variable")
+        .appendField(new Blockly.FieldTextInput("nombre de variable"), "text");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Lua['variable_html'] = function(block) {
+  var text_text_ = block.getFieldValue('text');
+  var value_text_add_variable = Blockly.Lua.valueToCode(block, 'text_add_variable', Blockly.Lua.ORDER_ATOMIC);
+  // TODO: Assemble Lua into code variable.
+  var code = 'buf = buf.."<p>' + text_text_ + '"..' + value_text_add_variable +'..' + '"</p"\n';
+  return code;
+};
