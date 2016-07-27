@@ -104,7 +104,8 @@ Blockly.Blocks['read_hc_sr04'] = {
 
 Blockly.Lua['read_hc_sr04'] = function(block) {
   // TODO: Assemble Lua into code variable.
-  var code = 'device.measure_avg()';
+  var code = 'device.measure()';
+  //var code = 'device.measure_avg()';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Lua.ORDER_NONE];
 };
