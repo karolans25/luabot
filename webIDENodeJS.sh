@@ -39,6 +39,7 @@ else
 	ARCH=32
 	echo "Host is a ${ARCH}-bit GNU/Linux."
 	#./serverNode/node-v5.3.0-linux-x86/bin/node ./serverNode/index.js
-	./serverNode/node-v5.3.0-linux-x86/bin/node ./serverNode/index_nodeMcu-tool.js
+	#./serverNode/node-v5.3.0-linux-x86/bin/node ./serverNode/index_nodeMcu-tool.js
+	./serverNode/node-v6.3.1-linux-x86/bin/node ./serverNode/index_nodeMcu-tool.js
 fi
 
