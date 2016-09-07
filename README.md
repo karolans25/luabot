@@ -45,6 +45,7 @@ el único requerimiento es pensar.
 
 * **Carolina Pulido**, crpulidog@unal.edu.co
 * **Johnny Cubides**, jgcubidesc@unal.edu.co
+
 ![Responsabilidades.png](https://bitbucket.org/repo/zbxzr5/images/3225728576-Responsabilidades.png)
 
 ## LuaBot Release ##
