@@ -44,7 +44,7 @@ Blockly.Blocks['timer_delay_mili'] = {
 Blockly.Lua['timer_delay_mili'] = function(block) {
   var value_delay = Blockly.Lua.valueToCode(block, 'delay', Blockly.Lua.ORDER_ATOMIC);
   // TODO: Assemble Lua into code variable.
-  var code = 'tmr.delay(' + 1000*value_delay + ')\n';
+  var code = 'tmr.delay(' + '1000*' + value_delay + ')\n';
   return code;
 };
 
@@ -69,7 +69,7 @@ Blockly.Blocks['timer_delay_seg'] = {
 Blockly.Lua['timer_delay_seg'] = function(block) {
   var value_delay = Blockly.Lua.valueToCode(block, 'delay', Blockly.Lua.ORDER_ATOMIC);
   // TODO: Assemble Lua into code variable.
-  var code = 'tmr.delay(' + 1000000*value_delay + ')\n';
+  var code = 'tmr.delay(' + '1000000*' + value_delay + ')\n';
   return code;
 };
 

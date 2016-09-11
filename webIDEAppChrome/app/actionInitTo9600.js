@@ -142,16 +142,11 @@ function upload() {
 					}
 				}
 			};
-			// Se ha agregado la línea uart.setup(...) con el fin de que siempre se tenga en cuenta la 
-			// velocidad de conexión a 115200 ya que nodemcu está por defecto a 9600 baudios
-			// Y los ttl-usb hl340 tiene problemas con chrome o chromium a esa velocidad,
-			// La solución consiste en dejar la conexión a 115200 por defecto en el archivo init.lua
 			temp_1 =	'file.remove("init.lua")\n'+
 						'file.open("init.lua", "w")\n'+
 						'file.writeline([[print(1)]])\n'+
 						'file.close()\n'+
 						'file.open("init.lua", "w+")\n'+
-						'file.writeline([[uart.setup(0,115200,8,0,1,1)]])\n'+
 						temp_2 +
 						'file.close()\n';
 						//'node.restart(); // podría ser agregado a temp_1 si

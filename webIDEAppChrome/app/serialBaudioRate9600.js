@@ -51,7 +51,7 @@ var onReceiveCallback = function(info) {
 			
 			if (send_code == true){
 				//console.log("count "+counter_code);
-				// Esta es una de las partes más delicadas de l programa ya que
+				// Esta es una de las partes más delicadas del programa ya que
 				// tiene la responsabilidad de avanzar o detenerse
 				// Dependiendo sí el esp8266 devuelve o no el prompt después de 
 				// un newline (\n).
@@ -318,7 +318,7 @@ function buildPortPicker(ports) {
 function openSelectedPort() {
   var portPicker = document.getElementById('port-picker');
   var selectedPort = portPicker.options[portPicker.selectedIndex].value;
-  chrome.serial.connect(selectedPort, {bitrate: 115200},onOpen);
+  chrome.serial.connect(selectedPort, onOpen);
 }
 
 onload = function() {

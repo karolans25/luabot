@@ -17,6 +17,7 @@
   <script src="./modulesNodeMCU/pwm.js"></script>
   <script src="./modulesNodeMCU/adc.js"></script>
   <script src="./modulesNodeMCU/sensores.js"></script>
+  <script src="./modulesNodeMCU/com.js"></script>
   <script language="javascript" src="./app/action.js"></script>
   <script language="javascript" src="./app/serial.js"></script>
   <!-- fileSystem -->
@@ -446,6 +447,9 @@
 	<category name="Sensores">
 		<block type='hc_sr04'></block>
 		<block type='read_hc_sr04'></block>
+	</category>
+	<category name="Comunicación">
+		<block type="uart_setup"></block>
 	</category>
   </xml>
 </body>
