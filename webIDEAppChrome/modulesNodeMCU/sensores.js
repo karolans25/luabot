@@ -109,3 +109,60 @@ Blockly.Lua['read_hc_sr04'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Lua.ORDER_NONE];
 };
+
+/************************************************************
+ * 		BEGIN DHT
+ ***********************************************************/
+
+Blockly.Blocks['dht'] = {
+  init: function() {
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_CENTRE)
+        .appendField("DHT");
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_CENTRE)
+        .appendField("Run");
+    this.appendValueInput("dhtPin")
+        .setCheck("Number")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("Pin");
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(180);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Lua['dht'] = function(block) {
+  var value_dhtpin = Blockly.Lua.valueToCode(block, 'dhtPin', Blockly.Lua.ORDER_ATOMIC);
+  // TODO: Assemble Lua into code variable.
+  var code = 'dhtStatus, dhtTemp, dhtHum, dhtTemp_dec, dhtHum_dec = dht.read('+value_dhtpin+')\n';
+  return code;
+};
+
+
+/***********************************************************
+ * 		MEASURE WITH DHT
+ **********************************************************/
+
+Blockly.Blocks['dht_value'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("DHT.")
+        .appendField(new Blockly.FieldDropdown([["Temperatura", "dhtTemp"], ["Humedad", "dhtHum"], ["Estado sensor", "dhtStatus"], ["Humedad decimal", "dhtTemp_dec"], ["Temperatura decimal", "dhtHum_dec"]]), "unidadFisica");
+    this.setOutput(true, null);
+    this.setColour(180);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Lua['dht_value'] = function(block) {
+  var dropdown_unidadfisica = block.getFieldValue('unidadFisica');
+  // TODO: Assemble Lua into code variable.
+  var code = dropdown_unidadfisica;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Lua.ORDER_NONE];
+};
+
