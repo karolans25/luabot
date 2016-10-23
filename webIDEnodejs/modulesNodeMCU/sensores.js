@@ -116,10 +116,16 @@ Blockly.Lua['read_hc_sr04'] = function(block) {
 
 Blockly.Blocks['dht'] = {
   init: function() {
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_CENTRE)
+        .appendField("DHT");
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_CENTRE)
+        .appendField("Run");
     this.appendValueInput("dhtPin")
         .setCheck("Number")
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("Leer DHT en Pin");
+        .appendField("Pin");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour(180);

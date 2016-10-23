@@ -1,8 +1,8 @@
 // Constructor de temporizador
 
-// timer delay
+// timer delay - microsegundos
 // Detiene la ejecución del programa
-Blockly.Blocks['timer_delay'] = {
+Blockly.Blocks['timer_delay_micro'] = {
   init: function() {
     this.appendValueInput("delay")
         .setCheck("Number")
@@ -16,10 +16,60 @@ Blockly.Blocks['timer_delay'] = {
   }
 };
 
-Blockly.Lua['timer_delay'] = function(block) {
+Blockly.Lua['timer_delay_micro'] = function(block) {
   var value_delay = Blockly.Lua.valueToCode(block, 'delay', Blockly.Lua.ORDER_ATOMIC);
   // TODO: Assemble Lua into code variable.
   var code = 'tmr.delay(' + value_delay + ')\n';
+  return code;
+};
+
+
+
+// timer delay - milisegundos
+// Detiene la ejecución del programa
+Blockly.Blocks['timer_delay_mili'] = {
+  init: function() {
+    this.appendValueInput("delay")
+        .setCheck("Number")
+        .appendField("Detener todo durante (ms): ");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(65);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Lua['timer_delay_mili'] = function(block) {
+  var value_delay = Blockly.Lua.valueToCode(block, 'delay', Blockly.Lua.ORDER_ATOMIC);
+  // TODO: Assemble Lua into code variable.
+  var code = 'tmr.delay(' + '1000*' + value_delay + ')\n';
+  return code;
+};
+
+
+
+// timer delay - segundos
+// Detiene la ejecución del programa
+Blockly.Blocks['timer_delay_seg'] = {
+  init: function() {
+    this.appendValueInput("delay")
+        .setCheck("Number")
+        .appendField("Detener todo durante (s): ");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(65);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Lua['timer_delay_seg'] = function(block) {
+  var value_delay = Blockly.Lua.valueToCode(block, 'delay', Blockly.Lua.ORDER_ATOMIC);
+  // TODO: Assemble Lua into code variable.
+  var code = 'tmr.delay(' + '1000000*' + value_delay + ')\n';
   return code;
 };
 

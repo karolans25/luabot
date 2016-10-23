@@ -66,7 +66,7 @@ Blockly.Lua['pwm_stop'] = function(block) {
  *****************************************************************/
 Blockly.Blocks['pwm_close'] = {
   init: function() {
-	this.appendValueInput("pwm")
+	this.appendValueInput("pin")
 	    .setCheck("Number")
 	    .appendField("Eliminar el PWM del pin ");
 	this.setInputsInline(false);

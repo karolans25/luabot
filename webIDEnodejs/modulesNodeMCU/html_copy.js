@@ -29,7 +29,7 @@ Blockly.Lua['page_html'] = function(block) {
   var statements_buttons = Blockly.Lua.statementToCode(block, 'buttons');
   var statements_logic = Blockly.Lua.statementToCode(block, 'logic');
   // TODO: Assemble Lua into code variable.
-  var code = 'srv=net.createServer(net.TCP)' +
+  var code = 'srv=net.createServer(net.TCP)' + 
 	'srv:listen(80,function(conn)\n' +
 	'conn:on("receive", function(client,request)\n' +
 	'local buf = ""\n'+

@@ -16,6 +16,9 @@
   <script src="./modulesNodeMCU/html.js"></script>
   <script src="./modulesNodeMCU/timer.js"></script>
   <script src="./modulesNodeMCU/pwm.js"></script>
+  <script src="./modulesNodeMCU/adc.js"></script>
+  <script src="./modulesNodeMCU/sensores.js"></script>
+  <script src="./modulesNodeMCU/com.js"></script>
   <script language="javascript" src="../serverNode/socket.io.js"></script>
   <script language="javascript" src="../serverNode/cliente_nodeMcu-tool.js"></script>
 </head>
@@ -397,18 +400,33 @@
       <block type="button_statement"></block>
       <block type="button"></block>
       <block type="html_text"></block>
-	</category>
-	<category name="Temporizador">
-      <block type="timer_delay"></block>
+      <block type="variable_html"></block>
+    </category>
+    <category name="Temporizador">
+      <block type="timer_delay_micro"></block>
+      <block type="timer_delay_mili"></block>
+      <block type="timer_delay_seg"></block>
       <block type="timer_alarm"></block>
       <block type="timer_stop"></block>
     </category>
-	<category name="PWM">
+    <category name="PWM">
       <block type="pwm_setup"></block>
       <block type="pwm_stop"></block>
       <block type="pwm_close"></block>
       <block type="pwm_duty"></block>
     </category>
+    <category name="ADC">
+      <block type="adc_reader"></block>
+    </category>
+	<category name="Sensores">
+		<block type='hc_sr04'></block>
+		<block type='read_hc_sr04'></block>
+		<block type='dht'></block>
+		<block type='dht_value'></block>
+	</category>
+	<category name="Comunicación">
+		<block type="uart_setup"></block>
+	</category>
   </xml>
 </body>
 </html>
