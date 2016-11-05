@@ -1,0 +1,7 @@
+file.remove("run.lua")
+file.open("run.lua", "w")
+file.writeline([[print(1)]])
+file.close()
+file.open("run.lua", "w+")
+file.writeline([[uart.setup(0,115200,8,0,1,1)]])
+file.close()

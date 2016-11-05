@@ -45,7 +45,7 @@ function executeOption(optionSelected){
 	else if (optionSelected == "nodeRestart")
 			specialSend('node.restart()', 'Reiniciando el ESP');
 	else if (optionSelected == "fileFormat")
-			specialSend('file.format()', 'Borrado y formateo de memoria del ESP');
+			specialSend('file.remove("run.lua")', 'Borrando memoria de memoria del ESP');
 
 	function specialSend(data, message){
 		var temp_code_blockly = ';\n' + data ;
@@ -124,7 +124,7 @@ function blockly_load() {
 function upload() {
 	//document.getElementById ("terminal0").value = ">> UpLoad esp8266";
 	//document.getElementById('labelVariable').innerText = "prueba";		
-	jPrompt('Tenga en cuenta que si un programa no funciona correctamente puede generarle problemas que LuaBot NO sea capaz de solucionar.\n\nAsegúrese que funciona bien ejecutando primero el programa con el botón RUN (cohete).\n\n¿Desea subir el programa al init.lua del ESP? Si/No','si', 'Upload init.lua', function(result){
+	jPrompt('Tenga en cuenta que si un programa no funciona correctamente puede generarle problemas que LuaBot NO sea capaz de solucionar.\n\nAsegúrese que funciona bien ejecutando primero el programa con el botón RUN (cohete).\n\n¿Desea subir el programa al run.lua del ESP? Si/No','si', 'Upload run.lua', function(result){
 		if (result == "si" || result == "yes" || result == "Si" || result == "Yes" || result == "SI" || result == "YES"){
 			
 			var temp_1 = '';
@@ -146,12 +146,11 @@ function upload() {
 			// velocidad de conexión a 115200 ya que nodemcu está por defecto a 9600 baudios
 			// Y los ttl-usb hl340 tiene problemas con chrome o chromium a esa velocidad,
 			// La solución consiste en dejar la conexión a 115200 por defecto en el archivo init.lua
-			temp_1 =	'file.remove("init.lua")\n'+
-						'file.open("init.lua", "w")\n'+
+			temp_1 =	'file.remove("run.lua")\n'+
+						'file.open("run.lua", "w")\n'+
 						'file.writeline([[print(1)]])\n'+
 						'file.close()\n'+
-						'file.open("init.lua", "w+")\n'+
-						'file.writeline([[uart.setup(0,115200,8,0,1,1)]])\n'+
+						'file.open("run.lua", "w+")\n'+
 						temp_2 +
 						'file.close()\n';
 						//'node.restart(); // podría ser agregado a temp_1 si
