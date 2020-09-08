@@ -106,11 +106,6 @@ otro navegador comente y descomente el de su elección.
 
 ## Agradecimientos ##
 
-
-**John Freddy López**,
-Rector Centro Educativo Los Andes Almendros,
-Bogotá Colombia.
-
 **Carlos Iván Camargo Barreño**,
 Profesor de Sistemas Embebidos, Facultad De Ingeniería,
 Departamento de Ingeniería Eléctrica y Electrónica,
