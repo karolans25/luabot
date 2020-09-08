@@ -106,7 +106,7 @@ otro navegador comente y descomente el de su elección.
 
 ## Agradecimientos ##
 
-**Carlos Iván Camargo Barreño**,
+**Carlos Iván Camargo Bareño**,
 Profesor de Sistemas Embebidos, Facultad De Ingeniería,
 Departamento de Ingeniería Eléctrica y Electrónica,
 Universidad Nacional De Colombia.
